@@ -8,6 +8,7 @@ import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Advantage from "@/components/Advantage";
 import Pricing from "@/components/Pricing";
+import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -23,6 +24,7 @@ export default function Home() {
       <Portfolio />
       <Advantage />
       <Pricing />
+      <Process />
       <Testimonials />
       <Contact />
       <Footer />

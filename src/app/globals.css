@@ -1,36 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Brand Colors */
-  --primary: #4800b2;
-  --primary-container: #6200ee;
+  /* Brand Colors - Matched to Demo Design 1 */
+  --primary: #6300e2;
+  --primary-container: #7c3aed;
   --on-primary: #ffffff;
   
-  --secondary: #b80049;
-  --secondary-container: #e2165f;
+  --secondary: #d946ef;
+  --secondary-container: #f0abfc;
   
-  --tech-teal: #44d8f1;
-  --tech-teal-container: #005d6a;
+  --tech-teal: #2dd4bf;
+  --tech-teal-container: #0d9488;
   
   /* Neutral Surfaces */
-  --background: #fdf8ff;
-  --surface: #fdf8ff;
-  --surface-container-low: #f7f2fa;
-  --surface-container: #f1ecf4;
-  --surface-container-high: #ebe6ee;
-  --surface-container-highest: #e6e1e9;
+  --background: #f8f7ff;
+  --surface: #ffffff;
+  --surface-container-low: #f3f0ff;
+  --surface-container: #ece7ff;
+  --surface-container-high: #e5deff;
+  --surface-container-highest: #ded5ff;
   --surface-container-lowest: #ffffff;
   
   /* Text */
-  --on-surface: #1c1b20;
-  --on-surface-variant: #494456;
+  --on-surface: #1a1a2e;
+  --on-surface-variant: #565677;
   
   /* Accents */
-  --outline-variant: rgba(203, 195, 217, 0.15);
-  --shadow-ambient: 0 20px 40px rgba(72, 0, 178, 0.06);
+  --outline-variant: rgba(99, 0, 226, 0.1);
+  --shadow-ambient: 0 20px 40px rgba(99, 0, 226, 0.08);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #6300e2, #d946ef);
+  --gradient-surface: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(243,240,255,0.5) 100%);
   
   /* Border Radius */
-  --radius-xl: 1.5rem; /* 24px as per standard premium look */
+  --radius-xl: 1.5rem;
   --radius-full: 9999px;
   
   /* Transitions */
@@ -67,7 +71,7 @@ a {
 
 /* Glassmorphism Utility */
 .glass {
-  background: rgba(253, 248, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
@@ -83,42 +87,52 @@ a {
   padding: 2rem;
   box-shadow: var(--shadow-ambient);
   transition: var(--transition-smooth);
+  border: 1px solid var(--outline-variant);
 }
 
 .card-premium:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(72, 0, 178, 0.1);
+  box-shadow: 0 30px 60px rgba(99, 0, 226, 0.12);
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 /* Buttons */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  background: var(--gradient-primary);
   color: var(--on-primary);
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: var(--radius-full);
   font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   cursor: pointer;
   transition: var(--transition-smooth);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 10px 20px rgba(99, 0, 226, 0.2);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 20px rgba(184, 0, 73, 0.3); /* Secondary pink glow */
-  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(217, 70, 239, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--on-surface);
+  color: var(--primary);
   padding: 1rem 2.5rem;
   border-radius: var(--radius-full);
   font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
-  border: 1px solid var(--outline-variant);
+  font-weight: 700;
+  border: 1px solid var(--primary);
   cursor: pointer;
   transition: var(--transition-smooth);
   display: inline-flex;
@@ -127,9 +141,8 @@ a {
 }
 
 .btn-secondary:hover {
-  background: var(--surface-container-low);
-  border-color: var(--primary);
-  color: var(--primary);
+  background: rgba(99, 0, 226, 0.05);
+  transform: translateY(-2px);
 }
 
 /* Tech Highlights */
@@ -138,21 +151,22 @@ a {
 }
 
 .tech-chip {
-  background-color: var(--tech-teal);
-  color: var(--tech-teal-container);
-  padding: 0.25rem 0.75rem;
+  background-color: var(--surface-container-low);
+  color: var(--primary);
+  padding: 0.35rem 1rem;
   border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--outline-variant);
 }
 
 /* Section Spacing */
 section {
-  padding: 8rem 2rem;
+  padding: 10rem 2rem;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 4rem 1.5rem;
+    padding: 6rem 1.5rem;
   }
 }

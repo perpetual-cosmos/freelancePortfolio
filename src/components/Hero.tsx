@@ -3,9 +3,9 @@ import React from 'react';
 const Hero = () => {
   return (
     <section style={{ 
-      paddingTop: '10rem', 
-      paddingBottom: '6rem',
-      background: 'radial-gradient(circle at top right, rgba(72, 0, 178, 0.05), transparent 40%)'
+      paddingTop: '12rem', 
+      paddingBottom: '8rem',
+      background: 'radial-gradient(circle at top right, rgba(99, 0, 226, 0.08), transparent 50%), radial-gradient(circle at bottom left, rgba(217, 70, 239, 0.05), transparent 50%)'
     }}>
       <div style={{
         maxWidth: '1200px',
@@ -15,47 +15,60 @@ const Hero = () => {
         gap: '4rem',
         alignItems: 'center'
       }}>
-        <div>
-          <div style={{ color: 'var(--tech-teal)', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.15em', marginBottom: '1.5rem' }}>
-            // SOFTWARE DEVELOPMENT COMPANY
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <div className="tech-chip" style={{ marginBottom: '2rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--secondary)' }}></span>
+            Innovating with AI, React, Node.js & More
           </div>
-          <h1 style={{ fontSize: '4.5rem', lineHeight: 1.1, marginBottom: '2rem' }}>
-            We Build Digital <br />
-            <span style={{ color: 'var(--tech-teal)' }}>Infrastructure.</span>
+          <h1 style={{ fontSize: '4.8rem', lineHeight: 1.05, marginBottom: '2rem', color: 'var(--on-surface)' }}>
+            Building <span className="text-gradient">Future-Ready</span> <br />
+            Digital Solutions
           </h1>
           <p style={{ 
             color: 'var(--on-surface-variant)', 
-            fontSize: '1.2rem', 
-            marginBottom: '3rem', 
+            fontSize: '1.25rem', 
+            marginBottom: '3.5rem', 
             maxWidth: '550px',
             lineHeight: 1.6
           }}>
-            TheUniPick delivers end-to-end software solutions — from AI-powered applications to enterprise-grade platforms. CMS, React, Node.js, Spring Boot, and beyond.
+            We craft high-performance applications powered by AI, modern CMS platforms, React, Node.js, and Spring Boot — transforming ideas into scalable digital products.
           </p>
           
           <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '4rem' }}>
-            <button className="btn-primary">START YOUR PROJECT</button>
-            <button className="btn-secondary">VIEW PORTFOLIO</button>
+            <button className="btn-primary">Start Your Project →</button>
+            <button className="btn-secondary">View Portfolio</button>
           </div>
 
-          <div style={{ display: 'flex', gap: '4rem', borderTop: '1px solid var(--outline-variant)', paddingTop: '2rem' }}>
+          <div style={{ display: 'flex', gap: '4rem', borderTop: '1px solid var(--outline-variant)', paddingTop: '2.5rem' }}>
             <div>
-              <div style={{ color: 'var(--on-surface-variant)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>PROJECTS DELIVERED</div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 800 }}>250+</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary)', fontFamily: 'Space Grotesk' }}>250+</div>
+              <div style={{ color: 'var(--on-surface-variant)', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.05em' }}>PROJECTS DELIVERED</div>
             </div>
             <div>
-              <div style={{ color: 'var(--on-surface-variant)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>TECHNOLOGIES</div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 800 }}>15+</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary)', fontFamily: 'Space Grotesk' }}>15+</div>
+              <div style={{ color: 'var(--on-surface-variant)', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.05em' }}>TECHNOLOGIES</div>
             </div>
           </div>
         </div>
 
         <div style={{ position: 'relative' }}>
-          <div className="glass" style={{
-            borderRadius: '2rem',
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '120%',
+            height: '120%',
+            background: 'radial-gradient(circle, rgba(99, 0, 226, 0.1) 0%, transparent 70%)',
+            zIndex: 0
+          }}></div>
+          <div className="card-premium" style={{
+            padding: 0,
             overflow: 'hidden',
-            boxShadow: '0 40px 100px rgba(0,0,0,0.1)',
-            border: '1px solid var(--outline-variant)'
+            boxShadow: '0 40px 100px rgba(99, 0, 226, 0.15)',
+            border: '2px solid rgba(255, 255, 255, 0.8)',
+            position: 'relative',
+            zIndex: 1
           }}>
             <img 
               src="/hero_infrastructure_1776542449505.png" 
@@ -63,26 +76,14 @@ const Hero = () => {
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
-          <div style={{
-            position: 'absolute',
-            bottom: '-2rem',
-            right: '-2rem',
-            width: '200px',
-            height: '200px',
-            background: 'linear-gradient(135deg, var(--tech-teal), var(--primary))',
-            borderRadius: '2rem',
-            zIndex: -1,
-            opacity: 0.15
-          }}></div>
         </div>
       </div>
       
       <style jsx>{`
         @media (max-width: 1024px) {
           section > div { grid-template-columns: 1fr; text-align: center; }
-          h1 { fontSize: '3.5rem'; }
-          div[style*="justify-content: space-between"] { justify-content: center !important; }
-          div[style*="max-width: 550px"] { margin: 0 auto 3rem auto; }
+          h1 { font-size: 3.5rem; }
+          div[style*="max-width: 550px"] { margin: 0 auto 3.5rem auto; }
           div[style*="display: flex; gap: 1.5rem"] { justify-content: center; }
           div[style*="display: flex; gap: 4rem"] { justify-content: center; }
         }
