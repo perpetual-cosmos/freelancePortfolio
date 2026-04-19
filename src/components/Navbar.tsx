@@ -30,12 +30,12 @@ const Navbar = () => {
       <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
         <div style={{ display: 'flex', gap: '1.5rem', marginRight: '2rem' }}>
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
-              style={{ 
-                fontSize: '0.85rem', 
-                fontWeight: 600, 
+              style={{
+                fontSize: '0.85rem',
+                fontWeight: 600,
                 color: 'var(--on-surface-variant)',
                 transition: 'var(--transition-smooth)'
               }}

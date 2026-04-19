@@ -24,7 +24,7 @@ const Services = () => {
             Full-Spectrum Development
           </h2>
         </div>
-        
+
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
@@ -32,21 +32,21 @@ const Services = () => {
           borderLeft: '1px solid var(--outline-variant)'
         }}>
           {services.map((s) => (
-            <div key={s.id} style={{ 
+            <div key={s.id} style={{
               padding: '4rem 3rem',
               borderRight: '1px solid var(--outline-variant)',
               borderBottom: '1px solid var(--outline-variant)',
               transition: 'var(--transition-smooth)',
               cursor: 'pointer'
             }}
-            onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-container-low)'}
-            onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-container-low)'}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
             >
               <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', marginBottom: '2rem' }}>
-                <div style={{ 
-                  width: '50px', 
-                  height: '50px', 
-                  background: 'var(--surface-container)', 
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  background: 'var(--surface-container)',
                   borderRadius: '0.75rem',
                   display: 'flex',
                   alignItems: 'center',

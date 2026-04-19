@@ -5,13 +5,13 @@
   --primary: #6300e2;
   --primary-container: #7c3aed;
   --on-primary: #ffffff;
-  
+
   --secondary: #d946ef;
   --secondary-container: #f0abfc;
-  
+
   --tech-teal: #2dd4bf;
   --tech-teal-container: #0d9488;
-  
+
   /* Neutral Surfaces */
   --background: #f8f7ff;
   --surface: #ffffff;
@@ -20,23 +20,23 @@
   --surface-container-high: #e5deff;
   --surface-container-highest: #ded5ff;
   --surface-container-lowest: #ffffff;
-  
+
   /* Text */
   --on-surface: #1a1a2e;
   --on-surface-variant: #565677;
-  
+
   /* Accents */
   --outline-variant: rgba(99, 0, 226, 0.1);
   --shadow-ambient: 0 20px 40px rgba(99, 0, 226, 0.08);
-  
+
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #6300e2, #d946ef);
-  --gradient-surface: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(243,240,255,0.5) 100%);
-  
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(243, 240, 255, 0.5) 100%);
+
   /* Border Radius */
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
-  
+
   /* Transitions */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -57,7 +57,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   color: var(--primary);
@@ -77,8 +82,13 @@ a {
 }
 
 /* Tonal Stacking Utility */
-.surface-low { background-color: var(--surface-container-low); }
-.surface-lowest { background-color: var(--surface-container-lowest); }
+.surface-low {
+  background-color: var(--surface-container-low);
+}
+
+.surface-lowest {
+  background-color: var(--surface-container-lowest);
+}
 
 /* Premium Card Style */
 .card-premium {

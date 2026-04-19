@@ -65,7 +65,7 @@ const Pricing = () => {
             Transparent pricing with no hidden fees.
           </p>
         </div>
-        
+
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
@@ -73,8 +73,8 @@ const Pricing = () => {
           alignItems: 'stretch'
         }}>
           {tiers.map((t, i) => (
-            <div key={i} className="card-premium" style={{ 
-              display: 'flex', 
+            <div key={i} className="card-premium" style={{
+              display: 'flex',
               flexDirection: 'column',
               padding: '4rem 3rem',
               border: t.highlight ? '2px solid var(--secondary)' : '1px solid var(--outline-variant)',
@@ -100,24 +100,24 @@ const Pricing = () => {
                   ★ Most Popular
                 </div>
               )}
-              
+
               <div style={{ fontWeight: 800, fontSize: '1.2rem', color: 'var(--on-surface)', marginBottom: '0.5rem' }}>{t.name}</div>
               <div style={{ fontSize: '0.9rem', color: 'var(--on-surface-variant)', marginBottom: '2.5rem' }}>{t.subtitle}</div>
-              
+
               <div style={{ marginBottom: '3rem' }}>
                 <span className="text-gradient" style={{ fontSize: '3.5rem', fontWeight: 800, fontFamily: 'Space Grotesk' }}>{t.price}</span>
               </div>
-              
+
               <div style={{ flex: 1, marginBottom: '3.5rem' }}>
                 {t.features.map((f, fi) => (
                   <div key={fi} style={{ display: 'flex', gap: '1rem', marginBottom: '1.25rem', alignItems: 'center', fontSize: '1rem', color: 'var(--on-surface-variant)' }}>
-                    <div style={{ 
-                      width: '20px', 
-                      height: '20px', 
-                      borderRadius: '50%', 
-                      background: 'rgba(99, 0, 226, 0.1)', 
-                      display: 'flex', 
-                      alignItems: 'center', 
+                    <div style={{
+                      width: '20px',
+                      height: '20px',
+                      borderRadius: '50%',
+                      background: 'rgba(99, 0, 226, 0.1)',
+                      display: 'flex',
+                      alignItems: 'center',
                       justifyContent: 'center',
                       color: 'var(--primary)',
                       fontSize: '0.75rem',
@@ -127,7 +127,7 @@ const Pricing = () => {
                   </div>
                 ))}
               </div>
-              
+
               <button className={t.highlight ? "btn-primary" : "btn-secondary"} style={{ width: '100%', justifyContent: 'center' }}>
                 {t.buttonText}
               </button>

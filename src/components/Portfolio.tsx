@@ -51,18 +51,18 @@ const Portfolio = () => {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12rem' }}>
           {projects.map((p, i) => (
-            <div key={i} style={{ 
-              display: 'grid', 
+            <div key={i} style={{
+              display: 'grid',
               gridTemplateColumns: i % 2 === 0 ? '1.2fr 1fr' : '1fr 1.2fr',
               gap: '6rem',
               alignItems: 'center'
             }}>
-              <div style={{ 
+              <div style={{
                 order: i % 2 === 0 ? 1 : 2,
                 position: 'relative'
               }}>
-                <div className="card-premium" style={{ 
-                  height: '550px', 
+                <div className="card-premium" style={{
+                  height: '550px',
                   background: `linear-gradient(135deg, ${p.color}08, ${p.color}02)`,
                   padding: 0,
                   display: 'flex',
@@ -87,14 +87,14 @@ const Portfolio = () => {
                     overflow: 'hidden'
                   }}>
                     <div style={{ position: 'relative', zIndex: 1 }}>{p.title.split(' ')[0]}</div>
-                    <div style={{ 
-                      position: 'absolute', 
-                      top: '20%', 
-                      left: '10%', 
-                      width: '100%', 
-                      height: '100%', 
-                      background: 'white', 
-                      opacity: 0.1, 
+                    <div style={{
+                      position: 'absolute',
+                      top: '20%',
+                      left: '10%',
+                      width: '100%',
+                      height: '100%',
+                      background: 'white',
+                      opacity: 0.1,
                       borderRadius: '1rem',
                       transform: 'rotate(-45deg)'
                     }}></div>

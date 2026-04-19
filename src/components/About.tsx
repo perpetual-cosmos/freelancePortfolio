@@ -18,18 +18,18 @@ const About = () => {
         gap: '6rem',
         alignItems: 'center'
       }}>
-        
+
         <div style={{ position: 'relative' }}>
-          <div className="card-premium" style={{ 
-            padding: 0, 
-            overflow: 'hidden', 
+          <div className="card-premium" style={{
+            padding: 0,
+            overflow: 'hidden',
             height: '550px',
             boxShadow: '0 40px 80px rgba(99, 0, 226, 0.1)',
             border: '8px solid white'
           }}>
-            <img 
-              src="/about_excellence_1776542525381.png" 
-              alt="Engineering Excellence" 
+            <img
+              src="/about_excellence_1776542525381.png"
+              alt="Engineering Excellence"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
@@ -60,7 +60,7 @@ const About = () => {
           <p style={{ color: 'var(--on-surface-variant)', fontSize: '1.15rem', marginBottom: '2rem', lineHeight: 1.7 }}>
             TheUniPick is a forward-thinking software development company specializing in building robust, scalable, and intelligent digital solutions. We combine deep technical expertise with creative problem-solving to deliver products that drive real business results.
           </p>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
             {stats.map((stat, i) => (
               <div key={i} className="card-premium" style={{ border: '1px solid var(--outline-variant)', background: 'white', padding: '1.5rem 2rem' }}>

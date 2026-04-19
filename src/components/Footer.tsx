@@ -5,7 +5,7 @@ const Footer = () => {
     <footer style={{ padding: '8rem 2rem 4rem', background: '#ffffff', borderTop: '1px solid rgba(99, 0, 226, 0.05)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: '6rem', marginBottom: '8rem' }}>
-          
+
           <div>
             <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.03em', marginBottom: '2rem' }}>
               TheUniPick
@@ -51,12 +51,12 @@ const Footer = () => {
 
         </div>
 
-        <div style={{ 
-          display: 'flex', 
+        <div style={{
+          display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: '2.5rem',
-          paddingTop: '3rem', 
+          paddingTop: '3rem',
           borderTop: '1px solid rgba(99, 0, 226, 0.05)',
           color: 'var(--on-surface-variant)',
           fontSize: '0.95rem'

@@ -30,15 +30,15 @@ const Testimonials = () => {
             What Our <span className="text-gradient">Clients Say</span>
           </h2>
         </div>
-        
+
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
           gap: '3rem'
         }}>
           {testimonies.map((t, i) => (
-            <div key={i} className="card-premium" style={{ 
-              display: 'flex', 
+            <div key={i} className="card-premium" style={{
+              display: 'flex',
               flexDirection: 'column',
               gap: '2.5rem',
               background: 'white',
