@@ -4,43 +4,43 @@ import { Check, Star, ArrowRight } from 'lucide-react';
 
 const tiers = [
   {
-    name: "STARTER",
-    subtitle: "Ideal for startups & MVPs",
-    price: "$2,999",
+    name: "MVP TRACK",
+    subtitle: "Ship high-quality early",
+    price: "$5,000+",
     features: [
-      "Custom Web Application",
-      "Responsive UI Design",
-      "Core API Integration",
-      "3 Months Post-Launch Support",
-      "Search Engine Optimization"
+      "Modular Next.js Architecture",
+      "Typescript-First Core",
+      "90%+ Lighthouse Performance",
+      "Core API & Auth Layer",
+      "Vercel/AWS Deployment"
     ],
     highlight: false
   },
   {
-    name: "SCALABLE",
-    subtitle: "Accelerate your growth",
-    price: "$7,999",
+    name: "SCALE TRACK",
+    subtitle: "Architected for growth",
+    price: "$12,000+",
     features: [
-      "Advanced Full Stack Studio",
-      "Custom AI Integration",
-      "Automated CMS Workflows",
-      "Cloud Architecture (AWS/GCP)",
-      "6 Months Priority Support",
-      "Performance Analytics"
+      "Event-Driven Backend",
+      "Automated Testing Suite",
+      "Full CI/CD Pipeline Setup",
+      "External API Integrations",
+      "Performance Monitoring Hub",
+      "Priority Engineering Support"
     ],
     highlight: true
   },
   {
     name: "ENTERPRISE",
-    subtitle: "High-level infra & security",
+    subtitle: "Dedicated core support",
     price: "Custom",
     features: [
       "Microservices Migration",
-      "Large-scale AI/ML Pipelines",
-      "Dedicated Engineering Team",
-      "24/7 Enterprise Support",
-      "SLA & Compliance Audit",
-      "Custom Legacy Modernization"
+      "Custom AI/ML Workflows",
+      "Security & Compliance Audit",
+      "Dedicated Dev Environment",
+      "24/7 SLA Guarantees",
+      "Legacy Code Refactoring"
     ],
     highlight: false
   }

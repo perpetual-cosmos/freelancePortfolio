@@ -2,19 +2,19 @@ import React from 'react';
 
 const testimonies = [
   {
-    quote: "TheUniPick delivered an outstanding AI platform that transformed our data analytics. Their team's expertise and dedication exceeded our expectations.",
-    author: "Sarah Johnson",
-    role: "CTO, TechFlow"
+    quote: "TheUnipick delivered an outstanding AI platform that transformed our data analytics. Their team's expertise and dedication exceeded our expectations.",
+    author: "Sarah Jenkins",
+    role: "CTO at Nexus AI"
   },
   {
-    quote: "Working with TheUniPick has been a game-changer for our e-commerce business. The custom CMS they built is intuitive, fast, and incredibly powerful.",
-    author: "Mark Davis",
-    role: "CEO, NexaMart"
+    quote: "Working with TheUnipick has been a game-changer for our e-commerce business. The custom CMS they built is intuitive, fast, and incredibly powerful.",
+    author: "David Chen",
+    role: "Founder of UrbanStyle"
   },
   {
-    quote: "The mobile app developed by TheUniPick is sleek, performant, and loved by our users. Their attention to detail in UI/UX is truly world-class.",
+    quote: "The mobile app developed by TheUnipick is sleek, performant, and loved by our users. Their attention to detail in UI/UX is truly world-class.",
     author: "Elena Rodriguez",
-    role: "Product Manager, FitPulse"
+    role: "Product Lead at FitTrack"
   }
 ];
 

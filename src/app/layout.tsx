@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppCTA from "@/components/widgets/WhatsAppCTA";
+import TrustPulse from "@/components/widgets/TrustPulse";
 
 export const metadata: Metadata = {
   title: "TheUnipick | Full-Stack Web & AI Development Studio — India",
@@ -38,6 +40,8 @@ export default function RootLayout({
       </head>
       <body style={{ margin: 0, padding: 0 }}>
         {children}
+        <WhatsAppCTA />
+        <TrustPulse />
       </body>
     </html>
   );

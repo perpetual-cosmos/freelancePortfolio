@@ -64,18 +64,23 @@ const About = () => {
         >
           <div style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.9rem', letterSpacing: '0.2em', marginBottom: '1.5rem', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <div style={{ width: '20px', height: '2px', background: 'var(--primary)' }}></div>
-            ABOUT US
+            OUR PHILOSOPHY
           </div>
           <h2 style={{ fontSize: '3.6rem', marginBottom: '2.5rem', lineHeight: 1.1, color: 'var(--on-surface)' }}>
-            Empowering Businesses with <br />
-            <span className="text-gradient">Cutting-Edge Technology</span>
+            We believe in <br />
+            <span className="text-gradient">Maintainable Excellence</span>
           </h2>
           <p style={{ color: 'var(--on-surface-variant)', fontSize: '1.15rem', marginBottom: '3rem', lineHeight: 1.7 }}>
-            TheUniPick is a forward-thinking software development company specializing in building robust, scalable, and intelligent digital solutions. We combine deep technical expertise with creative problem-solving to deliver products that drive real business results.
+            TheUnipick was founded on a simple realization: the industry is full of bloated, fragile code. We choose a different path. We build lean, modular systems designed to scale from the first commit. Our focus isn't just shipping—it's shipping code that won't keep you up at night.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
-            {stats.map((stat, i) => (
+            {[
+              { label: 'Next.js Deployments', value: '40+', icon: <Trophy size={20} /> },
+              { label: 'Lines of Test Code', value: '12k+', icon: <Users size={20} /> },
+              { label: 'Engineering Years', value: '8+', icon: <Calendar size={20} /> },
+              { label: 'Uptime SLA Met', value: '99.9%', icon: <Heart size={20} /> },
+            ].map((stat, i) => (
               <motion.div 
                 key={i} 
                 whileHover={{ y: -5 }}

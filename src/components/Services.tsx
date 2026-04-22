@@ -7,15 +7,12 @@ import {
 } from 'lucide-react';
 
 const services = [
-  { id: '01', title: 'CMS Development', desc: 'Custom WordPress, Strapi, and headless CMS solutions tailored to your content workflows.', icon: <Globe size={24} />, color: '#3b82f6' },
-  { id: '02', title: 'React & Frontend', desc: 'Modern UI applications built with React, Next.js, and TypeScript for seamless experiences.', icon: <Code2 size={24} />, color: '#14b8a6' },
-  { id: '03', title: 'Node.js Backend', desc: 'Scalable REST & GraphQL APIs, real-time applications, and microservices architecture.', icon: <Server size={24} />, color: '#22c55e' },
-  { id: '04', title: 'Spring Boot / Java', desc: 'Enterprise-grade backend systems and robust APIs built on the Java ecosystem.', icon: <Coffee size={24} />, color: '#f59e0b' },
-  { id: '05', title: 'AI & ML Solutions', desc: 'Custom AI models, intelligent chatbots, NLP engines, and data-driven automation.', icon: <Brain size={24} />, color: '#a855f7' },
-  { id: '06', title: 'Mobile Development', desc: 'Cross-platform mobile apps using React Native and Flutter with native performance.', icon: <Smartphone size={24} />, color: '#f43f5e' },
-  { id: '07', title: 'Data Engineering', desc: 'ETL pipelines, analytics dashboards, and business intelligence platforms.', icon: <BarChart3 size={24} />, color: '#3b82f6' },
-  { id: '08', title: 'E-Commerce', desc: 'Custom storefronts, Shopify integrations, and scalable e-commerce platforms.', icon: <ShoppingBag size={24} />, color: '#ec4899' },
-  { id: '09', title: 'Cloud & DevOps', desc: 'AWS/GCP infrastructure, CI/CD pipelines, and automated deployment workflows.', icon: <Cloud size={24} />, color: '#64748b' },
+  { id: '01', title: 'Next.js & Frontend', desc: 'Performance-first React applications with server-side rendering, edge caching, and a focus on Core Web Vitals.', icon: <Code2 size={24} />, color: '#14b8a6' },
+  { id: '02', title: 'Node.js Systems', desc: 'Scalable event-driven architectures, real-time synchronization, and robust API layers designed for high throughput.', icon: <Server size={24} />, color: '#22c55e' },
+  { id: '03', title: 'AI-Infused Pipelines', desc: 'Integrating LLMs, RAG systems, and custom automation workflows directly into your product ecosystem.', icon: <Brain size={24} />, color: '#a855f7' },
+  { id: '04', title: 'Infrastructure (IaC)', desc: 'Automated AWS/GCP deployments using Terraform and CI/CD pipelines that ensure zero-downtime releases.', icon: <Cloud size={24} />, color: '#64748b' },
+  { id: '05', title: 'Mobile (React Native)', desc: 'High-fidelity mobile experiences that share business logic with your web app for faster iteration.', icon: <Smartphone size={24} />, color: '#f43f5e' },
+  { id: '06', title: 'Product Architecture', desc: 'Strategic consulting for MVPs, helping founders choose the right tech stack to avoid early technical debt.', icon: <BarChart3 size={24} />, color: '#3b82f6' },
 ];
 
 const Services = () => {
@@ -29,7 +26,7 @@ const Services = () => {
             viewport={{ once: true }}
             style={{ color: 'var(--tech-teal)', fontWeight: 800, fontSize: '0.9rem', letterSpacing: '0.3rem', marginBottom: '1.5rem' }}
           >
-            // WHAT WE BUILD
+            // OUR ENGINEERING CORE
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -38,7 +35,7 @@ const Services = () => {
             transition={{ delay: 0.1 }}
             style={{ fontSize: '4.2rem', color: 'var(--on-surface)', marginBottom: '2rem' }}
           >
-            Everything Your Product Needs, <br /> Under <span className="text-gradient">One Studio</span>
+            Specialized Stacks for <br /> <span className="text-gradient">Ambitious Products</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +44,7 @@ const Services = () => {
             transition={{ delay: 0.2 }}
             style={{ color: 'var(--on-surface-variant)', fontSize: '1.25rem', maxWidth: '800px', margin: '0 auto' }}
           >
-            Whether you're building an MVP, scaling an existing product, or modernizing legacy infrastructure.
+            We don't do everything. We do the things that matter most for scaling digital products.
           </motion.p>
         </div>
 
