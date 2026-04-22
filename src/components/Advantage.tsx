@@ -11,42 +11,41 @@ const edges = [
     )
   },
   {
-    title: "Scalable Architecture",
-    desc: "Future-proof solutions that grow with your business. Our microservices-based approach ensures zero downtime during scaling.",
+    title: "No Integration Gaps",
+    desc: "The same team that builds your backend also configures your CI/CD and connects your mobile app — no finger-pointing when systems don't talk to each other.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-        <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-        <line x1="6" y1="10" x2="6" y2="14" />
+        <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z" />
+        <polyline points="7 12 10 15 17 8" />
       </svg>
     )
   },
   {
-    title: "AI & Innovation",
-    desc: "Seamlessly integrate intelligent features into your workflow. From LLM integration to custom neural networks, we stay at the frontier.",
+    title: "Consistent Standards",
+    desc: "One code style, one architecture philosophy, and one security posture across every layer of your product for long-term maintainability.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a14.5 14.5 0 0 0 0 20" />
+        <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
+        <path d="M7 2v20" />
+        <path d="M17 2v20" />
         <path d="M2 12h20" />
       </svg>
     )
   },
   {
-    title: "Dedicated Experts",
-    desc: "Our senior-heavy teams work exclusively on your project. You get direct access to architects, not just account managers.",
+    title: "Single Accountability",
+    desc: "One contract, one relationship, and one point of contact. We own the full stack, so you always know exactly who is responsible for delivery.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        <polyline points="16 11 18 13 22 9" />
       </svg>
     )
   },
   {
-    title: "Agile Execution",
-    desc: "Short feedback loops and weekly sprints. We prioritize transparency and rapid iteration to ensure project success.",
+    title: "Faster Context Switching",
+    desc: "When you need to add an AI feature to your existing web app, you don't re-brief a new vendor. We already know your stack and can execute instantly.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="23 4 23 10 17 10" />
@@ -56,7 +55,7 @@ const edges = [
   },
   {
     title: "Security Focused",
-    desc: "Baking encryption and threat detection into every layer. We follow HIPAA and SOC2 standards for data-sensitive applications.",
+    desc: "Baking encryption and threat detection into every layer. We follow global standards to ensure your digital infrastructure is bulletproof.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -71,7 +70,7 @@ const Advantage = () => {
     <section id="advantage" style={{ background: 'var(--surface-container-lowest)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '8rem' }}>
-          <div style={{ maxWidth: '600px' }}>
+          <div style={{ maxWidth: '800px' }}>
             <div style={{
               color: 'var(--primary)',
               fontWeight: 800,
@@ -86,12 +85,12 @@ const Advantage = () => {
               THE UNIPICK ADVANTAGE
             </div>
             <h2 style={{ fontSize: '3.8rem', lineHeight: 1.1, color: 'var(--on-surface)' }}>
-              Engineering Precision, <br />
-              <span className="text-gradient">Beyond Deployment.</span>
+              Full-Spectrum Studio Over <br />
+              <span className="text-gradient">Patchwork Vendors.</span>
             </h2>
           </div>
           <p style={{ color: 'var(--on-surface-variant)', fontSize: '1.1rem', maxWidth: '350px', marginBottom: '0.5rem' }}>
-            Our infrastructure-native approach ensures your digital products are built for extreme reliability and performance.
+            The hidden cost of piecing your stack together is integration gaps and blame-shifting. We solve this by handling the full stack.
           </p>
         </div>
 
