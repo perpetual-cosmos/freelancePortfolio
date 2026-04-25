@@ -1,50 +1,53 @@
+"use client";
+
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const techs = [
   "NEXT.JS", "NODE.JS", "SPRING BOOT", "PYTHON", "TYPESCRIPT",
-  "POSTGRESQL", "MONGODB", "AWS", "DOCKER", "REACT",
+  "POSTGRESQL", "MONGODB", "AWS", "DOCKER", "REACT", "TAILWIND", "REDIS",
   "NEXT.JS", "NODE.JS", "SPRING BOOT", "PYTHON", "TYPESCRIPT",
-  "POSTGRESQL", "MONGODB", "AWS", "DOCKER", "REACT"
+  "POSTGRESQL", "MONGODB", "AWS", "DOCKER", "REACT", "TAILWIND", "REDIS"
 ];
 
 const TechMarquee = () => {
   return (
     <div style={{
-      background: 'var(--surface-container-low)',
-      padding: '1.5rem 0',
-      borderTop: '1px solid var(--outline-variant)',
-      borderBottom: '1px solid var(--outline-variant)',
+      background: 'var(--surface-muted)',
+      padding: '2rem 0',
+      borderBottom: '1px solid var(--outline)',
       overflow: 'hidden',
       whiteSpace: 'nowrap',
-      width: '100%'
+      width: '100%',
+      position: 'relative'
     }}>
-      <div className="marquee-content" style={{
-        display: 'inline-flex',
-        gap: '4rem',
-        animation: 'marquee 40s linear infinite'
-      }}>
+      <motion.div 
+        animate={{ x: [0, -1500] }}
+        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+        style={{
+          display: 'inline-flex',
+          gap: '5rem',
+          alignItems: 'center'
+        }}
+      >
         {techs.map((tech, i) => (
-          <span key={i} style={{
-            fontSize: '0.8rem',
-            fontWeight: 800,
-            color: 'var(--on-surface-variant)',
-            letterSpacing: '0.2em',
-            opacity: 0.6
-          }}>
-            {tech}
-          </span>
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+            <span style={{
+              fontSize: '0.85rem',
+              fontWeight: 800,
+              color: 'var(--on-surface-muted)',
+              letterSpacing: '0.2rem',
+              transition: 'var(--transition-fast)'
+            }}>
+              {tech}
+            </span>
+            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--primary)', opacity: 0.2 }}></div>
+          </div>
         ))}
-      </div>
+      </motion.div>
 
-      <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .marquee-content {
-          will-change: transform;
-        }
-      `}</style>
+      {/* Edge Fades */}
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, var(--surface-muted) 0%, transparent 15%, transparent 85%, var(--surface-muted) 100%)', pointerEvents: 'none' }}></div>
     </div>
   );
 };

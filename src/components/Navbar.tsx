@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Menu, X, ArrowUpRight, ChevronDown, 
-  Globe, Code2, Server, Coffee, Brain, 
+import {
+  Menu, X, ArrowUpRight, ChevronDown,
+  Globe, Code2, Server, Coffee, Brain,
   Smartphone, BarChart3, ShoppingBag, Cloud,
   ArrowRight
 } from 'lucide-react';
@@ -64,8 +64,8 @@ const Navbar = () => {
           >
             Home
           </motion.a>
-          
-          <div 
+
+          <div
             onMouseEnter={() => setShowMegaMenu(true)}
             onMouseLeave={() => setShowMegaMenu(false)}
             style={{ position: 'relative', paddingBottom: '1rem', marginBottom: '-1rem' }}
@@ -123,11 +123,11 @@ const Navbar = () => {
                         textDecoration: 'none'
                       }}
                     >
-                      <div style={{ 
-                        color: s.color, 
-                        width: '36px', 
-                        height: '36px', 
-                        borderRadius: '10px', 
+                      <div style={{
+                        color: s.color,
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
                         background: `${s.color}10`,
                         display: 'flex',
                         alignItems: 'center',
@@ -142,7 +142,7 @@ const Navbar = () => {
                       </div>
                     </motion.a>
                   ))}
-                  
+
                   <div style={{ gridColumn: 'span 2', borderTop: '1px solid var(--outline-variant)', paddingTop: '1rem', marginTop: '0.5rem', textAlign: 'center' }}>
                     <a href="/services" style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.8rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
                       Explore All Expertise <ArrowRight size={12} />
@@ -176,7 +176,7 @@ const Navbar = () => {
           <div className="desktop-menu" style={{ display: 'none' }}>
             <AvailabilityBadge />
           </div>
-          
+
           <button className="btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.85rem', boxShadow: 'none' }}>
             Consultation <ArrowUpRight size={16} />
           </button>
