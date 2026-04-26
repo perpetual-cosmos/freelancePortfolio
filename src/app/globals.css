@@ -7,15 +7,15 @@
   --color-primary-dark: #4c1d95;
   --color-secondary: #d946ef;
   --color-tech-teal: #2dd4bf;
-  
+
   --color-background: #fdfcff;
   --color-surface: #ffffff;
   --color-surface-muted: #f8faff;
-  
+
   --color-on-surface: #0f172a;
   --color-on-surface-variant: #334155;
   --color-on-surface-muted: #64748b;
-  
+
   --color-accent-outline: rgba(99, 0, 226, 0.06);
   --color-accent-outline-strong: rgba(99, 0, 226, 0.12);
 
@@ -26,22 +26,37 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(2deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
 }
 
 @layer base {
   * {
     @apply border-accent-outline;
   }
+
   html {
     @apply scroll-smooth;
   }
+
   body {
     @apply bg-background text-on-surface font-sans antialiased selection:bg-primary/10 selection:text-primary;
     line-height: 1.6;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-bold text-on-surface tracking-tight;
   }
 }
@@ -50,7 +65,7 @@
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
-  
+
   .card-premium {
     @apply bg-white rounded-3xl border shadow-md;
     border-color: var(--color-accent-outline);
@@ -74,7 +89,7 @@
   .card-hover-gradient:hover::before {
     @apply opacity-100;
   }
-  
+
   .noise-overlay {
     position: relative;
   }

@@ -1,158 +1,244 @@
 "use client";
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Code2, Server, Brain, Cloud, BarChart3,
-  ArrowRight, Cpu, Layers, Globe
+  ArrowRight, Cpu, Layers, Globe, Zap, Sparkles,
+  ShieldCheck, Terminal, Fingerprint, Activity
 } from 'lucide-react';
 
 const services = [
-  { id: '01', title: 'Next.js & Frontend', desc: 'Performance-first React applications with server-side rendering, edge caching, and a focus on Core Web Vitals.', icon: <Code2 />, color: '#6300e2', size: 'large', tags: ['React', 'TypeScript', 'SEO'] },
-  { id: '02', title: 'Node.js Systems', desc: 'Scalable event-driven architectures and robust API layers.', icon: <Server />, color: '#10b981', size: 'small', tags: ['Express', 'GraphQL'] },
-  { id: '03', title: 'AI Engineering', desc: 'Integrating LLMs, RAG systems, and custom automation workflows.', icon: <Brain />, color: '#8b5cf6', size: 'small', tags: ['GPT-4', 'LangChain'] },
-  { id: '04', title: 'Cloud Infrastructure', desc: 'Automated AWS/GCP deployments with zero-downtime CI/CD pipelines.', icon: <Cloud />, color: '#0ea5e9', size: 'medium', tags: ['Docker', 'Terraform'] },
-  { id: '05', title: 'Product Strategy', desc: 'Strategic consulting for MVPs, helping founders avoid technical debt.', icon: <BarChart3 />, color: '#f43f5e', size: 'medium', tags: ['Roadmapping', 'Scalability'] },
+  {
+    id: 'SVC-001',
+    title: 'Frontend Architecture',
+    desc: 'Engineering sub-second interfaces with atomic state precision and edge-rendered logic.',
+    icon: <Code2 />,
+    color: '#6300e2',
+    size: 'large',
+    detail: 'We specialize in Next.js 15, Turbopack, and custom React hook systems that handle extreme concurrency.',
+    metric: { label: 'INTERACTION_FID', value: '12ms' },
+    tags: ['Next.js 15', 'TypeScript', 'Zustand']
+  },
+  {
+    id: 'SVC-002',
+    title: 'Distributed Systems',
+    desc: 'Elastic Node.js environments with event-driven resilience.',
+    icon: <Server />,
+    color: '#10b981',
+    size: 'small',
+    detail: 'Microservice orchestration with gRPC and automated elastic scaling.',
+    metric: { label: 'UPTIME_SLA', value: '99.9%' },
+    tags: ['NestJS', 'Postgres']
+  },
+  {
+    id: 'SVC-003',
+    title: 'Cognitive Pipelines',
+    desc: 'Production-ready LLM agents and RAG infrastructure.',
+    icon: <Brain />,
+    color: '#8b5cf6',
+    size: 'small',
+    detail: 'Integrating vector embeddings with real-time data ingestion for context-aware AI.',
+    metric: { label: 'INFERENCE', value: '0.8s' },
+    tags: ['OpenAI', 'Pinecone']
+  },
+  {
+    id: 'SVC-004',
+    title: 'Cloud Core / DevOps',
+    desc: 'Immutable infrastructure with zero-downtime CI/CD pipelines.',
+    icon: <Cloud />,
+    color: '#0ea5e9',
+    size: 'medium',
+    detail: 'Terraform-led AWS deployments with automated rollback and comprehensive monitoring.',
+    metric: { label: 'BUILD_TIME', value: '140s' },
+    tags: ['AWS', 'Terraform']
+  },
+  {
+    id: 'SVC-005',
+    title: 'System Strategy',
+    desc: 'Strategic refactoring and technical debt elimination for enterprises.',
+    icon: <BarChart3 />,
+    color: '#f43f5e',
+    size: 'medium',
+    detail: 'Bridging the gap between business vision and technical execution through rigorous audits.',
+    metric: { label: 'LEGACY_REDUCTION', value: '65%' },
+    tags: ['Audit', 'Scale']
+  },
 ];
 
 const Services = () => {
-  const cardBaseClass = "bg-white rounded-2xl border border-[rgba(99,0,226,0.06)] shadow-md transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden group hover:-translate-y-2 hover:border-[rgba(99,0,226,0.12)] hover:shadow-lg hover:scale-[1.01] card-hover-gradient";
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
 
   return (
-    <section id="services" className="bg-surface-muted relative py-32 lg:py-48 overflow-hidden noise-overlay">
-      {/* Decorative Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 blur-[120px] rounded-full pointer-events-none" />
+    <section id="services" className="bg-[#050505] relative py-32 lg:py-64 overflow-hidden">
+      {/* Hyper-Tech Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+        {/* Dynamic Light Rays */}
+        <motion.div
+          animate={{
+            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[-20%] left-[-10%] w-[100vw] h-[100vw] bg-[radial-gradient(circle_at_center,rgba(99,0,226,0.15),transparent_70%)] blur-[120px] pointer-events-none"
+        />
+      </div>
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-28 max-w-[900px] mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-32 lg:mb-48">
+          <div className="max-w-[850px]">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-black text-[0.75rem] tracking-[0.3em] uppercase mb-10"
+            >
+              <Fingerprint size={16} /> <span>INFRASTRUCTURE_MODULE_04</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[clamp(3rem,8vw,6.5rem)] font-extrabold tracking-tighter leading-[0.9] text-white font-display"
+            >
+              Specialized Stacks <br /> <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Engineered to Scale.</span>
+            </motion.h2>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-4 mb-8"
+            transition={{ delay: 0.3 }}
+            className="flex flex-col gap-6"
           >
-            <div className="h-[2px] w-12 bg-primary/20" />
-            <span className="text-primary font-black text-[0.8rem] tracking-[0.4em] uppercase whitespace-nowrap">// CORE CAPABILITIES</span>
-            <div className="h-[2px] w-12 bg-primary/20" />
+            <p className="text-white/60 text-[1.2rem] lg:text-[1.4rem] font-medium leading-relaxed max-w-[420px]">
+              We translate complex business logic into hardened, performant software systems.
+            </p>
+            <div className="flex items-center gap-4 text-primary font-black text-[0.8rem] tracking-[0.2em] uppercase">
+              <Activity size={18} className="animate-pulse" /> SYSTEM_LATENCY: OPTIMAL
+            </div>
           </motion.div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
-            transition={{ delay: 0.1 }}
-            className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold tracking-tight leading-[1.05] mb-10 font-display"
-          >
-            Specialized Stacks for <br /> <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">High-Impact Products.</span>
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-on-surface-variant text-[1.2rem] lg:text-[1.4rem] font-medium leading-relaxed opacity-90 max-w-[700px] mx-auto"
-          >
-            We don't just write code; we architect systems. Our engineering core is focused on extreme performance, long-term scalability, and flawless user experiences.
-          </motion.p>
         </div>
 
-        {/* Bento Grid Implementation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-auto">
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {services.map((s, idx) => (
-            <motion.div 
-              key={s.id} 
-              initial={{ opacity: 0, y: 30 }} 
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} 
-              transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }} 
+            <motion.div
+              key={s.id}
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className={`
-                group flex flex-col h-full
-                ${cardBaseClass}
-                ${s.size === 'large' ? 'md:col-span-2 lg:col-span-2 lg:row-span-2 shadow-primary/5 hover:shadow-primary/20' : ''}
-                ${s.size === 'medium' ? 'md:col-span-2 lg:col-span-1' : ''}
-                ${s.size === 'small' ? 'md:col-span-1' : ''}
+                relative group flex flex-col min-h-[480px] lg:min-h-[520px] rounded-[3rem] p-12 lg:p-14 overflow-hidden border transition-all duration-700
+                ${s.size === 'large' ? 'md:col-span-2 lg:col-span-2 lg:row-span-1' : ''}
+                ${hoveredIndex === idx ? 'border-primary/40 shadow-[0_0_50px_rgba(99,0,226,0.15)] -translate-y-2' : 'border-white/10 bg-white/5'}
               `}
             >
-              <div className="p-10 lg:p-14 flex flex-col h-full relative z-10">
-                {/* Icon Header */}
-                <div className="flex justify-between items-start mb-10">
-                  <div className="relative">
-                    <div 
-                      className="w-16 h-16 lg:w-20 lg:h-20 rounded-[2rem] flex items-center justify-center shrink-0 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 shadow-2xl relative z-10"
-                      style={{ color: 'white', background: `linear-gradient(135deg, ${s.color}, ${s.color}dd)` }}
-                    >
-                      {React.cloneElement(s.icon as React.ReactElement<{ size?: number }>, { size: 32 })}
-                    </div>
-                    {/* Pulsing Aura */}
-                    <div 
-                      className="absolute inset-0 blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 -z-10"
-                      style={{ background: s.color }}
-                    />
-                  </div>
-                  <span className="text-[1rem] font-black text-on-surface/10 font-mono tracking-tighter group-hover:text-primary/20 transition-colors uppercase">
-                    SYS_{s.id}
-                  </span>
+              {/* Internal Glass Background */}
+              <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-3xl -z-10" />
+
+              {/* Dynamic Glow Overlay */}
+              <motion.div
+                animate={{
+                  opacity: hoveredIndex === idx ? 0.2 : 0,
+                  scale: hoveredIndex === idx ? 1 : 0.8
+                }}
+                className="absolute inset-0 -z-10 pointer-events-none"
+                style={{ background: `radial-gradient(circle at center, ${s.color}, transparent 70%)` }}
+              />
+
+              {/* Card Header */}
+              <div className="flex justify-between items-start mb-12">
+                <div
+                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-[2rem] flex items-center justify-center text-white relative transition-all duration-700 group-hover:scale-110 group-hover:rotate-6"
+                  style={{ background: `linear-gradient(135deg, ${s.color}, ${s.color}aa)` }}
+                >
+                  {React.cloneElement(s.icon as React.ReactElement<{ size?: number }>, { size: 32 })}
+                  <div className="absolute inset-0 blur-2xl opacity-40 group-hover:opacity-100 transition-opacity" style={{ background: s.color }} />
                 </div>
 
-                {/* Content Body */}
-                <div className="flex-1">
-                  <h3 className="text-[1.8rem] lg:text-[2.2rem] font-black text-on-surface leading-[1.1] mb-6 font-display tracking-tighter group-hover:text-primary transition-colors duration-500">
-                    {s.title}
-                  </h3>
-                  <p className="text-on-surface-variant text-[1.1rem] lg:text-[1.2rem] leading-relaxed font-medium mb-10 opacity-80 group-hover:opacity-100 transition-opacity">
-                    {s.desc}
-                  </p>
-                  
-                  {/* Technology Tags */}
-                  <div className="flex flex-wrap gap-2 mb-10">
-                    {s.tags.map(tag => (
-                      <span key={tag} className="px-4 py-1.5 rounded-xl bg-surface-muted border border-[rgba(99,0,226,0.06)] text-[0.7rem] font-black text-on-surface-muted uppercase tracking-widest group-hover:border-primary/20 group-hover:text-primary transition-all duration-500">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Footer CTA */}
-                <div className="mt-auto pt-8 border-t border-[rgba(99,0,226,0.06)]">
-                  <a 
-                    href={`/services#service-${s.id}`} 
-                    className="inline-flex items-center gap-3 text-primary font-black text-[0.85rem] uppercase tracking-[0.25em] no-underline transition-all group-hover:gap-5"
-                  >
-                    View Infrastructure <ArrowRight size={18} />
-                  </a>
+                <div className="text-right">
+                  <div className="text-[0.65rem] font-black text-white/30 tracking-[0.2em] mb-1">{s.id}</div>
+                  <div className="text-primary font-black text-[1.4rem] font-display leading-none">{s.metric.value}</div>
+                  <div className="text-[0.55rem] font-black text-white/40 tracking-[0.1em] uppercase">{s.metric.label}</div>
                 </div>
               </div>
 
-              {/* Dynamic Gradient Background for Hover */}
-              <div 
-                className="absolute -right-20 -bottom-20 w-64 h-64 rounded-full blur-[100px] opacity-0 transition-opacity duration-1000 group-hover:opacity-[0.1]"
-                style={{ background: s.color }}
-              />
+              {/* Card Content */}
+              <div className="flex-1">
+                <h3 className="text-[2rem] lg:text-[2.6rem] font-extrabold text-white leading-none mb-6 font-display tracking-tight group-hover:text-primary transition-colors duration-500">
+                  {s.title}
+                </h3>
+                <p className="text-white/60 text-[1.15rem] leading-relaxed font-medium mb-8 opacity-80 group-hover:opacity-100 transition-opacity max-w-[480px]">
+                  {s.desc}
+                </p>
+
+                <AnimatePresence>
+                  {hoveredIndex === idx && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="text-white/40 text-[0.95rem] font-medium leading-relaxed mb-8 border-l-2 border-primary/20 pl-6"
+                    >
+                      {s.detail}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Footer */}
+              <div className="mt-auto pt-10 border-t border-white/10 flex flex-wrap items-center justify-between gap-6">
+                <div className="flex flex-wrap gap-2">
+                  {s.tags.map(tag => (
+                    <span key={tag} className="px-4 py-1.5 rounded-xl bg-white/5 border border-white/5 text-[0.65rem] font-black text-white/50 uppercase tracking-widest group-hover:border-primary/20 group-hover:text-primary transition-all">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <button className="flex items-center gap-3 text-white font-black text-[0.8rem] uppercase tracking-[0.3em] group/btn hover:text-primary transition-all">
+                  Deep_Dive <ArrowRight size={18} className="transition-transform group-hover/btn:translate-x-2" />
+                </button>
+              </div>
+
+              {/* Corner Accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/[0.03] to-transparent pointer-events-none" />
             </motion.div>
           ))}
         </div>
-        
+
         {/* Global Capabilities Summary */}
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          whileInView={{ opacity: 1 }} 
-          viewport={{ once: true }} 
-          className="mt-24 flex flex-wrap justify-center gap-12 lg:gap-20 border-t border-[rgba(99,0,226,0.06)] pt-16"
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 py-20 border-y border-white/10"
         >
           {[
-            { icon: <Cpu size={20} />, label: "Bare Metal Performance" },
-            { icon: <Layers size={20} />, label: "Atomic System Architecture" },
-            { icon: <Globe size={20} />, label: "Global Edge Distribution" }
+            { icon: <Cpu size={24} />, label: "Bare Metal Engine", val: "Rust / Go Optimized" },
+            { icon: <Layers size={24} />, label: "Atomic Integration", val: "Microservice Core" },
+            { icon: <Globe size={24} />, label: "Global Presence", val: "Multi-Cloud Ops" }
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-4 group cursor-default">
-              <div className="p-3 rounded-xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-primary/20">
+            <div key={i} className="flex items-center gap-8 group">
+              <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 text-primary flex items-center justify-center transition-all duration-700 group-hover:bg-primary group-hover:text-white group-hover:scale-110 shadow-sm">
                 {item.icon}
               </div>
-              <div className="text-on-surface-variant font-black text-[0.75rem] uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-all">
-                {item.label}
+              <div>
+                <div className="text-white font-black text-[1.2rem] font-display mb-1">{item.val}</div>
+                <div className="text-white/40 font-black text-[0.7rem] uppercase tracking-[0.2em]">
+                  {item.label}
+                </div>
               </div>
             </div>
           ))}

@@ -1,416 +1,236 @@
 "use client";
-
-import React from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import { 
+  ArrowRight, CheckCircle2, Zap, Shield, 
+  Target, Rocket, Sparkles, Cpu, Code2, 
+  Terminal, Database, Activity, Brain,
+  ChevronRight, Box, Lock, MousePointer2
+} from 'lucide-react';
 
 const services = [
   {
-    id: '01',
-    title: 'CMS Development',
-    icon: '🌐',
-    color: '#3b82f6',
-    problem: 'Your content team shouldn\'t need a developer to publish a blog post. And your developers shouldn\'t spend hours maintaining a rigid, outdated CMS that slows everyone down.',
-    solution: 'Custom, flexible content management systems tailored to how your team actually works — not how a cookie-cutter template assumes you work.',
-    includes: [
-      'WordPress (Custom): Fully custom-built WordPress sites with bespoke plugin development.',
-      'Strapi (Headless CMS): API-first content delivery for modern architectures.',
-      'Headless CMS Architecture: Decouple your content from your presentation layer.',
-      'CMS Migration: Move from legacy systems without losing content or SEO rankings.',
-      'Content Modeling: Design content structures that scale.'
+    id: 'SVC-ARCH-01',
+    title: 'Frontend Infrastructure',
+    tagline: 'Precision Engineering for the Modern Web',
+    icon: <Code2 className="w-10 h-10" />,
+    color: '#6300e2',
+    description: 'We don\'t just build UIs; we architect delivery systems. Our frontend core is focused on sub-200ms TTFB, atomic state management, and flawless edge-caching strategies.',
+    features: [
+      { title: 'Next.js 15+ Core', desc: 'Leveraging React 19 Server Components for maximum performance.' },
+      { title: 'State Orchestration', desc: 'Complex data flow management with Zustand and TanStack Query.' },
+      { title: 'Design Systems', desc: 'Building documented, accessible, and themeable UI foundations.' },
+      { title: 'Performance Ops', desc: 'Rigorous optimization for LCP, CLS, and INP metrics.' }
     ],
-    outcomes: [
-      'Content teams that don\'t need developer support for publishing',
-      'Faster page loads via headless delivery',
-      'One content source powering multiple channels',
-      'SEO-safe migration with zero ranking drops'
-    ],
-    timeline: '1–4 weeks',
-    pricing: '₹20,000'
+    specs: {
+      latency: '< 150ms',
+      uptime: '99.99%',
+      security: 'Enterprise Grade',
+      delivery: 'Edge Distributed'
+    },
+    stack: ['React 19', 'Next.js 15', 'TypeScript', 'Tailwind V4', 'Framer Motion'],
+    startingPrice: '$4,500'
   },
   {
-    id: '02',
-    title: 'React & Frontend Development',
-    icon: '⚛️',
-    color: '#14b8a6',
-    problem: 'Slow UIs lose customers. A sluggish dashboard makes your SaaS product feel unreliable. An outdated frontend signals to users that your product isn\'t worth trusting.',
-    solution: 'Modern, performant, pixel-sharp user interfaces that users love to work with — built with React, Next.js, and TypeScript as the foundation.',
-    includes: [
-      'React Application Development: SPAs, dashboards, and data-heavy UIs.',
-      'Next.js Web Applications: SSR, SSG, and ISR for performance and SEO.',
-      'TypeScript Migration: Migrate existing JavaScript for better scaling.',
-      'UI/Component Library Development: Reusable, documented component systems.',
-      'Performance Optimization: Core Web Vitals improvement and lazy loading.',
-      'Frontend Architecture: Establishing scalable folder structures and patterns.'
+    id: 'SVC-BACK-02',
+    title: 'Distributed Backends',
+    tagline: 'Resilient Logic for Global Scale',
+    icon: <Terminal className="w-10 h-10" />,
+    color: '#10b981',
+    description: 'High-concurrency systems built to handle millions of requests. We specialize in event-driven architectures, elastic Node.js environments, and hardened security protocols.',
+    features: [
+      { title: 'Microservices', desc: 'Decoupled, independently scalable service architectures.' },
+      { title: 'Database Ops', desc: 'Advanced PostgreSQL indexing and Redis caching layers.' },
+      { title: 'API Engineering', desc: 'Robust, documented REST and GraphQL interfaces.' },
+      { title: 'Real-time Flow', desc: 'Bi-directional communication via WebSockets and gRPC.' }
     ],
-    outcomes: [
-      'Lighthouse Performance scores above 90',
-      'Sub-2-second page loads',
-      'Zero accessibility red flags (WCAG 2.1 AA)',
-      'Component library that cuts future development time in half'
-    ],
-    stack: 'React 18+, Next.js 14+, TypeScript, Tailwind CSS, Zustand/Redux, React Query, Framer Motion',
-    timeline: '2–8 weeks',
-    pricing: '₹30,000'
+    specs: {
+      latency: '< 80ms',
+      uptime: '99.95%',
+      security: 'SOC2 Compliant',
+      delivery: 'Cloud Native'
+    },
+    stack: ['Node.js', 'NestJS', 'Go', 'PostgreSQL', 'Redis', 'RabbitMQ'],
+    startingPrice: '$7,000'
   },
   {
-    id: '03',
-    title: 'Node.js Backend Development',
-    icon: '🟢',
-    color: '#22c55e',
-    problem: 'Your frontend is beautiful. But if the backend is slow, insecure, or architecturally fragile — none of it matters. Most backend failures happen because of poor API design or lack of validation.',
-    solution: 'Production-grade backend systems that scale, stay secure, and are maintainable by the next developer who inherits the codebase.',
-    includes: [
-      'REST API Development: Clean, documented, and versioned APIs.',
-      'GraphQL API Development: Flexible query APIs for complex data.',
-      'Real-Time Applications: WebSocket-powered features like chat and notifications.',
-      'NestJS Application Architecture: Enterprise-structured Node.js apps.',
-      'Microservices: Break monoliths into independently deployable services.',
-      'Authentication & Authorization: JWT, OAuth 2.0, RBAC, and session management.',
-      'Third-Party Integrations: Payment gateways, messaging, and storage.'
+    id: 'SVC-AI-03',
+    title: 'Intelligence Pipelines',
+    tagline: 'Practical AI for Production Environments',
+    icon: <Brain className="w-10 h-10" />,
+    color: '#8b5cf6',
+    description: 'Bridging the gap between AI hype and production reality. We deploy custom LLM agents, vector-powered search, and autonomous data ingestion pipelines that provide measurable ROI.',
+    features: [
+      { title: 'Custom Agents', desc: 'Task-specific LLM agents with tool-calling capabilities.' },
+      { title: 'RAG Systems', desc: 'Vector search engines powered by Pinecone and LangChain.' },
+      { title: 'Data Ingestion', desc: 'Automated pipelines for processing unstructured enterprise data.' },
+      { title: 'Inference Ops', desc: 'Optimized model deployment for speed and cost-efficiency.' }
     ],
-    outcomes: [
-      'APIs handling thousands of requests per second',
-      'Zero critical security vulnerabilities at launch',
-      'Full documentation for your engineering team',
-      '< 200ms average API response time'
-    ],
-    stack: 'Node.js, Express.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis, JWT, Docker',
-    timeline: '3–8 weeks',
-    pricing: '₹40,000'
-  },
-  {
-    id: '04',
-    title: 'Spring Boot / Java Development',
-    icon: '☕',
-    color: '#f59e0b',
-    problem: 'Enterprise systems need enterprise-grade engineering. For high-throughput enterprise systems handling financial or sensitive data, Java and Spring Boot offer a battle-tested foundation.',
-    solution: 'Robust, high-performance backend systems and APIs on the Java ecosystem — built to run at scale, survive audits, and last for years.',
-    includes: [
-      'Spring Boot REST APIs: Enterprise-grade API development with layered architecture.',
-      'Microservices Architecture: Distributed systems with Spring Cloud.',
-      'Spring Security Implementation: OAuth2, JWT, LDAP, and RBAC.',
-      'Database Integration: JPA/Hibernate ORM and migrations with Flyway.',
-      'Spring Batch: Large-scale data processing and ETL workflows.',
-      'Legacy Java Modernization: Migrate existing Java EE to modern Spring Boot.',
-      'Performance & Scalability: JVM tuning and caching strategies.'
-    ],
-    outcomes: [
-      'Systems handling 10,000+ concurrent users',
-      '99.9% uptime architecture',
-      'Fully auditable and compliant codebases',
-      'Clean handoff with Javadoc and architecture documentation'
-    ],
-    stack: 'Java 17+, Spring Boot 3.x, Spring Cloud, JPA/Hibernate, PostgreSQL, Redis, Docker',
-    timeline: '4–12 weeks',
-    pricing: '₹60,000'
-  },
-  {
-    id: '05',
-    title: 'AI & ML Solutions',
-    icon: '🧠',
-    color: '#a855f7',
-    problem: 'AI is no longer optional. But most AI projects fail because of poor problem definition, bad data pipelines, or an over-engineered approach.',
-    solution: 'Practical, business-focused AI solutions — not AI for AI\'s sake. We identify what can realistically be automated or enhanced.',
-    includes: [
-      'Custom AI Chatbots & Assistants: Powered by LLMs (GPT-4, Claude, Gemini) with RAG.',
-      'NLP Solutions: Text classification, sentiment analysis, and document processing.',
-      'AI Integration: Integrate LLM capabilities using LangChain or LlamaIndex.',
-      'Recommendation Systems: Collaborative filtering for e-commerce and SaaS.',
-      'Predictive Analytics: Forecasting, churn prediction, and anomaly detection.',
-      'Computer Vision: Image classification and document OCR.',
-      'AI Automation Workflows: Intelligent pipelines that reduce human intervention.'
-    ],
-    outcomes: [
-      'Production-ready AI features integrated into your existing product',
-      'Clear ROI (time saved, error rate reduction)',
-      'Explainable AI outputs (not black-box decisions)',
-      'Data privacy maintained with private API options'
-    ],
-    stack: 'Python, LangChain, LlamaIndex, OpenAI API, HuggingFace, scikit-learn, FastAPI, Pinecone',
-    timeline: '3–10 weeks',
-    pricing: 'Project-based'
-  },
-  {
-    id: '06',
-    title: 'Mobile Development',
-    icon: '📱',
-    color: '#f43f5e',
-    problem: 'Native development for both iOS and Android doubles the cost and timeline. Cross-platform done right eliminates that trade-off without sacrificing performance.',
-    solution: 'High-quality cross-platform mobile applications using React Native and Flutter — delivering near-native performance and UX with a shared codebase.',
-    includes: [
-      'React Native Development: Cross-platform iOS and Android apps.',
-      'Flutter Development: Visually rich, high-performance apps.',
-      'Mobile Backend Integration: Connect to existing APIs and auth systems.',
-      'App Store Deployment: Full submission process for Apple and Google.',
-      'Offline-First Architecture: Apps that work without connectivity.',
-      'Push Notifications & Deep Linking: FCM, scheduling, and deep link routing.'
-    ],
-    outcomes: [
-      'Single codebase running on iOS and Android',
-      'App store approval without rejection delays',
-      'Smooth 60fps performance on mid-range devices',
-      '30-day post-launch monitoring included'
-    ],
-    stack: 'React Native, Flutter, Dart, Expo, Firebase, REST/GraphQL APIs',
-    timeline: '6–14 weeks',
-    pricing: '₹80,000'
-  },
-  {
-    id: '07',
-    title: 'Data Engineering',
-    icon: '📊',
-    color: '#3b82f6',
-    problem: 'Business data scattered across silos is noise, not intelligence. The companies that win can ask questions of their data and get answers in seconds.',
-    solution: 'End-to-end data infrastructure — from ingestion to transformation to visualization — that turns raw data into business decisions.',
-    includes: [
-      'ETL/ELT Pipelines: Extract, transform, and load data into warehouses.',
-      'Data Warehousing: Cloud data warehouses on BigQuery, Snowflake, or Redshift.',
-      'Analytics Dashboards: Custom BI dashboards using Metabase or React + D3.js.',
-      'Real-Time Data Pipelines: Streaming ingestion with Kafka or Kinesis.',
-      'Business Intelligence Platforms: Tools for non-technical stakeholders.',
-      'Data Modeling: Star/snowflake schemas and dbt for transformation logic.'
-    ],
-    outcomes: [
-      'Single source of truth for business metrics',
-      'Reports that update automatically without manual work',
-      'Business teams that can self-serve data insights',
-      'ML-ready data infrastructure for future AI projects'
-    ],
-    stack: 'Python, Apache Airflow, dbt, PostgreSQL, BigQuery, Metabase, Kafka',
-    timeline: '3–8 weeks',
-    pricing: 'Project-based'
-  },
-  {
-    id: '08',
-    title: 'E-Commerce Solutions',
-    icon: '🛒',
-    color: '#ec4899',
-    problem: 'Generic e-commerce templates convert poorly. They look like every other store, load slowly on mobile, and have checkout flows that lose customers.',
-    solution: 'Conversion-optimized e-commerce platforms — from custom Shopify builds to fully bespoke commerce applications.',
-    includes: [
-      'Custom Shopify Development: Theme development and liquid programming.',
-      'Headless Commerce: Decoupled storefronts for maximum performance.',
-      'Custom E-Commerce Platforms: Built with Next.js + Node.js + PostgreSQL.',
-      'Payment Integration: Razorpay, Stripe, PayPal, UPI, BNPL.',
-      'Inventory & Order Management: Custom systems and status tracking.',
-      'Performance & CRO: Checkout flow and product page optimization.'
-    ],
-    outcomes: [
-      'Mobile checkout completion rate improvement',
-      'Sub-2-second product page loads',
-      'Abandoned cart recovery flows',
-      'Scalable catalogue handling 10,000+ SKUs'
-    ],
-    stack: 'Shopify, Next.js, Medusa.js, Node.js, PostgreSQL, Razorpay, Stripe',
-    timeline: '3–8 weeks',
-    pricing: '₹35,000'
-  },
-  {
-    id: '09',
-    title: 'Cloud & DevOps',
-    icon: '☁️',
-    color: '#64748b',
-    problem: 'Most early-stage products run on servers set up manually. Professional infrastructure is the foundation that lets your team move fast without breaking things.',
-    solution: 'Modern, automated, observable cloud infrastructure — so deployments take minutes instead of hours.',
-    includes: [
-      'AWS Infrastructure Setup: VPC, EC2/ECS, S3, CloudFront, RDS.',
-      'GCP Infrastructure: Cloud Run, GKE, Cloud SQL, Cloud Storage.',
-      'Docker & Containerization: Dockerize applications for consistency.',
-      'Kubernetes (K8s): Container orchestration for applications at scale.',
-      'CI/CD Pipeline Setup: GitHub Actions, GitLab CI, or CircleCI.',
-      'Infrastructure as Code: Terraform for reproducible infrastructure.',
-      'Monitoring & Alerting: Prometheus + Grafana, Datadog, or CloudWatch.'
-    ],
-    outcomes: [
-      'Deployments that take minutes, not hours',
-      'Zero-downtime releases via rolling updates',
-      'Mean Time to Recovery (MTTR) under 15 minutes',
-      'Infrastructure costs reduced by 30–50% on optimization'
-    ],
-    stack: 'AWS, GCP, Docker, Kubernetes, Terraform, GitHub Actions, Prometheus',
-    timeline: '1–4 weeks',
-    pricing: 'Project-based'
+    specs: {
+      latency: '< 1.2s',
+      uptime: '99.9%',
+      security: 'Private API',
+      delivery: 'Hybrid AI'
+    },
+    stack: ['Python', 'LangChain', 'OpenAI', 'Pinecone', 'FastAPI', 'PyTorch'],
+    startingPrice: '$6,500'
   }
 ];
 
+const ServiceBlock = ({ service, index }: { service: typeof services[0], index: number }) => {
+  return (
+    <motion.section 
+      id={`service-${service.id}`}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="relative mb-32 lg:mb-56 group"
+    >
+      <div className="bg-white rounded-[4rem] border border-outline shadow-2xl overflow-hidden relative">
+        {/* Dynamic Accents */}
+        <div className="absolute top-0 right-0 w-[40%] h-[1px] bg-gradient-to-l from-primary/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-[40%] h-[1px] bg-gradient-to-r from-secondary/30 to-transparent" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr,0.7fr]">
+          {/* Detailed Content */}
+          <div className="p-10 lg:p-24 border-b lg:border-b-0 lg:border-r border-outline">
+            <div className="flex flex-col md:flex-row md:items-center gap-8 mb-16">
+              <div 
+                className="w-20 h-20 rounded-[2rem] flex items-center justify-center text-white shadow-2xl relative"
+                style={{ background: `linear-gradient(135deg, ${service.color}, ${service.color}aa)` }}
+              >
+                {service.icon}
+                <div className="absolute inset-0 blur-3xl opacity-30 -z-10" style={{ background: service.color }} />
+              </div>
+              <div>
+                <div className="text-primary font-black text-[0.8rem] tracking-[0.4em] uppercase mb-2">MOD_ID: {service.id}</div>
+                <h2 className="text-[2.8rem] lg:text-[4rem] font-black text-on-surface leading-[0.95] tracking-tighter font-display">
+                   {service.title}
+                </h2>
+              </div>
+            </div>
+
+            <p className="text-on-surface-variant text-[1.25rem] lg:text-[1.5rem] font-medium leading-relaxed mb-20 max-w-[800px] opacity-90">
+              {service.description}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+              {service.features.map((f, i) => (
+                <div key={i} className="space-y-4 group/item">
+                   <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-xl bg-primary/5 flex items-center justify-center text-primary transition-all group-hover/item:bg-primary group-hover/item:text-white">
+                         <ChevronRight size={18} />
+                      </div>
+                      <h4 className="text-[1.2rem] font-black text-on-surface font-display">{f.title}</h4>
+                   </div>
+                   <p className="text-on-surface-variant text-[1rem] leading-relaxed font-medium pl-11 opacity-80">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sidebar / Terminal Style */}
+          <div className="bg-[#0a0a0a] p-10 lg:p-20 flex flex-col text-white">
+            <div className="flex items-center justify-between mb-16 pb-6 border-b border-white/10">
+               <span className="text-[0.7rem] font-black tracking-[0.3em] opacity-40 uppercase">System Specs</span>
+               <div className="flex gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-red-500/20" />
+                  <div className="w-2 h-2 rounded-full bg-yellow-500/20" />
+                  <div className="w-2 h-2 rounded-full bg-green-500" />
+               </div>
+            </div>
+
+            <div className="space-y-12 flex-1">
+               {/* Spec Grid */}
+               <div className="grid grid-cols-2 gap-y-10 gap-x-6">
+                  {Object.entries(service.specs).map(([key, val]) => (
+                    <div key={key}>
+                       <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-2">{key.replace('_', ' ')}</div>
+                       <div className="text-[1.1rem] font-black font-display text-white">{val}</div>
+                    </div>
+                  ))}
+               </div>
+
+               {/* Tech Stack */}
+               <div>
+                  <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-6">Technologies</div>
+                  <div className="flex flex-wrap gap-2.5">
+                     {service.stack.map(tech => (
+                       <span key={tech} className="px-4 py-2 bg-white/5 border border-white/5 rounded-xl text-[0.7rem] font-black text-white/60 hover:text-primary hover:border-primary/40 transition-all cursor-default uppercase tracking-widest">{tech}</span>
+                     ))}
+                  </div>
+               </div>
+            </div>
+
+            <div className="mt-20 pt-10 border-t border-white/10 flex flex-col gap-8">
+               <div className="flex justify-between items-end">
+                  <div>
+                    <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-1">Baseline Investment</div>
+                    <div className="text-[2.2rem] font-black font-display text-primary leading-none">{service.startingPrice}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-1">Status</div>
+                    <div className="text-[0.8rem] font-black text-green-500 flex items-center gap-2">
+                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> AVAILABLE
+                    </div>
+                  </div>
+               </div>
+
+               <button className="w-full py-6 bg-primary text-white rounded-2xl font-black text-[0.9rem] uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(99,0,226,0.3)] hover:scale-[1.02] hover:shadow-primary/50 transition-all duration-500 flex items-center justify-center gap-4 group/btn">
+                  Initialize Engagement <ArrowRight size={20} className="transition-transform group-hover/btn:translate-x-2" />
+               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
 export default function ServicesPage() {
   return (
-    <main style={{ background: 'var(--background)' }}>
+    <main className="bg-surface-muted min-h-screen">
       <Navbar />
       
-      {/* Header Section */}
-      <section style={{ 
-        paddingTop: '12rem', 
-        paddingBottom: '6rem', 
-        background: 'var(--gradient-mesh)',
-        textAlign: 'center'
-      }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-          <h1 style={{ fontSize: '4.5rem', marginBottom: '2rem', color: 'var(--on-surface)' }}>
-            Full-Spectrum <span className="text-gradient">Development Services</span>
-          </h1>
-          <p style={{ fontSize: '1.25rem', color: 'var(--on-surface-variant)', lineHeight: 1.6 }}>
-            Nine service lines. One accountable studio. We cover the complete technology stack — so your product gets built by people who understand how all the pieces connect.
-          </p>
+      {/* Dynamic Header */}
+      <section className="relative pt-64 pb-32 overflow-hidden bg-[#050505] noise-overlay">
+        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:80px_80px]" />
+        
+        <div className="max-w-[1440px] mx-auto px-6 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-center text-center"
+          >
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary font-black text-[0.8rem] tracking-[0.3em] uppercase mb-12">
+               <Box size={18} /> <span>UNIPICK_SERVICE_ARCHITECTURE_2024</span>
+            </div>
+            <h1 className="text-[clamp(3.5rem,10vw,8rem)] font-extrabold tracking-tighter leading-[0.9] mb-12 font-display text-white">
+               Full-Spectrum <br /> <span className="text-gradient">Engineering Ops.</span>
+            </h1>
+            <p className="text-white/60 text-[1.4rem] lg:text-[1.8rem] font-medium leading-relaxed max-w-[850px] mx-auto">
+               Deep technical expertise across the entire stack. We don't just solve problems; we engineer the systems that eliminate them.
+            </p>
+          </motion.div>
         </div>
+
+        {/* Floating Decors */}
+        <div className="absolute top-1/4 right-[-10%] w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full" />
+        <div className="absolute bottom-0 left-[-10%] w-[500px] h-[500px] bg-secondary/10 blur-[150px] rounded-full" />
       </section>
 
-      <div style={{ 
-        maxWidth: '1400px', 
-        margin: '0 auto', 
-        display: 'grid', 
-        gridTemplateColumns: '300px 1fr', 
-        gap: '4rem', 
-        padding: '4rem 2rem' 
-      }}>
-        {/* Sticky Sidebar */}
-        <aside style={{ 
-          position: 'sticky', 
-          top: '8rem', 
-          height: 'fit-content',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.5rem'
-        }} className="desktop-sidebar">
-          {services.map((s) => (
-            <a 
-              key={s.id} 
-              href={`#service-${s.id}`}
-              style={{
-                padding: '1rem 1.5rem',
-                borderRadius: '0.75rem',
-                fontSize: '0.95rem',
-                fontWeight: 600,
-                color: 'var(--on-surface-variant)',
-                transition: 'var(--transition-smooth)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem'
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.background = 'var(--surface-container-low)';
-                e.currentTarget.style.color = 'var(--primary)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = 'var(--on-surface-variant)';
-              }}
-            >
-              <span style={{ opacity: 0.5 }}>{s.id}</span> {s.title}
-            </a>
-          ))}
-        </aside>
-
-        {/* Content Area */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
-          {services.map((s) => (
-            <section 
-              key={s.id} 
-              id={`service-${s.id}`} 
-              className="card-premium"
-              style={{ 
-                padding: '4rem', 
-                scrollMarginTop: '10rem',
-                background: 'white'
-              }}
-            >
-              <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', marginBottom: '3rem' }}>
-                <div style={{ 
-                  width: '64px', 
-                  height: '64px', 
-                  background: 'var(--surface-container-low)', 
-                  borderRadius: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '2rem',
-                  color: s.color
-                }}>
-                  {s.icon}
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--on-surface-variant)', opacity: 0.5, letterSpacing: '0.1em' }}>SERVICE {s.id}</div>
-                  <h2 style={{ fontSize: '2.5rem', color: 'var(--on-surface)', marginTop: '0.25rem' }}>{s.title}</h2>
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
-                <div>
-                  <div style={{ marginBottom: '2.5rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary)' }}>The Problem</h3>
-                    <p style={{ color: 'var(--on-surface-variant)', lineHeight: 1.7 }}>{s.problem}</p>
-                  </div>
-                  <div style={{ marginBottom: '2.5rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary)' }}>What We Build</h3>
-                    <p style={{ color: 'var(--on-surface-variant)', lineHeight: 1.7 }}>{s.solution}</p>
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary)' }}>Key Outcomes</h3>
-                    <ul style={{ paddingLeft: '1.25rem', color: 'var(--on-surface-variant)' }}>
-                      {s.outcomes.map((o, i) => <li key={i} style={{ marginBottom: '0.5rem' }}>{o}</li>)}
-                    </ul>
-                  </div>
-                </div>
-
-                <div style={{ 
-                  background: 'var(--surface-container-low)', 
-                  padding: '2.5rem', 
-                  borderRadius: '1.5rem',
-                  height: 'fit-content'
-                }}>
-                  <h3 style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>Service Details</h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    <div>
-                      <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--on-surface-variant)', opacity: 0.5, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>INCLUDES</div>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                        {s.includes.map((inc, i) => (
-                          <div key={i} style={{ fontSize: '0.9rem', display: 'flex', gap: '0.5rem' }}>
-                            <span style={{ color: 'var(--primary)' }}>•</span>
-                            <span>{inc}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {s.stack && (
-                      <div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--on-surface-variant)', opacity: 0.5, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>TECH STACK</div>
-                        <div style={{ fontSize: '0.9rem', color: 'var(--on-surface)' }}>{s.stack}</div>
-                      </div>
-                    )}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem', paddingTop: '1.5rem', borderTop: '1px solid var(--outline-variant)' }}>
-                      <div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--on-surface-variant)', opacity: 0.5, letterSpacing: '0.05em', marginBottom: '0.25rem' }}>TIMELINE</div>
-                        <div style={{ fontWeight: 700 }}>{s.timeline}</div>
-                      </div>
-                      <div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--on-surface-variant)', opacity: 0.5, letterSpacing: '0.05em', marginBottom: '0.25rem' }}>STARTING FROM</div>
-                        <div style={{ fontWeight: 700 }}>{s.pricing}</div>
-                      </div>
-                    </div>
-                    <button className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '1rem' }}>
-                      Get a Quote for {s.title.split(' ')[0]}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </section>
-          ))}
-        </div>
+      {/* Main Service List */}
+      <div className="max-w-[1440px] mx-auto px-6 py-32 lg:py-48">
+        {services.map((s, i) => (
+          <ServiceBlock key={s.id} service={s} index={i} />
+        ))}
       </div>
 
       <Contact />
       <Footer />
-
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          .desktop-sidebar { display: none !important; }
-          div[style*="grid-template-columns: 300px 1fr"] { grid-template-columns: 1fr !important; }
-          section[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
-          div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </main>
   );
 }
