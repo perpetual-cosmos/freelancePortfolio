@@ -37,10 +37,11 @@ const Stats = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {[
             { label: "Live Projects", value: "10+", color: "#6300e2" },
             { label: "Countries Reached", value: "70+", color: "#d946ef" },
+            { label: "Users on SaaS", value: "1K+", color: "#3b82f6" },
             { label: "Open Source PRs", value: "32+", color: "#2dd4bf" }
           ].map((stat, i) => (
             <motion.div 

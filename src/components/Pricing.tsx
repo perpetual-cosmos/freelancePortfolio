@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Star, ArrowRight, Zap, Target, Shield } from 'lucide-react';
+import { Check, Star, ArrowRight, Zap, Target, Shield, BarChart3, Bot, Wrench } from 'lucide-react';
 
 const tiers = [
   {
@@ -23,9 +23,33 @@ const tiers = [
   {
     name: "Shopify / E-com",
     subtitle: "Custom stores that actually sell",
-    price: "₹60,000+",
+    price: "₹35,000+",
     icon: <Shield size={24} />,
     features: ["Custom Liquid Theme", "Conversion Rate Optimization", "Inventory Management Setup", "Payment Gateway Integration", "High-Performance Assets"],
+    highlight: false
+  },
+  {
+    name: "SEO Monthly",
+    subtitle: "Organic growth and technical SEO",
+    price: "₹15,000/mo",
+    icon: <BarChart3 size={24} />,
+    features: ["Monthly Technical Audit", "4-8 Optimized Blog Posts", "Keyword Tracking", "Backlink Strategy", "Competitor Analysis", "GSC Management"],
+    highlight: false
+  },
+  {
+    name: "AI Automation",
+    subtitle: "Eliminate manual repetitive tasks",
+    price: "₹20,000+",
+    icon: <Bot size={24} />,
+    features: ["Process Audit & Mapping", "n8n / Make Workflow Build", "API Integrations", "WhatsApp / Email Automation", "Testing & Documentation"],
+    highlight: false
+  },
+  {
+    name: "Maintenance",
+    subtitle: "Peace of mind for your infrastructure",
+    price: "₹5,000/mo",
+    icon: <Wrench size={24} />,
+    features: ["Weekly Plugin/Theme Updates", "Daily Backups", "Uptime Monitoring", "Up to 2 Hrs/mo Minor Edits", "Monthly Performance Report"],
     highlight: false
   }
 ];

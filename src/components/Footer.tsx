@@ -24,17 +24,19 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-[#565677] text-[0.95rem] leading-relaxed font-medium mb-8 pr-4 opacity-80">
-              Architecting high-performance digital infrastructure for high-growth ventures.
+              Full-stack developer for Indian startups — web, Shopify, AI automation, and SEO that actually converts.
             </p>
             <div className="flex gap-4">
               {[
-                { icon: <TwitterLogo size={20} weight="fill" />, href: '#' },
-                { icon: <LinkedinLogo size={20} weight="fill" />, href: '#' },
-                { icon: <GithubLogo size={20} weight="fill" />, href: '#' }
+                { icon: <TwitterLogo size={20} weight="fill" />, href: 'https://x.com/perpetual_cosmos' },
+                { icon: <LinkedinLogo size={20} weight="fill" />, href: 'https://www.linkedin.com/in/perpetual-cosmos/' },
+                { icon: <GithubLogo size={20} weight="fill" />, href: 'https://github.com/perpetual-cosmos' }
               ].map((s, i) => (
                 <motion.a 
                   key={i} 
-                  href={s.href} 
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
                   className="text-[#8e8ea8] hover:text-primary transition-colors"
                 >
@@ -44,25 +46,37 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Platform */}
+          {/* Column 2: Services */}
           <div className="flex flex-col">
-            <h4 className="font-black text-[0.7rem] mb-8 text-[#1a1a2e] tracking-[0.2em] uppercase opacity-40 font-mono">/ PLATFORM</h4>
+            <h4 className="font-black text-[0.7rem] mb-8 text-[#1a1a2e] tracking-[0.2em] uppercase opacity-40 font-mono">/ SERVICES</h4>
             <nav className="flex flex-col gap-4">
-              {['Features', 'Solutions', 'Integrations', 'Enterprise', 'Changelog'].map(item => (
-                <a key={item} href="#" className="text-[0.9rem] text-[#565677] font-bold hover:text-primary transition-colors no-underline">
-                  {item}
+              {[
+                { label: 'Web Development', href: '/services/web-development' },
+                { label: 'Shopify Development', href: '/services/shopify-development' },
+                { label: 'AI Automation', href: '/services/ai-automation' },
+                { label: 'SEO Services', href: '/services/seo-services' },
+                { label: 'WordPress / CMS', href: '/services' },
+              ].map(item => (
+                <a key={item.label} href={item.href} className="text-[0.9rem] text-[#565677] font-bold hover:text-primary transition-colors no-underline">
+                  {item.label}
                 </a>
               ))}
             </nav>
           </div>
 
-          {/* Column 3: Expertise */}
+          {/* Column 3: Resources */}
           <div className="flex flex-col">
-            <h4 className="font-black text-[0.7rem] mb-8 text-[#1a1a2e] tracking-[0.2em] uppercase opacity-40 font-mono">/ EXPERTISE</h4>
+            <h4 className="font-black text-[0.7rem] mb-8 text-[#1a1a2e] tracking-[0.2em] uppercase opacity-40 font-mono">/ RESOURCES</h4>
             <nav className="flex flex-col gap-4">
-              {['Next.js Studio', 'AI Engineering', 'Distributed Ops', 'Cloud Systems', 'SaaS Architecture'].map(item => (
-                <a key={item} href="#" className="text-[0.9rem] text-[#565677] font-bold hover:text-primary transition-colors no-underline">
-                  {item}
+              {[
+                { label: 'Free Website Audit', href: '/audit' },
+                { label: 'Developer Glossary', href: '/learn' },
+                { label: 'Blog / Insights', href: '/blog' },
+                { label: 'Case Studies', href: '/portfolio' },
+                { label: 'Pricing', href: '/pricing' },
+              ].map(item => (
+                <a key={item.label} href={item.href} className="text-[0.9rem] text-[#565677] font-bold hover:text-primary transition-colors no-underline">
+                  {item.label}
                 </a>
               ))}
             </nav>
@@ -72,9 +86,15 @@ const Footer = () => {
           <div className="flex flex-col">
             <h4 className="font-black text-[0.7rem] mb-8 text-[#1a1a2e] tracking-[0.2em] uppercase opacity-40 font-mono">/ COMPANY</h4>
             <nav className="flex flex-col gap-4">
-              {['About Us', 'Portfolio', 'Our Process', 'Pricing', 'Contact'].map(item => (
-                <a key={item} href="#" className="text-[0.9rem] text-[#565677] font-bold hover:text-primary transition-colors no-underline">
-                  {item}
+              {[
+                { label: 'About', href: '/about' },
+                { label: 'Portfolio', href: '/portfolio' },
+                { label: 'Industries', href: '/industries/ecommerce' },
+                { label: 'Contact', href: '/contact' },
+                { label: 'Book a Call', href: '/contact' },
+              ].map(item => (
+                <a key={item.label} href={item.href} className="text-[0.9rem] text-[#565677] font-bold hover:text-primary transition-colors no-underline">
+                  {item.label}
                 </a>
               ))}
             </nav>

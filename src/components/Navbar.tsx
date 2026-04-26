@@ -1,17 +1,17 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, ChevronDown, Globe, Code2, Server, Coffee, Brain, Smartphone, ArrowRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronDown, Globe, Code2, Server, Brain, BarChart3, BookOpen, ArrowRight, Sparkles } from 'lucide-react';
 import AvailabilityBadge from './widgets/AvailabilityBadge';
 import Link from 'next/link';
 
 const services = [
-  { id: '01', title: 'CMS Architecture', desc: 'Headless CMS & Custom WP', icon: <Globe size={18} />, color: '#3b82f6', href: '/services#cms' },
-  { id: '02', title: 'React Systems', desc: 'Next.js & Core Web Vitals', icon: <Code2 size={18} />, color: '#6300e2', href: '/services#react' },
-  { id: '03', title: 'Node.js Backend', desc: 'Event-Driven Microservices', icon: <Server size={18} />, color: '#22c55e', href: '/services#node' },
-  { id: '04', title: 'Enterprise Core', desc: 'Robust Spring Boot Systems', icon: <Coffee size={18} />, color: '#f59e0b', href: '/services#java' },
-  { id: '05', title: 'AI Engineering', desc: 'RAG Systems & LLM Flows', icon: <Brain size={18} />, color: '#a855f7', href: '/services#ai' },
-  { id: '06', title: 'Mobile Ecosystems', desc: 'Native Performance Apps', icon: <Smartphone size={18} />, color: '#f43f5e', href: '/services#mobile' },
+  { id: '01', title: 'Web Development', desc: 'Next.js, MERN & TypeScript apps', icon: <Code2 size={18} />, color: '#6300e2', href: '/services/web-development' },
+  { id: '02', title: 'Shopify Development', desc: 'Custom D2C stores that convert', icon: <Server size={18} />, color: '#10b981', href: '/services/shopify-development' },
+  { id: '03', title: 'AI Automation', desc: 'n8n, Make & WhatsApp workflows', icon: <Brain size={18} />, color: '#a855f7', href: '/services/ai-automation' },
+  { id: '04', title: 'SEO & Performance', desc: 'Page 1 rankings & Core Web Vitals', icon: <BarChart3 size={18} />, color: '#f43f5e', href: '/services/seo-services' },
+  { id: '05', title: 'WordPress / CMS', desc: 'Headless & custom WP builds', icon: <Globe size={18} />, color: '#0ea5e9', href: '/services' },
+  { id: '06', title: 'LMS / EdTech', desc: 'Custom course & learning platforms', icon: <BookOpen size={18} />, color: '#7c6fff', href: '/services' },
 ];
 
 const navLinks = [

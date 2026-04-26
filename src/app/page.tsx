@@ -10,6 +10,7 @@ import Advantage from "@/components/Advantage";
 import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
+import BlogPreview from "@/components/BlogPreview";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import TrustBar from "@/components/TrustBar";
@@ -28,6 +29,7 @@ export default function Home() {
       <Pricing />
       <Process />
       <Testimonials />
+      <BlogPreview />
       <Contact />
       <Footer />
     </main>

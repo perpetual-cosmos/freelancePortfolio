@@ -21,19 +21,29 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "TheUnipick Development Services",
-  "itemListElement": [
-    { "@type": "Service", "position": 1, "name": "CMS Development", "description": "Custom WordPress, Strapi, and headless CMS solutions" },
-    { "@type": "Service", "position": 2, "name": "React & Frontend Development", "description": "Modern React, Next.js, and TypeScript applications" },
-    { "@type": "Service", "position": 3, "name": "Node.js Backend Development", "description": "Scalable REST & GraphQL APIs and microservices" },
-    { "@type": "Service", "position": 4, "name": "Spring Boot / Java Development", "description": "Enterprise-grade backend systems on the Java ecosystem" },
-    { "@type": "Service", "position": 5, "name": "AI & ML Solutions", "description": "Custom AI models, chatbots, NLP, and intelligent automation" },
-    { "@type": "Service", "position": 6, "name": "Mobile Development", "description": "Cross-platform iOS and Android apps with React Native and Flutter" },
-    { "@type": "Service", "position": 7, "name": "Data Engineering", "description": "ETL pipelines, analytics dashboards, and data warehousing" },
-    { "@type": "Service", "position": 8, "name": "E-Commerce Solutions", "description": "Custom storefronts, Shopify, and scalable commerce platforms" },
-    { "@type": "Service", "position": 9, "name": "Cloud & DevOps", "description": "AWS/GCP infrastructure, CI/CD, containerization, and monitoring" }
-  ]
+  "@type": "Person",
+  "name": "Tarun Singh",
+  "url": "https://theunipick.com",
+  "sameAs": [
+    "https://github.com/perpetual-cosmos",
+    "https://www.linkedin.com/in/perpetual-cosmos/",
+    "https://x.com/perpetual_cosmos"
+  ],
+  "jobTitle": "Full-Stack Developer & SEO Specialist",
+  "description": "I build production-ready web products for Indian founders — from idea to ranked, converting website, in 4–8 weeks. Specializing in Next.js, Shopify, WordPress, and AI automation.",
+  "knowsAbout": ["Next.js", "Shopify", "WordPress", "AI Automation", "SEO", "React", "Node.js", "n8n", "Web Development"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kanpur",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  },
+  "offers": {
+    "@type": "Offer",
+    "description": "Free 20-point website audit covering SEO, speed, and conversion rate optimization. Delivered in 48 hours.",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
 };
 
 export default function RootLayout({
