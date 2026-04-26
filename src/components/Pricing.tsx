@@ -134,10 +134,13 @@ const Pricing = () => {
         </div>
         
         {/* Footnote */}
-        <div className="mt-20 text-center">
+        <div className="mt-20 text-center flex flex-col items-center gap-6">
           <p className="text-on-surface-muted font-bold text-[0.9rem] flex items-center justify-center gap-3">
             <Shield size={18} className="text-tech-teal" /> All packages include comprehensive handover docs and 30-day post-launch support.
           </p>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/5 border border-primary/10 text-[0.9rem] font-bold text-primary">
+            <Check size={18} /> Fixed-price guarantee. Zero hidden costs. Cancel anytime.
+          </div>
         </div>
       </div>
     </section>

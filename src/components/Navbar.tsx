@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, ChevronDown, Globe, Code2, Server, Coffee, Brain, Smartphone, ArrowRight, Sparkles } from 'lucide-react';
 import AvailabilityBadge from './widgets/AvailabilityBadge';
+import Link from 'next/link';
 
 const services = [
   { id: '01', title: 'CMS Architecture', desc: 'Headless CMS & Custom WP', icon: <Globe size={18} />, color: '#3b82f6', href: '/services#cms' },
@@ -15,9 +16,9 @@ const services = [
 
 const navLinks = [
   { name: 'About', href: '/about' },
-  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Work', href: '/portfolio' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Blog', href: '/blog' },
 ];
 
 const Navbar = () => {
@@ -96,6 +97,9 @@ const Navbar = () => {
                       <div className="flex items-center gap-2 text-[0.7rem] font-black text-on-surface-muted uppercase tracking-widest">
                          <Sparkles size={12} className="text-primary" /> Core Infrastructure Expertise
                       </div>
+                      <Link href="/learn" className="text-on-surface-muted font-bold text-[0.85rem] flex items-center gap-2 hover:text-primary transition-all mr-auto ml-8">
+                        View Glossary
+                      </Link>
                       <a href="/services" className="text-primary font-black text-[0.85rem] flex items-center gap-2 uppercase tracking-[0.2em] hover:gap-4 transition-all">
                         Full Stack <ArrowRight size={16} />
                       </a>
@@ -122,10 +126,10 @@ const Navbar = () => {
             <div className="hidden xl:block">
               <AvailabilityBadge />
             </div>
-            <button className="relative inline-flex items-center gap-3 px-8 py-3 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden text-[0.9rem] group">
-              <span className="relative z-10 flex items-center gap-2">Initiate Project</span>
+            <Link href="/audit" className="relative inline-flex items-center gap-3 px-8 py-3 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden text-[0.9rem] group">
+              <span className="relative z-10 flex items-center gap-2">Get Free Audit</span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
-            </button>
+            </Link>
             <button 
               onClick={() => setIsOpen(!isOpen)} 
               className="lg:hidden w-12 h-12 flex items-center justify-center bg-primary/5 rounded-2xl text-primary hover:bg-primary hover:text-white transition-all"
@@ -155,9 +159,9 @@ const Navbar = () => {
                   </a>
                 ))}
                 <div className="border-t border-outline/50 pt-8 mt-4">
-                  <button className="relative inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden w-full text-[1.1rem]">
-                    Book a Strategy Call <ArrowUpRight size={22} />
-                  </button>
+                  <Link href="/audit" className="relative inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden w-full text-[1.1rem]">
+                    Get Free Website Audit <ArrowUpRight size={22} />
+                  </Link>
                 </div>
               </div>
             </motion.div>

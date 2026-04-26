@@ -1,29 +1,32 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Quote, Star, Sparkles } from 'lucide-react';
+import { Quote, Star, Sparkles, ExternalLink } from 'lucide-react';
 
 const testimonies = [
   { 
-    quote: "TheUnipick delivered an outstanding AI platform that transformed our data analytics. Their team's expertise and dedication exceeded our expectations.", 
-    author: "Sarah Jenkins", 
-    role: "CTO at Nexus AI", 
-    avatar: "SJ",
-    color: "#6300e2" 
+    quote: "Tarun rescued our entire production codebase in 48 hours. Professional, fast, and the code is actually clean.", 
+    author: "Client", 
+    role: "Alumnipp", 
+    avatar: "AL",
+    color: "#6300e2",
+    link: "https://alumnipp.com"
   },
   { 
-    quote: "Working with TheUnipick has been a game-changer for our e-commerce business. The custom CMS they built is intuitive, fast, and incredibly powerful.", 
-    author: "David Chen", 
-    role: "Founder of UrbanStyle", 
-    avatar: "DC",
-    color: "#d946ef" 
+    quote: "Our tattoo studio website now ranks #1 in Udaipur for tattoo searches. Worth every rupee.", 
+    author: "Owner", 
+    role: "BlackArt Tattoo", 
+    avatar: "BA",
+    color: "#d946ef",
+    link: "https://www.blackarttattoo.in/"
   },
   { 
-    quote: "The mobile app developed by TheUnipick is sleek, performant, and loved by our users. Their attention to detail in UI/UX is truly world-class.", 
-    author: "Elena Rodriguez", 
-    role: "Product Lead at FitTrack", 
-    avatar: "ER",
-    color: "#2dd4bf" 
+    quote: "He understood what we needed for our WhatsApp automation SaaS without us having to explain twice. Rare.", 
+    author: "Dhruv", 
+    role: "Founder, Wavo.digital", 
+    avatar: "DH",
+    color: "#2dd4bf",
+    link: "https://wavo.digital"
   }
 ];
 
@@ -92,8 +95,13 @@ const Testimonials = () => {
                   {t.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-black text-[1.1rem] text-on-surface leading-tight mb-1 truncate font-display tracking-tight">
+                  <div className="font-black text-[1.1rem] text-on-surface leading-tight mb-1 truncate font-display tracking-tight flex items-center gap-2">
                     {t.author}
+                    {t.link && (
+                      <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors">
+                        <ExternalLink size={14} />
+                      </a>
+                    )}
                   </div>
                   <div className="text-[0.75rem] text-on-surface-muted font-black tracking-widest uppercase truncate opacity-70">
                     {t.role}

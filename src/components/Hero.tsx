@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, ShieldCheck, Zap, Rocket, Globe } from 'lucide-react';
+import Link from 'next/link';
 
 const Hero = () => {
   const containerVariants = {
@@ -60,18 +61,21 @@ const Hero = () => {
             From Shopify stores to Next.js apps, WordPress sites to AI automations — I deliver complete digital products with measurable business results. No fluff. No templates. Just code that works.
           </motion.p>
           
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-6 justify-center lg:justify-start mb-20 lg:mb-28">
-            <button className={btnPrimaryClass}>
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-6 justify-center lg:justify-start mb-4">
+            <Link href="/audit" className={btnPrimaryClass}>
               <span className="relative z-10 flex items-center gap-2">
                 Get Free Website Audit 
                 <ArrowRight size={22} className="transition-transform group-hover:translate-x-1.5" />
               </span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
-            </button>
-            <button className={btnSecondaryClass}>
+            </Link>
+            <Link href="/portfolio" className={btnSecondaryClass}>
               See My Work
               <Rocket size={18} className="text-primary/40 group-hover:text-primary transition-colors" />
-            </button>
+            </Link>
+          </motion.div>
+          <motion.div variants={itemVariants} className="text-[0.85rem] text-on-surface-muted font-bold mb-20 lg:mb-28 flex items-center justify-center lg:justify-start gap-2 tracking-wide">
+             <ShieldCheck size={18} className="text-primary" /> No long-term contracts. Fixed pricing. Cancel anytime.
           </motion.div>
           
           {/* Trust Metrics */}
