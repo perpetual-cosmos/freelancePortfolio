@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring, useMotionTemplate } from 'framer-motion';
 import {
   Code2, Server, Brain, Cloud, BarChart3,
   ArrowRight, Cpu, Layers, Globe, Zap, Sparkles,
@@ -68,13 +68,53 @@ const services = [
 const Services = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 700 };
+  const mouseXSpring = useSpring(mouseX, springConfig);
+  const mouseYSpring = useSpring(mouseY, springConfig);
+
+  const handleMouseMove = ({ currentTarget, clientX, clientY }: React.MouseEvent) => {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  };
+
 
   return (
-    <section id="services" className="bg-[#050505] relative py-32 lg:py-64 overflow-hidden">
+    <section 
+      id="services" 
+      onMouseMove={handleMouseMove}
+      className="bg-[#050505] relative py-32 lg:py-64 overflow-hidden"
+    >
       {/* Hyper-Tech Background */}
       <div className="absolute inset-0 z-0">
-        {/* Animated Grid */}
+        {/* Base Grid (Static) */}
         <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+        {/* Cursor Glow Grid */}
+        <motion.div
+          className="absolute inset-0 z-0 pointer-events-none opacity-40 bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:60px_60px]"
+          style={{
+            WebkitMaskImage: useMotionTemplate`radial-gradient(450px circle at ${mouseXSpring}px ${mouseYSpring}px, black, transparent 80%)`,
+            maskImage: useMotionTemplate`radial-gradient(450px circle at ${mouseXSpring}px ${mouseYSpring}px, black, transparent 80%)`
+          }}
+        />
+
+        {/* Cursor Radial Glow */}
+        <motion.div
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            background: useMotionTemplate`
+              radial-gradient(
+                600px circle at ${mouseXSpring}px ${mouseYSpring}px,
+                rgba(99, 0, 226, 0.15),
+                transparent 80%
+              )
+            `,
+          }}
+        />
 
         {/* Dynamic Light Rays */}
         <motion.div
