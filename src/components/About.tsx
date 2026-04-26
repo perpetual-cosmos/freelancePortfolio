@@ -1,115 +1,130 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Calendar, Heart, ShieldCheck, Zap } from 'lucide-react';
+import { ShieldCheck, Zap, Cpu, Award, Users } from 'lucide-react';
 
 const stats = [
-  { label: 'Next.js Deployments', value: '40+', icon: <Zap size={20} /> },
-  { label: 'System Uptime', value: '99.9%', icon: <ShieldCheck size={20} /> },
-  { label: 'Engineering Years', value: '8+', icon: <Calendar size={20} /> },
-  { label: 'Founder Satisfaction', value: '100%', icon: <Heart size={20} /> },
+  { label: 'Cloud Deployments', value: '40+', sub: 'Next.js & AWS', icon: <Zap size={24} /> },
+  { label: 'System Reliability', value: '99.9%', sub: 'SLA Guaranteed', icon: <ShieldCheck size={24} /> },
+  { label: 'Engineering Experience', value: '8+', sub: 'Lead Engineers', icon: <Cpu size={24} /> },
+  { label: 'Enterprise Partners', value: '15+', sub: 'Global Scale', icon: <Award size={24} /> },
 ];
 
 const About = () => {
+  const cardClass = "bg-white rounded-2xl border border-[rgba(99,0,226,0.06)] shadow-md transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden p-10 group hover:-translate-y-2 hover:border-[rgba(99,0,226,0.12)] hover:shadow-lg hover:scale-[1.01] card-hover-gradient";
+  const glassClass = "bg-white/60 backdrop-blur-xl border border-white/40 shadow-2xl";
+  const btnPrimaryClass = "relative inline-flex items-center gap-3 px-12 py-5 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-primary/40 active:scale-95 overflow-hidden group";
+
   return (
-    <section id="about" style={{ background: 'var(--surface)', position: 'relative' }} className="noise-overlay">
-      <div className="about-inner">
-        {/* Image column */}
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-          style={{ position: 'relative' }}>
-          <div className="about-img-wrapper">
-            <img src="/about_engineering.png" alt="Engineering Excellence"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent, rgba(15,23,42,0.4))' }} />
+    <section id="about" className="bg-white relative overflow-hidden py-32 lg:py-48 noise-overlay">
+      {/* Decorative Blur Background */}
+      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-secondary/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-[1fr,1.1fr] gap-20 lg:gap-32 items-center">
+        {/* Left: Interactive Visual Column */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95, x: -20 }} 
+          whileInView={{ opacity: 1, scale: 1, x: 0 }} 
+          viewport={{ once: true }}
+          className="relative"
+        >
+          <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-[rgba(99,0,226,0.12)] aspect-[4/5] lg:aspect-auto lg:h-[650px]">
+            <img 
+              src="/about_engineering.png" 
+              alt="Elite Engineering Culture"
+              className="w-full h-full object-cover transition-transform duration-[3s] hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/20 to-transparent" />
+            
+            {/* Overlay Quote */}
+            <div className="absolute bottom-12 left-10 right-10">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                  <Users size={18} />
+                </div>
+                <div className="text-white/80 font-black text-[0.7rem] tracking-[0.2em] uppercase">TheUnipick Creed</div>
+              </div>
+              <p className="text-white text-[1.4rem] lg:text-[1.8rem] font-bold leading-tight font-display tracking-tight italic">
+                "We don't just ship code. We architect resilience into every single pixel."
+              </p>
+            </div>
           </div>
-          {/* Floating Badge */}
-          <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="about-badge">
-            <div style={{ fontSize: '0.75rem', fontWeight: 800, opacity: 0.8, marginBottom: '0.4rem', letterSpacing: '0.2rem' }}>ESTABLISHED</div>
-            <div style={{ fontSize: '2.2rem', fontWeight: 900, fontFamily: 'Space Grotesk', lineHeight: 1 }}>2017</div>
+
+          {/* Floating Experience Badge */}
+          <motion.div 
+            animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }} 
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className={`${glassClass} absolute -top-8 -right-8 lg:-right-12 p-8 lg:p-12 rounded-[2.5rem] z-20 border border-white/50`}
+          >
+            <div className="text-primary font-black text-[3rem] lg:text-[4.5rem] font-display leading-none mb-2">08</div>
+            <div className="text-on-surface-muted font-black text-[0.75rem] tracking-[0.3em] uppercase leading-tight">
+              Years of <br /> Elite Engineering
+            </div>
           </motion.div>
         </motion.div>
 
-        {/* Text column */}
-        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <div style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.4rem', marginBottom: '1.5rem', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div style={{ width: '30px', height: '2px', background: 'var(--primary)', flexShrink: 0 }} />
-            OUR PHILOSOPHY
-          </div>
-          <h2 style={{ marginBottom: '2rem' }}>
-            We build for <span className="text-gradient">Long-term Resilience.</span>
-          </h2>
-          <p style={{ color: 'var(--on-surface-variant)', fontSize: 'clamp(1rem,1.5vw,1.2rem)', marginBottom: '3rem', lineHeight: 1.8 }}>
-            TheUnipick was founded on a simple principle: complexity is the enemy of scale.
-            We specialize in stripping away the bloat and building lean, modular systems
-            that don't just ship—they endure. Our engineering culture is obsessed with
-            maintainability, performance, and the "quiet" confidence of a stable production environment.
-          </p>
+        {/* Right: Narrative & Stats Column */}
+        <div className="flex flex-col">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[0.8rem] tracking-[0.2em] uppercase mb-8">
+              <Cpu size={16} /> <span>The Engineering DNA</span>
+            </div>
+            <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight mb-10 text-on-surface font-display">
+              Built on a Foundation of <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Pure Precision.</span>
+            </h2>
+            <p className="text-on-surface-variant text-[1.2rem] lg:text-[1.4rem] mb-12 leading-relaxed font-medium opacity-90">
+              Complexity is the enemy of scale. At TheUnipick, we specialize in stripping away the bloat to build lean, modular systems that don't just work—they endure. Our culture is obsessed with maintainability, performance, and the quiet confidence of a stable production environment.
+            </p>
+          </motion.div>
 
-          <div className="stats-grid">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
             {stats.map((stat, i) => (
-              <motion.div key={i} whileHover={{ y: -5, borderColor: 'var(--primary)' }}
-                className="card-premium" style={{ padding: 'clamp(1.25rem, 2vw, 2rem) clamp(1.5rem, 2.5vw, 2.5rem)' }}>
-                <div style={{ color: 'var(--primary)', marginBottom: '1rem', opacity: 0.8 }}>{stat.icon}</div>
-                <div style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 900, fontFamily: 'Space Grotesk', color: 'var(--on-surface)', lineHeight: 1, marginBottom: '0.5rem' }}>{stat.value}</div>
-                <div style={{ color: 'var(--on-surface-muted)', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.05em' }}>{stat.label.toUpperCase()}</div>
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={cardClass}
+              >
+                <div className="text-primary/20 group-hover:text-primary transition-colors duration-500 mb-6 group-hover:scale-110 group-hover:rotate-6 inline-block">
+                  {stat.icon}
+                </div>
+                <div className="text-[2.2rem] lg:text-[2.8rem] font-black font-display text-on-surface leading-none mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-on-surface font-black text-[0.8rem] tracking-widest uppercase mb-1">
+                  {stat.label}
+                </div>
+                <div className="text-on-surface-muted text-[0.7rem] font-bold uppercase tracking-tight opacity-60">
+                  {stat.sub}
+                </div>
               </motion.div>
             ))}
           </div>
-        </motion.div>
-      </div>
 
-      <style jsx>{`
-        .about-inner {
-          max-width: 1400px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 4rem;
-          align-items: center;
-          padding: 0 1.25rem;
-        }
-        .about-img-wrapper {
-          border-radius: 2rem;
-          overflow: hidden;
-          height: clamp(300px, 50vw, 500px);
-          box-shadow: var(--shadow-lg);
-          border: 1px solid var(--outline-strong);
-          position: relative;
-        }
-        .about-badge {
-          position: absolute;
-          bottom: 2rem;
-          right: -0.5rem;
-          background: var(--primary);
-          color: white;
-          padding: 1.75rem 2rem;
-          border-radius: 1.75rem;
-          box-shadow: var(--shadow-glow);
-          z-index: 10;
-        }
-        .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.25rem;
-        }
-        @media (min-width: 640px) {
-          .about-inner { padding: 0 1.75rem; }
-          .about-badge { right: -1rem; bottom: 3rem; padding: 2rem 2.5rem; }
-        }
-        @media (min-width: 1024px) {
-          .about-inner {
-            grid-template-columns: 1fr 1.2fr;
-            gap: 8rem;
-            padding: 0 2.5rem;
-          }
-          .about-img-wrapper {
-            height: 650px;
-            border-radius: 3rem;
-          }
-          .about-badge { right: -2rem; bottom: 4rem; }
-        }
-      `}</style>
+          {/* Bottom CTA */}
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            whileInView={{ opacity: 1 }} 
+            viewport={{ once: true }} 
+            transition={{ delay: 0.5 }}
+            className="mt-16 flex items-center gap-6"
+          >
+            <button className={btnPrimaryClass}>
+              <span className="relative z-10">Learn Our Process</span>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
+            </button>
+            <div className="hidden sm:block h-[1px] flex-1 bg-[rgba(99,0,226,0.12)]" />
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 };

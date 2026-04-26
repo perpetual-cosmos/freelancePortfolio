@@ -1,170 +1,170 @@
-import React, { useState } from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, ChevronDown, Globe, Code2, Server, Coffee, Brain, Smartphone, BarChart3, ShoppingBag, Cloud, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronDown, Globe, Code2, Server, Coffee, Brain, Smartphone, ArrowRight, Sparkles } from 'lucide-react';
 import AvailabilityBadge from './widgets/AvailabilityBadge';
 
 const services = [
-  { id: '01', title: 'CMS Development', desc: 'Custom WordPress & Headless CMS', icon: <Globe size={18} />, color: '#3b82f6', href: '/services#cms' },
-  { id: '02', title: 'React & Frontend', desc: 'Next.js & Performance Optimization', icon: <Code2 size={18} />, color: '#14b8a6', href: '/services#react' },
-  { id: '03', title: 'Node.js Backend', desc: 'Scalable APIs & Microservices', icon: <Server size={18} />, color: '#22c55e', href: '/services#node' },
-  { id: '04', title: 'Enterprise Java', desc: 'Robust Spring Boot Systems', icon: <Coffee size={18} />, color: '#f59e0b', href: '/services#java' },
-  { id: '05', title: 'AI & ML', desc: 'Custom Models & LLM Integration', icon: <Brain size={18} />, color: '#a855f7', href: '/services#ai' },
-  { id: '06', title: 'Mobile Apps', desc: 'Native & Cross-platform solutions', icon: <Smartphone size={18} />, color: '#f43f5e', href: '/services#mobile' },
-  { id: '07', title: 'Data Analytics', desc: 'ETL & Business Intelligence', icon: <BarChart3 size={18} />, color: '#3b82f6', href: '/services#data' },
-  { id: '08', title: 'E-Commerce', desc: 'Scalable Storefronts & Shopify', icon: <ShoppingBag size={18} />, color: '#ec4899', href: '/services#ecommerce' },
-  { id: '09', title: 'Cloud & DevOps', desc: 'AWS/GCP & CI/CD Pipelines', icon: <Cloud size={18} />, color: '#64748b', href: '/services#cloud' },
+  { id: '01', title: 'CMS Architecture', desc: 'Headless CMS & Custom WP', icon: <Globe size={18} />, color: '#3b82f6', href: '/services#cms' },
+  { id: '02', title: 'React Systems', desc: 'Next.js & Core Web Vitals', icon: <Code2 size={18} />, color: '#6300e2', href: '/services#react' },
+  { id: '03', title: 'Node.js Backend', desc: 'Event-Driven Microservices', icon: <Server size={18} />, color: '#22c55e', href: '/services#node' },
+  { id: '04', title: 'Enterprise Core', desc: 'Robust Spring Boot Systems', icon: <Coffee size={18} />, color: '#f59e0b', href: '/services#java' },
+  { id: '05', title: 'AI Engineering', desc: 'RAG Systems & LLM Flows', icon: <Brain size={18} />, color: '#a855f7', href: '/services#ai' },
+  { id: '06', title: 'Mobile Ecosystems', desc: 'Native Performance Apps', icon: <Smartphone size={18} />, color: '#f43f5e', href: '/services#mobile' },
 ];
 
 const navLinks = [
-  { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showMegaMenu, setShowMegaMenu] = useState(false);
-  const [showMobileServices, setShowMobileServices] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div style={{ position: 'fixed', top: '1rem', left: '50%', transform: 'translateX(-50%)', width: 'calc(100% - 2rem)', maxWidth: '1200px', zIndex: 1000 }}>
-      <nav className="glass" style={{ padding: '0.65rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: 'var(--radius-full)', border: '1px solid rgba(99, 0, 226, 0.1)', boxShadow: 'var(--shadow-lg)', position: 'relative', zIndex: 1001 }}>
-        {/* Logo */}
-        <motion.a href="/" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-          style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.03em', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-          <div style={{ width: '30px', height: '30px', background: 'var(--gradient-primary, linear-gradient(135deg,#6300e2,#d946ef))', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '0.9rem', flexShrink: 0 }}>U</div>
-          <span className="nav-logo-text">TheUnipick</span>
-        </motion.a>
+    <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+        <nav className={`
+          relative flex justify-between items-center px-8 py-3 rounded-full border transition-all duration-700
+          ${scrolled 
+            ? 'bg-white/80 backdrop-blur-xl border-outline shadow-xl scale-[0.98]' 
+            : 'bg-transparent border-transparent scale-100'}
+        `}>
+          {/* Brand Identity */}
+          <motion.a 
+            href="/" 
+            initial={{ opacity: 0, x: -20 }} 
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-4 group no-underline"
+          >
+            <div className="w-11 h-11 bg-primary rounded-2xl flex items-center justify-center text-white text-xl font-black shadow-lg transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-110 group-hover:shadow-primary/40">U</div>
+            <div className="flex flex-col">
+               <span className="text-[1.3rem] font-black text-on-surface tracking-tighter leading-none font-display">TheUnipick</span>
+               <span className="text-[0.6rem] font-black text-primary tracking-[0.3em] uppercase opacity-60">Studio</span>
+            </div>
+          </motion.a>
 
-        {/* Desktop Menu */}
-        <div className="desktop-menu" style={{ display: 'flex', gap: '1.75rem', alignItems: 'center' }}>
-          <motion.a href="/" whileHover={{ y: -2 }} style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--on-surface-variant)', textDecoration: 'none' }}>Home</motion.a>
-
-          <div onMouseEnter={() => setShowMegaMenu(true)} onMouseLeave={() => setShowMegaMenu(false)} style={{ position: 'relative', paddingBottom: '1rem', marginBottom: '-1rem' }}>
-            <motion.div style={{ fontSize: '0.88rem', fontWeight: 600, color: showMegaMenu ? 'var(--primary)' : 'var(--on-surface-variant)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-              Services <ChevronDown size={13} style={{ transform: showMegaMenu ? 'rotate(180deg)' : 'rotate(0deg)', transition: '0.3s' }} />
-            </motion.div>
-            <AnimatePresence>
-              {showMegaMenu && (
-                <motion.div initial={{ opacity: 0, y: 10, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 5, scale: 0.98 }} transition={{ duration: 0.15 }}
-                  style={{ position: 'absolute', top: 'calc(100% + 0.75rem)', left: '0', width: '520px', backgroundColor: 'white', borderRadius: '1.5rem', padding: '1.25rem', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', border: '1px solid var(--outline-variant)', display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '0.4rem', zIndex: 1002 }}>
-                  {services.map((s) => (
-                    <motion.a key={s.id} href={s.href} whileHover={{ backgroundColor: 'var(--surface-container-low)', x: 4 }}
-                      style={{ padding: '0.65rem 0.9rem', borderRadius: '1rem', display: 'flex', alignItems: 'center', gap: '0.85rem', textDecoration: 'none' }}>
-                      <div style={{ color: s.color, width: '32px', height: '32px', borderRadius: '8px', background: `${s.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                        {React.cloneElement(s.icon as React.ReactElement<{ size?: number }>, { size: 16 })}
-                      </div>
-                      <div>
-                        <div style={{ fontWeight: 700, fontSize: '0.82rem', color: 'var(--on-surface)', marginBottom: '0.1rem' }}>{s.title}</div>
-                        <div style={{ fontSize: '0.68rem', color: 'var(--on-surface-muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '160px' }}>{s.desc}</div>
-                      </div>
-                    </motion.a>
-                  ))}
-                  <div style={{ gridColumn: 'span 2', borderTop: '1px solid var(--outline-variant)', paddingTop: '1rem', marginTop: '0.25rem', textAlign: 'center' }}>
-                    <a href="/services" style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.78rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                      Explore All Expertise <ArrowRight size={12} />
-                    </a>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {navLinks.filter(l => l.name !== 'Home').map((link) => (
-            <motion.a key={link.name} href={link.href} whileHover={{ y: -2 }}
-              style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--on-surface-variant)', textDecoration: 'none' }}
-              onMouseOver={(e) => e.currentTarget.style.color = 'var(--primary)'}
-              onMouseOut={(e) => e.currentTarget.style.color = 'var(--on-surface-variant)'}>
-              {link.name}
-            </motion.a>
-          ))}
-        </div>
-
-        {/* Right side */}
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <div className="desktop-menu">
-            <AvailabilityBadge />
-          </div>
-          <button className="btn-primary nav-cta" style={{ padding: '0.55rem 1.25rem', fontSize: '0.82rem', boxShadow: 'none' }}>
-            Consultation <ArrowUpRight size={15} />
-          </button>
-          <button onClick={() => setIsOpen(!isOpen)} className="mobile-toggle"
-            style={{ background: 'none', border: 'none', color: 'var(--on-surface)', cursor: 'pointer', padding: '0.25rem' }}>
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Drawer */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div initial={{ opacity: 0, y: -10, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.98 }} transition={{ duration: 0.2 }}
-            className="glass mobile-drawer">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              {navLinks.map((link) => (
-                <a key={link.name} href={link.href} onClick={() => setIsOpen(false)}
-                  style={{ padding: '0.85rem 1.25rem', borderRadius: '1rem', fontSize: '1rem', fontWeight: 700, color: 'var(--on-surface)', textDecoration: 'none', transition: 'background 0.2s' }}
-                  onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(99,0,226,0.06)'; e.currentTarget.style.color = 'var(--primary)'; }}
-                  onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--on-surface)'; }}>
-                  {link.name}
-                </a>
-              ))}
-
-              <div>
-                <button onClick={() => setShowMobileServices(!showMobileServices)}
-                  style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.85rem 1.25rem', borderRadius: '1rem', fontSize: '1rem', fontWeight: 700, color: 'var(--on-surface)', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
-                  Services
-                  <ChevronDown size={16} style={{ transform: showMobileServices ? 'rotate(180deg)' : 'rotate(0deg)', transition: '0.3s' }} />
-                </button>
-                {showMobileServices && (
-                  <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column', gap: '0.15rem', marginTop: '0.25rem' }}>
-                    {services.map(s => (
-                      <a key={s.id} href={s.href} onClick={() => setIsOpen(false)}
-                        style={{ padding: '0.65rem 1rem', borderRadius: '0.75rem', fontSize: '0.9rem', fontWeight: 600, color: 'var(--on-surface-variant)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <span style={{ color: s.color }}>{React.cloneElement(s.icon as React.ReactElement<{ size?: number }>, { size: 15 })}</span>
-                        {s.title}
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-10">
+            {/* Services Mega-Menu Trigger */}
+            <div 
+              onMouseEnter={() => setShowMegaMenu(true)} 
+              onMouseLeave={() => setShowMegaMenu(false)} 
+              className="relative py-2"
+            >
+              <div className={`text-[0.95rem] font-black flex items-center gap-2 cursor-pointer transition-colors ${showMegaMenu ? 'text-primary' : 'text-on-surface-variant hover:text-primary'}`}>
+                Capabilities <ChevronDown size={14} className={`transition-transform duration-500 ${showMegaMenu ? 'rotate-180' : ''}`} />
+              </div>
+              
+              <AnimatePresence>
+                {showMegaMenu && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }} 
+                    animate={{ opacity: 1, y: 0, scale: 1 }} 
+                    exit={{ opacity: 0, y: 15, scale: 0.98 }} 
+                    className="absolute top-full left-1/2 -translate-x-1/2 w-[700px] bg-white rounded-[3rem] p-8 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border border-outline mt-6 grid grid-cols-2 gap-4 z-[1002]"
+                  >
+                    {services.map((s) => (
+                      <a 
+                        key={s.id} 
+                        href={s.href} 
+                        className="p-5 rounded-[2rem] flex items-center gap-5 no-underline transition-all hover:bg-surface-muted group/item"
+                      >
+                        <div 
+                          className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-all duration-500 group-hover/item:scale-110 group-hover/item:rotate-6"
+                          style={{ color: 'white', background: s.color }}
+                        >
+                          {React.cloneElement(s.icon as React.ReactElement<{ size?: number }>, { size: 20 })}
+                        </div>
+                        <div>
+                          <div className="font-black text-[1rem] text-on-surface group-hover/item:text-primary transition-colors tracking-tight font-display">{s.title}</div>
+                          <div className="text-[0.8rem] text-on-surface-muted font-medium opacity-80">{s.desc}</div>
+                        </div>
                       </a>
                     ))}
-                  </div>
+                    <div className="col-span-2 pt-6 mt-4 border-t border-outline/50 flex justify-between items-center px-4">
+                      <div className="flex items-center gap-2 text-[0.7rem] font-black text-on-surface-muted uppercase tracking-widest">
+                         <Sparkles size={12} className="text-primary" /> Core Infrastructure Expertise
+                      </div>
+                      <a href="/services" className="text-primary font-black text-[0.85rem] flex items-center gap-2 uppercase tracking-[0.2em] hover:gap-4 transition-all">
+                        Full Stack <ArrowRight size={16} />
+                      </a>
+                    </div>
+                  </motion.div>
                 )}
+              </AnimatePresence>
+            </div>
+
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className="text-[0.95rem] font-black text-on-surface-variant no-underline hover:text-primary transition-all relative group/nav"
+              >
+                {link.name}
+                <span className="absolute bottom-[-6px] left-0 w-0 h-[2px] bg-primary transition-all group-hover/nav:w-full" />
+              </a>
+            ))}
+          </div>
+
+          {/* Action Hub */}
+          <div className="flex items-center gap-6">
+            <div className="hidden xl:block">
+              <AvailabilityBadge />
+            </div>
+            <button className="relative inline-flex items-center gap-3 px-8 py-3 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden text-[0.9rem] group">
+              <span className="relative z-10 flex items-center gap-2">Initiate Project</span>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
+            </button>
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="lg:hidden w-12 h-12 flex items-center justify-center bg-primary/5 rounded-2xl text-primary hover:bg-primary hover:text-white transition-all"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Navigation Overlay */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              exit={{ opacity: 0, y: -20 }}
+              className="lg:hidden mt-4 overflow-hidden"
+            >
+              <div className="bg-white rounded-[3rem] p-10 border border-outline shadow-2xl flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <a 
+                    key={link.name} 
+                    href={link.href} 
+                    className="px-8 py-5 rounded-2xl text-[1.4rem] font-black text-on-surface no-underline hover:bg-primary/5 hover:text-primary transition-all font-display tracking-tight"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                <div className="border-t border-outline/50 pt-8 mt-4">
+                  <button className="relative inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden w-full text-[1.1rem]">
+                    Book a Strategy Call <ArrowUpRight size={22} />
+                  </button>
+                </div>
               </div>
-            </div>
-
-            <div style={{ borderTop: '1px solid var(--outline)', paddingTop: '1.25rem', marginTop: '0.5rem' }}>
-              <button className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.9rem 1.5rem' }}>
-                Book Consultation <ArrowUpRight size={16} />
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <style jsx>{`
-        .nav-logo-text { display: inline; }
-        .desktop-menu { display: flex !important; }
-        .mobile-toggle { display: none !important; }
-        .mobile-drawer {
-          margin-top: 0.75rem;
-          border-radius: 1.75rem;
-          padding: 1.25rem;
-          border: 1px solid rgba(99,0,226,0.1);
-          box-shadow: var(--shadow-lg);
-          display: none;
-        }
-        @media (max-width: 1024px) {
-          .desktop-menu { display: none !important; }
-          .mobile-toggle { display: block !important; }
-          .mobile-drawer { display: block; }
-          .nav-cta { display: none !important; }
-        }
-        @media (max-width: 400px) {
-          .nav-logo-text { display: none; }
-        }
-      `}</style>
-    </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </header>
   );
 };
 

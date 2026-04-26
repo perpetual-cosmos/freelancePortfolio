@@ -1,68 +1,132 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Quote, Star } from 'lucide-react';
+import { Quote, Star, Sparkles } from 'lucide-react';
 
 const testimonies = [
-  { quote: "TheUnipick delivered an outstanding AI platform that transformed our data analytics. Their team's expertise and dedication exceeded our expectations.", author: "Sarah Jenkins", role: "CTO at Nexus AI", color: "var(--primary)" },
-  { quote: "Working with TheUnipick has been a game-changer for our e-commerce business. The custom CMS they built is intuitive, fast, and incredibly powerful.", author: "David Chen", role: "Founder of UrbanStyle", color: "var(--secondary)" },
-  { quote: "The mobile app developed by TheUnipick is sleek, performant, and loved by our users. Their attention to detail in UI/UX is truly world-class.", author: "Elena Rodriguez", role: "Product Lead at FitTrack", color: "var(--tech-teal)" }
+  { 
+    quote: "TheUnipick delivered an outstanding AI platform that transformed our data analytics. Their team's expertise and dedication exceeded our expectations.", 
+    author: "Sarah Jenkins", 
+    role: "CTO at Nexus AI", 
+    avatar: "SJ",
+    color: "#6300e2" 
+  },
+  { 
+    quote: "Working with TheUnipick has been a game-changer for our e-commerce business. The custom CMS they built is intuitive, fast, and incredibly powerful.", 
+    author: "David Chen", 
+    role: "Founder of UrbanStyle", 
+    avatar: "DC",
+    color: "#d946ef" 
+  },
+  { 
+    quote: "The mobile app developed by TheUnipick is sleek, performant, and loved by our users. Their attention to detail in UI/UX is truly world-class.", 
+    author: "Elena Rodriguez", 
+    role: "Product Lead at FitTrack", 
+    avatar: "ER",
+    color: "#2dd4bf" 
+  }
 ];
 
 const Testimonials = () => {
+  const cardClass = "bg-white rounded-2xl border border-[rgba(99,0,226,0.06)] shadow-md transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden p-12 lg:p-14 group hover:-translate-y-2 hover:border-[rgba(99,0,226,0.12)] hover:shadow-lg hover:scale-[1.01] card-hover-gradient";
+
   return (
-    <section id="testimonials" style={{ background: 'var(--surface)' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.25rem' }}>
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(4rem, 7vw, 8rem)' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.3rem', marginBottom: '1.25rem' }}>
-            // CLIENT FEEDBACK
+    <section id="testimonials" className="bg-white py-32 lg:py-48 relative overflow-hidden noise-overlay">
+      {/* Decorative Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 blur-[160px] rounded-full -z-10" />
+
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+        <div className="text-center mb-24 lg:mb-32">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[0.8rem] tracking-[0.2em] uppercase mb-6"
+          >
+            <Sparkles size={16} /> <span>Client Feedback</span>
           </motion.div>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            Validated by <span className="text-gradient">Digital Leaders</span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ delay: 0.1 }}
+            className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold tracking-tight leading-[1.05] font-display text-on-surface"
+          >
+            Validated by <br /> <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Digital Leaders.</span>
           </motion.h2>
         </div>
 
-        <div className="testimonials-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {testimonies.map((t, i) => (
-            <motion.div key={i} initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="card-premium" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', padding: 'clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3.5vw, 3.5rem)', position: 'relative' }}>
-              <div style={{ width: '46px', height: '46px', borderRadius: '12px', background: 'var(--surface-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: t.color }}>
-                <Quote size={22} fill="currentColor" opacity={0.2} />
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 30 }} 
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} 
+              transition={{ delay: i * 0.1, duration: 0.8 }}
+              className={cardClass}
+            >
+              <div className="mb-10 flex justify-between items-start relative z-10">
+                <div 
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-md"
+                  style={{ color: 'white', background: t.color }}
+                >
+                  <Quote size={20} fill="white" />
+                </div>
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, si) => (
+                    <Star key={si} size={14} fill={t.color} color={t.color} className="opacity-80" />
+                  ))}
+                </div>
               </div>
-              <p style={{ color: 'var(--on-surface-variant)', fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)', lineHeight: 1.8, fontStyle: 'italic', flex: 1 }}>
+              
+              <p className="text-on-surface-variant text-[1.1rem] lg:text-[1.25rem] leading-relaxed font-medium italic mb-12 flex-1 opacity-90 group-hover:opacity-100 transition-opacity relative z-10">
                 "{t.quote}"
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', borderTop: '1px solid var(--outline)', paddingTop: '2rem', flexWrap: 'wrap' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--surface-muted)', border: `2px solid ${t.color}`, flexShrink: 0 }} />
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--on-surface)' }}>{t.author}</div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--on-surface-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>{t.role.toUpperCase()}</div>
+              
+              <div className="flex items-center gap-5 pt-10 border-t border-[rgba(99,0,226,0.06)] relative z-10">
+                <div 
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-black text-lg shadow-lg group-hover:scale-110 transition-transform" 
+                  style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}dd)` }}
+                >
+                  {t.avatar}
                 </div>
-                <div style={{ display: 'flex', gap: '2px', marginLeft: 'auto' }}>
-                  {[...Array(5)].map((_, si) => <Star key={si} size={13} fill={t.color} color={t.color} />)}
+                <div className="flex-1 min-w-0">
+                  <div className="font-black text-[1.1rem] text-on-surface leading-tight mb-1 truncate font-display tracking-tight">
+                    {t.author}
+                  </div>
+                  <div className="text-[0.75rem] text-on-surface-muted font-black tracking-widest uppercase truncate opacity-70">
+                    {t.role}
+                  </div>
                 </div>
               </div>
+              
+              {/* Dynamic Accent */}
+              <div 
+                className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ backgroundImage: `linear-gradient(to bottom left, ${t.color}10, transparent)` }}
+              />
             </motion.div>
           ))}
         </div>
+        
+        {/* Trust Highlight */}
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          whileInView={{ opacity: 1 }} 
+          viewport={{ once: true }}
+          className="mt-24 text-center"
+        >
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-surface-muted border border-[rgba(99,0,226,0.06)] text-[0.9rem] font-bold text-on-surface-variant">
+             <div className="flex -space-x-2">
+                {[1, 2, 3, 4].map(j => (
+                   <div key={j} className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white" />
+                ))}
+             </div>
+             Join 50+ founders who trust our engineering core.
+          </div>
+        </motion.div>
       </div>
-
-      <style jsx>{`
-        .testimonials-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-        @media (min-width: 640px) {
-          section { padding-left: 1.75rem; padding-right: 1.75rem; }
-          .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        }
-        @media (min-width: 1024px) {
-          .testimonials-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        }
-      `}</style>
     </section>
   );
 };

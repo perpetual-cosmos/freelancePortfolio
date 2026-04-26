@@ -34,123 +34,67 @@ const TrustPulse = () => {
   const pulse = pulses[index];
 
   return (
-    <>
-      <div className="tp-wrapper">
-        <AnimatePresence>
-          {isVisible && (
-            <motion.div
-              initial={{ opacity: 0, x: -40, scale: 0.92 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -20, scale: 0.92 }}
-              transition={{ type: 'spring', damping: 22, stiffness: 300 }}
-              className="tp-card"
-            >
-              {/* Icon + content row */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                <div className="tp-icon" style={{ background: `${pulse.color}15`, color: pulse.color }}>
-                  {pulse.icon}
+    <div className="fixed bottom-6 left-6 sm:bottom-8 sm:left-8 min-[360px]:bottom-4 min-[360px]:left-4 z-[9998]">
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0, x: -40, scale: 0.92 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -20, scale: 0.92 }}
+            transition={{ type: 'spring', damping: 22, stiffness: 300 }}
+            className="p-3.5 sm:px-[1.1rem] sm:py-4 rounded-[1.25rem] shadow-lg border border-white/50 bg-white/82 backdrop-blur-xl relative overflow-hidden w-[min(280px,calc(100vw-3rem))] sm:w-[300px]"
+          >
+            {/* Icon + content row */}
+            <div className="flex items-start gap-3">
+              <div 
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-[10px] sm:rounded-[11px] flex items-center justify-center shrink-0"
+                style={{ background: `${pulse.color}15`, color: pulse.color }}
+              >
+                {pulse.icon}
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <div className="flex justify-between items-center mb-0.5 gap-2">
+                  <span className="text-[0.65rem] sm:text-[0.7rem] font-extrabold uppercase tracking-widest whitespace-nowrap" style={{ color: pulse.color }}>
+                    Verified Activity
+                  </span>
+                  <span className="text-[0.65rem] sm:text-[0.7rem] text-on-surface-muted font-semibold whitespace-nowrap">
+                    {pulse.time}
+                  </span>
                 </div>
-
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem', gap: '0.5rem' }}>
-                    <span className="tp-label" style={{ color: pulse.color }}>Verified Activity</span>
-                    <span className="tp-time">{pulse.time}</span>
-                  </div>
-                  <div className="tp-text">{pulse.text}</div>
+                <div className="text-[0.82rem] sm:text-[0.88rem] font-bold text-on-surface leading-snug">
+                  {pulse.text}
                 </div>
-
-                <button
-                  onClick={() => setIsVisible(false)}
-                  style={{ background: 'none', border: 'none', color: 'var(--on-surface-muted)', cursor: 'pointer', fontSize: '1.1rem', lineHeight: 1, padding: '0 0.15rem', flexShrink: 0 }}
-                  aria-label="Dismiss"
-                >
-                  ×
-                </button>
               </div>
 
-              {/* Progress bar */}
-              <div style={{ height: '3px', width: '100%', background: 'rgba(0,0,0,0.06)', borderRadius: '2px', overflow: 'hidden', marginTop: '0.75rem' }}>
-                <motion.div
-                  initial={{ width: '100%' }}
-                  animate={{ width: '0%' }}
-                  transition={{ duration: DURATION / 1000, ease: 'linear' }}
-                  style={{ height: '100%', background: pulse.color }}
-                />
-              </div>
+              <button
+                onClick={() => setIsVisible(false)}
+                className="bg-none border-none text-on-surface-muted cursor-pointer text-[1.1rem] leading-none px-0.5 shrink-0 hover:text-on-surface transition-colors"
+                aria-label="Dismiss"
+              >
+                ×
+              </button>
+            </div>
 
-              {/* Watermark */}
-              <div style={{ position: 'absolute', top: -8, right: -8, opacity: 0.07, pointerEvents: 'none' }}>
-                <ShieldCheck size={68} color="var(--primary)" />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+            {/* Progress bar */}
+            <div className="h-[3px] w-full bg-black/5 rounded-[2px] overflow-hidden mt-3">
+              <motion.div
+                initial={{ width: '100%' }}
+                animate={{ width: '0%' }}
+                transition={{ duration: DURATION / 1000, ease: 'linear' }}
+                className="h-full"
+                style={{ background: pulse.color }}
+              />
+            </div>
 
-      <style jsx>{`
-        .tp-wrapper {
-          position: fixed;
-          bottom: 1.5rem;
-          left: 1.5rem;
-          z-index: 9998;
-        }
-        .tp-card {
-          padding: 0.85rem 1rem;
-          border-radius: 1.25rem;
-          box-shadow: 0 16px 40px rgba(0,0,0,0.1);
-          border: 1px solid rgba(255,255,255,0.5);
-          background: rgba(255,255,255,0.82);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          position: relative;
-          overflow: hidden;
-          width: min(280px, calc(100vw - 3rem));
-        }
-        .tp-icon {
-          width: 36px;
-          height: 36px;
-          border-radius: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        .tp-label {
-          font-size: 0.65rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          white-space: nowrap;
-        }
-        .tp-time {
-          font-size: 0.65rem;
-          color: var(--on-surface-muted);
-          font-weight: 600;
-          white-space: nowrap;
-        }
-        .tp-text {
-          font-size: 0.82rem;
-          font-weight: 700;
-          color: var(--on-surface);
-          line-height: 1.4;
-        }
-
-        @media (min-width: 640px) {
-          .tp-wrapper { bottom: 2rem; left: 2rem; }
-          .tp-card {
-            width: 300px;
-            padding: 1rem 1.1rem;
-          }
-          .tp-icon { width: 40px; height: 40px; border-radius: 11px; }
-          .tp-label, .tp-time { font-size: 0.7rem; }
-          .tp-text { font-size: 0.88rem; }
-        }
-
-        @media (max-width: 360px) {
-          .tp-wrapper { bottom: 1rem; left: 1rem; }
-        }
-      `}</style>
-    </>
+            {/* Watermark */}
+            <div className="absolute -top-2 -right-2 opacity-[0.07] pointer-events-none">
+              <ShieldCheck size={68} className="text-primary" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
