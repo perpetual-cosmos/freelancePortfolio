@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Space_Grotesk, Manrope } from 'next/font/google';
 import WhatsAppCTA from "@/components/widgets/WhatsAppCTA";
 import TrustPulse from "@/components/widgets/TrustPulse";
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
 export const metadata: Metadata = {
-  title: "TheUnipick | Full-Stack Web & AI Development Studio — India",
-  description: "TheUnipick is a full-spectrum development studio based in India. From React & Next.js frontends to AI solutions, mobile apps, and cloud DevOps — we build production-grade digital products for startups and growing businesses.",
+  title: "Tarun Singh | Full-Stack Developer & SEO Specialist — I Build Websites That Rank, Convert & Scale",
+  description: "Full-stack web developer specializing in Next.js, Shopify, WordPress, and AI automations. 10+ live products shipped. 70+ countries reached. Get a free website audit today.",
 };
 
 const jsonLd = {
@@ -38,7 +49,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body style={{ margin: 0, padding: 0 }}>
+      <body className={`${spaceGrotesk.variable} ${manrope.variable} antialiased`} style={{ margin: 0, padding: 0 }}>
         {children}
         <WhatsAppCTA />
         <TrustPulse />

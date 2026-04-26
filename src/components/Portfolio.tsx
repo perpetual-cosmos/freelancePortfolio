@@ -7,40 +7,47 @@ import {
   Code2, Share2, Terminal, Info
 } from 'lucide-react';
 import { GithubLogo as Github } from '@phosphor-icons/react';
+import Link from 'next/link';
 
 const projects = [
   {
-    id: "DEP-042",
-    title: "FinEdge Analytics",
-    category: "FINTECH • AI CORE",
+    id: "PRJ-001",
+    slug: "biryanibabu-website",
+    title: "Biryani Babu",
+    category: "FULL STACK • E-COMMERCE",
     year: "2024",
-    desc: "A high-performance financial intelligence platform processing 2M+ transactions/sec. Engineered with a focus on sub-10ms predictive modeling and institutional security.",
-    stats: [{ label: "Throughput", value: "2M/s" }, { label: "Latency", value: "8.5ms" }],
-    image: "/portfolio_fintech.png",
-    color: "#6300e2",
-    tags: ["Next.js 15", "Go", "Python", "AWS"]
-  },
-  {
-    id: "DEP-089",
-    title: "LuxeCart Global",
-    category: "E-COMMERCE • SCALE",
-    year: "2023",
-    desc: "Redefining digital luxury through hyper-personalized headless commerce. Featuring ultra-fast product discovery and frictionless checkout for global markets.",
-    stats: [{ label: "Conversion", value: "+32%" }, { label: "Load Time", value: "0.4s" }],
-    image: "/portfolio_ecommerce.png",
+    desc: "Kolkata's 1st Biryani QSR - Authentic Barrackpore & Delhi Flavors.",
+    stats: [{ label: "Stack", value: "React" }, { label: "Type", value: "QSR" }],
+    image: "/projects/biriyanibabu.webp",
     color: "#d946ef",
-    tags: ["React Native", "Node.js", "Redis", "Stripe"]
+    tags: ["React", "Vite", "Styled-Components", "TypeScript"],
+    link: "https://biryanibabu.in/"
   },
   {
-    id: "DEP-112",
-    title: "MediSync Cloud",
-    category: "HEALTHCARE • SAAS",
+    id: "PRJ-002",
+    slug: "blackart-tattoo-studio",
+    title: "BlackArt Tattoo Studio",
+    category: "FULL STACK • BOOKING",
+    year: "2024",
+    desc: "Premier Tattoo & Piercing Studio Website in Udaipur. Highly converting premium website with elegant user experience.",
+    stats: [{ label: "Stack", value: "Next.js" }, { label: "Type", value: "Studio" }],
+    image: "/projects/BlackArtTattoo.webp",
+    color: "#6300e2",
+    tags: ["React", "Next.js", "Tailwind", "TypeScript"],
+    link: "https://www.blackarttattoo.in/"
+  },
+  {
+    id: "PRJ-003",
+    slug: "SaaS-Innovation-Platform",
+    title: "Creative Agency",
+    category: "FRONTEND • PERFORMANCE",
     year: "2023",
-    desc: "Mission-critical healthcare ecosystem connecting 500+ clinics. HIPAA-compliant architecture with integrated AI diagnostic assistance and encrypted record sync.",
-    stats: [{ label: "Nodes", value: "500+" }, { label: "Security", value: "AES-256" }],
-    image: "/portfolio_ai_healthcare.png",
+    desc: "Award-winning creative agency website with stunning performance and smooth animations.",
+    stats: [{ label: "Stack", value: "WordPress" }, { label: "Type", value: "Agency" }],
+    image: "/projects/Creative-agency.webp",
     color: "#2dd4bf",
-    tags: ["React", "PostgreSQL", "Docker", "Go"]
+    tags: ["Wordpress", "PHP", "MySQL"],
+    link: "https://www.innovacient.com/"
   }
 ];
 
@@ -76,7 +83,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
           <motion.div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative perspective-[2000px] group/img"
+            className="relative group/img"
+            style={{ perspective: '2000px' }}
           >
             {/* Main Image Container */}
             <motion.div
@@ -92,12 +100,12 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
               {/* Hover Overlay Detail */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 p-12 flex flex-col justify-end">
                 <div className="flex gap-4">
-                  <button className="p-4 rounded-full bg-white text-black hover:bg-primary hover:text-white transition-all shadow-2xl scale-0 group-hover/img:scale-100 duration-500 delay-100">
+                  <a href={project.link} target="_blank" rel="noreferrer" className="p-4 rounded-full bg-white text-black hover:bg-primary hover:text-white transition-all shadow-2xl scale-0 group-hover/img:scale-100 duration-500 delay-100">
                     <ExternalLink size={24} />
-                  </button>
-                  <button className="p-4 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-black transition-all shadow-2xl scale-0 group-hover/img:scale-100 duration-500 delay-200">
+                  </a>
+                  <a href={project.link} target="_blank" rel="noreferrer" className="p-4 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-black transition-all shadow-2xl scale-0 group-hover/img:scale-100 duration-500 delay-200">
                     <Github size={24} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -167,16 +175,25 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
             ))}
           </div>
 
-          <div className="pt-10 flex items-center gap-10">
-            <button className="relative px-12 py-5 bg-white text-black rounded-full font-black text-[0.9rem] uppercase tracking-[0.2em] shadow-2xl hover:bg-primary hover:text-white transition-all duration-500 hover:-translate-y-1 group/btn overflow-hidden">
+          <div className="pt-10 flex flex-wrap items-center gap-6 lg:gap-10">
+            {project.slug && (
+              <Link href={`/case-study/${project.slug}`} className="relative px-8 lg:px-12 py-5 bg-white text-black rounded-full font-black text-[0.8rem] lg:text-[0.9rem] uppercase tracking-[0.2em] shadow-2xl hover:bg-primary hover:text-white transition-all duration-500 hover:-translate-y-1 group/btn overflow-hidden block">
+                <span className="relative z-10 flex items-center gap-3">
+                  <Layout size={20} /> View Case Study
+                </span>
+                <div className="absolute inset-0 bg-black/10 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover/btn:translate-x-[150%]" />
+              </Link>
+            )}
+
+            <a href={project.link} target="_blank" rel="noreferrer" className={`relative px-8 lg:px-12 py-5 ${project.slug ? 'bg-white/10 text-white hover:bg-white/20' : 'bg-white text-black hover:bg-primary hover:text-white'} rounded-full font-black text-[0.8rem] lg:text-[0.9rem] uppercase tracking-[0.2em] shadow-2xl transition-all duration-500 hover:-translate-y-1 group/btn overflow-hidden block`}>
               <span className="relative z-10 flex items-center gap-3">
                 View Build <ArrowRight size={20} className="transition-transform group-hover/btn:translate-x-2" />
               </span>
               <div className="absolute inset-0 bg-black/10 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover/btn:translate-x-[150%]" />
-            </button>
+            </a>
 
-            <div className="flex gap-6 items-center text-white/40">
-              <a href="#" className="hover:text-primary transition-colors"><Info size={24} /></a>
+            <div className="flex gap-6 items-center text-white/40 ml-auto lg:ml-0">
+              <a href={project.link} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors"><ExternalLink size={24} /></a>
               <a href="#" className="hover:text-primary transition-colors"><Share2 size={24} /></a>
             </div>
           </div>
@@ -186,11 +203,14 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
   );
 };
 
-const Portfolio = () => {
+const Portfolio = ({ showCTA = true }: { showCTA?: boolean }) => {
   return (
     <section id="portfolio" className="bg-[#050505] py-32 lg:py-64 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:100px_100px]" />
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+        style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '100px 100px' }}
+      />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
@@ -209,40 +229,32 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-[clamp(3.5rem,10vw,8rem)] font-extrabold tracking-tighter leading-[0.9] text-white font-display"
           >
-            Case Studies in <br /> <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">Full-Stack Scale.</span>
+            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">Featured Work.</span>
           </motion.h2>
         </header>
 
-        <div className="space-y-32 lg:space-y-56">
+        <div className="space-y-16 lg:space-y-32">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
 
-        {/* Call to Action Repository */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="mt-56 p-12 lg:p-24 rounded-[4rem] bg-white/[0.03] border border-white/10 relative overflow-hidden group"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-
-          <div className="relative z-10 flex flex-col items-center text-center max-w-[800px] mx-auto">
-            <div className="w-20 h-20 rounded-[2rem] bg-primary flex items-center justify-center text-white mb-10 shadow-2xl shadow-primary/40">
-              <Database size={40} />
-            </div>
-            <h3 className="text-[2.5rem] lg:text-[4rem] font-black text-white leading-none tracking-tighter mb-8 font-display">
-              Ready to explore our full system archive?
-            </h3>
-            <p className="text-white/60 text-[1.2rem] mb-12 max-w-[600px]">
-              Access our detailed architecture logs, code snippets, and deployment strategies across 20+ production systems.
-            </p>
-            <button className="px-16 py-6 bg-white text-black rounded-full font-black text-[1rem] uppercase tracking-[0.3em] hover:bg-primary hover:text-white transition-all duration-500 shadow-2xl">
-              Access Repository
-            </button>
-          </div>
-        </motion.div>
+        {/* Explore All Projects Button */}
+        {showCTA && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-12 lg:mt-24 pb-12"
+          >
+            <Link href="/portfolio" className="relative px-12 py-5 bg-white text-black rounded-full font-black text-[1rem] uppercase tracking-[0.2em] shadow-2xl hover:bg-primary hover:text-white transition-all duration-500 hover:-translate-y-1 group overflow-hidden inline-flex items-center gap-3">
+              <span className="relative z-10 flex items-center gap-3">
+                Explore All Projects <ArrowRight size={20} className="transition-transform group-hover:translate-x-2" />
+              </span>
+              <div className="absolute inset-0 bg-black/10 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
+            </Link>
+          </motion.div>
+        )}
       </div>
     </section>
   );

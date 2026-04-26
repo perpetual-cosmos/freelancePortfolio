@@ -1,0 +1,402 @@
+export interface CaseStudy {
+  id: string;
+  title: string;
+  client: string;
+  industry: string;
+  tagline: string;
+  heroImage: string;
+  stats: { label: string; value: string }[];
+  challenge: {
+    description: string;
+    painPoints: string[];
+  };
+  approach: {
+    phase: string;
+    description: string;
+    duration: string;
+  }[];
+  outcomes: string[];
+  technologies: string[];
+  testimonial: {
+    quote: string;
+    author: string;
+    role: string;
+    image: string;
+  };
+  gallery: string[];
+}
+
+export const caseStudies: Record<string, CaseStudy> = {
+  "biryanibabu-website": {
+    id: "biryanibabu-website",
+    title: "Biryani Babu",
+    client: "Biryani Babu",
+    industry: "Food & Restaurant",
+    tagline: "Kolkata's 1st Biryani QSR - Local SEO Dominance",
+    heroImage: "/case-studies/biriyanibabu-CggFjvPm.webp",
+    stats: [
+      { label: "Search Ranking", value: "#1 Local" },
+      { label: "Online Orders", value: "+300%" },
+      { label: "Mobile Conversion", value: "+180%" },
+    ],
+    challenge: {
+      description: "Biryani Babu needed to transform their website into the #1 ranked online destination for biryani and kebab lovers in Kolkata, attracting high-intent local customers and converting them into foot traffic and online orders.",
+      painPoints: [
+        "Lacked static, powerful titles and indexable menu content",
+        "High-quality cinematic images were slowing down mobile load times",
+        "Missing critical Restaurant and Menu JSON-LD Schema markup",
+        "No natural integration of local 'near me' keywords"
+      ],
+    },
+    approach: [
+      {
+        phase: "On-Page SEO",
+        description: "Overhauled titles, meta descriptions, and heading tags to target specific, high-value local keywords in Rajarhat and New Town.",
+        duration: "1 week",
+      },
+      {
+        phase: "Content Integration",
+        description: "Integrated indexable menu content onto the main page with a 'Signature Dishes' section and wove 'near me' keywords into the copy.",
+        duration: "2 weeks",
+      },
+      {
+        phase: "Schema Markup",
+        description: "Implemented advanced Restaurant, Menu, and Review Snippet structured data to enrich search results.",
+        duration: "1 week",
+      },
+      {
+        phase: "Performance tuning",
+        description: "Converted high-quality images to WebP format, optimized scripts, and ensured seamless mobile usability.",
+        duration: "1 week",
+      },
+    ],
+    outcomes: [
+      "Dominated local search results for 'Best Biryani in Kolkata'",
+      "300% increase in online orders and foot traffic",
+      "Enhanced social proof through prominent, schema-marked reviews",
+      "Lightning-fast mobile load times and seamless booking experience",
+    ],
+    technologies: ["React", "Vite", "Styled-Components", "TypeScript", "Advanced SEO Schema"],
+    testimonial: {
+      quote: "The SEO overhaul changed everything. We're now the top result for biryani in Rajarhat, and our online orders have never been higher!",
+      author: "Rahul Verma",
+      role: "Verified Diner",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: [
+      "/case-studies/biriyanibabumenu-CyXOLQob.webp",
+      "/case-studies/biryanibabufoodmenu-DdVwKquE.webp",
+      "/case-studies/biriyanibabufooter-CNp1aHZH.webp"
+    ],
+  },
+  "blackart-tattoo-studio": {
+    id: "blackart-tattoo-studio",
+    title: "BlackArt Tattoo Studio",
+    client: "Artist Nirmal",
+    industry: "Retail & Services",
+    tagline: "Local SEO dominance and high-converting studio presence",
+    heroImage: "/case-studies/blackarttattoo-CLnulL0F.webp",
+    stats: [
+      { label: "Search Visibility", value: "Top 3" },
+      { label: "Page Speed", value: "98/100" },
+      { label: "Client Inquiries", value: "+310%" },
+    ],
+    challenge: {
+      description: "BlackArt Tattoos needed a digital presence that matched their international hygiene standards and artistic excellence. The goal was to dominate local search in Udaipur and convert tourists into clients.",
+      painPoints: [
+        "Need for premium, trust-building visual identity",
+        "High competition in local tattoo service search",
+        "Requirement to showcase hygiene and safety protocols",
+        "Mobile-first audience needing quick booking access"
+      ],
+    },
+    approach: [
+      {
+        phase: "Identity",
+        description: "Defined a clean, sophisticated brand voice emphasizing safety and custom artistry.",
+        duration: "1 week",
+      },
+      {
+        phase: "UX Design",
+        description: "Created artist-focused layouts with high-impact visuals and streamlined CTAs.",
+        duration: "2 weeks",
+      },
+      {
+        phase: "SEO & CRO",
+        description: "Implemented advanced LocalBusiness schema and optimized content for high-intent keywords.",
+        duration: "2 weeks",
+      },
+      {
+        phase: "Launch",
+        description: "Deployed on high-performance infrastructure with real-time analytics.",
+        duration: "1 week",
+      },
+    ],
+    outcomes: [
+      "Secured #1 ranking for 'Tattoo Studio in Udaipur' keywords",
+      "310% increase in monthly appointment inquiries",
+      "Perfect Core Web Vitals score for mobile experience",
+      "Enhanced social proof through integrated testimonial system",
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Local SEO"],
+    testimonial: {
+      quote: "My digital presence now perfectly reflects the quality of work we do at the studio. The increase in international clients has been phenomenal.",
+      author: "Artist Nirmal",
+      role: "Founder, BlackArt Tattoos",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: [
+      "/case-studies/blackarttattoo-CLnulL0F.webp",
+      "/case-studies/blackarttattoo2-ClIUgKkV.webp",
+      "/case-studies/blackarttattoo3-CnHNr91H.webp"
+    ],
+  },
+  "alexink-tattoo-website": {
+    id: "alexink-tattoo-website",
+    title: "Alexink Tattoo Website",
+    client: "Artishtic Expressions",
+    industry: "Arts & Lifestyle",
+    tagline: "A bold digital presence that boosted bookings by 240%",
+    heroImage: "/case-studies/TattooWebsite-BCwhkFr1.webp",
+    stats: [
+      { label: "Conversion Rate", value: "+240%" },
+      { label: "Page Load Time", value: "1.2s" },
+      { label: "Mobile Traffic", value: "+180%" },
+    ],
+    challenge: {
+      description: "Alexink, a boutique tattoo studio, had a dated website that didn’t reflect the artistry or professionalism of their brand. Slow load times and poor mobile usability meant most visitors left before booking a session.",
+      painPoints: [
+        "Outdated design that didn’t represent the studio’s creative quality",
+        "8+ second load times leading to high bounce rates",
+        "No online booking or portfolio filtering",
+        "Inconsistent experience across devices"
+      ],
+    },
+    approach: [
+      {
+        phase: "Discovery",
+        description: "Interviewed artists and clients to understand the booking journey and visual expectations.",
+        duration: "2 weeks",
+      },
+      {
+        phase: "Design",
+        description: "Developed a modern, tattoo-inspired aesthetic with a focus on showcasing artwork and streamlining bookings.",
+        duration: "3 weeks",
+      },
+      {
+        phase: "Development",
+        description: "Built a fully responsive React website with integrated booking and gallery systems, optimized for performance.",
+        duration: "8 weeks",
+      },
+      {
+        phase: "Testing & Launch",
+        description: "Conducted usability testing, optimized SEO, and launched with a marketing campaign targeting local audiences.",
+        duration: "2 weeks",
+      },
+    ],
+    outcomes: [
+      "Page load time reduced from 8s to 1.2s",
+      "Online bookings increased by 240%",
+      "Mobile bounce rate dropped by 70%",
+      "Customers spent 3x longer exploring artist portfolios",
+    ],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Stripe", "Node.js", "PostgreSQL"],
+    testimonial: {
+      quote: "The new site captures who we are perfectly. Clients now find us easily, and bookings have skyrocketed. The whole process was smooth and professional.",
+      author: "Sarah Mitchell",
+      role: "Founder, Alexink Tattoo Studio",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: [
+      "/case-studies/TattooWebsite1-DWaV4DZc.webp",
+      "/case-studies/TattooWebsite1-DWaV4DZc.webp",
+      "/case-studies/TatooWebsitec-BOa8FhS7.webp"
+    ],
+  },
+  "inkmaster-tattoo-website": {
+    id: "inkmaster-tattoo-website",
+    title: "Inkmaster Tattoo Website",
+    client: "Inkmaster Tattoo",
+    industry: "Art & Lifestyle",
+    tagline: "Redesigned UX that turned visitors into loyal clients",
+    heroImage: "/case-studies/TattooWebsite2-D0LnzfOo.webp",
+    stats: [
+      { label: "Website Performance", value: "96%" },
+      { label: "Average Session Time", value: "+180%" },
+      { label: "Booking increased", value: "4X" },
+    ],
+    challenge: {
+      description: "Inkmaster Tattoo had a strong reputation offline but lacked an online identity. They do not have any site which reflect their artistry, and failed to convert visitors into bookings.",
+      painPoints: [
+        "Strict demand for a visually rich, artist-focused design",
+        "No reference were provided by the client ",
+        "Low budget and tight timeline",
+        "SEO visibility"
+      ],
+    },
+    approach: [
+      {
+        phase: "User Research",
+        description: "Analyzed competitor sites, gathered client feedback, and reviewed analytics to identify key pain points.",
+        duration: "2 Days",
+      },
+      {
+        phase: "UX Design",
+        description: "Created a clean, immersive design that highlighted each artist’s work with intuitive navigation.",
+        duration: "2 days",
+      },
+      {
+        phase: "Development",
+        description: "Built a fast, mobile-optimized site with a real-time booking calendar and easy content management tools.",
+        duration: "1 weeks",
+      },
+      {
+        phase: "Testing & Optimization",
+        description: "Launched a pilot version, monitored engagement metrics, and refined based on feedback.",
+        duration: "2 days",
+      },
+    ],
+    outcomes: [
+      "Good looking portfolio website within 2 weeks",
+      "Bookings increased fivefold within three months",
+      "Customer satisfaction rated 4.8/5",
+      "Booking increase 4times",
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "Vercel", "MongoDB", "Cloudinary"],
+    testimonial: {
+      quote: "We finally have a site that represents our art. Clients now comment on how easy it is to browse and book, it’s been a complete transformation.",
+      author: "Aditya Ranjan",
+      role: "Owner, Inkmaster Tattoo",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: [
+      "/case-studies/TattooWebsite2a-zznwtKwN.webp",
+      "/case-studies/TattooWebsite2b-sUHHJZOt.webp",
+      "/case-studies/TattooWebsite2c-BeHlvRw3.webp"
+    ],
+  },
+  "cozycafe-branding-website": {
+    id: "cozycafe-branding-website",
+    title: "CozyCafe Branding & Website",
+    client: "CozyCafe",
+    industry: "Food & Restaurant",
+    tagline: "From local cafe to community favorite through authentic branding",
+    heroImage: "/case-studies/CozyCafe-CBA3aU9L.webp",
+    stats: [
+      { label: "Foot Traffic", value: "+220%" },
+      { label: "Online Orders", value: "+340%" },
+      { label: "Social Engagement", value: "+180%" },
+    ],
+    challenge: {
+      description: "CozyCafe, a small family-owned coffee shop, struggled to attract new customers despite great products. Their old branding felt inconsistent and their website wasn’t optimized for local search or online ordering.",
+      painPoints: [
+        "Outdated logo and color palette",
+        "Unclear menu presentation",
+        "No online ordering or delivery integration",
+        "Low visibility in Google search results"
+      ],
+    },
+    approach: [
+      {
+        phase: "Brand Discovery",
+        description: "Worked closely with the owners to define their identity and visual direction.",
+        duration: "2 weeks",
+      },
+      {
+        phase: "Design & Branding",
+        description: "Developed a warm, inviting brand identity and redesigned all digital and print assets.",
+        duration: "3 weeks",
+      },
+      {
+        phase: "Website Development",
+        description: "Built a user-friendly website with integrated online ordering, responsive design, and SEO optimization.",
+        duration: "7 weeks",
+      },
+      {
+        phase: "Launch & Marketing",
+        description: "Introduced the new brand through social campaigns and local SEO improvements.",
+        duration: "3 weeks",
+      },
+    ],
+    outcomes: [
+      "Local search visibility tripled within two months",
+      "Online orders increased by 340%",
+      "Customer loyalty program sign-ups up 200%",
+      "Monthly revenue increased by 60%",
+    ],
+    technologies: ["React", "Next.js", "Tailwind CSS", "Firebase", "Stripe", "Google Maps API"],
+    testimonial: {
+      quote: "Our cafe finally feels like us — warm, welcoming, and professional. Customers tell us they found us online, which never happened before. We couldn’t be happier.",
+      author: "Rahul Verma",
+      role: "Owner, Cafe",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: [
+      "/case-studies/Cozycafea-CWs9pQjz.webp",
+      "/case-studies/CozyCafeb-BY2ZsLmu.webp",
+      "/case-studies/CozyCafec-_5AIYppe.webp"
+    ],
+  },
+  "SaaS-Innovation-Platform": {
+    id: "SaaS-Innovation-Platform",
+    title: "SaaS Innovation Platform",
+    client: "TechNova Systems",
+    industry: "Technology & Software",
+    tagline: "A scalable SaaS platform built for next-generation startups",
+    heroImage: "/case-studies/innovation-D_EP4z-1.webp",
+    stats: [
+      { label: "Deployment Speed", value: "4x Faster" },
+      { label: "Uptime", value: "99.9%" },
+      { label: "Customer Growth", value: "+320%" },
+    ],
+    challenge: {
+      description: "TechNova Systems wanted to modernize their legacy SaaS infrastructure to better support startups launching data-driven products. Their existing system lacked scalability, intuitive UX, and analytics clarity.",
+      painPoints: [
+        "Complex onboarding process",
+        "Limited scalability under heavy load",
+        "Fragmented data visualization tools",
+        "High customer churn rate"
+      ],
+    },
+    approach: [
+      {
+        phase: "Research & Architecture",
+        description: "Evaluated existing infrastructure, mapped performance bottlenecks, and designed a scalable microservice architecture.",
+        duration: "4 weeks",
+      },
+      {
+        phase: "UI/UX Redesign",
+        description: "Simplified workflows and introduced modular dashboards for better data insights.",
+        duration: "5 weeks",
+      },
+      {
+        phase: "Backend Development",
+        description: "Implemented Node.js and Python-based microservices with Redis caching and WebSocket for real-time updates.",
+        duration: "10 weeks",
+      },
+      {
+        phase: "Launch & Optimization",
+        description: "Conducted beta rollout, integrated feedback loops, and set up automated monitoring and deployment pipelines.",
+        duration: "3 weeks",
+      },
+    ],
+    outcomes: [
+      "Onboarding time reduced from 14 days to 3 days",
+      "Platform uptime improved to 99.9%",
+      "Customer growth increased by 320%",
+      "Support requests decreased by 55%",
+    ],
+    technologies: ["React", "TypeScript", "Node.js", "Redis", "Python", "AWS"],
+    testimonial: {
+      quote: "The upgrade completely changed how our platform performs. Our clients now experience faster, smoother service, and we’ve been able to scale without downtime.",
+      author: "Amit Patel",
+      role: "CTO, TechNova Systems",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: [
+      "/case-studies/innovationa-CHi1-TrY.webp",
+      "/case-studies/innovationb-CbxODil5.webp",
+      "/case-studies/innovationc-B0Jj_VJh.webp"
+    ],
+  }
+};

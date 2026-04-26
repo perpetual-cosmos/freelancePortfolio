@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="Qnubt_dnH3kzXRbxcWz5s_JTvN3hiEiT7YZ8dPnLPus" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Hire Top Freelance Web Developer in India | TheUnipick - Get Your Website Built</title>
+  <meta name="description"
+    content="Want a professional website built? Get a free consultation from a top Indian freelance web developer. SEO-optimized, modern websites for startups and small businesses. Contact today!" />
+  <meta name="keywords"
+    content="Tarun Singh, full stack developer, hire web developer, freelance web developer India, build a website, React developer, SEO-friendly website, custom web development India, web developer Kanpur" />
+  <meta name="author" content="Tarun Singh" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Tarun Singh - Full Stack Web Developer" />
+  <meta property="og:description"
+    content="Looking to build a website? Work with Tarun Singh, a freelance full stack developer who specializes in React, GSAP, and Three.js." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://theunipick.vercel.app/" />
+  <meta property="og:image" content="https://theunipick.vercel.app/og-image.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tarun Singh - Full Stack Developer | Build Your Website" />
+  <meta name="twitter:description"
+    content="Hire Tarun Singh to create modern, high-performance websites. Expert in React, GSAP, and Three.js." />
+  <meta name="twitter:image" content="https://theunipick.vercel.app/og-image.webp" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script type="module" crossorigin src="/assets/index-DX2vxRSk.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B99Xsixy.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>

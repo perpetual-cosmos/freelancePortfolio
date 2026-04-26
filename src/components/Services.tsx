@@ -10,58 +10,69 @@ import {
 const services = [
   {
     id: 'SVC-001',
-    title: 'Frontend Architecture',
-    desc: 'Engineering sub-second interfaces with atomic state precision and edge-rendered logic.',
+    title: 'Web Development',
+    desc: 'High-performance Next.js and MERN stack applications built for speed and scale.',
     icon: <Code2 />,
     color: '#6300e2',
     size: 'large',
-    detail: 'We specialize in Next.js 15, Turbopack, and custom React hook systems that handle extreme concurrency.',
-    metric: { label: 'INTERACTION_FID', value: '12ms' },
-    tags: ['Next.js 15', 'TypeScript', 'Zustand']
+    detail: 'I build production-ready web products—from seed-stage MVPs to Series A scale. Focus on Next.js 15, Supabase, and custom API integrations.',
+    metric: { label: 'PAGE_LOAD', value: '<1s' },
+    tags: ['Next.js 15', 'MERN Stack', 'TypeScript']
   },
   {
     id: 'SVC-002',
-    title: 'Distributed Systems',
-    desc: 'Elastic Node.js environments with event-driven resilience.',
+    title: 'Shopify Development',
+    desc: 'Custom Shopify themes and apps for D2C brands that actually convert.',
     icon: <Server />,
     color: '#10b981',
     size: 'small',
-    detail: 'Microservice orchestration with gRPC and automated elastic scaling.',
-    metric: { label: 'UPTIME_SLA', value: '99.9%' },
-    tags: ['NestJS', 'Postgres']
+    detail: 'Specializing in custom Liquid themes and headless Shopify builds. I optimize for conversion and page speed (90+ score guaranteed).',
+    metric: { label: 'CONVERSION', value: '+40%' },
+    tags: ['Shopify Liquid', 'Headless', 'D2C']
   },
   {
     id: 'SVC-003',
-    title: 'Cognitive Pipelines',
-    desc: 'Production-ready LLM agents and RAG infrastructure.',
+    title: 'AI Automation',
+    desc: 'Eliminate repetitive tasks with custom n8n and Make.com workflows.',
     icon: <Brain />,
     color: '#8b5cf6',
     size: 'small',
-    detail: 'Integrating vector embeddings with real-time data ingestion for context-aware AI.',
-    metric: { label: 'INFERENCE', value: '0.8s' },
-    tags: ['OpenAI', 'Pinecone']
+    detail: 'I build automated pipelines for lead routing, WhatsApp bots, and CRM syncing. Save 20+ hours of manual work every week.',
+    metric: { label: 'TIME_SAVED', value: '20h/wk' },
+    tags: ['n8n', 'Make.com', 'APIs']
   },
   {
     id: 'SVC-004',
-    title: 'Cloud Core / DevOps',
-    desc: 'Immutable infrastructure with zero-downtime CI/CD pipelines.',
-    icon: <Cloud />,
-    color: '#0ea5e9',
-    size: 'medium',
-    detail: 'Terraform-led AWS deployments with automated rollback and comprehensive monitoring.',
-    metric: { label: 'BUILD_TIME', value: '140s' },
-    tags: ['AWS', 'Terraform']
-  },
-  {
-    id: 'SVC-005',
-    title: 'System Strategy',
-    desc: 'Strategic refactoring and technical debt elimination for enterprises.',
+    title: 'SEO & Performance',
+    desc: 'Data-driven SEO strategies that drive organic revenue, not just traffic.',
     icon: <BarChart3 />,
     color: '#f43f5e',
     size: 'medium',
-    detail: 'Bridging the gap between business vision and technical execution through rigorous audits.',
-    metric: { label: 'LEGACY_REDUCTION', value: '65%' },
-    tags: ['Audit', 'Scale']
+    detail: 'Technical SEO audits, keyword clustering, and content strategy designed to rank on Page 1 for high-intent commercial keywords.',
+    metric: { label: 'ORGANIC_LIFT', value: '340%' },
+    tags: ['Technical SEO', 'Audit', 'Growth']
+  },
+  {
+    id: 'SVC-005',
+    title: 'WordPress / CMS',
+    desc: 'Secure, scalable, and easy-to-manage WordPress solutions for businesses.',
+    icon: <Globe />,
+    color: '#0ea5e9',
+    size: 'small',
+    detail: 'From custom theme development to headless WordPress setups. I ensure your CMS is a tool for growth, not a technical hurdle.',
+    metric: { label: 'SECURITY_SLA', value: '100%' },
+    tags: ['WordPress', 'Headless', 'PHP']
+  },
+  {
+    id: 'SVC-006',
+    title: 'LMS / EdTech',
+    desc: 'Custom course platforms and education portals built for engagement.',
+    icon: <Cpu />,
+    color: '#7c6fff',
+    size: 'small',
+    detail: 'Building scalable learning management systems with custom progress tracking, quizzes, and certificate generation.',
+    metric: { label: 'ENGAGEMENT', value: '85%' },
+    tags: ['EdTech', 'LMS', 'Next.js']
   },
 ];
 
@@ -91,12 +102,17 @@ const Services = () => {
       {/* Hyper-Tech Background */}
       <div className="absolute inset-0 z-0">
         {/* Base Grid (Static) */}
-        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div 
+          className="absolute inset-0 opacity-[0.07]" 
+          style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '60px 60px' }}
+        />
 
         {/* Cursor Glow Grid */}
         <motion.div
-          className="absolute inset-0 z-0 pointer-events-none opacity-40 bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:60px_60px]"
+          className="absolute inset-0 z-0 pointer-events-none opacity-40"
           style={{
+            backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
             WebkitMaskImage: useMotionTemplate`radial-gradient(450px circle at ${mouseXSpring}px ${mouseYSpring}px, black, transparent 80%)`,
             maskImage: useMotionTemplate`radial-gradient(450px circle at ${mouseXSpring}px ${mouseYSpring}px, black, transparent 80%)`
           }}
@@ -147,7 +163,7 @@ const Services = () => {
               viewport={{ once: true }}
               className="text-[clamp(3rem,8vw,6.5rem)] font-extrabold tracking-tighter leading-[0.9] text-white font-display"
             >
-              Specialized Stacks <br /> <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Engineered to Scale.</span>
+              Full-Stack <br /> <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Business Solutions.</span>
             </motion.h2>
           </div>
 

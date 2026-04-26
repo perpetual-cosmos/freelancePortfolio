@@ -197,7 +197,7 @@ export default function ServicesPage() {
       
       {/* Dynamic Header */}
       <section className="relative pt-64 pb-32 overflow-hidden bg-[#050505] noise-overlay">
-        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
         
         <div className="max-w-[1440px] mx-auto px-6 relative z-10">
           <motion.div 

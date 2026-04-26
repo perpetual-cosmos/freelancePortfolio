@@ -4,11 +4,10 @@ import { motion } from 'framer-motion';
 import { Search, PenTool, Code2, ShieldCheck, Rocket, Sparkles } from 'lucide-react';
 
 const steps = [
-  { id: '01', title: 'Architecture', desc: 'Mapping your technical ecosystem, from data schemas to cloud infrastructure.', icon: <Search size={22} /> },
-  { id: '02', title: 'Prototyping', desc: 'Low-fidelity builds to validate core logic and user flows before full engineering.', icon: <PenTool size={22} /> },
-  { id: '03', title: 'Engineering', desc: 'High-velocity sprints with Typescript-first code and daily CI/CD deployments.', icon: <Code2 size={22} /> },
-  { id: '04', title: 'Stress Testing', desc: 'Rigorous automated testing and load tests to ensure extreme production stability.', icon: <ShieldCheck size={22} /> },
-  { id: '05', title: 'Deployment', desc: 'Zero-downtime releases with automated rollback safety nets and monitoring.', icon: <Rocket size={22} /> }
+  { id: '01', title: 'Discovery Call', desc: 'A 30-min deep dive into your business goals, target audience, and technical requirements.', icon: <Search size={22} /> },
+  { id: '02', title: 'Proposal & Timeline', desc: 'A transparent breakdown of the scope, milestones, and fixed-price investment.', icon: <PenTool size={22} /> },
+  { id: '03', title: 'Build & Review', desc: 'Weekly sprints with live staging links so you see the progress in real-time.', icon: <Code2 size={22} /> },
+  { id: '04', title: 'Launch & Handover', desc: 'A smooth go-live followed by training on how to manage your new digital asset.', icon: <Rocket size={22} /> }
 ];
 
 const Process = () => {
@@ -41,7 +40,7 @@ const Process = () => {
           {/* Connecting Line (Desktop) */}
           <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-0" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-16 lg:gap-10 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-10 relative z-10">
             {steps.map((step, i) => (
               <motion.div 
                 key={i} 

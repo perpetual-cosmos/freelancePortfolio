@@ -1,34 +1,65 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
-import { ExternalLink, ArrowRight, Sparkles, Code2, Globe, Database, Cpu } from 'lucide-react';
+import { ExternalLink, ArrowRight, Sparkles, Code2, Globe, Database, Cpu, Layout } from 'lucide-react';
 import { GithubLogo as Github } from '@phosphor-icons/react';
 
 const additionalProjects = [
   {
-    title: "EcoTrack IoT",
-    category: "IoT • CLOUD • DATA",
-    image: "/project_eco.png",
-    desc: "Real-time environmental monitoring system for smart cities.",
-    metrics: "2.4M Events/Day"
+    slug: "alexink-tattoo-website",
+    title: "Tattoo Studio Web",
+    category: "FRONTEND • CREATIVE",
+    image: "/projects/TattooWebsite.webp",
+    desc: "Sleek and attractive client website for modern tattoo artists.",
+    metrics: "High Conversion",
+    link: "https://demo-tattoo-website.vercel.app/"
   },
   {
-    title: "SecureAuth Pro",
-    category: "SECURITY • DEV OPS",
-    image: "/project_auth.png",
-    desc: "Enterprise-grade authentication gateway for distributed systems.",
-    metrics: "0.2ms Auth Latency"
+    slug: "inkmaster-tattoo-website",
+    title: "Neon Tattoo Site",
+    category: "FRONTEND • STYLISH",
+    image: "/projects/TattooWebsite2.webp",
+    desc: "Modern, neon-themed stylish tattoo website with stunning visuals.",
+    metrics: "Performance",
+    link: "https://demo-tattoo-website2.vercel.app/"
   },
   {
-    title: "VocalAI Assistant",
-    category: "AI • NLP • MOBILE",
-    image: "/project_vocal.png",
-    desc: "Voice-controlled AI assistant for healthcare professionals.",
-    metrics: "94% Accuracy"
+    title: "Journal Platform",
+    category: "FULL STACK • CMS",
+    image: "/projects/Journal.webp",
+    desc: "Professional, responsive WordPress website for UJMRID academic journal.",
+    metrics: "SEO Optimized",
+    link: "https://ujmrid.com/"
+  },
+  {
+    title: "Spice E-Commerce",
+    category: "FULL STACK • E-COM",
+    image: "/projects/Spice.webp",
+    desc: "Custom WooCommerce-based B2C spice e-commerce platform.",
+    metrics: "Sales Growth",
+    link: "https://spicesusa.com/"
+  },
+  {
+    title: "Modern E-Commerce",
+    category: "FULL STACK • WEBGL",
+    image: "/projects/E-commerce.webp",
+    desc: "Interactive React e-commerce site featuring a Three.js 3D product viewer.",
+    metrics: "Immersive",
+    link: "https://ecommerce-frontend-five-sand.vercel.app/"
+  },
+  {
+    slug: "cozycafe-branding-website",
+    title: "Cozy Cafe Website",
+    category: "CREATIVE • NEXT.JS",
+    image: "/projects/CozyCafe.webp",
+    desc: "Highly converting premium website experience built for cafes.",
+    metrics: "Brand Growth",
+    link: "https://demo-cafes-website.vercel.app/"
   }
 ];
 
@@ -39,7 +70,7 @@ export default function PortfolioPage() {
       
       {/* Cinematic Header */}
       <section className="relative pt-64 pb-32 overflow-hidden border-b border-white/5 noise-overlay">
-        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
         
         <div className="max-w-[1440px] mx-auto px-6 relative z-10 text-center">
           <motion.div 
@@ -69,7 +100,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Primary Portfolio Showcase */}
-      <Portfolio />
+      <Portfolio showCTA={false} />
 
       {/* Secondary Project Grid */}
       <section className="py-32 lg:py-56 relative overflow-hidden bg-white rounded-t-[5rem] -mt-20 z-20">
@@ -98,11 +129,10 @@ export default function PortfolioPage() {
                 transition={{ delay: i * 0.1 }}
                 className="group flex flex-col bg-surface-muted border border-outline rounded-[3rem] overflow-hidden p-8 transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/20"
               >
-                <div className="relative aspect-video rounded-[2rem] overflow-hidden bg-[#0a0a0a] mb-10 shadow-xl">
-                   <div className="absolute inset-0 flex items-center justify-center text-white/5 font-black text-[3rem] font-display pointer-events-none group-hover:text-primary/10 transition-colors">
-                      {p.title.split(' ')[0]}
-                   </div>
-                   <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[0.6rem] font-black text-white/60 tracking-widest uppercase">
+                <div className="relative aspect-video rounded-[2rem] overflow-hidden bg-[#0a0a0a] mb-10 shadow-xl group/img">
+                   <img src={p.image} alt={p.title} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover/img:scale-105 group-hover/img:opacity-100 transition-all duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                   <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-[0.6rem] font-black text-white/90 tracking-widest uppercase z-10 border border-white/10">
                       {p.metrics}
                    </div>
                 </div>
@@ -114,11 +144,16 @@ export default function PortfolioPage() {
                   </div>
                   <p className="text-on-surface-variant text-[1.05rem] leading-relaxed font-medium opacity-80">{p.desc}</p>
                   
-                  <div className="pt-6 flex items-center gap-8">
-                    <a href="#" className="flex items-center gap-2 text-on-surface font-black text-[0.8rem] tracking-widest uppercase hover:text-primary transition-all">
+                  <div className="pt-6 flex flex-wrap items-center gap-6 lg:gap-8">
+                    {p.slug && (
+                      <Link href={`/case-study/${p.slug}`} className="flex items-center gap-2 text-on-surface font-black text-[0.8rem] tracking-widest uppercase hover:text-primary transition-all">
+                        Case Study <Layout size={16} />
+                      </Link>
+                    )}
+                    <a href={p.link} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-on-surface-variant font-black text-[0.8rem] tracking-widest uppercase hover:text-primary transition-all">
                       Demo <ExternalLink size={16} />
                     </a>
-                    <a href="#" className="flex items-center gap-2 text-on-surface-variant font-black text-[0.8rem] tracking-widest uppercase hover:text-primary transition-all">
+                    <a href={p.link} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-on-surface-variant font-black text-[0.8rem] tracking-widest uppercase hover:text-primary transition-all">
                       Code <Github size={16} />
                     </a>
                   </div>

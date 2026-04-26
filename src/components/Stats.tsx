@@ -24,7 +24,7 @@ const Stats = () => {
             viewport={{ once: true }}
             className="text-[clamp(2rem,4vw,3rem)] font-extrabold mb-6 tracking-tight text-on-surface leading-[1.1] font-display"
           >
-            Emphasis on Excellence, Delivered at Scale
+            Measurable Impact Across Global Markets
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -33,15 +33,15 @@ const Stats = () => {
             transition={{ delay: 0.1 }}
             className="text-on-surface-variant text-[1.1rem] leading-relaxed font-medium opacity-80"
           >
-            Our infrastructure powers millions of interactions every day, built on a foundation of reliability and elite engineering.
+            Over the last 18 months, I've built digital products that reach thousands of users and scale across international borders. No fluff, just results.
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16">
           {[
-            { label: "Successful Deployments", value: "250+", color: "#6300e2" },
-            { label: "Expert Engineers", value: "85+", color: "#d946ef" },
-            { label: "Partner Enterprises", value: "40+", color: "#2dd4bf" }
+            { label: "Live Projects", value: "10+", color: "#6300e2" },
+            { label: "Countries Reached", value: "70+", color: "#d946ef" },
+            { label: "Open Source PRs", value: "32+", color: "#2dd4bf" }
           ].map((stat, i) => (
             <motion.div 
               key={i} 

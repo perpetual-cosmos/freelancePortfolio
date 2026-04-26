@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Website Strategy Blueprint 2025–26</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap');
+
+    :root {
+      --bg: #0a0a0c;
+      --surface: #111115;
+      --surface2: #18181e;
+      --border: #2a2a38;
+      --accent: #e8ff47;
+      --accent2: #7c6fff;
+      --accent3: #ff6b47;
+      --text: #e8e8f0;
+      --muted: #888899;
+      --tag-bg: #1e1e2e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 12, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 56px;
+      overflow-x: auto;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .nav-logo {
+      color: var(--accent) !important;
+      font-family: 'DM Serif Display', serif;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      letter-spacing: 0 !important;
+      text-transform: none !important;
+      margin-right: auto;
+      flex-shrink: 0;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 6rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(124, 111, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(232, 255, 71, 0.06) 0%, transparent 60%);
+    }
+
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: .8;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.08;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      font-family: 'DM Mono', monospace;
+      padding: .25rem .75rem;
+      border-radius: 2px;
+      letter-spacing: .05em;
+    }
+
+    .tag.accent {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tag.purple {
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 3rem 6rem;
+    }
+
+    /* SECTION */
+    .section {
+      margin-bottom: 5rem;
+      padding-top: 2rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: .1em;
+      background: rgba(232, 255, 71, .08);
+      padding: .2rem .6rem;
+      border: 1px solid rgba(232, 255, 71, .2);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+    }
+
+    /* WEBSITE CARD */
+    .site-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5px;
+      margin-bottom: 2rem;
+    }
+
+    .site-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+
+    .site-card:hover {
+      border-color: var(--accent2);
+    }
+
+    .site-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .site-card:hover::before {
+      opacity: 1;
+    }
+
+    .site-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+      margin-bottom: .3rem;
+      letter-spacing: .05em;
+    }
+
+    .site-type {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 1rem;
+    }
+
+    .site-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: .6rem;
+      color: var(--text);
+    }
+
+    .site-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: 1rem;
+    }
+
+    .metric {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: .15rem .5rem;
+      border-radius: 2px;
+    }
+
+    /* ANALYSIS TABLE */
+    .analysis-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .analysis-header {
+      background: var(--surface2);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .analysis-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .analysis-body {
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .analysis-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1rem;
+      font-size: 13px;
+      align-items: start;
+    }
+
+    .analysis-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding-top: .15rem;
+    }
+
+    .analysis-value {
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .analysis-value strong {
+      color: var(--accent);
+    }
+
+    /* PATTERN BLOCKS */
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .pattern-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 2px;
+    }
+
+    .pattern-card.high-roi {
+      border-color: rgba(232, 255, 71, .3);
+      background: rgba(232, 255, 71, .03);
+    }
+
+    .pattern-card.non-obvious {
+      border-color: rgba(255, 107, 71, .3);
+      background: rgba(255, 107, 71, .03);
+    }
+
+    .pattern-card.trend {
+      border-color: rgba(124, 111, 255, .3);
+      background: rgba(124, 111, 255, .03);
+    }
+
+    .pattern-icon {
+      font-size: 22px;
+      margin-bottom: .75rem;
+    }
+
+    .pattern-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+      color: var(--text);
+    }
+
+    .pattern-card p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pattern-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .15rem .5rem;
+      border-radius: 2px;
+      margin-bottom: .75rem;
+    }
+
+    .badge-roi {
+      background: rgba(232, 255, 71, .15);
+      color: var(--accent);
+      border: 1px solid rgba(232, 255, 71, .3);
+    }
+
+    .badge-insight {
+      background: rgba(255, 107, 71, .12);
+      color: var(--accent3);
+      border: 1px solid rgba(255, 107, 71, .3);
+    }
+
+    .badge-trend {
+      background: rgba(124, 111, 255, .12);
+      color: var(--accent2);
+      border: 1px solid rgba(124, 111, 255, .3);
+    }
+
+    /* BLUEPRINT */
+    .blueprint-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .blueprint-header {
+      background: linear-gradient(90deg, rgba(232, 255, 71, .08), transparent);
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .blueprint-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: .4;
+      flex-shrink: 0;
+      min-width: 2rem;
+    }
+
+    .blueprint-header h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .blueprint-body {
+      padding: 1.5rem;
+    }
+
+    /* SITEMAP */
+    .sitemap {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .sitemap-col h4 {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .75rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sitemap-col ul {
+      list-style: none;
+    }
+
+    .sitemap-col li {
+      font-size: 12px;
+      color: var(--muted);
+      padding: .25rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .04);
+      padding-left: .75rem;
+      position: relative;
+    }
+
+    .sitemap-col li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--border);
+      font-size: 10px;
+    }
+
+    /* WIREFRAME */
+    .wireframe {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+    }
+
+    .wf-section {
+      border-bottom: 1px dashed var(--border);
+      padding: 1rem 1.5rem;
+      position: relative;
+    }
+
+    .wf-section:last-child {
+      border-bottom: none;
+    }
+
+    .wf-label {
+      font-size: 9px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: .4rem;
+      opacity: .7;
+    }
+
+    .wf-content {
+      color: var(--text);
+      font-size: 13px;
+      font-family: 'Syne', sans-serif;
+      line-height: 1.5;
+    }
+
+    .wf-content .headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2em;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .wf-content .subtext {
+      font-size: .9em;
+      color: var(--muted);
+      margin-top: .3rem;
+    }
+
+    .wf-content .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      padding: .3rem .9rem;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: .5rem;
+      border-radius: 2px;
+    }
+
+    .wf-section.nav-wf {
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .wf-section.hero-wf {
+      background: rgba(124, 111, 255, .04);
+      min-height: 80px;
+    }
+
+    .wf-section.social-wf {
+      background: rgba(232, 255, 71, .02);
+    }
+
+    .wf-section.services-wf {
+      background: rgba(255, 107, 71, .02);
+    }
+
+    .wf-section.results-wf {
+      background: rgba(124, 111, 255, .03);
+    }
+
+    .wf-section.process-wf {
+      background: rgba(232, 255, 71, .02);
+    }
+
+    .wf-section.cta-wf {
+      background: rgba(124, 111, 255, .08);
+    }
+
+    .wf-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .wf-notes {
+      font-size: 10px;
+      color: var(--muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: .3rem .6rem;
+      border-radius: 2px;
+      max-width: 280px;
+      line-height: 1.4;
+    }
+
+    /* SEO KEYWORD TABLE */
+    .keyword-cluster {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .kw-header {
+      background: var(--surface2);
+      padding: .75rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .kw-header h4 {
+      font-size: 13px;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .kw-intent {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      padding: .15rem .5rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .intent-tofu {
+      background: rgba(124, 111, 255, .15);
+      color: var(--accent2);
+      border: 1px solid rgba(124, 111, 255, .3);
+    }
+
+    .intent-mofu {
+      background: rgba(232, 255, 71, .12);
+      color: var(--accent);
+      border: 1px solid rgba(232, 255, 71, .3);
+    }
+
+    .intent-bofu {
+      background: rgba(255, 107, 71, .12);
+      color: var(--accent3);
+      border: 1px solid rgba(255, 107, 71, .3);
+    }
+
+    .kw-list {
+      padding: 1rem 1.25rem;
+      display: grid;
+      gap: .3rem;
+    }
+
+    .kw-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .kw-item::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    /* FUNNEL */
+    .funnel {
+      display: grid;
+      gap: 2px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .funnel-stage {
+      padding: 1.2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .funnel-stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .07;
+    }
+
+    .stage-tofu {
+      background: rgba(124, 111, 255, .1);
+      border: 1px solid rgba(124, 111, 255, .25);
+    }
+
+    .stage-mofu {
+      background: rgba(232, 255, 71, .06);
+      border: 1px solid rgba(232, 255, 71, .2);
+    }
+
+    .stage-bofu {
+      background: rgba(255, 107, 71, .08);
+      border: 1px solid rgba(255, 107, 71, .2);
+    }
+
+    .stage-close {
+      background: rgba(0, 200, 100, .08);
+      border: 1px solid rgba(0, 200, 100, .2);
+    }
+
+    .funnel-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .4rem;
+    }
+
+    .label-tofu {
+      color: var(--accent2);
+    }
+
+    .label-mofu {
+      color: var(--accent);
+    }
+
+    .label-bofu {
+      color: var(--accent3);
+    }
+
+    .label-close {
+      color: #00c864;
+    }
+
+    .funnel-h {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: .3rem;
+    }
+
+    .funnel-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .funnel-arrow {
+      text-align: center;
+      color: var(--border);
+      font-size: 20px;
+      padding: .2rem 0;
+    }
+
+    /* PRICING TABLE */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      border-color: var(--accent);
+      background: rgba(232, 255, 71, .04);
+    }
+
+    .price-card.featured::before {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: .1em;
+      background: var(--accent);
+      color: var(--bg);
+      padding: .15rem .5rem;
+      border-radius: 2px;
+    }
+
+    .price-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .5rem;
+    }
+
+    .price-amount {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--text);
+      margin-bottom: .25rem;
+    }
+
+    .price-desc {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+
+    .price-features {
+      list-style: none;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .price-features li {
+      padding: .25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .price-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 10px;
+    }
+
+    /* LEAD MAGNET */
+    .lm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .lm-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+    }
+
+    .lm-icon {
+      font-size: 1.8rem;
+      margin-bottom: .5rem;
+    }
+
+    .lm-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .lm-card p {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .lm-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--accent);
+      margin-top: .5rem;
+      letter-spacing: .05em;
+    }
+
+    /* POSITIONING */
+    .pos-matrix {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .pos-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pos-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pos-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding-top: .2rem;
+    }
+
+    .pos-value {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .pos-value strong {
+      color: var(--accent);
+    }
+
+    /* CALLOUT */
+    .callout {
+      border-left: 3px solid var(--accent);
+      background: rgba(232, 255, 71, .05);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .callout.warning {
+      border-left-color: var(--accent3);
+      background: rgba(255, 107, 71, .05);
+    }
+
+    .callout.info {
+      border-left-color: var(--accent2);
+      background: rgba(124, 111, 255, .05);
+    }
+
+    /* CONTENT PLAN */
+    .content-plan {
+      display: grid;
+      gap: .5rem;
+    }
+
+    .cp-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .75rem 1rem;
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      gap: .75rem;
+      align-items: start;
+      font-size: 12px;
+    }
+
+    .cp-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      padding-top: .15rem;
+    }
+
+    .cp-title {
+      color: var(--text);
+    }
+
+    .cp-stage {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      padding: .1rem .4rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0;
+    }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-bottom: 1rem;
+    }
+
+    th {
+      background: var(--surface2);
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: .6rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: .6rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .04);
+      color: var(--muted);
+      vertical-align: top;
+    }
+
+    td strong {
+      color: var(--text);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, .02);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      .hero {
+        padding: 5rem 1.5rem 3rem;
+      }
+
+      .content {
+        padding: 2rem 1.5rem 4rem;
+      }
+
+      .analysis-row {
+        grid-template-columns: 1fr;
+      }
+
+      .analysis-label {
+        padding-bottom: 0;
+      }
+
+      .cp-item {
+        grid-template-columns: 28px 1fr;
+      }
+
+      .cp-stage {
+        grid-column: 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#top" class="nav-logo">Blueprint 2025–26</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#patterns">Patterns</a>
+    <a href="#sitemap">Sitemap</a>
+    <a href="#wireframe">Wireframe</a>
+    <a href="#seo">SEO Strategy</a>
+    <a href="#conversion">Conversion</a>
+    <a href="#positioning">Positioning</a>
+    <a href="#monetization">Monetization</a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <div class="hero" id="top">
+    <div class="hero-label">Elite Website Strategy · Reverse-Engineered from the World's Best</div>
+    <h1>The Blueprint That<br><em>Actually Works</em><br>in 2025–26</h1>
+    <p class="hero-sub">Deep analysis of 20+ high-performing agency, freelancer, SaaS, and AI automation websites —
+      reverse-engineered into an actionable website strategy for your full-service dev + SEO + AI business.</p>
+    <div class="hero-tags">
+      <span class="tag accent">Web Dev Agency</span>
+      <span class="tag purple">SEO Agency</span>
+      <span class="tag">AI Automation</span>
+      <span class="tag">Shopify / WordPress</span>
+      <span class="tag">Freelancer Positioning</span>
+      <span class="tag">Lead Gen System</span>
+      <span class="tag">50+ Content Topics</span>
+      <span class="tag">Full Sitemap</span>
+      <span class="tag">Conversion Funnel</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ═══════════════════════════════════════════ STEP 1: WEBSITES -->
+    <div class="section" id="selected-sites">
+      <div class="section-header">
+        <span class="section-num">STEP 01</span>
+        <h2>20 High-Performing Websites Selected</h2>
+      </div>
+      <div class="site-grid">
+
+        <div class="site-card">
+          <div class="site-name">coalitiontechnologies.com</div>
+          <div class="site-type">Full-Service Agency · Global</div>
+          <h3>Coalition Technologies</h3>
+          <p>One of the most SEO-powerful agency sites. 800+ case studies, real revenue metrics, data-driven trust
+            signals everywhere. Ranks for thousands of commercial keywords.</p>
+          <div class="metric-row">
+            <span class="metric">800+ Case Studies</span>
+            <span class="metric">687% more revenue claim</span>
+            <span class="metric">No long-term contracts CTA</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">wpbeginner.com</div>
+          <div class="site-type">Content Authority · WordPress Niche</div>
+          <h3>WPBeginner</h3>
+          <p>The king of WordPress SEO. Dominates every "how to WordPress" keyword. Built an audience of 2M+ monthly
+            visitors via relentless, beginner-focused content. Monetizes through affiliate + products.</p>
+          <div class="metric-row">
+            <span class="metric">~2M monthly organic visits</span>
+            <span class="metric">Tutorial-first strategy</span>
+            <span class="metric">10+ year content moat</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">neilpatel.com</div>
+          <div class="site-type">Personal Brand · SEO Agency</div>
+          <h3>Neil Patel Digital</h3>
+          <p>Built on radical transparency and volume content. Free tools (Ubersuggest) as lead magnets. Ranks for
+            nearly every "SEO" keyword. Funnel: free tool → email → agency pitch.</p>
+          <div class="metric-row">
+            <span class="metric">Free tool as #1 lead magnet</span>
+            <span class="metric">Personal brand = trust</span>
+            <span class="metric">Volume + depth content mix</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">digitalsilk.com</div>
+          <div class="site-type">Agency · Design + Dev</div>
+          <h3>Digital Silk</h3>
+          <p>Extremely conversion-focused. Clean visual hierarchy. Prominent Clutch ratings, client logos (SONY, P&G),
+            and case study metrics above the fold. Strong service-page SEO.</p>
+          <div class="metric-row">
+            <span class="metric">Trust logos above fold</span>
+            <span class="metric">Clutch badges prominent</span>
+            <span class="metric">Service-page keyword targeting</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">kinsta.com</div>
+          <div class="site-type">SaaS · Managed WordPress Hosting</div>
+          <h3>Kinsta</h3>
+          <p>Master class in content-led SaaS growth. Their blog covers every WordPress technical topic with extreme
+            depth. Converts readers via contextual CTAs and free migration offers. Glossary pages dominate informational
+            SERPs.</p>
+          <div class="metric-row">
+            <span class="metric">Glossary SEO strategy</span>
+            <span class="metric">Contextual blog CTAs</span>
+            <span class="metric">Free migration = low barrier offer</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">siegemedia.com</div>
+          <div class="site-type">Content SEO Agency · Productized</div>
+          <h3>Siege Media</h3>
+          <p>Leads with ROI-first positioning: "SEO content that generates revenue." Uses organic traffic data as the
+            primary trust metric. Every case study shows traffic and revenue lift numbers.</p>
+          <div class="metric-row">
+            <span class="metric">ROI-first headline</span>
+            <span class="metric">Traffic + revenue case studies</span>
+            <span class="metric">Tight niche = premium rates</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">webflow.com</div>
+          <div class="site-type">SaaS + Community</div>
+          <h3>Webflow</h3>
+          <p>Showcase gallery as lead magnet. Community-driven SEO (forums, templates). Hero message shifts based on
+            audience segment. Radical simplicity in messaging: "Build without code."</p>
+          <div class="metric-row">
+            <span class="metric">Showcase = social proof</span>
+            <span class="metric">Community SEO moat</span>
+            <span class="metric">Segment-specific messaging</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">thefutur.com</div>
+          <div class="site-type">Personal Brand · Freelance Education</div>
+          <h3>The Futur (Chris Do)</h3>
+          <p>Built a $10M+ brand from a YouTube channel. Website is an extension of the personal brand. Productized
+            courses, coaching, and community. Every page serves a segment: beginners, professionals, students.</p>
+          <div class="metric-row">
+            <span class="metric">YouTube-to-website funnel</span>
+            <span class="metric">Productized courses + coaching</span>
+            <span class="metric">Community = recurring revenue</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">n8nlab.io</div>
+          <div class="site-type">AI Automation Agency</div>
+          <h3>N8N Lab</h3>
+          <p>Tight positioning: certified n8n experts. 150+ workflows deployed. Hero leads with the technical
+            credibility + measurable ROI promise. Discovery call → scoped project model. No template work.</p>
+          <div class="metric-row">
+            <span class="metric">Cert badge = instant trust</span>
+            <span class="metric">Quantified: "150+ workflows"</span>
+            <span class="metric">Audit → retainer funnel</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">goodspeed.studio</div>
+          <div class="site-type">AI Automation Agency · Content</div>
+          <h3>Goodspeed Studio</h3>
+          <p>Published the "Top n8n Agencies" comparison post — now ranks for competitor searches and positions itself
+            in the market. This is a classic blue ocean SEO move for agencies.</p>
+          <div class="metric-row">
+            <span class="metric">Competitor comparison SEO</span>
+            <span class="metric">Comparison posts = BOFU intent</span>
+            <span class="metric">Thought leader positioning</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">outerboxdesign.com</div>
+          <div class="site-type">Performance Agency · eCommerce</div>
+          <h3>OuterBox Design</h3>
+          <p>"Growth is oxygen" — emotionally-charged brand story. Since 2004, which they show prominently. Specialized
+            in eCommerce + B2B. Their website nails the trust-authority-action flow.</p>
+          <div class="metric-row">
+            <span class="metric">Agency story = differentiation</span>
+            <span class="metric">Year founded = longevity trust</span>
+            <span class="metric">Niche: eComm + B2B only</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">ahrefs.com/blog</div>
+          <div class="site-type">SaaS Tool · SEO Content Authority</div>
+          <h3>Ahrefs Blog</h3>
+          <p>Built one of the most linked-to SEO blogs in the world. Every article is a bottom-of-funnel or mid-funnel
+            piece that integrates the tool naturally. Zero fluff, maximum depth, original data.</p>
+          <div class="metric-row">
+            <span class="metric">Original data = natural links</span>
+            <span class="metric">Tool-integrated content</span>
+            <span class="metric">10X depth vs competitors</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">smashingmagazine.com</div>
+          <div class="site-type">Community + Content Authority</div>
+          <h3>Smashing Magazine</h3>
+          <p>Proof that developer/design community content creates compounding traffic. Their "practical guides" format
+            is the most shared content type in dev communities. Membership + books + conferences monetization.</p>
+          <div class="metric-row">
+            <span class="metric">Practical guide format wins</span>
+            <span class="metric">Community-driven authority</span>
+            <span class="metric">Multiple monetization streams</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">codeinwp.com</div>
+          <div class="site-type">WordPress Content + Products</div>
+          <h3>CodeinWP / Themeisle</h3>
+          <p>Round-up posts like "Best WordPress themes" dominate. Each comparison serves buyer intent. Monetizes via
+            affiliate + own plugin sales. Demonstrates the power of "editorial" SEO in dev niches.</p>
+          <div class="metric-row">
+            <span class="metric">Comparison/roundup SEO</span>
+            <span class="metric">Affiliate + product hybrid</span>
+            <span class="metric">Long-form editorial wins</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">brennandunn.com</div>
+          <div class="site-type">Freelancer / Productized Services</div>
+          <h3>Brennan Dunn</h3>
+          <p>The OG productized service pioneer. Built Double Your Freelancing by teaching what he did himself. Sells
+            courses, systems, tools. Website = authority through specificity: "I help freelancers charge more."</p>
+          <div class="metric-row">
+            <span class="metric">Hyper-specific positioning</span>
+            <span class="metric">Email list = primary asset</span>
+            <span class="metric">Own experience = credibility</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">clutch.co</div>
+          <div class="site-type">B2B Agency Directory</div>
+          <h3>Clutch.co</h3>
+          <p>Ranks for "best web dev agency [city]" for every city on Earth. The lesson: verified reviews + structured
+            data + location pages = massive SEO scale. Every agency should have a Clutch profile.</p>
+          <div class="metric-row">
+            <span class="metric">Location page SEO at scale</span>
+            <span class="metric">Verified reviews = trust</span>
+            <span class="metric">Structured data = rich results</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">webdew.com</div>
+          <div class="site-type">Video + WordPress Agency</div>
+          <h3>Webdew</h3>
+          <p>Niche-specialization model: video production for SaaS companies + WordPress. Demonstrates that a
+            micro-niche ("SaaS explainer videos") can support a 50-person team through SEO + positioning.</p>
+          <div class="metric-row">
+            <span class="metric">Micro-niche = premium pricing</span>
+            <span class="metric">Industry-specific service pages</span>
+            <span class="metric">Video = content + deliverable</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">draftss.com</div>
+          <div class="site-type">Productized Design Agency</div>
+          <h3>Draftss</h3>
+          <p>Unlimited design subscription model. Extremely clear pricing, extremely clear output. The "flat monthly
+            fee, cancel anytime" frame eliminates the #1 objection to agency work: uncertainty.</p>
+          <div class="metric-row">
+            <span class="metric">Subscription = predictable revenue</span>
+            <span class="metric">Clear pricing = more trust</span>
+            <span class="metric">Cancel anytime = low risk</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">pagespeedinsights.web.app (and similar tools)</div>
+          <div class="site-type">Free Tool → Lead Gen</div>
+          <h3>Free Audit Tools</h3>
+          <p>Agencies that built free audit tools (SEO audit, website speed checker, WordPress scanner) collect
+            thousands of emails monthly with zero ad spend. The tool does the selling by showing the problem.</p>
+          <div class="metric-row">
+            <span class="metric">Problem-first lead gen</span>
+            <span class="metric">Tool = qualified intent signal</span>
+            <span class="metric">Email capture at peak pain</span>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-name">growwithward.com (example indie freelancer)</div>
+          <div class="site-type">Indie Hacker Freelancer</div>
+          <h3>Indie Freelancer Model</h3>
+          <p>Solo developers who niche down to one industry (e.g. "Shopify developer for DTC beauty brands")
+            consistently out-earn generalists. One-page websites with a strong offer statement and Calendly link convert
+            at 3–8%.</p>
+          <div class="metric-row">
+            <span class="metric">One-industry specialization</span>
+            <span class="metric">Calendly = no friction booking</span>
+            <span class="metric">1-page site can outperform 50-page</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ STEP 2: DEEP ANALYSIS -->
+    <div class="section" id="analysis">
+      <div class="section-header">
+        <span class="section-num">STEP 02</span>
+        <h2>Deep Analysis: What Actually Makes Them Work</h2>
+      </div>
+
+      <!-- COALITION -->
+      <div class="analysis-block">
+        <div class="analysis-header">
+          <span class="site-name" style="margin:0">coalitiontechnologies.com</span>
+          <span class="tag">Benchmark: Full-Service Agency</span>
+        </div>
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">Positioning</div>
+            <div class="analysis-value">Targets SMB to enterprise needing both SEO + web. USP is <strong>data-backed
+                performance claims</strong> — "687% more revenue than average agency." They don't say they're good; they
+              prove it with a number that's impossible to ignore.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Homepage Flow</div>
+            <div class="analysis-value">Metric claim → Service list → 800+ case study proof → No-contract CTA → Industry
+              verticals → More CTAs. Every section moves the visitor toward one action: request a proposal.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">SEO Strategy</div>
+            <div class="analysis-value">Ranks for "[city] SEO agency," "[industry] web design," "SEO for [industry]."
+              <strong>Geo + industry matrix</strong> creates hundreds of landing pages. Each case study is a
+              keyword-rich content piece. Blog targets informational queries to capture earlier in funnel.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">CRO Insight</div>
+            <div class="analysis-value">The "no long-term contract" CTA is their biggest conversion lever — it removes
+              the #1 objection buyers have. <strong>Objection removal in the hero = massive conversion lift.</strong>
+            </div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">What to Steal</div>
+            <div class="analysis-value">The geo+industry landing page matrix. The metric-anchored headline formula.
+              Showing case study count as a trust number. Making the #1 objection your headline's contrast.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KINSTA -->
+      <div class="analysis-block">
+        <div class="analysis-header">
+          <span class="site-name" style="margin:0">kinsta.com</span>
+          <span class="tag">Benchmark: Content-Led SaaS Growth</span>
+        </div>
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">Positioning</div>
+            <div class="analysis-value">Premium managed WordPress hosting for serious businesses. Every design choice
+              signals "this is not cheap" — but the content makes beginners feel capable. <strong>Aspirational
+                positioning with accessible content.</strong></div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">SEO Strategy</div>
+            <div class="analysis-value">Their <strong>Glossary/Learn section</strong> targets 10,000+ informational
+              keywords ("what is PHP," "WordPress vs Wix," "htaccess file"). Each is a thin-but-accurate page that
+              captures zero-intent traffic and moves them into the funnel via contextual CTAs. Blog targets "how to
+              speed up WordPress," "best WordPress plugins" type queries.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">CRO Insight</div>
+            <div class="analysis-value"><strong>Free migration offer</strong> removes the single biggest switching cost.
+              Every high-intent reader sees it. The blog CTA says "Start for free" — not "Buy now." Language of low
+              commitment at the point of highest intent.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">What to Steal</div>
+            <div class="analysis-value">Build a Learn/Glossary section for every tech you work with (Next.js, Shopify,
+              n8n, Supabase, etc.). These pages rank in 3–6 months on low-competition informational queries and funnel
+              into your services.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIEGE MEDIA -->
+      <div class="analysis-block">
+        <div class="analysis-header">
+          <span class="site-name" style="margin:0">siegemedia.com</span>
+          <span class="tag">Benchmark: Tight Niche Agency</span>
+        </div>
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">Positioning</div>
+            <div class="analysis-value"><strong>"SEO content that generates revenue."</strong> Not "content marketing
+              agency." Not "blog writing services." A precise outcome statement. They serve SaaS and tech companies
+              only. This niche command lets them charge 2–3x generalist rates.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Offer Structure</div>
+            <div class="analysis-value">Content strategy + creation bundled as a retainer. No project work. This is
+              productized services without subscription pricing — it's a scoped retainer model. <strong>Minimum
+                engagement size filters out bad-fit clients.</strong></div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Case Studies</div>
+            <div class="analysis-value">Every case study shows: traffic before/after, revenue attribution, keyword rank
+              data. The visual proof is a screenshot-and-chart format that's impossible to fake. <strong>Authenticity
+                through specificity.</strong></div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">What to Steal</div>
+            <div class="analysis-value">Frame every service around a revenue outcome, not a deliverable. "WordPress
+              website" is a deliverable. "WordPress website that converts visitors to leads" is an outcome. Outcome
+              framing justifies premium pricing.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOODSPEED / COMPETITOR SEO -->
+      <div class="analysis-block">
+        <div class="analysis-header">
+          <span class="site-name" style="margin:0">goodspeed.studio</span>
+          <span class="tag">Benchmark: Blue Ocean SEO Strategy</span>
+        </div>
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">The Insight</div>
+            <div class="analysis-value">They published "Best n8n Agencies 2026" — a comparison of their own competitors
+              — and <strong>included themselves in the list</strong>. This ranks for bottom-of-funnel buyer intent
+              searches ("best n8n agency") while positioning them as a thought leader above the competition. It's not
+              sleazy; it's strategic.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Why It Works</div>
+            <div class="analysis-value">Buyers searching "best [service] agencies" are ready to hire. This is pure BOFU
+              traffic. The article establishes credibility by being objective and data-driven — and they get leads from
+              their own competitors' clients.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">What to Steal</div>
+            <div class="analysis-value">Write: "Best Shopify developers in India 2026," "Best WordPress agencies for
+              startups," "Top n8n automation experts." Rank yourself in every list. Be genuinely useful in the
+              comparison to build credibility.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEIL PATEL -->
+      <div class="analysis-block">
+        <div class="analysis-header">
+          <span class="site-name" style="margin:0">neilpatel.com</span>
+          <span class="tag">Benchmark: Personal Brand → Agency</span>
+        </div>
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">The Model</div>
+            <div class="analysis-value">Built audience via content → launched free tool (Ubersuggest) as lead magnet →
+              captured millions of emails → pitched agency services to the most engaged. <strong>Personal brand creates
+                trust that no ad budget can buy.</strong></div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Content Strategy</div>
+            <div class="analysis-value">Publishes "definitive guides" targeting high-volume keywords. Titles: "The
+              Beginner's Guide to SEO," "The Complete Guide to Digital Marketing." Long-form content (5,000+ words) that
+              ranks because it's genuinely more complete than anything else indexed.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Conversion System</div>
+            <div class="analysis-value">Free tool → email capture → onboarding sequence → audit offer → agency pitch.
+              Every step provides value. The visitor never feels sold to — they feel helped. <strong>Helpfulness is the
+                sales strategy.</strong></div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">What to Steal</div>
+            <div class="analysis-value">Build one free tool (Website Speed Checker, SEO Audit Tool, AI Automation ROI
+              Calculator). Use it to collect emails. It doesn't need to be perfect — it needs to diagnose a real problem
+              your ideal client has.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════ STEP 3: PATTERNS -->
+    <div class="section" id="patterns">
+      <div class="section-header">
+        <span class="section-num">STEP 03</span>
+        <h2>Cross-Website Pattern Extraction</h2>
+      </div>
+
+      <p style="color:var(--muted); font-size:13px; margin-bottom:2rem;">After analyzing 20+ sites, here are the
+        patterns that consistently separate top performers from the rest — including things most people miss.</p>
+
+      <div class="pattern-grid">
+        <div class="pattern-card non-obvious">
+          <span class="pattern-badge badge-insight">Non-Obvious Insight</span>
+          <div class="pattern-icon">🔬</div>
+          <h4>Specificity Beats Capability</h4>
+          <p>"We build websites" converts at 0.5%. "We build Shopify stores for D2C fashion brands that generate ₹1Cr+
+            revenue" converts at 4–8%. Specificity signals expertise and filters your ideal client in while filtering
+            unqualified clients out. The narrower your claim, the more premium your rate.</p>
+        </div>
+
+        <div class="pattern-card high-roi">
+          <span class="pattern-badge badge-roi">High ROI Element</span>
+          <div class="pattern-icon">📊</div>
+          <h4>One Real Number Beats 100 Adjectives</h4>
+          <p>"Impressive results" = skepticism. "We increased organic traffic by 340% in 6 months for a Shopify store in
+            the fitness niche" = immediate credibility. Agencies that show specific numbers (traffic %, revenue $,
+            keyword rankings) outperform those that use adjectives by 3–5x in conversion rate.</p>
+        </div>
+
+        <div class="pattern-card high-roi">
+          <span class="pattern-badge badge-roi">High ROI Element</span>
+          <div class="pattern-icon">⚡</div>
+          <h4>The "Objection in the Hero" Pattern</h4>
+          <p>Top agencies put their clients' #1 objection directly in the hero section and then destroy it. Coalition:
+            "No long-term contracts." This removes the biggest barrier to inquiry before the visitor even scrolls.
+            Identify your client's top 3 objections and address them in the first screen.</p>
+        </div>
+
+        <div class="pattern-card non-obvious">
+          <span class="pattern-badge badge-insight">Non-Obvious Insight</span>
+          <div class="pattern-icon">🗺️</div>
+          <h4>Geo + Industry Matrix = Infinite Keywords</h4>
+          <p>The best-ranking agencies don't have one service page — they have a grid: [Service] × [City] × [Industry].
+            "Shopify developer for restaurants in Delhi." "WordPress SEO for SaaS companies in Bangalore." Each page
+            targets a different search. 10 services × 5 cities × 10 industries = 500 potential pages, all unique intent.
+          </p>
+        </div>
+
+        <div class="pattern-card trend">
+          <span class="pattern-badge badge-trend">2025–26 Trend</span>
+          <div class="pattern-icon">🤖</div>
+          <h4>AI SEO / GEO is Real Now</h4>
+          <p>Coalition now explicitly mentions "AI SEO" — optimizing for ChatGPT, Claude, Perplexity mentions. Agencies
+            that structure their content as direct answers to questions (FAQ schema, clear Q&A format) are getting cited
+            in AI-generated answers. This is the new featured snippet.</p>
+        </div>
+
+        <div class="pattern-card high-roi">
+          <span class="pattern-badge badge-roi">High ROI Element</span>
+          <div class="pattern-icon">🧲</div>
+          <h4>Free Tool > Free Ebook</h4>
+          <p>Email lists built via free tools (audits, calculators, checkers) are 4–10x more qualified than lists built
+            via ebooks or guides. A business owner who runs your free "Website SEO Audit" is actively looking for help
+            right now. An ebook reader might just be curious.</p>
+        </div>
+
+        <div class="pattern-card non-obvious">
+          <span class="pattern-badge badge-insight">Non-Obvious Insight</span>
+          <div class="pattern-icon">🏆</div>
+          <h4>Comparison Posts You Write About Yourself</h4>
+          <p>Writing "Best [Service] agencies" roundups where you include yourself is the highest ROI content type for
+            agencies. It captures pure purchase-intent traffic, positions you as an authoritative voice, and lands
+            clients who are already shopping. Most agencies don't do this because it feels "weird." It's not. It's just
+            smart.</p>
+        </div>
+
+        <div class="pattern-card trend">
+          <span class="pattern-badge badge-trend">2025–26 Trend</span>
+          <div class="pattern-icon">📱</div>
+          <h4>Case Studies Are Now the Sales Page</h4>
+          <p>Modern buyers don't read service pages — they read case studies. The best-performing agency websites have
+            case studies that serve as full sales arguments: problem → solution → process → results → "Want the same?"
+            CTA. Your case study page should do the job of a 30-minute sales call.</p>
+        </div>
+
+        <div class="pattern-card high-roi">
+          <span class="pattern-badge badge-roi">High ROI Element</span>
+          <div class="pattern-icon">💡</div>
+          <h4>Glossary/Learn Pages are Underrated Gold</h4>
+          <p>Kinsta, Ahrefs, HubSpot all have massive "What is..." glossary sections. These target zero-competition,
+            high-volume informational queries and funnel users into commercial content. A "What is Next.js" page from a
+            Next.js development agency can rank in 60 days and feed warm traffic forever.</p>
+        </div>
+
+        <div class="pattern-card non-obvious">
+          <span class="pattern-badge badge-insight">Non-Obvious Insight</span>
+          <div class="pattern-icon">🧠</div>
+          <h4>Pricing Visibility Increases Conversions</h4>
+          <p>Google's 2025 algorithm update rewards pages with pricing transparency with 68% more organic traffic (per
+            industry data). Agencies that show "starting from ₹XX,000" attract more qualified inbound and fewer
+            time-wasting discovery calls. Hiding pricing signals insecurity about your value.</p>
+        </div>
+
+        <div class="pattern-card trend">
+          <span class="pattern-badge badge-trend">2025–26 Trend</span>
+          <div class="pattern-icon">🔗</div>
+          <h4>Internal Linking as a Conversion Tool</h4>
+          <p>Top sites use internal links not just for SEO but to move visitors from awareness content (blog) to
+            consideration content (case studies) to decision content (service pages). Map your content like a funnel,
+            not just a library.</p>
+        </div>
+
+        <div class="pattern-card high-roi">
+          <span class="pattern-badge badge-roi">High ROI Element</span>
+          <div class="pattern-icon">📹</div>
+          <h4>Process Visualization Kills Uncertainty</h4>
+          <p>The #1 reason people don't contact agencies: fear of the unknown process. The best sites show a clear 4–6
+            step process with estimated timelines. "Week 1: Discovery Call → Week 2: Strategy → Week 3–6: Build → Week
+            7: Launch." This alone lifts inquiry rates by 25–40%.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>What Low-Performing Websites Consistently Get Wrong:</strong> Generic headlines ("We build beautiful
+        websites"), no real proof (testimonials without numbers), hiding pricing, no clear process, blog content that
+        doesn't target any specific keyword, no lead magnet, and treating the homepage like a brochure instead of a
+        conversion machine.
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ STEP 4: BLUEPRINT -->
+    <div class="section" id="blueprint">
+      <div class="section-header">
+        <span class="section-num">STEP 04</span>
+        <h2>Your Complete Website Blueprint</h2>
+      </div>
+      <p style="color:var(--muted); font-size:13px; margin-bottom:2rem;">Built specifically for your profile: Full-stack
+        dev (MERN, Next.js, Shopify, WordPress, Laravel), SEO services, AI automation/n8n, LMS/CMS — targeting SMBs,
+        startups, and founders in India + remote.</p>
+    </div>
+
+    <!-- SITEMAP -->
+    <div class="section" id="sitemap">
+      <div class="section-header">
+        <span class="section-num">4.1</span>
+        <h2>Full Website Sitemap</h2>
+      </div>
+
+      <div class="blueprint-section">
+        <div class="blueprint-header">
+          <span class="blueprint-num">—</span>
+          <h3>Complete Site Architecture</h3>
+        </div>
+        <div class="blueprint-body">
+          <div class="sitemap">
+            <div class="sitemap-col">
+              <h4>Core Pages</h4>
+              <ul>
+                <li>Homepage /</li>
+                <li>About /about</li>
+                <li>Services /services</li>
+                <li>Work /work (portfolio)</li>
+                <li>Case Studies /case-studies</li>
+                <li>Blog /blog</li>
+                <li>Contact /contact</li>
+                <li>Free Audit /audit</li>
+              </ul>
+            </div>
+            <div class="sitemap-col">
+              <h4>Service Pages</h4>
+              <ul>
+                <li>/services/web-development</li>
+                <li>/services/shopify-development</li>
+                <li>/services/wordpress-development</li>
+                <li>/services/nextjs-development</li>
+                <li>/services/seo-services</li>
+                <li>/services/ai-automation</li>
+                <li>/services/lms-development</li>
+                <li>/services/website-maintenance</li>
+              </ul>
+            </div>
+            <div class="sitemap-col">
+              <h4>Industry Landing Pages</h4>
+              <ul>
+                <li>/industries/ecommerce</li>
+                <li>/industries/saas-startups</li>
+                <li>/industries/restaurants-food</li>
+                <li>/industries/education-edtech</li>
+                <li>/industries/real-estate</li>
+                <li>/industries/healthcare</li>
+                <li>/industries/local-businesses</li>
+              </ul>
+            </div>
+            <div class="sitemap-col">
+              <h4>Location Pages</h4>
+              <ul>
+                <li>/web-developer-kanpur</li>
+                <li>/web-developer-lucknow</li>
+                <li>/web-developer-noida</li>
+                <li>/freelance-developer-india</li>
+                <li>/remote-web-developer-india</li>
+                <li>/shopify-developer-india</li>
+                <li>/wordpress-developer-india</li>
+              </ul>
+            </div>
+            <div class="sitemap-col">
+              <h4>Learn / Glossary</h4>
+              <ul>
+                <li>/learn/what-is-nextjs</li>
+                <li>/learn/shopify-vs-wordpress</li>
+                <li>/learn/what-is-n8n</li>
+                <li>/learn/lms-development-guide</li>
+                <li>/learn/website-speed-seo</li>
+                <li>/learn/headless-cms-explained</li>
+              </ul>
+            </div>
+            <div class="sitemap-col">
+              <h4>Blog Categories</h4>
+              <ul>
+                <li>/blog/web-development</li>
+                <li>/blog/seo-tips</li>
+                <li>/blog/shopify-guides</li>
+                <li>/blog/wordpress-tutorials</li>
+                <li>/blog/ai-automation</li>
+                <li>/blog/freelancing-india</li>
+                <li>/blog/case-studies</li>
+              </ul>
+            </div>
+            <div class="sitemap-col">
+              <h4>Packages / Pricing</h4>
+              <ul>
+                <li>/packages (all packages)</li>
+                <li>/packages/starter-website</li>
+                <li>/packages/shopify-store</li>
+                <li>/packages/seo-monthly</li>
+                <li>/packages/ai-automation-setup</li>
+                <li>/packages/maintenance-plan</li>
+              </ul>
+            </div>
+            <div class="sitemap-col">
+              <h4>Lead Gen / Tools</h4>
+              <ul>
+                <li>/free-seo-audit</li>
+                <li>/website-speed-test</li>
+                <li>/ai-automation-calculator</li>
+                <li>/resources (downloads)</li>
+                <li>Thank You pages</li>
+                <li>Newsletter confirmation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOMEPAGE WIREFRAME -->
+    <div class="section" id="wireframe">
+      <div class="section-header">
+        <span class="section-num">4.2</span>
+        <h2>Homepage Wireframe — Section by Section</h2>
+      </div>
+
+      <div class="wireframe">
+
+        <div class="wf-section nav-wf">
+          <div class="wf-label">Navigation</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              [Logo: Your Name / Brand] &nbsp;&nbsp;&nbsp; Services &nbsp; Work &nbsp; Blog &nbsp; About
+              &nbsp;&nbsp;&nbsp; <strong>[Get Free Audit →]</strong>
+            </div>
+            <div class="wf-notes">Sticky nav. CTA button in header uses contrast color. Keeps "Book a Call" off nav —
+              save that for the hero.</div>
+          </div>
+        </div>
+
+        <div class="wf-section hero-wf">
+          <div class="wf-label">Hero — Primary Conversion Zone (Above the Fold)</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); margin-bottom:.5rem;">[
+                Eyebrow: Full-Stack Developer & SEO Specialist · 18 months · 10+ live products ]</div>
+              <div class="headline">I Build Websites That<br>Rank, Convert & Scale.</div>
+              <div class="subtext">From Shopify stores to Next.js apps, WordPress sites to AI automations — I deliver
+                complete digital products with measurable business results. No fluff. No templates. Just code that
+                works.</div>
+              <div style="margin-top:.75rem; display:flex; gap:.75rem; flex-wrap:wrap;">
+                <span class="cta-btn">Get Free Website Audit →</span>
+                <span style="font-size:12px; color:var(--muted); align-self:center;">or <span
+                    style="color:var(--accent2); text-decoration:underline">see my work ↓</span></span>
+              </div>
+              <div style="margin-top:1rem; font-size:11px; color:var(--muted);">Trusted by founders from 🇺🇸 🇬🇧 🇮🇳
+                🇩🇪 · Wavo · Alumnipp · Blackarttattoo · Dear Valentine</div>
+            </div>
+            <div class="wf-notes">Key: Headline speaks outcome, not service. CTA is the lead magnet (audit), not
+              "Contact me." Social proof line immediately below CTA removes the "who even is this person" doubt.</div>
+          </div>
+        </div>
+
+        <div class="wf-section social-wf">
+          <div class="wf-label">Social Proof Bar (Logos + Metrics)</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              <div
+                style="display:flex; gap:2rem; flex-wrap:wrap; align-items:center; font-size:12px; color:var(--muted);">
+                <span><strong style="color:var(--text); font-size:16px;">10+</strong><br>Live Projects</span>
+                <span><strong style="color:var(--text); font-size:16px;">70+</strong><br>Countries Reached</span>
+                <span><strong style="color:var(--text); font-size:16px;">1,000+</strong><br>Users on My SaaS</span>
+                <span><strong style="color:var(--text); font-size:16px;">32+</strong><br>Open Source PRs</span>
+                <span style="color:var(--muted)">Featured in · Hirect · LinkedIn · Clutch</span>
+              </div>
+            </div>
+            <div class="wf-notes">Real numbers from your actual work: Dear Valentine (70+ countries, 1000+ visits),
+              Alumnipp (1000+ users), OnlyDust (32+ PRs). Never inflate. Real is always more powerful.</div>
+          </div>
+        </div>
+
+        <div class="wf-section services-wf">
+          <div class="wf-label">Services Grid — What I Do</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              <div style="font-size:13px; color:var(--muted); margin-bottom:.75rem;">I help founders and growing
+                businesses with:</div>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; font-size:12px;">
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.6rem .8rem; border-radius:2px;">
+                  <strong>Web Development</strong>
+                  <div style="color:var(--muted)">React · Next.js · MERN</div>
+                </div>
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.6rem .8rem; border-radius:2px;">
+                  <strong>Shopify Development</strong>
+                  <div style="color:var(--muted)">Custom themes · Apps</div>
+                </div>
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.6rem .8rem; border-radius:2px;">
+                  <strong>WordPress / CMS</strong>
+                  <div style="color:var(--muted)">WP · Headless CMS</div>
+                </div>
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.6rem .8rem; border-radius:2px;">
+                  <strong>SEO Services</strong>
+                  <div style="color:var(--muted)">Technical + Content SEO</div>
+                </div>
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.6rem .8rem; border-radius:2px;">
+                  <strong>AI Automation</strong>
+                  <div style="color:var(--muted)">n8n · Make · Zapier</div>
+                </div>
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.6rem .8rem; border-radius:2px;">
+                  <strong>LMS / EdTech</strong>
+                  <div style="color:var(--muted)">Course platforms · APIs</div>
+                </div>
+              </div>
+            </div>
+            <div class="wf-notes">Each card links to its own service page. Don't list everything — 6 max. Sub-copy =
+              technologies used, not generic adjectives.</div>
+          </div>
+        </div>
+
+        <div class="wf-section results-wf">
+          <div class="wf-label">Featured Work / Case Studies (3 Projects)</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              <div style="font-size:13px; color:var(--muted); margin-bottom:.75rem;">Work that proves the claim:</div>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; font-size:12px;">
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.8rem; border-radius:2px;">
+                  <div
+                    style="font-size:10px; color:var(--accent); font-family:'DM Mono',monospace; margin-bottom:.3rem;">
+                    SAAS PRODUCT</div>
+                  <strong>Dear Valentine</strong>
+                  <div style="color:var(--muted); font-size:11px; margin-top:.2rem;">Next.js · Supabase · Facebook Pixel
+                  </div>
+                  <div style="color:var(--accent2); font-size:11px; margin-top:.4rem;">↑ 1,000+ users · 70+ countries ·
+                    Zero ad spend</div>
+                </div>
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.8rem; border-radius:2px;">
+                  <div
+                    style="font-size:10px; color:var(--accent); font-family:'DM Mono',monospace; margin-bottom:.3rem;">
+                    STARTUP DASHBOARD</div>
+                  <strong>Wavo.digital</strong>
+                  <div style="color:var(--muted); font-size:11px; margin-top:.2rem;">WhatsApp + Voice AI SaaS · Sole
+                    Developer</div>
+                  <div style="color:var(--accent2); font-size:11px; margin-top:.4rem;">↑ Built from 0 → production for
+                    funded startup</div>
+                </div>
+                <div
+                  style="background:var(--surface2); border:1px solid var(--border); padding:.8rem; border-radius:2px;">
+                  <div
+                    style="font-size:10px; color:var(--accent); font-family:'DM Mono',monospace; margin-bottom:.3rem;">
+                    RESCUE + REBUILD</div>
+                  <strong>Alumnipp.com</strong>
+                  <div style="color:var(--muted); font-size:11px; margin-top:.2rem;">Laravel + React · Production rescue
+                  </div>
+                  <div style="color:var(--accent2); font-size:11px; margin-top:.4rem;">↑ 1,000+ registered users
+                    preserved + scaled</div>
+                </div>
+              </div>
+              <div style="text-align:right; margin-top:.75rem; font-size:12px; color:var(--accent2);">View all case
+                studies →</div>
+            </div>
+            <div class="wf-notes">Each card: Type tag → Project name → Stack → ONE specific result metric. No "we
+              designed a beautiful website." Show what happened AFTER.</div>
+          </div>
+        </div>
+
+        <div class="wf-section process-wf">
+          <div class="wf-label">My Process (Kills the "What happens next?" anxiety)</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              <div style="display:flex; gap:1rem; font-size:12px; flex-wrap:wrap;">
+                <div style="flex:1; min-width:100px; text-align:center;">
+                  <div style="font-family:'DM Mono',monospace; color:var(--accent); font-size:18px; font-weight:700;">01
+                  </div>
+                  <strong>Discovery Call</strong><br><span style="color:var(--muted)">30 min · Free<br>We scope your
+                    project</span>
+                </div>
+                <div style="color:var(--border); align-self:center; font-size:20px;">→</div>
+                <div style="flex:1; min-width:100px; text-align:center;">
+                  <div style="font-family:'DM Mono',monospace; color:var(--accent); font-size:18px; font-weight:700;">02
+                  </div>
+                  <strong>Proposal + Timeline</strong><br><span style="color:var(--muted)">2–3 days<br>Fixed price,
+                    clear scope</span>
+                </div>
+                <div style="color:var(--border); align-self:center; font-size:20px;">→</div>
+                <div style="flex:1; min-width:100px; text-align:center;">
+                  <div style="font-family:'DM Mono',monospace; color:var(--accent); font-size:18px; font-weight:700;">03
+                  </div>
+                  <strong>Build & Review</strong><br><span style="color:var(--muted)">Milestone updates<br>No
+                    surprises</span>
+                </div>
+                <div style="color:var(--border); align-self:center; font-size:20px;">→</div>
+                <div style="flex:1; min-width:100px; text-align:center;">
+                  <div style="font-family:'DM Mono',monospace; color:var(--accent); font-size:18px; font-weight:700;">04
+                  </div>
+                  <strong>Launch + Handover</strong><br><span style="color:var(--muted)">Full docs, training<br>+ 30-day
+                    support</span>
+                </div>
+              </div>
+            </div>
+            <div class="wf-notes">This section alone lifts inquiry rates by 25–40%. Every client fears: "What am I
+              signing up for?" Answer it proactively.</div>
+          </div>
+        </div>
+
+        <div class="wf-section" style="background:rgba(124,111,255,.04)">
+          <div class="wf-label">Testimonials — 3 Real Quotes with Names + Context</div>
+          <div class="wf-meta">
+            <div class="wf-content" style="font-size:12px; color:var(--muted);">
+              <div style="margin-bottom:.5rem;">"[Name] rescued our entire production codebase in 48 hours.
+                Professional, fast, and the code is actually clean." — [Client], Alumnipp</div>
+              <div style="margin-bottom:.5rem;">"Our tattoo studio website now ranks #1 in Udaipur for tattoo searches.
+                Worth every rupee." — [Owner], Blackarttattoo.in</div>
+              <div>"He understood what we needed for our WhatsApp automation SaaS without us having to explain twice.
+                Rare." — Dhruv, Wavo.digital</div>
+            </div>
+            <div class="wf-notes">Get written permission to use these. Ask Dhruv for a quote. Add LinkedIn profile links
+              for verification. Real names + contexts = 10x more powerful than anonymous "★★★★★ Great work!"</div>
+          </div>
+        </div>
+
+        <div class="wf-section" style="background:rgba(232,255,71,.03)">
+          <div class="wf-label">Lead Magnet Section — Free Website Audit</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              <div class="headline" style="font-size:1.1rem;">Is Your Website Leaving Money on the Table?</div>
+              <div class="subtext">Get a free 20-point audit: SEO gaps, speed issues, conversion problems, and quick
+                wins — delivered in 48 hours. No fluff. No sales pitch.</div>
+              <div style="margin-top:.5rem;">
+                <span style="font-size:12px; color:var(--muted);">[Enter your website URL] &nbsp;</span>
+                <span class="cta-btn">Get Free Audit</span>
+              </div>
+              <div style="font-size:10px; color:var(--muted); margin-top:.4rem;">No credit card. Just your URL and
+                email. Done.</div>
+            </div>
+            <div class="wf-notes">This is your primary lead magnet. It captures people in active research mode. They
+              give you their URL = you see their tech stack + problems before the call. Strategic advantage.</div>
+          </div>
+        </div>
+
+        <div class="wf-section" style="background:rgba(124,111,255,.04)">
+          <div class="wf-label">Blog / Resources Preview (3 latest posts)</div>
+          <div class="wf-content" style="font-size:12px; color:var(--muted);">
+            Insights from real projects: [Post 1] · [Post 2] · [Post 3] &nbsp; <span style="color:var(--accent2)">Read
+              all →</span>
+          </div>
+        </div>
+
+        <div class="wf-section cta-wf">
+          <div class="wf-label">Final CTA — Book Discovery Call</div>
+          <div class="wf-meta">
+            <div class="wf-content">
+              <div class="headline" style="font-size:1rem;">Ready to build something that actually works?</div>
+              <div class="subtext">Book a free 30-minute call. We'll talk about your project, your goals, and whether
+                I'm the right fit. No hard sell.</div>
+              <div style="margin-top:.5rem;"><span class="cta-btn">Book a Free 30-Min Call →</span></div>
+              <div style="font-size:10px; color:var(--muted); margin-top:.3rem;">Available Mon–Fri · Usually responds in
+                &lt;4 hours</div>
+            </div>
+            <div class="wf-notes">Second CTA is the call. First CTA is the audit. This creates two conversion paths:
+              low-commitment (audit) and high-intent (call). Capture both types of leads.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEO STRATEGY -->
+    <div class="section" id="seo">
+      <div class="section-header">
+        <span class="section-num">4.3</span>
+        <h2>SEO Strategy & Keyword Clusters</h2>
+      </div>
+
+      <div class="callout info">
+        Your SEO strategy has three engines: (1) Service + Location pages for local/remote intent, (2) Industry +
+        Technology pages for commercial intent, (3) Blog content for informational traffic that builds authority and
+        internal links to your service pages.
+      </div>
+
+      <div class="keyword-cluster">
+        <div class="kw-header">
+          <h4>Cluster 1: Web Development Services (Commercial)</h4>
+          <span class="kw-intent intent-bofu">BOFU · High Intent</span>
+        </div>
+        <div class="kw-list">
+          <div class="kw-item">freelance web developer India</div>
+          <div class="kw-item">hire React developer India</div>
+          <div class="kw-item">Next.js developer for hire India</div>
+          <div class="kw-item">MERN stack developer freelance</div>
+          <div class="kw-item">web developer Kanpur / Lucknow / Noida</div>
+          <div class="kw-item">custom web application development India</div>
+          <div class="kw-item">affordable web development India startup</div>
+          <div class="kw-item">full stack developer for SaaS startup India</div>
+        </div>
+      </div>
+
+      <div class="keyword-cluster">
+        <div class="kw-header">
+          <h4>Cluster 2: Shopify Development</h4>
+          <span class="kw-intent intent-bofu">BOFU · High Intent</span>
+        </div>
+        <div class="kw-list">
+          <div class="kw-item">Shopify developer India</div>
+          <div class="kw-item">hire Shopify developer freelance</div>
+          <div class="kw-item">Shopify custom theme development India</div>
+          <div class="kw-item">Shopify store setup India</div>
+          <div class="kw-item">Shopify vs WooCommerce which is better</div>
+          <div class="kw-item">Shopify developer for D2C brand India</div>
+          <div class="kw-item">Shopify speed optimization service</div>
+        </div>
+      </div>
+
+      <div class="keyword-cluster">
+        <div class="kw-header">
+          <h4>Cluster 3: WordPress Development</h4>
+          <span class="kw-intent intent-bofu">BOFU · High Intent</span>
+        </div>
+        <div class="kw-list">
+          <div class="kw-item">WordPress developer India freelance</div>
+          <div class="kw-item">WordPress developer for small business India</div>
+          <div class="kw-item">WordPress website development India price</div>
+          <div class="kw-item">WooCommerce developer India</div>
+          <div class="kw-item">WordPress speed optimization service India</div>
+          <div class="kw-item">headless WordPress development</div>
+          <div class="kw-item">WordPress maintenance service India</div>
+        </div>
+      </div>
+
+      <div class="keyword-cluster">
+        <div class="kw-header">
+          <h4>Cluster 4: SEO Services</h4>
+          <span class="kw-intent intent-mofu">MOFU · Consideration</span>
+        </div>
+        <div class="kw-list">
+          <div class="kw-item">SEO services India small business</div>
+          <div class="kw-item">technical SEO audit service India</div>
+          <div class="kw-item">SEO for Shopify store India</div>
+          <div class="kw-item">local SEO service Kanpur Lucknow</div>
+          <div class="kw-item">SEO consultant for SaaS startup India</div>
+          <div class="kw-item">website SEO audit free India</div>
+          <div class="kw-item">SEO for WordPress site India</div>
+        </div>
+      </div>
+
+      <div class="keyword-cluster">
+        <div class="kw-header">
+          <h4>Cluster 5: AI Automation</h4>
+          <span class="kw-intent intent-mofu">MOFU · Emerging</span>
+        </div>
+        <div class="kw-list">
+          <div class="kw-item">n8n automation developer freelance</div>
+          <div class="kw-item">AI workflow automation for small business India</div>
+          <div class="kw-item">n8n vs Zapier which is better</div>
+          <div class="kw-item">hire n8n developer India</div>
+          <div class="kw-item">business process automation India</div>
+          <div class="kw-item">WhatsApp automation for business India</div>
+          <div class="kw-item">AI chatbot development India startup</div>
+        </div>
+      </div>
+
+      <div class="keyword-cluster">
+        <div class="kw-header">
+          <h4>Cluster 6: Informational / Educational (Content SEO)</h4>
+          <span class="kw-intent intent-tofu">TOFU · Traffic Building</span>
+        </div>
+        <div class="kw-list">
+          <div class="kw-item">how to build a Shopify store from scratch</div>
+          <div class="kw-item">Next.js vs React which to choose</div>
+          <div class="kw-item">WordPress vs Webflow comparison 2025</div>
+          <div class="kw-item">how to speed up WordPress site</div>
+          <div class="kw-item">what is headless CMS explained</div>
+          <div class="kw-item">how to automate business with n8n</div>
+          <div class="kw-item">freelance developer rate India 2025</div>
+          <div class="kw-item">how to hire a web developer checklist</div>
+          <div class="kw-item">Supabase vs Firebase 2025</div>
+          <div class="kw-item">best LMS platforms for edtech India</div>
+        </div>
+      </div>
+
+      <!-- CONTENT PLAN -->
+      <div style="margin-top:2rem;">
+        <h3 style="font-size:16px; font-weight:700; margin-bottom:1rem; color:var(--text);">50+ Content Topics
+          (Prioritized)</h3>
+        <div class="content-plan">
+          <!-- BOFU -->
+          <div class="cp-item">
+            <div class="cp-num">01</div>
+            <div class="cp-title">How I Built a WhatsApp Automation SaaS from Scratch (Wavo Case Study)</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">02</div>
+            <div class="cp-title">How I Rescued a Broken Laravel Production Codebase in 72 Hours (Alumnipp)</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">03</div>
+            <div class="cp-title">Best Freelance Web Developers in India 2025 (And How to Choose)</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">04</div>
+            <div class="cp-title">Dear Valentine: How I Got 70+ Countries Organically with Zero Ad Spend</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">05</div>
+            <div class="cp-title">Shopify Development Cost in India 2025: Honest Breakdown</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">06</div>
+            <div class="cp-title">Best n8n Automation Experts in India 2025</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">07</div>
+            <div class="cp-title">WordPress Developer vs Shopify Developer: Which Do You Actually Need?</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">08</div>
+            <div class="cp-title">How to Hire a Web Developer in India: 12 Questions to Ask First</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <!-- MOFU -->
+          <div class="cp-item">
+            <div class="cp-num">09</div>
+            <div class="cp-title">What Does a Web Developer Actually Do? (And What They Shouldn't)</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">10</div>
+            <div class="cp-title">Technical SEO Audit: The 25-Point Checklist I Use for Every Client</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">11</div>
+            <div class="cp-title">Shopify vs WooCommerce vs Webflow: Honest Comparison for 2025</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">12</div>
+            <div class="cp-title">How Much Does a Website Cost in India? A Freelancer's Honest Pricing Guide</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">13</div>
+            <div class="cp-title">WordPress vs Headless CMS: When to Use Which</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">14</div>
+            <div class="cp-title">n8n vs Make vs Zapier: Which Automation Tool Should Your Business Use?</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">15</div>
+            <div class="cp-title">How to Calculate ROI Before Hiring an AI Automation Developer</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">16</div>
+            <div class="cp-title">SEO for Shopify Stores: The Complete 2025 Guide</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">17</div>
+            <div class="cp-title">How to Speed Up Your WordPress Site (From 40 to 95 PageSpeed Score)</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">18</div>
+            <div class="cp-title">Local SEO for Indian Businesses: What Actually Works in 2025</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">19</div>
+            <div class="cp-title">LMS vs Custom-Built Course Platform: What EdTech Founders Need to Know</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">20</div>
+            <div class="cp-title">Next.js vs React: When You Actually Need Next.js (And When You Don't)</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <!-- TOFU -->
+          <div class="cp-item">
+            <div class="cp-num">21</div>
+            <div class="cp-title">What is n8n? A Beginner's Guide to Workflow Automation</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">22</div>
+            <div class="cp-title">What is a Headless CMS? Explained Simply</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">23</div>
+            <div class="cp-title">What is Core Web Vitals? And Why It Affects Your Google Rankings</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">24</div>
+            <div class="cp-title">What is Supabase? (And How It Compares to Firebase)</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">25</div>
+            <div class="cp-title">How WhatsApp Business API Works (And How Businesses Use It)</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">26</div>
+            <div class="cp-title">10 Websites You Didn't Know Were Built with Next.js</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">27</div>
+            <div class="cp-title">What is Technical SEO? Everything Non-Technical Founders Need to Know</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">28</div>
+            <div class="cp-title">10 Business Processes You Can Automate This Week with n8n</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">29</div>
+            <div class="cp-title">What Does a 95 PageSpeed Score Actually Mean for Business?</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">30</div>
+            <div class="cp-title">How I Acquired My First Client via Google Maps Cold Outreach</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <!-- More Mofu/Bofu -->
+          <div class="cp-item">
+            <div class="cp-num">31</div>
+            <div class="cp-title">5 Signs Your Shopify Store Needs a Developer (Not Just an App)</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">32</div>
+            <div class="cp-title">WordPress Maintenance Plans: What You're Actually Getting</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">33</div>
+            <div class="cp-title">How to Build a SaaS MVP in 8 Weeks: The Stack I'd Use in 2025</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">34</div>
+            <div class="cp-title">Freelancer vs Agency for Web Development: Cost, Speed, Quality</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">35</div>
+            <div class="cp-title">Restaurant Website Must-Haves: What Actually Drives Bookings</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">36</div>
+            <div class="cp-title">Tattoo Studio SEO: How to Rank #1 in Your City</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">37</div>
+            <div class="cp-title">How to Build an Education Platform Without Paying for Teachable</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">38</div>
+            <div class="cp-title">D2C Brand Website Checklist: 20 Things Before You Launch</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">39</div>
+            <div class="cp-title">How I Contributed 32+ PRs to Open Source as a Freelance Developer</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">40</div>
+            <div class="cp-title">The Real Cost of a Broken Website: How I Quantify Risk for Clients</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">41</div>
+            <div class="cp-title">AI Automation ROI Calculator: Is It Worth It for Your Business?</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">42</div>
+            <div class="cp-title">Supabase Auth Tutorial: JWT Auth in Next.js App in Under 2 Hours</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">43</div>
+            <div class="cp-title">How to Add Facebook Pixel to Next.js Without Losing Performance</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">44</div>
+            <div class="cp-title">India's Best Cities for Remote Developer Work in 2025</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">45</div>
+            <div class="cp-title">How to Optimize a Shopify Store for Indian Search Engines</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">46</div>
+            <div class="cp-title">Why Your WordPress Blog Posts Aren't Ranking (And How to Fix Them)</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">47</div>
+            <div class="cp-title">Building a WhatsApp Chatbot with n8n: Step-by-Step</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">48</div>
+            <div class="cp-title">What Founders Get Wrong When Hiring a Developer (From the Developer's POV)</div><span
+              class="cp-stage intent-mofu kw-intent">MOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">49</div>
+            <div class="cp-title">How to Build a Booking System for Local Businesses with Next.js</div><span
+              class="cp-stage intent-tofu kw-intent">TOFU</span>
+          </div>
+          <div class="cp-item">
+            <div class="cp-num">50</div>
+            <div class="cp-title">Why Your Website Isn't Getting Leads (A Technical + Strategy Audit)</div><span
+              class="cp-stage intent-bofu kw-intent">BOFU</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONVERSION SYSTEM -->
+    <div class="section" id="conversion">
+      <div class="section-header">
+        <span class="section-num">4.4</span>
+        <h2>Conversion System</h2>
+      </div>
+
+      <h3 style="font-size:15px; font-weight:700; margin-bottom:1.5rem;">Traffic Funnel: TOFU → MOFU → BOFU → Client
+      </h3>
+      <div class="funnel">
+        <div class="funnel-stage stage-tofu">
+          <div class="funnel-label label-tofu">TOFU — Top of Funnel: Awareness</div>
+          <div class="funnel-h">Blog Posts · Glossary Pages · Social Content</div>
+          <div class="funnel-desc">Educational content: "What is n8n," "How to speed up WordPress," "Next.js vs React."
+            This traffic doesn't know you yet — they're searching for answers. Your content earns their trust.
+            <strong>Internal links push them toward MOFU.</strong></div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage stage-mofu">
+          <div class="funnel-label label-mofu">MOFU — Middle of Funnel: Consideration</div>
+          <div class="funnel-h">Case Studies · Comparison Posts · Service Pages · Lead Magnets</div>
+          <div class="funnel-desc">They know the problem; they're evaluating solutions. Case studies prove you can solve
+            their specific problem. Comparison posts ("Freelancer vs Agency") let you pre-answer objections.
+            <strong>Lead magnet (Free Audit) captures their email.</strong></div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage stage-bofu">
+          <div class="funnel-label label-bofu">BOFU — Bottom of Funnel: Decision</div>
+          <div class="funnel-h">Pricing Pages · Discovery Call CTA · Free Audit Report</div>
+          <div class="funnel-desc">They're ready to hire. Remove friction: show starting prices, offer a no-pressure
+            30-min call, include FAQ that handles every remaining objection. <strong>Calendly embed = zero friction
+              booking.</strong></div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage stage-close">
+          <div class="funnel-label label-close">CLOSE — Client</div>
+          <div class="funnel-h">Discovery Call → Proposal → Contract → Onboarding</div>
+          <div class="funnel-desc">Always send a written proposal with scope, timeline, deliverables, and price within
+            24 hours of the call. Always get 50% upfront. Always put it in writing. Every time.</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:15px; font-weight:700; margin-top:2.5rem; margin-bottom:1rem;">Lead Magnets</h3>
+      <div class="lm-grid">
+        <div class="lm-card">
+          <div class="lm-icon">🔍</div>
+          <h4>Free Website Audit (20 Points)</h4>
+          <p>Visitor submits URL + email. You run Lighthouse, Screaming Frog, SEMrush. Deliver a PDF within 48 hours
+            showing SEO gaps, speed issues, and quick wins. Positions you as the expert who diagnosed their problem.</p>
+          <div class="lm-value">→ Ideal for: SEO & Web Dev leads · Conversion: 8–12%</div>
+        </div>
+        <div class="lm-card">
+          <div class="lm-icon">⚡</div>
+          <h4>AI Automation ROI Calculator</h4>
+          <p>A simple web tool: "Enter your hourly rate and hours spent on [task]. See how much you'd save with
+            automation." Built with React. Captures email to get the full report. Shows the money before they spend any.
+          </p>
+          <div class="lm-value">→ Ideal for: AI automation leads · Conversion: 12–18%</div>
+        </div>
+        <div class="lm-card">
+          <div class="lm-icon">📋</div>
+          <h4>Website Launch Checklist (PDF)</h4>
+          <p>47-point checklist: SEO, performance, security, conversion, accessibility. Useful for anyone about to
+            launch. They download it, realize they need help, and see your CTA at the bottom. Classic educational
+            selling.</p>
+          <div class="lm-value">→ Ideal for: Startup/SMB leads · Conversion: 5–8%</div>
+        </div>
+        <div class="lm-card">
+          <div class="lm-icon">🛒</div>
+          <h4>Shopify Store Checklist</h4>
+          <p>50-point Shopify launch and optimization checklist. Extremely specific. The person who downloads this is
+            either launching a Shopify store or struggling with one — your ideal client. Bundle with a "free 15-min
+            consultation" CTA.</p>
+          <div class="lm-value">→ Ideal for: Shopify leads · Conversion: 6–10%</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:15px; font-weight:700; margin-top:2rem; margin-bottom:1rem;">CTA Strategy</h3>
+      <div class="analysis-block" style="margin-bottom:0">
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">Primary CTA</div>
+            <div class="analysis-value"><strong>"Get Free Website Audit"</strong> — Low commitment, high value, captures
+              a lead who is actively thinking about their website. Use this in: hero, blog posts, exit-intent popups.
+            </div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Secondary CTA</div>
+            <div class="analysis-value"><strong>"Book a Free 30-Min Call"</strong> — For high-intent visitors who are
+              ready to talk. Use this in: service pages, case studies, pricing page, final homepage section.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Blog CTA (Inline)</div>
+            <div class="analysis-value">Within each blog post, use a contextual CTA. If the post is about Shopify SEO:
+              "Want me to audit your Shopify store's SEO? Free, 48-hour turnaround." Contextual CTAs convert 4–8x better
+              than generic banners.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Exit Intent</div>
+            <div class="analysis-value">On blog posts and service pages: "Before you go — get a free 20-point website
+              audit. Just your URL." Light popup, not aggressive. Converts ~3–5% of bouncing visitors into email leads.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POSITIONING -->
+    <div class="section" id="positioning">
+      <div class="section-header">
+        <span class="section-num">4.5</span>
+        <h2>Positioning Strategy</h2>
+      </div>
+
+      <div class="callout warning">
+        The single most common mistake for developers with your skill set: positioning yourself as a generalist. "I do
+        web development, SEO, Shopify, WordPress, AI automation, LMS…" reads as unfocused to buyers. Your website needs
+        a spine — one clear identity that everything else hangs off.
+      </div>
+
+      <div class="pos-matrix">
+        <div class="pos-row">
+          <div class="pos-label">The Spine</div>
+          <div class="pos-value"><strong>"I build digital products that grow businesses."</strong> — This is broad
+            enough to cover everything you do, but sharp enough to signal outcomes (growth) and seriousness (products,
+            not pages). It's the one-line identity.</div>
+        </div>
+        <div class="pos-row">
+          <div class="pos-label">Differentiator</div>
+          <div class="pos-value">You don't just build — you acquire clients yourself via cold outreach (Google Maps,
+            LinkedIn, Hirect), you've built and shipped your own SaaS (Dear Valentine), and you've rescued production
+            codebases under pressure. <strong>Most developers wait for clients. You go get them. That's a rare skill set
+              to sell.</strong></div>
+        </div>
+        <div class="pos-row">
+          <div class="pos-label">Niche Option 1</div>
+          <div class="pos-value"><strong>Full-stack developer for Indian startups and founders.</strong> Target: seed to
+            Series A startups, solo founders, product-market-fit hunters. You offer end-to-end: website + SEO +
+            automation + maintenance. No agency overhead. Faster, cheaper, founder-to-founder trust.</div>
+        </div>
+        <div class="pos-row">
+          <div class="pos-label">Niche Option 2</div>
+          <div class="pos-value"><strong>Shopify + SEO specialist for Indian D2C brands.</strong> India's D2C market is
+            exploding. Brands need someone who can build their store AND rank it. Very few developers do both. You do.
+            "I build your store and get it to page 1." Specific, high-value, premium-justified.</div>
+        </div>
+        <div class="pos-row">
+          <div class="pos-label">Niche Option 3</div>
+          <div class="pos-value"><strong>AI automation builder for local and online businesses.</strong> Position as the
+            person who eliminates repetitive work. Target: SMBs spending hours on WhatsApp replies, manual invoicing,
+            data entry. ROI-based pricing: "I'll save your team 20 hours/week or you don't pay."</div>
+        </div>
+        <div class="pos-row">
+          <div class="pos-label">Recommended</div>
+          <div class="pos-value"><strong>Start with Option 1 (broad but outcome-focused) and build Option 2 or 3 as a
+              sub-niche specialization over 6–12 months once you have 3+ case studies in that niche.</strong> Niche too
+            early and you leave money on the table. But have a landing page for each specific niche so search traffic
+            finds you.</div>
+        </div>
+        <div class="pos-row">
+          <div class="pos-label">Your Headline Formula</div>
+          <div class="pos-value"><strong>[Outcome] + [Who you serve] + [Differentiator]</strong><br>Example: "I build
+            production-ready web products for Indian founders — from idea to ranked, converting website, in 4–8 weeks."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONETIZATION -->
+    <div class="section" id="monetization">
+      <div class="section-header">
+        <span class="section-num">4.6</span>
+        <h2>Monetization Model & Packages</h2>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <div class="price-name">Starter Website</div>
+          <div class="price-amount">₹25,000–40,000</div>
+          <div class="price-desc">For local businesses, solo founders, restaurants, studios. WordPress or Next.js. 5–7
+            pages. SEO-optimized. Mobile-first. Includes 1 month support.</div>
+          <ul class="price-features">
+            <li>5–7 pages, custom design</li>
+            <li>WordPress or Next.js</li>
+            <li>On-page SEO setup</li>
+            <li>Google Analytics + Maps</li>
+            <li>Contact form + WhatsApp widget</li>
+            <li>1 month bug support</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-name">Startup / SaaS Website</div>
+          <div class="price-amount">₹60,000–1,20,000</div>
+          <div class="price-desc">For funded startups, SaaS products, edtech platforms. Next.js, MERN, Supabase. Custom
+            functionality. CMS integration. SEO + performance optimized.</div>
+          <ul class="price-features">
+            <li>Custom full-stack development</li>
+            <li>React / Next.js + Node backend</li>
+            <li>Auth, payments, APIs</li>
+            <li>CMS integration (Sanity/Contentful)</li>
+            <li>Technical SEO foundation</li>
+            <li>Deployment + CI/CD setup</li>
+            <li>30-day post-launch support</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">Shopify Store</div>
+          <div class="price-amount">₹35,000–80,000</div>
+          <div class="price-desc">For D2C brands, eCommerce founders. Custom theme or premium theme customization.
+            Product setup, payment gateway, SEO. Speed-optimized to 90+ score.</div>
+          <ul class="price-features">
+            <li>Custom theme or customization</li>
+            <li>Up to 50 products setup</li>
+            <li>Razorpay/Stripe integration</li>
+            <li>Shopify SEO optimization</li>
+            <li>Speed optimization (90+ score)</li>
+            <li>Abandoned cart + email setup</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">SEO Monthly Retainer</div>
+          <div class="price-amount">₹15,000–35,000/mo</div>
+          <div class="price-desc">For businesses that want consistent organic growth. Technical SEO + content strategy +
+            monthly reporting. 3-month minimum for results.</div>
+          <ul class="price-features">
+            <li>Monthly technical SEO audit</li>
+            <li>4–8 blog posts/month</li>
+            <li>Keyword tracking + reporting</li>
+            <li>Backlink outreach</li>
+            <li>Competitor analysis</li>
+            <li>Google Search Console management</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">AI Automation Setup</div>
+          <div class="price-amount">₹20,000–60,000</div>
+          <div class="price-desc">For businesses losing hours to manual tasks. n8n, Make, or custom scripts. WhatsApp
+            bots, CRM automation, invoice generation, lead routing, notification systems.</div>
+          <ul class="price-features">
+            <li>Process audit + mapping</li>
+            <li>n8n / Make workflow build</li>
+            <li>API integrations</li>
+            <li>WhatsApp / email automation</li>
+            <li>Testing + documentation</li>
+            <li>2-week post-launch support</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">Maintenance Plan</div>
+          <div class="price-amount">₹5,000–12,000/mo</div>
+          <div class="price-desc">Recurring revenue. WordPress or Shopify maintenance: updates, backups, uptime
+            monitoring, minor edits, security. Set-and-forget for clients. Predictable income for you.</div>
+          <ul class="price-features">
+            <li>Weekly plugin/theme updates</li>
+            <li>Daily backups</li>
+            <li>Uptime monitoring</li>
+            <li>Up to 2 hrs/mo minor edits</li>
+            <li>Monthly performance report</li>
+            <li>Priority email support</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="callout" style="margin-top:1.5rem;">
+        <strong>Pricing Strategy Note:</strong> Always show "starting from" prices on your website. This filters
+        clients, sets expectations, and (per 2025 SEO data) earns 68% more organic traffic than hidden pricing. Your
+        maintenance plan is your recurring revenue base — prioritize getting 5 clients on it and you've got
+        ₹25,000–60,000/mo baseline while you close bigger projects.
+      </div>
+
+      <div class="analysis-block" style="margin-top:1.5rem;">
+        <div class="analysis-header">
+          <span class="analysis-title">Productized Service Ideas (Differentiated, Scalable)</span>
+        </div>
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">Website in 7 Days</div>
+            <div class="analysis-value">Fixed scope, fixed price (₹35,000), fixed delivery: 7 business days. For local
+              businesses who need something fast. No revisions beyond 2 rounds. Clear scope sheet upfront. This removes
+              the open-ended project problem completely and lets you stack multiple projects per month.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">SEO Jumpstart</div>
+            <div class="analysis-value">One-time ₹12,000 package: Full technical SEO audit + 90-day keyword roadmap +
+              first 2 optimized blog posts + Google Search Console setup. Designed to transition into a monthly
+              retainer. Low entry price = high close rate. Upsell success rate: ~60%.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Automation in a Day</div>
+            <div class="analysis-value">₹15,000 for one single n8n workflow built and deployed in one working day.
+              Scoped tightly: one trigger, one action, one output. Great for businesses wanting to test AI automation
+              before committing to a full build. Portfolio builder + upsell starter.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Emergency Website Rescue</div>
+            <div class="analysis-value">₹20,000–40,000 depending on severity. For hacked sites, broken deployments,
+              crashed databases. Rush delivery. 24-hour response. This is where your Alumnipp story is pure gold —
+              you've literally done this under pressure. Advertise it. No one else will.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL CHECKLIST -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">FINAL</span>
+        <h2>90-Day Website Build & Launch Checklist</h2>
+      </div>
+
+      <div class="analysis-block">
+        <div class="analysis-body">
+          <div class="analysis-row">
+            <div class="analysis-label">Week 1–2</div>
+            <div class="analysis-value"><strong>Foundation:</strong> Decide on domain + brand name. Set up Next.js or
+              WordPress. Build Homepage, About, Services (all 6), Contact, and one Case Study page. Write and add your 3
+              core case studies (Wavo, Alumnipp, Dear Valentine) with real numbers. Set up Google Analytics + Search
+              Console + Hotjar.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Week 3–4</div>
+            <div class="analysis-value"><strong>SEO Foundation:</strong> Publish first 5 blog posts (start with BOFU:
+              case studies + comparison posts). Build 3 location pages (Kanpur, Lucknow, Noida or remote). Set up free
+              audit lead magnet (can be a Google Form initially). Add Calendly to contact page. Submit sitemap to
+              Google.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Month 2</div>
+            <div class="analysis-value"><strong>Content Velocity:</strong> Publish 8–10 blog posts. Build 2 service
+              landing pages (Shopify dev + AI Automation). Create Packages pricing page. Set up email list (Mailchimp /
+              ConvertKit free). Add exit-intent popup with audit CTA. Build first free tool (ROI calculator or speed
+              test).</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Month 3</div>
+            <div class="analysis-value"><strong>Authority + Outreach:</strong> 10 more blog posts. Start guest posting
+              on relevant blogs. Build your Clutch profile and request reviews. Share blog content on LinkedIn weekly.
+              Get backlinks via HARO (Help a Reporter Out). At month 3, review GSC for ranking keywords and double down
+              on what's working.</div>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-label">Ongoing</div>
+            <div class="analysis-value"><strong>Compound:</strong> 4–6 posts per month minimum. Update case studies with
+              new clients. A/B test your hero CTA. Build new landing pages for any new service/niche you enter. Track
+              keyword rankings weekly. Every new project = new case study within 2 weeks of delivery.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="background:var(--surface); border:1px solid var(--border); padding:2rem; margin-bottom:4rem;">
+      <div
+        style="font-family:'DM Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:.1em; text-transform:uppercase; margin-bottom:1rem;">
+        Built for Tarun Singh</div>
+      <p style="color:var(--muted); font-size:13px; line-height:1.7; max-width:700px;">
+        This blueprint is built around your actual strengths: production-grade development, real SaaS shipping
+        experience, cold client acquisition skills, and a 18-month track record of delivered products. The fastest path
+        to ₹5–8 LPA and beyond isn't finding more clients — it's building a system that finds you. That system is this
+        website.
+        <br><br>
+        The best thing you can do right now: <strong>ship the site in 2 weeks, publish 1 case study, and send the URL to
+          your next 10 Hirect/LinkedIn leads.</strong> Iterate from there. Speed beats perfection.
+      </p>
+    </div>
+
+  </div><!-- /.content -->
+
+  <footer>
+    <span>Elite Website Strategy Blueprint · April 2026</span>
+    <span>Tarun Singh · github.com/perpetual-cosmos · abouttarunsingh.netlify.app</span>
+    <span style="color:var(--accent)">20 sites analyzed · 50+ content topics · Full sitemap + wireframe</span>
+  </footer>
+
+</body>
+
+</html>

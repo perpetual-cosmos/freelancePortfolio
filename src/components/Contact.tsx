@@ -74,7 +74,7 @@ const Contact = () => {
                    Initiate Review <ArrowRight size={18} />
                 </button>
               </div>
-              <div className="absolute inset-0 z-0 opacity-[0.03] bg-[linear-gradient(to_right,#6300e2_1px,transparent_1px),linear-gradient(to_bottom,#6300e2_1px,transparent_1px)] bg-[size:20px:20px]" />
+              <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
             </motion.div>
           </div>
 

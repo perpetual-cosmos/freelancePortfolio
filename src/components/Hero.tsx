@@ -49,27 +49,27 @@ const Hero = () => {
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="text-center lg:text-left">
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[0.8rem] tracking-[0.2em] uppercase mb-8">
             <Sparkles size={16} className="text-primary animate-pulse" />
-            <span>Scale Your Vision in Q3 2024</span>
+            <span>Full-Stack Developer & SEO Specialist · 18 months · 10+ live products</span>
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-[clamp(2.8rem,9vw,6rem)] font-extrabold leading-[0.95] tracking-tight mb-8 text-on-surface font-display">
-            Architecting <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Digital Depth</span> <br className="hidden lg:block" /> For Visionaries.
+            I Build Websites That <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Rank, Convert</span> <br className="hidden lg:block" /> & Scale.
           </motion.h1>
           
           <motion.p variants={itemVariants} className="text-on-surface-variant max-w-[640px] mx-auto lg:mx-0 mb-12 text-[clamp(1.1rem,1.4vw,1.35rem)] leading-relaxed font-medium opacity-90">
-            We engineer high-performance software systems that don't just work—they redefine markets. From specialized Next.js interfaces to complex AI backends, we turn ambition into production-ready reality.
+            From Shopify stores to Next.js apps, WordPress sites to AI automations — I deliver complete digital products with measurable business results. No fluff. No templates. Just code that works.
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex flex-wrap gap-6 justify-center lg:justify-start mb-20 lg:mb-28">
             <button className={btnPrimaryClass}>
               <span className="relative z-10 flex items-center gap-2">
-                Start Project 
+                Get Free Website Audit 
                 <ArrowRight size={22} className="transition-transform group-hover:translate-x-1.5" />
               </span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
             </button>
             <button className={btnSecondaryClass}>
-              Technical Stack
+              See My Work
               <Rocket size={18} className="text-primary/40 group-hover:text-primary transition-colors" />
             </button>
           </motion.div>
@@ -77,9 +77,9 @@ const Hero = () => {
           {/* Trust Metrics */}
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-12 lg:gap-20">
             {[
-              { label: 'Products Shipped', value: '50+', icon: <Zap size={18} /> },
-              { label: 'Uptime Standard', value: '99.9%', icon: <ShieldCheck size={18} /> },
-              { label: 'Founder CSAT', value: '4.9/5', icon: <Globe size={18} /> }
+              { label: 'Live Projects', value: '10+', icon: <Zap size={18} /> },
+              { label: 'Countries Reached', value: '70+', icon: <ShieldCheck size={18} /> },
+              { label: 'SaaS Users', value: '1,000+', icon: <Globe size={18} /> }
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center lg:items-start gap-1 group">
                 <div className="flex items-center gap-2 mb-1">
@@ -97,13 +97,15 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9, rotateY: 20 }} 
           animate={{ opacity: 1, scale: 1, rotateY: -10 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as any, delay: 0.5 }}
-          className="relative lg:h-[700px] flex items-center justify-center lg:justify-end perspective-[2000px]"
+          className="relative lg:h-[700px] flex items-center justify-center lg:justify-end"
+          style={{ perspective: '2000px' }}
         >
           <div className="relative group cursor-pointer">
             {/* Main Visual Container */}
             <motion.div 
-              className="relative z-10 rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(99,0,226,0.25)] border border-white/20 transition-all duration-700 lg:rotate-y-[-15deg] lg:rotate-x-[10deg] group-hover:rotate-y-[-5deg] group-hover:rotate-x-[2deg] group-hover:scale-[1.02]"
+              className="relative z-10 rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(99,0,226,0.25)] border border-white/20 transition-all duration-700"
               style={{ transformStyle: 'preserve-3d' }}
+              whileHover={{ rotateY: -5, rotateX: 2, scale: 1.02 }}
             >
               <img src="/hero_premium_dashboard.png" alt="Engineering Interface" className="w-full max-w-[580px] h-auto block" />
               {/* Gloss Finish */}

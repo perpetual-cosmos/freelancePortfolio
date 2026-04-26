@@ -5,27 +5,27 @@ import { Check, Star, ArrowRight, Zap, Target, Shield } from 'lucide-react';
 
 const tiers = [
   {
-    name: "MVP TRACK",
-    subtitle: "Ideal for early-stage founders",
-    price: "$5,000+",
+    name: "Starter",
+    subtitle: "Ideal for local businesses & portfolios",
+    price: "₹25,000+",
     icon: <Target size={24} />,
-    features: ["Modular Next.js Architecture", "Typescript-First Core", "90%+ Lighthouse Performance", "Core API & Auth Layer", "Vercel/AWS Deployment"],
+    features: ["Landing Page / 5-Page Website", "Responsive Design", "Basic SEO Setup", "Contact Form Integration", "30 Days Support"],
     highlight: false
   },
   {
-    name: "SCALE TRACK",
-    subtitle: "Architected for high-growth",
-    price: "$12,000+",
+    name: "Startup / SaaS",
+    subtitle: "Built for high-growth digital products",
+    price: "₹75,000+",
     icon: <Zap size={24} />,
-    features: ["Event-Driven Backend", "Automated Testing Suite", "Full CI/CD Pipeline Setup", "External API Integrations", "Performance Monitoring Hub", "Priority Engineering Support"],
+    features: ["Full-Stack Next.js App", "Database & Auth Integration", "Technical SEO Strategy", "Custom Dashboard / UI", "Priority Engineering", "60 Days Support"],
     highlight: true
   },
   {
-    name: "ENTERPRISE",
-    subtitle: "Dedicated core infrastructure",
-    price: "Custom",
+    name: "Shopify / E-com",
+    subtitle: "Custom stores that actually sell",
+    price: "₹60,000+",
     icon: <Shield size={24} />,
-    features: ["Microservices Migration", "Custom AI/ML Workflows", "Security & Compliance Audit", "Dedicated Dev Environment", "24/7 SLA Guarantees", "Legacy Code Refactoring"],
+    features: ["Custom Liquid Theme", "Conversion Rate Optimization", "Inventory Management Setup", "Payment Gateway Integration", "High-Performance Assets"],
     highlight: false
   }
 ];
@@ -56,7 +56,7 @@ const Pricing = () => {
             viewport={{ once: true }}
             className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold tracking-tight leading-[1.05] font-display text-on-surface"
           >
-            Premium Engineering <br /> <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Packages.</span>
+            Premium Development <br /> <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Investment Tiers.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
