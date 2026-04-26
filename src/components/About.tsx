@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Zap, Cpu, Award, Users } from 'lucide-react';
 
 const stats = [
-  { label: 'Cloud Deployments', value: '40+', sub: 'Next.js & AWS', icon: <Zap size={24} /> },
-  { label: 'System Reliability', value: '99.9%', sub: 'SLA Guaranteed', icon: <ShieldCheck size={24} /> },
-  { label: 'Engineering Experience', value: '8+', sub: 'Lead Engineers', icon: <Cpu size={24} /> },
-  { label: 'Enterprise Partners', value: '15+', sub: 'Global Scale', icon: <Award size={24} /> },
+  { label: 'Live Projects Shipped', value: '10+', sub: 'Real clients, real results', icon: <Zap size={24} /> },
+  { label: 'Experience', value: '18mo', sub: 'Full-stack + SEO practice', icon: <Award size={24} /> },
+  { label: 'SaaS Users', value: '1K+', sub: 'Dear Valentine platform', icon: <Users size={24} /> },
+  { label: 'Countries Reached', value: '70+', sub: 'Products with global users', icon: <ShieldCheck size={24} /> },
 ];
 
 const About = () => {
@@ -43,10 +43,10 @@ const About = () => {
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
                   <Users size={18} />
                 </div>
-                <div className="text-white/80 font-black text-[0.7rem] tracking-[0.2em] uppercase">TheUnipick Creed</div>
+                <div className="text-white/80 font-black text-[0.7rem] tracking-[0.2em] uppercase">Tarun Singh · TheUnipick</div>
               </div>
               <p className="text-white text-[1.4rem] lg:text-[1.8rem] font-bold leading-tight font-display tracking-tight italic">
-                "We don't just ship code. We architect resilience into every single pixel."
+                "I don't take on projects I can't ship. Everything in my portfolio is live, real, and built from scratch."
               </p>
             </div>
           </div>
@@ -75,10 +75,10 @@ const About = () => {
               <Cpu size={16} /> <span>The Engineering DNA</span>
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight mb-10 text-on-surface font-display">
-              Built on a Foundation of <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Pure Precision.</span>
+              Tarun Singh — <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Builder First.</span>
             </h2>
             <p className="text-on-surface-variant text-[1.2rem] lg:text-[1.4rem] mb-12 leading-relaxed font-medium opacity-90">
-              Complexity is the enemy of scale. At TheUnipick, we specialize in stripping away the bloat to build lean, modular systems that don't just work—they endure. Our culture is obsessed with maintainability, performance, and the quiet confidence of a stable production environment.
+              I'm a full-stack developer and SEO specialist based in Kanpur, India. Over the past 18 months I've shipped 10+ live products — from a SaaS with 1,000+ users, to Shopify stores now ranking #1, to production codebases rescued under pressure. I don't subcontract. I don't ghost clients. I build and I ship.
             </p>
           </motion.div>
 

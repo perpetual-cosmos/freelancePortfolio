@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Users, Star, Globe, ShieldCheck } from 'lucide-react';
 
 const pulses = [
-  { id: 1, text: "Completed a Fintech React dashboard", time: "Just now", icon: <CheckCircle size={16} />, color: '#3b82f6' },
-  { id: 2, text: "New project for a Berlin startup", time: "2 mins ago", icon: <Globe size={16} />, color: '#10b981' },
-  { id: 3, text: "5.0 Rating on recent Upwork project", time: "1 hour ago", icon: <Star size={16} />, color: '#f59e0b' },
-  { id: 4, text: "Trusted by 50+ clients globally", time: "Active", icon: <Users size={16} />, color: '#8b5cf6' },
+  { id: 1, text: "BlackArt Tattoo now #1 on Google in Udaipur", time: "Just now", icon: <CheckCircle size={16} />, color: '#6300e2' },
+  { id: 2, text: "Dear Valentine crossed 1,000+ active users", time: "This week", icon: <Users size={16} />, color: '#10b981' },
+  { id: 3, text: "Biryani Babu — 40% conversion lift post-launch", time: "Apr 2025", icon: <Star size={16} />, color: '#f59e0b' },
+  { id: 4, text: "Available for new projects · Kanpur, India", time: "Active", icon: <Globe size={16} />, color: '#8b5cf6' },
 ];
 
 const DURATION = 8000;
