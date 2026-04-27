@@ -21,6 +21,7 @@ export interface ServiceData {
   specs: Record<string, string>;
   faq: ServiceFAQ[];
   category: string;
+  startingPrice: string;
 }
 
 const servicesData: ServiceData[] = [
@@ -40,6 +41,7 @@ const servicesData: ServiceData[] = [
       { title: 'Performance Optimization', desc: 'Sub-100ms TTFB, perfect Core Web Vitals scores.' }
     ],
     pricing: 'Starting from ₹25,000 for websites · ₹75,000 for full-stack apps',
+    startingPrice: '₹25,000',
     outcome: 'BlackArt Tattoo Studio went from 0 to #1 in Udaipur search results within 3 months of launch.',
     stack: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind', 'MongoDB'],
     specs: { Latency: '< 150ms', Uptime: '99.99%', Security: 'Enterprise', Delivery: 'Edge CDN' },
@@ -65,6 +67,7 @@ const servicesData: ServiceData[] = [
       { title: 'Email & Cart Flows', desc: 'Abandoned cart recovery and automated email sequences.' }
     ],
     pricing: 'Starting from ₹35,000 for custom themes · ₹80,000 for headless builds',
+    startingPrice: '₹35,000',
     outcome: "Shopify stores I've built average a 40% increase in add-to-cart rates vs. their previous theme.",
     stack: ['Shopify', 'Liquid', 'WooCommerce', 'WordPress', 'Razorpay', 'Stripe'],
     specs: { Latency: '< 200ms', Uptime: '99.95%', Security: 'PCI Ready', Delivery: 'Global CDN' },
@@ -90,6 +93,7 @@ const servicesData: ServiceData[] = [
       { title: 'Post-Launch Monitoring', desc: '2-week monitoring period to ensure everything runs smoothly.' }
     ],
     pricing: 'Single workflow from ₹15,000 · Full automation build from ₹20,000–60,000',
+    startingPrice: '₹15,000',
     outcome: 'Typical client saves 20+ hours/month on manual tasks within the first 2 weeks of deployment.',
     stack: ['n8n', 'Zapier', 'Make.com', 'OpenAI', 'Python', 'Node.js'],
     specs: { Response: '< 2s', Uptime: '99.9%', API: 'Private', Deploy: 'Hybrid' },
@@ -115,6 +119,7 @@ const servicesData: ServiceData[] = [
       { title: 'Competitor Analysis', desc: 'Benchmark against competitors and identify ranking opportunities.' }
     ],
     pricing: 'One-time audit from ₹12,000 · Monthly retainer from ₹15,000/mo',
+    startingPrice: '₹12,000',
     outcome: 'BlackArt Tattoo Studio reached the #1 position for "tattoo studio Udaipur" within 90 days.',
     stack: ['Ahrefs', 'GSC', 'Screaming Frog', 'Analytics', 'Schema', 'Lighthouse'],
     specs: { Results: '3-6 months', Coverage: 'Global', Reports: 'Monthly', Tools: 'Premium' },
@@ -140,6 +145,7 @@ const servicesData: ServiceData[] = [
       { title: 'Blog & Content Systems', desc: 'SEO-optimized blog setups with CMS integration.' }
     ],
     pricing: 'Starting from ₹25,000 for WordPress · ₹50,000 for LMS platforms',
+    startingPrice: '₹25,000',
     outcome: 'ClearKaro EdTech platform launched with full course management, payments, and 500+ student capacity.',
     stack: ['WordPress', 'Headless CMS', 'Strapi', 'Sanity', 'Next.js', 'Supabase'],
     specs: { Speed: '< 1s', CMS: 'Headless', Security: 'Hardened', Scale: 'Unlimited' },
@@ -165,6 +171,7 @@ const servicesData: ServiceData[] = [
       { title: 'Social Media Assets', desc: 'Templates for Instagram, LinkedIn, and marketing materials.' }
     ],
     pricing: 'Logo & branding from ₹10,000 · Full UI/UX design from ₹20,000',
+    startingPrice: '₹10,000',
     outcome: 'Complete brand identity redesign for Dear Valentine SaaS — increased user engagement by 35%.',
     stack: ['Figma', 'Illustrator', 'Photoshop', 'After Effects', 'Canva'],
     specs: { Tool: 'Figma', Revisions: '3 rounds', Delivery: '2-3 weeks', Format: 'All formats' },
