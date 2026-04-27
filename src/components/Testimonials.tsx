@@ -31,107 +31,104 @@ const testimonies = [
 ];
 
 const Testimonials = () => {
-  const cardClass = "bg-white rounded-2xl border border-[rgba(99,0,226,0.06)] shadow-md transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden p-12 lg:p-14 group hover:-translate-y-2 hover:border-[rgba(99,0,226,0.12)] hover:shadow-lg hover:scale-[1.01] card-hover-gradient";
-
   return (
-    <section id="testimonials" className="bg-white py-32 lg:py-48 relative overflow-hidden noise-overlay">
+    <section id="testimonials" className="bg-white py-14 sm:py-20 lg:py-28 relative overflow-hidden">
       {/* Decorative Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 blur-[160px] rounded-full -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 blur-[140px] rounded-full -z-10" />
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
-        <div className="text-center mb-24 lg:mb-32">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
+            initial={{ opacity: 0, y: 12 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[0.8rem] tracking-[0.2em] uppercase mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-bold text-[0.6rem] sm:text-[0.65rem] tracking-[0.15em] uppercase mb-4"
           >
-            <Sparkles size={16} /> <span>Client Feedback</span>
+            <Sparkles size={12} /> <span>Client Feedback</span>
           </motion.div>
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }} 
+            initial={{ opacity: 0, y: 15 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }} 
-            transition={{ delay: 0.1 }}
-            className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold tracking-tight leading-[1.05] font-display text-on-surface"
+            transition={{ delay: 0.08 }}
+            className="text-[clamp(1.6rem,4vw,2.8rem)] font-extrabold tracking-tight leading-[1.1] font-display text-on-surface"
           >
-            Validated by <br /> <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Digital Leaders.</span>
+            Validated by <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Digital Leaders.</span>
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {testimonies.map((t, i) => (
             <motion.div 
               key={i} 
-              initial={{ opacity: 0, y: 30 }} 
+              initial={{ opacity: 0, y: 20 }} 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} 
-              transition={{ delay: i * 0.1, duration: 0.8 }}
-              className={cardClass}
+              transition={{ delay: i * 0.08 }}
+              className="bg-white rounded-xl border border-[rgba(0,0,0,0.05)] p-5 sm:p-6 group hover:-translate-y-1 hover:border-[rgba(99,0,226,0.1)] hover:shadow-md transition-all duration-500 relative overflow-hidden flex flex-col"
             >
-              <div className="mb-10 flex justify-between items-start relative z-10">
+              {/* Top Row */}
+              <div className="mb-4 flex justify-between items-start">
                 <div 
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-md"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-sm"
                   style={{ color: 'white', background: t.color }}
                 >
-                  <Quote size={20} fill="white" />
+                  <Quote size={16} fill="white" />
                 </div>
-                <div className="flex gap-1">
+                <div className="flex gap-0.5">
                   {[...Array(5)].map((_, si) => (
-                    <Star key={si} size={14} fill={t.color} color={t.color} className="opacity-80" />
+                    <Star key={si} size={11} fill={t.color} color={t.color} className="opacity-70" />
                   ))}
                 </div>
               </div>
               
-              <p className="text-on-surface-variant text-[1.1rem] lg:text-[1.25rem] leading-relaxed font-medium italic mb-12 flex-1 opacity-90 group-hover:opacity-100 transition-opacity relative z-10">
+              {/* Quote */}
+              <p className="text-on-surface-variant text-[0.82rem] sm:text-[0.88rem] leading-relaxed font-medium italic mb-5 flex-1 opacity-85 group-hover:opacity-100 transition-opacity">
                 "{t.quote}"
               </p>
               
-              <div className="flex items-center gap-5 pt-10 border-t border-[rgba(99,0,226,0.06)] relative z-10">
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-4 border-t border-[rgba(0,0,0,0.04)]">
                 <div 
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-black text-lg shadow-lg group-hover:scale-110 transition-transform" 
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-[0.75rem] shadow-sm group-hover:scale-105 transition-transform" 
                   style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}dd)` }}
                 >
                   {t.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-black text-[1.1rem] text-on-surface leading-tight mb-1 truncate font-display tracking-tight flex items-center gap-2">
+                  <div className="font-bold text-[0.82rem] text-on-surface leading-tight mb-0.5 truncate font-display tracking-tight flex items-center gap-1.5">
                     {t.author}
                     {t.link && (
                       <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors">
-                        <ExternalLink size={14} />
+                        <ExternalLink size={12} />
                       </a>
                     )}
                   </div>
-                  <div className="text-[0.75rem] text-on-surface-muted font-black tracking-widest uppercase truncate opacity-70">
+                  <div className="text-[0.6rem] sm:text-[0.65rem] text-on-surface-muted font-bold tracking-wider uppercase truncate opacity-60">
                     {t.role}
                   </div>
                 </div>
               </div>
-              
-              {/* Dynamic Accent */}
-              <div 
-                className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ backgroundImage: `linear-gradient(to bottom left, ${t.color}10, transparent)` }}
-              />
             </motion.div>
           ))}
         </div>
         
-        {/* Trust Highlight */}
+        {/* Trust Bar */}
         <motion.div 
           initial={{ opacity: 0 }} 
           whileInView={{ opacity: 1 }} 
           viewport={{ once: true }}
-          className="mt-24 text-center"
+          className="mt-8 sm:mt-10 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-surface-muted border border-[rgba(99,0,226,0.06)] text-[0.9rem] font-bold text-on-surface-variant">
-             <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map(j => (
-                   <div key={j} className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white" />
-                ))}
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-surface-muted border border-[rgba(0,0,0,0.04)] text-[0.72rem] sm:text-[0.78rem] font-bold text-on-surface-variant">
+             <div className="flex -space-x-1.5">
+               {[1, 2, 3, 4].map(j => (
+                  <div key={j} className="w-6 h-6 rounded-full bg-slate-200 border-2 border-white" />
+               ))}
              </div>
-             Join 50+ founders who trust our engineering core.
+             Join 50+ founders who trust our engineering.
           </div>
         </motion.div>
       </div>
