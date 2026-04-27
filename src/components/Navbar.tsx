@@ -1,17 +1,16 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, ChevronDown, Globe, Code2, Server, Brain, BarChart3, BookOpen, ArrowRight, Sparkles } from 'lucide-react';
-import AvailabilityBadge from './widgets/AvailabilityBadge';
+import { Menu, X, ChevronDown, Globe, Code2, Server, Brain, BarChart3, BookOpen, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
-  { id: '01', title: 'Web Development', desc: 'Next.js, MERN & TypeScript apps', icon: <Code2 size={18} />, color: '#6300e2', href: '/services/web-development' },
-  { id: '02', title: 'Shopify Development', desc: 'Custom D2C stores that convert', icon: <Server size={18} />, color: '#10b981', href: '/services/shopify-development' },
-  { id: '03', title: 'AI Automation', desc: 'n8n, Make & WhatsApp workflows', icon: <Brain size={18} />, color: '#a855f7', href: '/services/ai-automation' },
-  { id: '04', title: 'SEO & Performance', desc: 'Page 1 rankings & Core Web Vitals', icon: <BarChart3 size={18} />, color: '#f43f5e', href: '/services/seo-services' },
-  { id: '05', title: 'WordPress / CMS', desc: 'Headless & custom WP builds', icon: <Globe size={18} />, color: '#0ea5e9', href: '/services' },
-  { id: '06', title: 'LMS / EdTech', desc: 'Custom course & learning platforms', icon: <BookOpen size={18} />, color: '#7c6fff', href: '/services' },
+  { title: 'Web Development', desc: 'Next.js, MERN & TypeScript', icon: <Code2 size={16} />, color: '#6300e2', href: '/services/web-development' },
+  { title: 'Shopify Development', desc: 'Custom D2C stores', icon: <Server size={16} />, color: '#10b981', href: '/services/shopify-development' },
+  { title: 'AI Automation', desc: 'n8n, Make & workflows', icon: <Brain size={16} />, color: '#a855f7', href: '/services/ai-automation' },
+  { title: 'SEO & Performance', desc: 'Rankings & Core Web Vitals', icon: <BarChart3 size={16} />, color: '#f43f5e', href: '/services/seo-services' },
+  { title: 'WordPress / CMS', desc: 'Headless & custom builds', icon: <Globe size={16} />, color: '#0ea5e9', href: '/services' },
+  { title: 'LMS / EdTech', desc: 'Course & learning platforms', icon: <BookOpen size={16} />, color: '#7c6fff', href: '/services' },
 ];
 
 const navLinks = [
@@ -33,75 +32,63 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${scrolled ? 'py-2' : 'py-3 sm:py-4'}`}>
+      <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-10">
         <nav className={`
-          relative flex justify-between items-center px-8 py-3 rounded-full border transition-all duration-700
+          relative flex justify-between items-center h-12 sm:h-14 px-4 sm:px-5 lg:px-6 rounded-2xl border transition-all duration-500
           ${scrolled 
-            ? 'bg-white/80 backdrop-blur-xl border-outline shadow-xl scale-[0.98]' 
-            : 'bg-transparent border-transparent scale-100'}
+            ? 'bg-white/85 backdrop-blur-2xl border-[rgba(99,0,226,0.06)] shadow-[0_4px_30px_rgba(0,0,0,0.06)]' 
+            : 'bg-white/40 backdrop-blur-xl border-transparent'}
         `}>
-          {/* Brand Identity */}
-          <motion.a 
-            href="/" 
-            initial={{ opacity: 0, x: -20 }} 
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-4 group no-underline"
-          >
-            <div className="w-11 h-11 bg-primary rounded-2xl flex items-center justify-center text-white text-xl font-black shadow-lg transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-110 group-hover:shadow-primary/40">U</div>
-            <div className="flex flex-col">
-               <span className="text-[1.3rem] font-black text-on-surface tracking-tighter leading-none font-display">TheUnipick</span>
-               <span className="text-[0.6rem] font-black text-primary tracking-[0.3em] uppercase opacity-60">Studio</span>
-            </div>
-          </motion.a>
+          {/* Brand */}
+          <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0 group">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-primary rounded-xl flex items-center justify-center text-white text-sm sm:text-base font-black shadow-sm transition-all duration-300 group-hover:shadow-primary/30 group-hover:scale-105">U</div>
+            <span className="text-[0.95rem] sm:text-[1.05rem] font-black text-on-surface tracking-tight leading-none font-display">TheUnipick</span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
-            {/* Services Mega-Menu Trigger */}
+          {/* Center Navigation */}
+          <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+            {/* Services Dropdown */}
             <div 
               onMouseEnter={() => setShowMegaMenu(true)} 
               onMouseLeave={() => setShowMegaMenu(false)} 
-              className="relative py-2"
+              className="relative"
             >
-              <div className={`text-[0.95rem] font-black flex items-center gap-2 cursor-pointer transition-colors ${showMegaMenu ? 'text-primary' : 'text-on-surface-variant hover:text-primary'}`}>
-                Capabilities <ChevronDown size={14} className={`transition-transform duration-500 ${showMegaMenu ? 'rotate-180' : ''}`} />
-              </div>
+              <button className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[0.82rem] font-bold transition-colors ${showMegaMenu ? 'text-primary bg-primary/5' : 'text-on-surface-variant hover:text-on-surface hover:bg-black/[0.03]'}`}>
+                Services <ChevronDown size={13} className={`transition-transform duration-300 opacity-50 ${showMegaMenu ? 'rotate-180 opacity-100' : ''}`} />
+              </button>
               
               <AnimatePresence>
                 {showMegaMenu && (
                   <motion.div 
-                    initial={{ opacity: 0, y: 20, scale: 0.95 }} 
-                    animate={{ opacity: 1, y: 0, scale: 1 }} 
-                    exit={{ opacity: 0, y: 15, scale: 0.98 }} 
-                    className="absolute top-full left-1/2 -translate-x-1/2 w-[700px] bg-white rounded-[3rem] p-8 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border border-outline mt-6 grid grid-cols-2 gap-4 z-[1002]"
+                    initial={{ opacity: 0, y: 8 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: 5 }} 
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 w-[580px] bg-white rounded-2xl p-2 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] border border-[rgba(0,0,0,0.06)] mt-2 grid grid-cols-2 gap-0.5 z-[1002]"
                   >
                     {services.map((s) => (
                       <a 
-                        key={s.id} 
+                        key={s.title} 
                         href={s.href} 
-                        className="p-5 rounded-[2rem] flex items-center gap-5 no-underline transition-all hover:bg-surface-muted group/item"
+                        className="px-3.5 py-3 rounded-xl flex items-center gap-3 no-underline transition-all hover:bg-surface-muted group/item"
                       >
                         <div 
-                          className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-all duration-500 group-hover/item:scale-110 group-hover/item:rotate-6"
+                          className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-110"
                           style={{ color: 'white', background: s.color }}
                         >
-                          {React.cloneElement(s.icon as React.ReactElement<{ size?: number }>, { size: 20 })}
+                          {s.icon}
                         </div>
-                        <div>
-                          <div className="font-black text-[1rem] text-on-surface group-hover/item:text-primary transition-colors tracking-tight font-display">{s.title}</div>
-                          <div className="text-[0.8rem] text-on-surface-muted font-medium opacity-80">{s.desc}</div>
+                        <div className="min-w-0">
+                          <div className="font-bold text-[0.82rem] text-on-surface group-hover/item:text-primary transition-colors leading-tight">{s.title}</div>
+                          <div className="text-[0.7rem] text-on-surface-muted font-medium truncate">{s.desc}</div>
                         </div>
                       </a>
                     ))}
-                    <div className="col-span-2 pt-6 mt-4 border-t border-outline/50 flex justify-between items-center px-4">
-                      <div className="flex items-center gap-2 text-[0.7rem] font-black text-on-surface-muted uppercase tracking-widest">
-                         <Sparkles size={12} className="text-primary" /> Core Infrastructure Expertise
-                      </div>
-                      <Link href="/learn" className="text-on-surface-muted font-bold text-[0.85rem] flex items-center gap-2 hover:text-primary transition-all mr-auto ml-8">
-                        View Glossary
-                      </Link>
-                      <a href="/services" className="text-primary font-black text-[0.85rem] flex items-center gap-2 uppercase tracking-[0.2em] hover:gap-4 transition-all">
-                        Full Stack <ArrowRight size={16} />
+                    <div className="col-span-2 mt-1 pt-2.5 border-t border-[rgba(0,0,0,0.04)] flex justify-between items-center px-3.5 pb-1">
+                      <span className="text-[0.65rem] font-bold text-on-surface-muted uppercase tracking-wider">All capabilities</span>
+                      <a href="/services" className="text-primary font-bold text-[0.78rem] flex items-center gap-1.5 hover:gap-3 transition-all">
+                        View All <ArrowRight size={13} />
                       </a>
                     </div>
                   </motion.div>
@@ -113,54 +100,66 @@ const Navbar = () => {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-[0.95rem] font-black text-on-surface-variant no-underline hover:text-primary transition-all relative group/nav"
+                className="px-3.5 py-2 rounded-xl text-[0.82rem] font-bold text-on-surface-variant no-underline hover:text-on-surface hover:bg-black/[0.03] transition-all"
               >
                 {link.name}
-                <span className="absolute bottom-[-6px] left-0 w-0 h-[2px] bg-primary transition-all group-hover/nav:w-full" />
               </a>
             ))}
           </div>
 
-          {/* Action Hub */}
-          <div className="flex items-center gap-6">
-            <div className="hidden xl:block">
-              <AvailabilityBadge />
+          {/* Right Actions */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Availability — inline dot */}
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-tech-teal/8 border border-tech-teal/15">
+              <div className="relative w-1.5 h-1.5">
+                <div className="w-full h-full bg-tech-teal rounded-full" />
+                <motion.div
+                  animate={{ scale: [1, 2.5], opacity: [0.6, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="absolute inset-0 bg-tech-teal rounded-full"
+                />
+              </div>
+              <span className="text-[0.65rem] font-bold text-tech-teal tracking-tight whitespace-nowrap">Available</span>
             </div>
-            <Link href="/audit" className="relative inline-flex items-center gap-3 px-8 py-3 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden text-[0.9rem] group">
-              <span className="relative z-10 flex items-center gap-2">Get Free Audit</span>
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
+
+            <Link href="/audit" className="hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-on-surface text-white font-bold text-[0.75rem] sm:text-[0.8rem] transition-all duration-300 hover:bg-primary hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:scale-[0.97]">
+              Free Audit
+              <ArrowRight size={14} className="opacity-60" />
             </Link>
+
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="lg:hidden w-12 h-12 flex items-center justify-center bg-primary/5 rounded-2xl text-primary hover:bg-primary hover:text-white transition-all"
+              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-black/[0.03] text-on-surface-variant hover:bg-primary hover:text-white transition-all"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </nav>
 
-        {/* Mobile Navigation Overlay */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div 
-              initial={{ opacity: 0, y: -20 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              exit={{ opacity: 0, y: -20 }}
-              className="lg:hidden mt-4 overflow-hidden"
+              initial={{ opacity: 0, y: -10, scale: 0.98 }} 
+              animate={{ opacity: 1, y: 0, scale: 1 }} 
+              exit={{ opacity: 0, y: -8, scale: 0.98 }}
+              transition={{ duration: 0.25 }}
+              className="lg:hidden mt-2 overflow-hidden"
             >
-              <div className="bg-white rounded-[3rem] p-10 border border-outline shadow-2xl flex flex-col gap-4">
+              <div className="bg-white rounded-2xl p-3 border border-[rgba(0,0,0,0.06)] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] flex flex-col gap-0.5">
+                <a href="/services" className="px-4 py-3 rounded-xl text-[0.9rem] font-bold text-on-surface no-underline hover:bg-surface-muted transition-all">Services</a>
                 {navLinks.map((link) => (
                   <a 
                     key={link.name} 
                     href={link.href} 
-                    className="px-8 py-5 rounded-2xl text-[1.4rem] font-black text-on-surface no-underline hover:bg-primary/5 hover:text-primary transition-all font-display tracking-tight"
+                    className="px-4 py-3 rounded-xl text-[0.9rem] font-bold text-on-surface no-underline hover:bg-surface-muted transition-all"
                   >
                     {link.name}
                   </a>
                 ))}
-                <div className="border-t border-outline/50 pt-8 mt-4">
-                  <Link href="/audit" className="relative inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden w-full text-[1.1rem]">
-                    Get Free Website Audit <ArrowUpRight size={22} />
+                <div className="border-t border-[rgba(0,0,0,0.04)] mt-1 pt-2">
+                  <Link href="/audit" className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-on-surface text-white font-bold text-[0.85rem] hover:bg-primary transition-all w-full">
+                    Get Free Audit <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
