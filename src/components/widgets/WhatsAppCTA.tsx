@@ -6,7 +6,7 @@ import { WhatsappLogo } from '@phosphor-icons/react';
 
 const WhatsAppCTA = () => {
   const [tooltipVisible, setTooltipVisible] = useState(true);
-  const whatsappNumber = "911234567890";
+  const whatsappNumber = "919451172458";
   const message = "Hi! I'm interested in discussing a project with TheUnipick.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
