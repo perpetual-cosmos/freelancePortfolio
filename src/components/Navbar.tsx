@@ -7,36 +7,42 @@ import Link from 'next/link';
 const serviceCategories = [
   {
     title: 'Web Development',
+    slug: 'web-development',
     icon: <Code2 size={18} />,
     color: '#6300e2',
     items: ['React.js', 'Next.js', 'MERN Stack', 'TypeScript', 'Full-Stack Apps', 'SaaS Products', 'API Development', 'Progressive Web Apps']
   },
   {
     title: 'E-Commerce',
+    slug: 'shopify-development',
     icon: <ShoppingCart size={18} />,
     color: '#10b981',
     items: ['Shopify Development', 'WooCommerce', 'Custom Stores', 'Payment Integration', 'D2C Brands', 'Product Catalog', 'Checkout Optimization']
   },
   {
     title: 'CMS & Platforms',
+    slug: 'cms-platforms',
     icon: <Layers size={18} />,
     color: '#0ea5e9',
     items: ['WordPress', 'Headless CMS', 'LMS / EdTech', 'Website Migration', 'Blog Systems', 'Custom Dashboards', 'Multi-Language Sites']
   },
   {
     title: 'AI & Automation',
+    slug: 'ai-automation',
     icon: <Bot size={18} />,
     color: '#a855f7',
     items: ['AI Automation', 'n8n Workflows', 'Zapier', 'Make.com', 'WhatsApp Bots', 'CRM Integration', 'Lead Routing', 'Chatbots']
   },
   {
     title: 'Design & Branding',
+    slug: 'design-branding',
     icon: <Palette size={18} />,
     color: '#f43f5e',
     items: ['UI/UX Design', 'Figma Prototyping', 'Logo Design', 'Brand Identity', 'Landing Pages', 'Design Systems']
   },
   {
     title: 'SEO & Growth',
+    slug: 'seo-services',
     icon: <BarChart3 size={18} />,
     color: '#f59e0b',
     items: ['Technical SEO', 'On-Page SEO', 'Core Web Vitals', 'Performance Audit', 'Keyword Strategy', 'Content Marketing', 'Business Consultation']
@@ -163,7 +169,7 @@ const Navbar = () => {
                           {cat.items.map((item) => (
                             <li key={item}>
                               <a 
-                                href="/services" 
+                                href={`/services/${cat.slug}`} 
                                 className="text-[0.75rem] text-on-surface-variant font-medium no-underline hover:text-primary transition-colors block py-0.5 leading-relaxed"
                               >
                                 {item}
@@ -237,7 +243,7 @@ const Navbar = () => {
                             </div>
                             <div className="flex flex-col gap-0.5">
                               {cat.items.slice(0, 4).map((item) => (
-                                <a key={item} href="/services" className="text-[0.65rem] text-on-surface-muted font-medium no-underline hover:text-primary py-0.5">{item}</a>
+                                <a key={item} href={`/services/${cat.slug}`} className="text-[0.65rem] text-on-surface-muted font-medium no-underline hover:text-primary py-0.5">{item}</a>
                               ))}
                               {cat.items.length > 4 && (
                                 <span className="text-[0.6rem] text-primary font-bold mt-0.5">+{cat.items.length - 4} more</span>

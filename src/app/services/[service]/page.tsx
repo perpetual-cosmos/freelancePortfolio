@@ -1,131 +1,189 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import { ArrowRight, Check } from 'lucide-react';
-import Link from 'next/link';
+"use client";
 
-const servicesData: Record<string, { title: string, desc: string, features: string[], pricing: string, outcome: string, faq: { q: string, a: string }[] }> = {
-  'web-development': {
-    title: 'Full-Stack Web Development',
-    desc: 'High-performance Next.js and MERN stack applications built for speed, scale, and conversion. From seed-stage MVPs to production systems with 1,000+ concurrent users.',
-    features: ['Next.js 15 App Router & SSG/SSR', 'Server-Side Rendering for SEO', 'Custom API & Third-Party Integration', 'Scalable Database Design (Supabase, Postgres)', 'CI/CD Deployment Pipeline', '60-Day Post-Launch Support'],
-    pricing: 'Starting from ₹25,000 for websites · ₹75,000 for full-stack apps',
-    outcome: 'BlackArt Tattoo Studio went from 0 to #1 in Udaipur search results within 3 months of launch.',
-    faq: [
-      { q: 'How long does a project take?', a: 'A standard website takes 7–14 days. A full-stack web app with custom features takes 3–6 weeks depending on scope.' },
-      { q: 'Do you use templates?', a: 'Never. Every project is built from scratch, custom-designed to your brand and business goals.' },
-    ]
-  },
-  'shopify-development': {
-    title: 'Custom Shopify Development',
-    desc: 'Bespoke Shopify themes and headless storefronts for D2C brands. I specialize in conversion-rate optimization and page speed — 90+ Lighthouse score guaranteed.',
-    features: ['Custom Liquid Theme Development', 'Headless Shopify with Hydrogen', 'Conversion Rate Optimization', 'Payment Gateway Integration (Razorpay, Stripe)', 'Product & Inventory Setup (up to 50 products)', 'Abandoned Cart & Email Flow Setup'],
-    pricing: 'Starting from ₹35,000 for custom themes · ₹80,000 for headless builds',
-    outcome: "Shopify stores I've built average a 40% increase in add-to-cart rates vs. their previous theme.",
-    faq: [
-      { q: 'Can you work with my existing Shopify store?', a: 'Yes. I can audit and redesign an existing store, or build from scratch on a new store.' },
-      { q: 'Do you handle product uploads?', a: 'Yes, I set up up to 50 products with images, descriptions, and variants as part of the project.' },
-    ]
-  },
-  'seo-services': {
-    title: 'Technical & Content SEO',
-    desc: 'Data-driven SEO strategies that drive organic revenue, not just vanity metrics. I focus on ranking for commercial-intent keywords that bring paying customers.',
-    features: ['20-Point Technical SEO Audit', 'Keyword Clustering & Content Strategy', 'Core Web Vitals Optimization', 'On-Page SEO Implementation', 'Google Search Console Setup & Management', 'Monthly Ranking Reports'],
-    pricing: 'One-time audit from ₹12,000 · Monthly retainer from ₹15,000/mo',
-    outcome: 'BlackArt Tattoo Studio reached the #1 position for "tattoo studio Udaipur" within 90 days.',
-    faq: [
-      { q: 'How long does SEO take to show results?', a: 'Typically 60–90 days for initial movement on low-competition keywords. Competitive terms take 3–6 months of consistent effort.' },
-      { q: 'Do you write the blog content?', a: 'Yes — content strategy and writing is included in the monthly retainer. I create SEO-optimized articles targeting your specific keyword clusters.' },
-    ]
-  },
-  'ai-automation': {
-    title: 'AI & Workflow Automation',
-    desc: 'Eliminate repetitive tasks with custom n8n, Make.com, and AI integrations. If your team is doing the same digital task more than 3 times a week, it can be automated.',
-    features: ['Business Process Audit & Mapping', 'Custom n8n / Make.com Workflow Build', 'WhatsApp Bot Development', 'CRM Syncing & Lead Routing', 'Email Automation Sequences', '2-Week Post-Launch Monitoring'],
-    pricing: 'Single workflow from ₹15,000 · Full automation build from ₹20,000–60,000',
-    outcome: 'Typical client saves 20+ hours/month on manual tasks within the first 2 weeks of deployment.',
-    faq: [
-      { q: "I'm not technical. Can you still help?", a: 'Absolutely. I handle all the technical setup. You just describe the repetitive task, and I build the system that handles it automatically.' },
-      { q: 'What tools do you use?', a: 'n8n is my primary tool due to its flexibility and low cost. I also work with Make.com, custom Node.js scripts, and direct API integrations.' },
-    ]
-  }
+import React, { useState } from 'react';
+import { notFound, useParams } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Check, ChevronDown, ChevronRight, ArrowLeft, Sparkles } from 'lucide-react';
+import { Code2, ShoppingCart, Brain, BarChart3, Globe, Palette } from 'lucide-react';
+import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Contact from '@/components/Contact';
+import { getServiceBySlug, getAllServiceSlugs, type ServiceData } from '@/data/services';
+
+const iconMap: Record<string, React.ReactNode> = {
+  'web-development': <Code2 size={22} />,
+  'shopify-development': <ShoppingCart size={22} />,
+  'ai-automation': <Brain size={22} />,
+  'seo-services': <BarChart3 size={22} />,
+  'cms-platforms': <Globe size={22} />,
+  'design-branding': <Palette size={22} />,
 };
 
-export function generateStaticParams() {
-  return Object.keys(servicesData).map((service) => ({
-    service,
-  }));
+function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-[rgba(0,0,0,0.05)] rounded-xl overflow-hidden bg-white hover:border-[rgba(0,0,0,0.08)] transition-colors">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 sm:py-4 text-left"
+      >
+        <span className="text-[0.85rem] sm:text-[0.9rem] font-bold text-on-surface">{faq.q}</span>
+        <ChevronDown size={16} className={`text-on-surface-muted shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden"
+          >
+            <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+              <p className="text-[0.8rem] sm:text-[0.85rem] text-on-surface-variant leading-relaxed font-medium">{faq.a}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }
 
-export default function ServicePage({ params }: { params: { service: string } }) {
-  const serviceData = servicesData[params.service];
+export default function ServicePage() {
+  const params = useParams();
+  const slug = params.service as string;
+  const service = getServiceBySlug(slug);
 
-  if (!serviceData) {
+  if (!service) {
     notFound();
   }
 
+  const icon = iconMap[slug] || <Code2 size={22} />;
+
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
-      <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-      
-      <div className="max-w-[1000px] mx-auto px-6 relative z-10">
-        <div className="mb-16">
-          <Link href="/services" className="text-primary font-bold text-sm hover:underline mb-8 inline-block">
-            &larr; Back to all services
+    <main className="bg-background min-h-screen">
+      <Navbar />
+
+      {/* Hero */}
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/3 to-transparent pointer-events-none" />
+        <div className="max-w-[900px] mx-auto px-4 sm:px-8 relative z-10">
+          <Link href="/services" className="inline-flex items-center gap-1.5 text-[0.75rem] font-bold text-on-surface-muted hover:text-primary transition-colors mb-5 no-underline">
+            <ArrowLeft size={14} /> All Services
           </Link>
-          <h1 className="text-[clamp(3rem,6vw,5rem)] font-extrabold font-display leading-[1.05] tracking-tight text-on-surface mb-6">
-            {serviceData.title}
-          </h1>
-          <p className="text-on-surface-variant text-[1.4rem] font-medium leading-relaxed max-w-[800px] mb-6">
-            {serviceData.desc}
+
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+            <div
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-white shadow-sm shrink-0"
+              style={{ background: `linear-gradient(135deg, ${service.color}, ${service.color}cc)` }}
+            >
+              {icon}
+            </div>
+            <div>
+              <h1 className="text-[clamp(1.4rem,3.5vw,2.2rem)] font-extrabold tracking-tight leading-[1.05] font-display text-on-surface">
+                {service.title}
+              </h1>
+              <p className="text-[0.72rem] sm:text-[0.78rem] text-on-surface-muted font-medium">{service.tagline}</p>
+            </div>
+          </div>
+
+          <p className="text-on-surface-variant text-[0.88rem] sm:text-[0.95rem] leading-relaxed font-medium opacity-80 mb-5">
+            {service.description}
           </p>
-          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-sm">
-            {serviceData.pricing}
+
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-bold text-[0.7rem] sm:text-[0.75rem]">
+            {service.pricing}
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div>
-            <h2 className="text-2xl font-bold font-display text-on-surface mb-6">What's Included</h2>
-            <ul className="space-y-4">
-              {serviceData.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-4 text-lg text-on-surface-variant">
-                  <span className="text-primary mt-1"><Check size={20} /></span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* Content */}
+      <section className="py-8 sm:py-10 lg:py-14">
+        <div className="max-w-[900px] mx-auto px-4 sm:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr,0.7fr] gap-6 sm:gap-8">
+            {/* Features */}
+            <div>
+              <h2 className="text-[1rem] sm:text-[1.1rem] font-bold font-display text-on-surface mb-4 sm:mb-5">What's Included</h2>
+              <div className="space-y-3">
+                {service.features.map((f, i) => (
+                  <div key={i} className="flex items-start gap-2.5">
+                    <Check size={15} strokeWidth={2.5} className="mt-0.5 text-tech-teal shrink-0" />
+                    <div>
+                      <span className="text-[0.82rem] sm:text-[0.88rem] font-bold text-on-surface">{f.title}</span>
+                      <span className="text-[0.78rem] sm:text-[0.82rem] text-on-surface-muted font-medium"> — {f.desc}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-          <div className="space-y-6">
-            <div className="bg-primary/5 border border-primary/10 rounded-3xl p-8">
-              <div className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Real Client Outcome</div>
-              <p className="text-on-surface font-bold text-lg leading-relaxed italic">"{serviceData.outcome}"</p>
+              {/* Stack */}
+              <div className="mt-6 sm:mt-8">
+                <h3 className="text-[0.65rem] font-bold text-on-surface-muted tracking-[0.15em] uppercase mb-3">Tech Stack</h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {service.stack.map(tech => (
+                    <span key={tech} className="px-2.5 py-1 bg-surface-muted border border-[rgba(0,0,0,0.04)] rounded-lg text-[0.65rem] font-bold text-on-surface-variant uppercase tracking-wider">{tech}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Specs */}
+              <div className="mt-5 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {Object.entries(service.specs).map(([key, val]) => (
+                  <div key={key} className="bg-surface-muted rounded-xl p-3 text-center">
+                    <div className="text-[0.5rem] font-bold text-on-surface-muted tracking-[0.15em] uppercase mb-1">{key}</div>
+                    <div className="text-[0.82rem] font-bold text-on-surface">{val}</div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="bg-surface-muted border border-outline rounded-3xl p-8 flex flex-col justify-center gap-6">
-              <h3 className="text-xl font-bold text-on-surface">Ready to start?</h3>
-              <p className="text-on-surface-muted">
-                Let's discuss how {serviceData.title} can accelerate your business.
-              </p>
-              <Link href="/audit" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-black hover:-translate-y-1 transition-transform">
-                Get Free Audit First <ArrowRight size={20} />
+            {/* Sidebar */}
+            <div className="space-y-4">
+              {/* Outcome Card */}
+              <div className="bg-primary/5 border border-primary/10 rounded-xl p-4 sm:p-5">
+                <div className="text-[0.55rem] font-bold text-primary uppercase tracking-[0.15em] mb-2">
+                  <Sparkles size={10} className="inline mr-1" />Real Client Outcome
+                </div>
+                <p className="text-on-surface font-bold text-[0.82rem] sm:text-[0.88rem] leading-relaxed italic">"{service.outcome}"</p>
+              </div>
+
+              {/* CTA Card */}
+              <div className="bg-white border border-[rgba(0,0,0,0.05)] rounded-xl p-4 sm:p-5">
+                <h3 className="text-[0.95rem] font-bold text-on-surface mb-1.5">Ready to start?</h3>
+                <p className="text-[0.78rem] text-on-surface-muted font-medium mb-4">
+                  Let's discuss how this can accelerate your business.
+                </p>
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 w-full py-2.5 sm:py-3 rounded-xl bg-on-surface text-white font-bold text-[0.78rem] sm:text-[0.82rem] no-underline hover:bg-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+                  Get Started <ArrowRight size={14} className="opacity-60" />
+                </Link>
+              </div>
+
+              {/* Free Audit */}
+              <Link href="/audit" className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-primary/15 text-primary font-bold text-[0.78rem] no-underline hover:bg-primary/5 transition-all">
+                Or get a free audit first <ArrowRight size={13} />
               </Link>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold font-display text-on-surface mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {serviceData.faq.map((item, i) => (
-              <div key={i} className="bg-surface-muted border border-outline rounded-2xl p-8">
-                <h3 className="font-bold text-on-surface text-lg mb-3">{item.q}</h3>
-                <p className="text-on-surface-variant leading-relaxed">{item.a}</p>
-              </div>
-            ))}
+      {/* FAQ */}
+      {service.faq.length > 0 && (
+        <section className="py-8 sm:py-10 lg:py-14">
+          <div className="max-w-[700px] mx-auto px-4 sm:px-8">
+            <h2 className="text-[1rem] sm:text-[1.1rem] font-bold font-display text-on-surface mb-4 sm:mb-5">Frequently Asked</h2>
+            <div className="flex flex-col gap-2 sm:gap-2.5">
+              {service.faq.map((item, i) => (
+                <FAQItem key={i} faq={item} index={i} />
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      )}
+
+      <Contact />
+      <Footer />
     </main>
   );
 }

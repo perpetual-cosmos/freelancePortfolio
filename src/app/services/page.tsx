@@ -1,231 +1,176 @@
 "use client";
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
-import { 
-  ArrowRight, CheckCircle2, Zap, Shield, 
-  Target, Rocket, Sparkles, Cpu, Code2, 
-  Terminal, Database, Activity, Brain,
-  ChevronRight, Box, Lock, MousePointer2
-} from 'lucide-react';
+import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
+import { Code2, ShoppingCart, Brain, BarChart3, Globe, Palette } from 'lucide-react';
+import Link from 'next/link';
+import { getAllServices, type ServiceData } from '@/data/services';
 
-const services = [
-  {
-    id: 'SVC-ARCH-01',
-    title: 'Frontend Infrastructure',
-    tagline: 'Precision Engineering for the Modern Web',
-    icon: <Code2 className="w-10 h-10" />,
-    color: '#6300e2',
-    description: 'We don\'t just build UIs; we architect delivery systems. Our frontend core is focused on sub-200ms TTFB, atomic state management, and flawless edge-caching strategies.',
-    features: [
-      { title: 'Next.js 15+ Core', desc: 'Leveraging React 19 Server Components for maximum performance.' },
-      { title: 'State Orchestration', desc: 'Complex data flow management with Zustand and TanStack Query.' },
-      { title: 'Design Systems', desc: 'Building documented, accessible, and themeable UI foundations.' },
-      { title: 'Performance Ops', desc: 'Rigorous optimization for LCP, CLS, and INP metrics.' }
-    ],
-    specs: {
-      latency: '< 150ms',
-      uptime: '99.99%',
-      security: 'Enterprise Grade',
-      delivery: 'Edge Distributed'
-    },
-    stack: ['React 19', 'Next.js 15', 'TypeScript', 'Tailwind V4', 'Framer Motion'],
-    startingPrice: '$4,500'
-  },
-  {
-    id: 'SVC-BACK-02',
-    title: 'Distributed Backends',
-    tagline: 'Resilient Logic for Global Scale',
-    icon: <Terminal className="w-10 h-10" />,
-    color: '#10b981',
-    description: 'High-concurrency systems built to handle millions of requests. We specialize in event-driven architectures, elastic Node.js environments, and hardened security protocols.',
-    features: [
-      { title: 'Microservices', desc: 'Decoupled, independently scalable service architectures.' },
-      { title: 'Database Ops', desc: 'Advanced PostgreSQL indexing and Redis caching layers.' },
-      { title: 'API Engineering', desc: 'Robust, documented REST and GraphQL interfaces.' },
-      { title: 'Real-time Flow', desc: 'Bi-directional communication via WebSockets and gRPC.' }
-    ],
-    specs: {
-      latency: '< 80ms',
-      uptime: '99.95%',
-      security: 'SOC2 Compliant',
-      delivery: 'Cloud Native'
-    },
-    stack: ['Node.js', 'NestJS', 'Go', 'PostgreSQL', 'Redis', 'RabbitMQ'],
-    startingPrice: '$7,000'
-  },
-  {
-    id: 'SVC-AI-03',
-    title: 'Intelligence Pipelines',
-    tagline: 'Practical AI for Production Environments',
-    icon: <Brain className="w-10 h-10" />,
-    color: '#8b5cf6',
-    description: 'Bridging the gap between AI hype and production reality. We deploy custom LLM agents, vector-powered search, and autonomous data ingestion pipelines that provide measurable ROI.',
-    features: [
-      { title: 'Custom Agents', desc: 'Task-specific LLM agents with tool-calling capabilities.' },
-      { title: 'RAG Systems', desc: 'Vector search engines powered by Pinecone and LangChain.' },
-      { title: 'Data Ingestion', desc: 'Automated pipelines for processing unstructured enterprise data.' },
-      { title: 'Inference Ops', desc: 'Optimized model deployment for speed and cost-efficiency.' }
-    ],
-    specs: {
-      latency: '< 1.2s',
-      uptime: '99.9%',
-      security: 'Private API',
-      delivery: 'Hybrid AI'
-    },
-    stack: ['Python', 'LangChain', 'OpenAI', 'Pinecone', 'FastAPI', 'PyTorch'],
-    startingPrice: '$6,500'
-  }
-];
+const iconMap: Record<string, React.ReactNode> = {
+  'web-development': <Code2 size={22} />,
+  'shopify-development': <ShoppingCart size={22} />,
+  'ai-automation': <Brain size={22} />,
+  'seo-services': <BarChart3 size={22} />,
+  'cms-platforms': <Globe size={22} />,
+  'design-branding': <Palette size={22} />,
+};
 
-const ServiceBlock = ({ service, index }: { service: typeof services[0], index: number }) => {
+const ServiceBlock = ({ service, index }: { service: ServiceData, index: number }) => {
+  const icon = iconMap[service.slug] || <Code2 size={22} />;
+
   return (
-    <motion.section 
-      id={`service-${service.id}`}
-      initial={{ opacity: 0, y: 40 }}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="relative mb-32 lg:mb-56 group"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ delay: index * 0.05 }}
+      className="bg-white rounded-2xl border border-[rgba(0,0,0,0.05)] overflow-hidden hover:shadow-lg transition-shadow duration-500"
     >
-      <div className="bg-white rounded-[4rem] border border-outline shadow-2xl overflow-hidden relative">
-        {/* Dynamic Accents */}
-        <div className="absolute top-0 right-0 w-[40%] h-[1px] bg-gradient-to-l from-primary/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-[40%] h-[1px] bg-gradient-to-r from-secondary/30 to-transparent" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr,0.7fr]">
-          {/* Detailed Content */}
-          <div className="p-10 lg:p-24 border-b lg:border-b-0 lg:border-r border-outline">
-            <div className="flex flex-col md:flex-row md:items-center gap-8 mb-16">
-              <div 
-                className="w-20 h-20 rounded-[2rem] flex items-center justify-center text-white shadow-2xl relative"
-                style={{ background: `linear-gradient(135deg, ${service.color}, ${service.color}aa)` }}
-              >
-                {service.icon}
-                <div className="absolute inset-0 blur-3xl opacity-30 -z-10" style={{ background: service.color }} />
-              </div>
-              <div>
-                <div className="text-primary font-black text-[0.8rem] tracking-[0.4em] uppercase mb-2">MOD_ID: {service.id}</div>
-                <h2 className="text-[2.8rem] lg:text-[4rem] font-black text-on-surface leading-[0.95] tracking-tighter font-display">
-                   {service.title}
-                </h2>
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-[1.3fr,0.7fr]">
+        {/* Content Side */}
+        <div className="p-5 sm:p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-[rgba(0,0,0,0.04)]">
+          {/* Header */}
+          <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+            <div 
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-white shadow-sm shrink-0"
+              style={{ background: `linear-gradient(135deg, ${service.color}, ${service.color}cc)` }}
+            >
+              {icon}
             </div>
+            <div>
+              <h2 className="text-[1.05rem] sm:text-[1.15rem] lg:text-[1.25rem] font-bold text-on-surface leading-tight font-display tracking-tight">{service.title}</h2>
+              <p className="text-[0.7rem] sm:text-[0.75rem] text-on-surface-muted font-medium">{service.tagline}</p>
+            </div>
+          </div>
 
-            <p className="text-on-surface-variant text-[1.25rem] lg:text-[1.5rem] font-medium leading-relaxed mb-20 max-w-[800px] opacity-90">
-              {service.description}
-            </p>
+          <p className="text-on-surface-variant text-[0.82rem] sm:text-[0.88rem] leading-relaxed font-medium opacity-80 mb-5 sm:mb-6">
+            {service.description}
+          </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-              {service.features.map((f, i) => (
-                <div key={i} className="space-y-4 group/item">
-                   <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-xl bg-primary/5 flex items-center justify-center text-primary transition-all group-hover/item:bg-primary group-hover/item:text-white">
-                         <ChevronRight size={18} />
-                      </div>
-                      <h4 className="text-[1.2rem] font-black text-on-surface font-display">{f.title}</h4>
-                   </div>
-                   <p className="text-on-surface-variant text-[1rem] leading-relaxed font-medium pl-11 opacity-80">{f.desc}</p>
+          {/* Features */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            {service.features.slice(0, 4).map((f, i) => (
+              <div key={i} className="flex items-start gap-2.5 group/item">
+                <div className="w-6 h-6 rounded-md bg-primary/5 flex items-center justify-center text-primary shrink-0 mt-0.5 transition-colors group-hover/item:bg-primary group-hover/item:text-white">
+                  <ChevronRight size={13} />
                 </div>
+                <div>
+                  <h4 className="text-[0.78rem] sm:text-[0.82rem] font-bold text-on-surface leading-tight mb-0.5">{f.title}</h4>
+                  <p className="text-on-surface-muted text-[0.7rem] sm:text-[0.72rem] leading-snug font-medium opacity-70">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dark Sidebar */}
+        <div className="bg-[#0a0a0a] p-5 sm:p-6 lg:p-8 flex flex-col text-white">
+          {/* Terminal Header */}
+          <div className="flex items-center justify-between mb-5 pb-3 border-b border-white/8">
+            <span className="text-[0.55rem] font-bold tracking-[0.2em] opacity-30 uppercase">Specs</span>
+            <div className="flex gap-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-red-500/30" />
+              <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/30" />
+              <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+            </div>
+          </div>
+
+          {/* Specs */}
+          <div className="grid grid-cols-2 gap-y-4 gap-x-4 mb-5">
+            {Object.entries(service.specs).map(([key, val]) => (
+              <div key={key}>
+                <div className="text-[0.5rem] font-bold text-white/25 tracking-[0.15em] uppercase mb-1">{key}</div>
+                <div className="text-[0.82rem] font-bold font-display text-white">{val}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Stack */}
+          <div className="mb-5">
+            <div className="text-[0.5rem] font-bold text-white/25 tracking-[0.15em] uppercase mb-2.5">Stack</div>
+            <div className="flex flex-wrap gap-1.5">
+              {service.stack.map(tech => (
+                <span key={tech} className="px-2.5 py-1 bg-white/5 border border-white/5 rounded-lg text-[0.6rem] font-bold text-white/50 uppercase tracking-wider">{tech}</span>
               ))}
             </div>
           </div>
 
-          {/* Sidebar / Terminal Style */}
-          <div className="bg-[#0a0a0a] p-10 lg:p-20 flex flex-col text-white">
-            <div className="flex items-center justify-between mb-16 pb-6 border-b border-white/10">
-               <span className="text-[0.7rem] font-black tracking-[0.3em] opacity-40 uppercase">System Specs</span>
-               <div className="flex gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-red-500/20" />
-                  <div className="w-2 h-2 rounded-full bg-yellow-500/20" />
-                  <div className="w-2 h-2 rounded-full bg-green-500" />
-               </div>
+          {/* Price + CTA */}
+          <div className="mt-auto pt-5 border-t border-white/8 flex flex-col gap-4">
+            <div className="flex justify-between items-end">
+              <div>
+                <div className="text-[0.5rem] font-bold text-white/25 tracking-[0.15em] uppercase mb-0.5">Starting at</div>
+                <div className="text-[1.4rem] sm:text-[1.6rem] font-black font-display text-primary leading-none">{service.startingPrice}</div>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[0.6rem] font-bold text-green-500 uppercase tracking-wider">Available</span>
+              </div>
             </div>
 
-            <div className="space-y-12 flex-1">
-               {/* Spec Grid */}
-               <div className="grid grid-cols-2 gap-y-10 gap-x-6">
-                  {Object.entries(service.specs).map(([key, val]) => (
-                    <div key={key}>
-                       <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-2">{key.replace('_', ' ')}</div>
-                       <div className="text-[1.1rem] font-black font-display text-white">{val}</div>
-                    </div>
-                  ))}
-               </div>
-
-               {/* Tech Stack */}
-               <div>
-                  <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-6">Technologies</div>
-                  <div className="flex flex-wrap gap-2.5">
-                     {service.stack.map(tech => (
-                       <span key={tech} className="px-4 py-2 bg-white/5 border border-white/5 rounded-xl text-[0.7rem] font-black text-white/60 hover:text-primary hover:border-primary/40 transition-all cursor-default uppercase tracking-widest">{tech}</span>
-                     ))}
-                  </div>
-               </div>
-            </div>
-
-            <div className="mt-20 pt-10 border-t border-white/10 flex flex-col gap-8">
-               <div className="flex justify-between items-end">
-                  <div>
-                    <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-1">Baseline Investment</div>
-                    <div className="text-[2.2rem] font-black font-display text-primary leading-none">{service.startingPrice}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-[0.6rem] font-black text-white/30 tracking-[0.2em] uppercase mb-1">Status</div>
-                    <div className="text-[0.8rem] font-black text-green-500 flex items-center gap-2">
-                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> AVAILABLE
-                    </div>
-                  </div>
-               </div>
-
-               <button className="w-full py-6 bg-primary text-white rounded-2xl font-black text-[0.9rem] uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(99,0,226,0.3)] hover:scale-[1.02] hover:shadow-primary/50 transition-all duration-500 flex items-center justify-center gap-4 group/btn">
-                  Initialize Engagement <ArrowRight size={20} className="transition-transform group-hover/btn:translate-x-2" />
-               </button>
-            </div>
+            <Link href={`/services/${service.slug}`} className="w-full py-3 sm:py-3.5 bg-primary text-white rounded-xl font-bold text-[0.78rem] sm:text-[0.82rem] hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 flex items-center justify-center gap-2 no-underline">
+              Learn More <ArrowRight size={15} className="opacity-60" />
+            </Link>
           </div>
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 };
 
 export default function ServicesPage() {
+  const services = getAllServices();
+
+  // Extract a short price like "₹25K+" from the pricing string
+  const getShortPrice = (pricing: string) => {
+    const match = pricing.match(/₹[\d,]+/);
+    if (match) {
+      const num = parseInt(match[0].replace(/[₹,]/g, ''));
+      if (num >= 1000) return `₹${Math.round(num / 1000)}K+`;
+      return `₹${num}+`;
+    }
+    return '';
+  };
+
   return (
     <main className="bg-surface-muted min-h-screen">
       <Navbar />
       
-      {/* Dynamic Header */}
-      <section className="relative pt-64 pb-32 overflow-hidden bg-[#050505] noise-overlay">
-        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+      {/* Page Header */}
+      <section className="relative pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-12 lg:pb-16 overflow-hidden bg-[#050505]">
+        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         
-        <div className="max-w-[1440px] mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 relative z-10">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary font-black text-[0.8rem] tracking-[0.3em] uppercase mb-12">
-               <Box size={18} /> <span>UNIPICK_SERVICE_ARCHITECTURE_2024</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-[0.6rem] tracking-[0.15em] uppercase mb-4 sm:mb-5">
+               <Sparkles size={12} /> <span>Our Services</span>
             </div>
-            <h1 className="text-[clamp(3.5rem,10vw,8rem)] font-extrabold tracking-tighter leading-[0.9] mb-12 font-display text-white">
-               Full-Spectrum <br /> <span className="text-gradient">Engineering Ops.</span>
+            <h1 className="text-[clamp(1.8rem,5vw,3.5rem)] font-extrabold tracking-tighter leading-[0.95] mb-3 sm:mb-4 font-display text-white">
+               Full-Spectrum{' '}
+               <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">Engineering.</span>
             </h1>
-            <p className="text-white/60 text-[1.4rem] lg:text-[1.8rem] font-medium leading-relaxed max-w-[850px] mx-auto">
-               Deep technical expertise across the entire stack. We don't just solve problems; we engineer the systems that eliminate them.
+            <p className="text-white/50 text-[0.88rem] sm:text-[0.95rem] font-medium leading-relaxed max-w-[520px] mx-auto">
+               Deep technical expertise across the entire stack. We engineer the systems that eliminate problems.
             </p>
           </motion.div>
         </div>
 
-        {/* Floating Decors */}
-        <div className="absolute top-1/4 right-[-10%] w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full" />
-        <div className="absolute bottom-0 left-[-10%] w-[500px] h-[500px] bg-secondary/10 blur-[150px] rounded-full" />
+        {/* Ambient glows */}
+        <div className="absolute top-1/4 right-[-8%] w-[300px] h-[300px] bg-primary/8 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-[-8%] w-[300px] h-[300px] bg-secondary/8 blur-[120px] rounded-full" />
       </section>
 
-      {/* Main Service List */}
-      <div className="max-w-[1440px] mx-auto px-6 py-32 lg:py-48">
+      {/* Service Blocks */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 py-10 sm:py-14 lg:py-20 space-y-5 sm:space-y-6 lg:space-y-8">
         {services.map((s, i) => (
-          <ServiceBlock key={s.id} service={s} index={i} />
+          <ServiceBlock key={s.slug} service={{ ...s, startingPrice: getShortPrice(s.pricing) } as any} index={i} />
         ))}
       </div>
 
