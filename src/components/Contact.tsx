@@ -170,13 +170,13 @@ const Contact = () => {
 
   /* ── Input helpers ───────────────────────────────────────────────────── */
   const cx =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white/90 text-[0.95rem] placeholder:text-white/25 focus:outline-none focus:border-violet-500/70 focus:bg-white/8 focus:ring-2 focus:ring-violet-500/20 transition-all duration-200";
+    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white/90 text-[0.82rem] sm:text-[0.88rem] placeholder:text-white/25 focus:outline-none focus:border-violet-500/70 focus:bg-white/8 focus:ring-2 focus:ring-violet-500/20 transition-all duration-200";
 
   return (
     <section
       id="contact"
       ref={sectionRef}
-      className="relative bg-[#060610] py-28 lg:py-40 overflow-hidden"
+      className="relative bg-[#060610] py-14 sm:py-20 lg:py-28 overflow-hidden"
     >
       {/* Ambient cursor glow */}
       <div
@@ -200,23 +200,23 @@ const Contact = () => {
       <div className="absolute top-[-12rem] left-[-8rem] w-[45rem] h-[45rem] rounded-full bg-violet-700/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10rem] right-[-6rem] w-[35rem] h-[35rem] rounded-full bg-fuchsia-700/10 blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
         {/* ── Header ── */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-violet-500/20 bg-violet-500/8 text-violet-400 text-[0.68rem] font-black tracking-[0.3em] uppercase mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/20 bg-violet-500/8 text-violet-400 text-[0.58rem] sm:text-[0.62rem] font-bold tracking-[0.2em] uppercase mb-4 sm:mb-5"
           >
-            <Sparkles size={13} /> Let's Build Together
+            <Sparkles size={11} /> Let's Build Together
           </motion.div>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-[clamp(2.8rem,6vw,5rem)] font-extrabold leading-[0.92] tracking-tighter text-white mb-6"
+            className="text-[clamp(1.6rem,4.5vw,3rem)] font-extrabold leading-[0.95] tracking-tighter text-white mb-3 sm:mb-4"
           >
             Start a{" "}
             <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
@@ -224,21 +224,20 @@ const Contact = () => {
             </span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.14 }}
-            className="text-white/50 text-[1.1rem] max-w-xl mx-auto leading-relaxed"
+            className="text-white/50 text-[0.85rem] sm:text-[0.92rem] max-w-md mx-auto leading-relaxed"
           >
-            Drop me a message and I'll get back to you within 24 hours with a
-            clear plan — no strings attached.
+            Drop me a message — I'll reply within 24 hours with a clear plan.
           </motion.p>
         </div>
 
         {/* ── Grid ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.6fr] gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.4fr] gap-6 sm:gap-8 lg:gap-10 items-start">
           {/* ── Left: Contact cards + CTA ── */}
-          <div className="space-y-5">
+          <div className="space-y-3 sm:space-y-4">
             {CONTACT_CARDS.map((card, i) => (
               <motion.div
                 key={i}
@@ -253,18 +252,18 @@ const Contact = () => {
                     href={card.href}
                     target="_blank"
                     rel="noreferrer"
-                    className={`flex items-center gap-5 p-5 rounded-2xl border border-white/8 bg-gradient-to-br ${card.bg} backdrop-blur-sm group relative overflow-hidden cursor-pointer`}
+                    className={`flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl border border-white/8 bg-gradient-to-br ${card.bg} backdrop-blur-sm group relative overflow-hidden cursor-pointer`}
                   >
                     <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
+                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${card.color} flex items-center justify-center text-white shadow-sm flex-shrink-0`}
                     >
-                      {card.icon}
+                      {React.cloneElement(card.icon as React.ReactElement<{ size?: number }>, { size: 16 })}
                     </div>
                     <div className="min-w-0">
-                      <div className="text-[0.6rem] font-black text-white/40 tracking-widest uppercase mb-0.5">
+                      <div className="text-[0.52rem] sm:text-[0.55rem] font-bold text-white/40 tracking-widest uppercase mb-0.5">
                         {card.label}
                       </div>
-                      <div className="font-bold text-[0.95rem] text-white/90 truncate">
+                      <div className="font-bold text-[0.82rem] sm:text-[0.88rem] text-white/90 truncate">
                         {card.val}
                       </div>
                     </div>
@@ -275,18 +274,18 @@ const Contact = () => {
                   </a>
                 ) : (
                   <div
-                    className={`flex items-center gap-5 p-5 rounded-2xl border border-white/8 bg-gradient-to-br ${card.bg} backdrop-blur-sm`}
+                    className={`flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl border border-white/8 bg-gradient-to-br ${card.bg} backdrop-blur-sm`}
                   >
                     <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}
+                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${card.color} flex items-center justify-center text-white shadow-sm flex-shrink-0`}
                     >
-                      {card.icon}
+                      {React.cloneElement(card.icon as React.ReactElement<{ size?: number }>, { size: 16 })}
                     </div>
                     <div className="min-w-0">
-                      <div className="text-[0.6rem] font-black text-white/40 tracking-widest uppercase mb-0.5">
+                      <div className="text-[0.52rem] sm:text-[0.55rem] font-bold text-white/40 tracking-widest uppercase mb-0.5">
                         {card.label}
                       </div>
-                      <div className="font-bold text-[0.95rem] text-white/90">
+                      <div className="font-bold text-[0.82rem] sm:text-[0.88rem] text-white/90">
                         {card.val}
                       </div>
                     </div>
@@ -301,10 +300,10 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.35 }}
-              className="p-6 rounded-2xl border border-white/8 bg-white/3"
+              className="p-4 sm:p-5 rounded-xl border border-white/8 bg-white/3"
             >
-              <p className="text-[0.65rem] font-black text-violet-400 tracking-[0.25em] uppercase mb-4 flex items-center gap-2">
-                <Briefcase size={13} /> What can I help you with?
+              <p className="text-[0.58rem] sm:text-[0.6rem] font-bold text-violet-400 tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
+                <Briefcase size={12} /> What can I help you with?
               </p>
               <div className="flex flex-wrap gap-2">
                 {SERVICE_OPTIONS.map((s) => (
@@ -312,11 +311,10 @@ const Contact = () => {
                     key={s}
                     type="button"
                     onClick={() => setActiveService(s === activeService ? "" : s)}
-                    className={`px-3.5 py-1.5 rounded-lg text-[0.78rem] font-bold border transition-all duration-200 ${
-                      activeService === s
+                    className={`px-3 py-1.5 rounded-lg text-[0.7rem] sm:text-[0.75rem] font-bold border transition-all duration-200 ${activeService === s
                         ? "bg-violet-600 border-violet-500 text-white shadow-lg shadow-violet-500/20"
                         : "bg-white/5 border-white/10 text-white/50 hover:border-violet-500/40 hover:text-white/80"
-                    }`}
+                      }`}
                   >
                     {s}
                   </button>
@@ -330,14 +328,14 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.42 }}
-              className="flex items-center gap-3 p-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/5"
+              className="flex items-center gap-2.5 p-3 sm:p-3.5 rounded-xl border border-emerald-500/20 bg-emerald-500/5"
             >
               <div className="relative flex-shrink-0">
-                <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                <div className="absolute inset-0 w-3 h-3 rounded-full bg-emerald-400/40 animate-ping" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-emerald-400/40 animate-ping" />
               </div>
-              <p className="text-emerald-400 text-[0.82rem] font-bold">
-                Available for new projects · responds in{" "}
+              <p className="text-emerald-400 text-[0.72rem] sm:text-[0.78rem] font-bold">
+                Available · responds in{" "}
                 <span className="text-white/80">≤ 24h</span>
               </p>
             </motion.div>
@@ -349,10 +347,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="relative rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-8 lg:p-10 shadow-2xl"
+            className="relative rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-5 sm:p-6 lg:p-8 shadow-xl"
           >
             {/* Glass shine */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent rounded-t-3xl" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent rounded-t-2xl" />
 
             <AnimatePresence mode="wait">
               {status === "success" ? (
@@ -362,17 +360,16 @@ const Contact = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="flex flex-col items-center justify-center text-center py-16 gap-6"
+                  className="flex flex-col items-center justify-center text-center py-10 sm:py-12 gap-4"
                 >
-                  <div className="w-20 h-20 rounded-full bg-emerald-500/15 flex items-center justify-center">
-                    <CheckCircle2 size={40} className="text-emerald-400" />
+                  <div className="w-14 h-14 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                    <CheckCircle2 size={28} className="text-emerald-400" />
                   </div>
-                  <h3 className="text-[1.8rem] font-black text-white tracking-tight">
+                  <h3 className="text-[1.2rem] sm:text-[1.4rem] font-black text-white tracking-tight">
                     Message Sent! 🎉
                   </h3>
-                  <p className="text-white/50 max-w-sm leading-relaxed">
-                    Thanks for reaching out! I'll review your message and get
-                    back to you within 24 hours.
+                  <p className="text-white/50 text-[0.82rem] sm:text-[0.88rem] max-w-sm leading-relaxed">
+                    Thanks for reaching out! I'll get back within 24 hours.
                   </p>
                 </motion.div>
               ) : (
@@ -383,20 +380,20 @@ const Contact = () => {
                   onSubmit={handleSend}
                   initial={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="space-y-6"
+                  className="space-y-4 sm:space-y-5"
                   noValidate
                 >
                   <div>
-                    <h3 className="text-[1.5rem] font-black text-white tracking-tight mb-1">
+                    <h3 className="text-[1.1rem] sm:text-[1.2rem] font-black text-white tracking-tight mb-0.5">
                       Send a Message
                     </h3>
-                    <p className="text-white/40 text-[0.88rem]">
-                      Fill in the details below — I'll reply fast.
+                    <p className="text-white/40 text-[0.78rem] sm:text-[0.82rem]">
+                      Fill in the details — I'll reply fast.
                     </p>
                   </div>
 
                   {/* Name + Email row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Field
                       label="Your Name"
                       icon={<User size={12} />}
@@ -499,7 +496,7 @@ const Contact = () => {
                       status !== "sending" ? { y: -2, scale: 1.01 } : {}
                     }
                     whileTap={status !== "sending" ? { scale: 0.98 } : {}}
-                    className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-black text-[0.88rem] uppercase tracking-[0.2em] text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 shadow-xl shadow-violet-500/25 hover:shadow-violet-500/40 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
+                    className="w-full flex items-center justify-center gap-2.5 px-6 py-3 sm:py-3.5 rounded-xl font-bold text-[0.78rem] sm:text-[0.82rem] uppercase tracking-[0.15em] text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/35 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
                   >
                     {status === "sending" ? (
                       <>
@@ -514,7 +511,7 @@ const Contact = () => {
                     )}
                   </motion.button>
 
-                  <p className="text-center text-white/25 text-[0.72rem]">
+                  <p className="text-center text-white/20 text-[0.65rem] sm:text-[0.68rem]">
                     No spam. Your data is safe with me.
                   </p>
                 </motion.form>
