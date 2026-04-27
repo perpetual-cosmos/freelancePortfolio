@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { BookOpen, ArrowRight } from 'lucide-react';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: 'Developer Glossary & Learning Center | TheUnipick',
@@ -16,7 +18,9 @@ const glossaryTerms = [
 
 export default function LearnIndexPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
+    <>
+      <Navbar />
+      <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
       <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-[1000px] mx-auto px-6 relative z-10">
@@ -50,6 +54,8 @@ export default function LearnIndexPage() {
           ))}
         </div>
       </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

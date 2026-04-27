@@ -2,6 +2,8 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const topicsData: Record<string, { title: string, category: string, intro: string, sections: { heading: string, body: string }[], cta: string }> = {
   'what-is-nextjs': {
@@ -64,7 +66,9 @@ export default function TopicPage({ params }: { params: { topic: string } }) {
   }
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
+    <>
+      <Navbar />
+      <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
       <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-secondary/10 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-[800px] mx-auto px-6 relative z-10">
@@ -100,6 +104,8 @@ export default function TopicPage({ params }: { params: { topic: string } }) {
            </Link>
         </div>
       </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Zap, Activity, CheckCircle2, Search, BarChart3, MousePointerClick } from 'lucide-react';
 import Link from 'next/link';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: 'Free Website & SEO Audit | TheUnipick',
@@ -16,7 +18,9 @@ const auditPoints = [
 
 export default function AuditPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
+    <>
+      <Navbar />
+      <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
       <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-secondary/10 blur-[120px] rounded-full pointer-events-none" />
       
@@ -98,7 +102,9 @@ export default function AuditPage() {
           </div>
         </div>
       </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
 
