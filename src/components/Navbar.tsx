@@ -1,16 +1,46 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Globe, Code2, Server, Brain, BarChart3, BookOpen, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, Globe, Code2, Server, Brain, BarChart3, BookOpen, ArrowRight, ShoppingCart, Palette, Settings, Layers, Workflow, PenTool, Monitor, Database, Bot, Plug, FileCode, LayoutTemplate, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
-const services = [
-  { title: 'Web Development', desc: 'Next.js, MERN & TypeScript', icon: <Code2 size={16} />, color: '#6300e2', href: '/services/web-development' },
-  { title: 'Shopify Development', desc: 'Custom D2C stores', icon: <Server size={16} />, color: '#10b981', href: '/services/shopify-development' },
-  { title: 'AI Automation', desc: 'n8n, Make & workflows', icon: <Brain size={16} />, color: '#a855f7', href: '/services/ai-automation' },
-  { title: 'SEO & Performance', desc: 'Rankings & Core Web Vitals', icon: <BarChart3 size={16} />, color: '#f43f5e', href: '/services/seo-services' },
-  { title: 'WordPress / CMS', desc: 'Headless & custom builds', icon: <Globe size={16} />, color: '#0ea5e9', href: '/services' },
-  { title: 'LMS / EdTech', desc: 'Course & learning platforms', icon: <BookOpen size={16} />, color: '#7c6fff', href: '/services' },
+const serviceCategories = [
+  {
+    title: 'Web Development',
+    icon: <Code2 size={18} />,
+    color: '#6300e2',
+    items: ['React.js', 'Next.js', 'MERN Stack', 'TypeScript', 'Full-Stack Apps', 'SaaS Products', 'API Development', 'Progressive Web Apps']
+  },
+  {
+    title: 'E-Commerce',
+    icon: <ShoppingCart size={18} />,
+    color: '#10b981',
+    items: ['Shopify Development', 'WooCommerce', 'Custom Stores', 'Payment Integration', 'D2C Brands', 'Product Catalog', 'Checkout Optimization']
+  },
+  {
+    title: 'CMS & Platforms',
+    icon: <Layers size={18} />,
+    color: '#0ea5e9',
+    items: ['WordPress', 'Headless CMS', 'LMS / EdTech', 'Website Migration', 'Blog Systems', 'Custom Dashboards', 'Multi-Language Sites']
+  },
+  {
+    title: 'AI & Automation',
+    icon: <Bot size={18} />,
+    color: '#a855f7',
+    items: ['AI Automation', 'n8n Workflows', 'Zapier', 'Make.com', 'WhatsApp Bots', 'CRM Integration', 'Lead Routing', 'Chatbots']
+  },
+  {
+    title: 'Design & Branding',
+    icon: <Palette size={18} />,
+    color: '#f43f5e',
+    items: ['UI/UX Design', 'Figma Prototyping', 'Logo Design', 'Brand Identity', 'Landing Pages', 'Design Systems']
+  },
+  {
+    title: 'SEO & Growth',
+    icon: <BarChart3 size={18} />,
+    color: '#f59e0b',
+    items: ['Technical SEO', 'On-Page SEO', 'Core Web Vitals', 'Performance Audit', 'Keyword Strategy', 'Content Marketing', 'Business Consultation']
+  }
 ];
 
 const navLinks = [
@@ -24,6 +54,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showMegaMenu, setShowMegaMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -48,7 +79,7 @@ const Navbar = () => {
 
           {/* Center Navigation */}
           <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
-            {/* Services Dropdown */}
+            {/* Services Mega-Menu Trigger */}
             <div 
               onMouseEnter={() => setShowMegaMenu(true)} 
               onMouseLeave={() => setShowMegaMenu(false)} 
@@ -57,43 +88,6 @@ const Navbar = () => {
               <button className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[0.82rem] font-bold transition-colors ${showMegaMenu ? 'text-primary bg-primary/5' : 'text-on-surface-variant hover:text-on-surface hover:bg-black/[0.03]'}`}>
                 Services <ChevronDown size={13} className={`transition-transform duration-300 opacity-50 ${showMegaMenu ? 'rotate-180 opacity-100' : ''}`} />
               </button>
-              
-              <AnimatePresence>
-                {showMegaMenu && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: 8 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: 5 }} 
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 w-[580px] bg-white rounded-2xl p-2 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] border border-[rgba(0,0,0,0.06)] mt-2 grid grid-cols-2 gap-0.5 z-[1002]"
-                  >
-                    {services.map((s) => (
-                      <a 
-                        key={s.title} 
-                        href={s.href} 
-                        className="px-3.5 py-3 rounded-xl flex items-center gap-3 no-underline transition-all hover:bg-surface-muted group/item"
-                      >
-                        <div 
-                          className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/item:scale-110"
-                          style={{ color: 'white', background: s.color }}
-                        >
-                          {s.icon}
-                        </div>
-                        <div className="min-w-0">
-                          <div className="font-bold text-[0.82rem] text-on-surface group-hover/item:text-primary transition-colors leading-tight">{s.title}</div>
-                          <div className="text-[0.7rem] text-on-surface-muted font-medium truncate">{s.desc}</div>
-                        </div>
-                      </a>
-                    ))}
-                    <div className="col-span-2 mt-1 pt-2.5 border-t border-[rgba(0,0,0,0.04)] flex justify-between items-center px-3.5 pb-1">
-                      <span className="text-[0.65rem] font-bold text-on-surface-muted uppercase tracking-wider">All capabilities</span>
-                      <a href="/services" className="text-primary font-bold text-[0.78rem] flex items-center gap-1.5 hover:gap-3 transition-all">
-                        View All <ArrowRight size={13} />
-                      </a>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </div>
 
             {navLinks.map((link) => (
@@ -109,7 +103,7 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Availability — inline dot */}
+            {/* Availability */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-tech-teal/8 border border-tech-teal/15">
               <div className="relative w-1.5 h-1.5">
                 <div className="w-full h-full bg-tech-teal rounded-full" />
@@ -136,7 +130,72 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Mobile Menu */}
+        {/* ===== FULL-WIDTH MEGA MENU ===== */}
+        <AnimatePresence>
+          {showMegaMenu && (
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 4 }}
+              transition={{ duration: 0.25 }}
+              onMouseEnter={() => setShowMegaMenu(true)}
+              onMouseLeave={() => setShowMegaMenu(false)}
+              className="hidden lg:block absolute left-0 right-0 top-full mt-1 z-[1001]"
+            >
+              <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-10">
+                <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.06)] shadow-[0_25px_80px_-15px_rgba(0,0,0,0.12)] p-6 lg:p-8">
+                  {/* Category Grid */}
+                  <div className="grid grid-cols-3 xl:grid-cols-6 gap-6 lg:gap-8">
+                    {serviceCategories.map((cat) => (
+                      <div key={cat.title} className="flex flex-col">
+                        {/* Category Header */}
+                        <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-[rgba(0,0,0,0.04)]">
+                          <div 
+                            className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                            style={{ color: 'white', background: cat.color }}
+                          >
+                            {cat.icon}
+                          </div>
+                          <span className="text-[0.78rem] font-bold text-on-surface leading-tight">{cat.title}</span>
+                        </div>
+                        {/* Service Items */}
+                        <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
+                          {cat.items.map((item) => (
+                            <li key={item}>
+                              <a 
+                                href="/services" 
+                                className="text-[0.75rem] text-on-surface-variant font-medium no-underline hover:text-primary transition-colors block py-0.5 leading-relaxed"
+                              >
+                                {item}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Footer Bar */}
+                  <div className="mt-6 pt-5 border-t border-[rgba(0,0,0,0.04)] flex flex-wrap items-center justify-between gap-4">
+                    <p className="text-[0.78rem] text-on-surface-muted font-medium max-w-[480px]">
+                      Need something custom? We build tailored solutions for startups, D2C brands, and enterprises.
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <Link href="/services" className="text-[0.75rem] font-bold text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5 no-underline">
+                        All Services <ArrowRight size={13} />
+                      </Link>
+                      <Link href="/contact" className="text-[0.75rem] font-bold text-primary flex items-center gap-1.5 no-underline hover:gap-2.5 transition-all">
+                        Let's Talk <ArrowUpRight size={13} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* ===== MOBILE MENU ===== */}
         <AnimatePresence>
           {isOpen && (
             <motion.div 
@@ -146,8 +205,51 @@ const Navbar = () => {
               transition={{ duration: 0.25 }}
               className="lg:hidden mt-2 overflow-hidden"
             >
-              <div className="bg-white rounded-2xl p-3 border border-[rgba(0,0,0,0.06)] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] flex flex-col gap-0.5">
-                <a href="/services" className="px-4 py-3 rounded-xl text-[0.9rem] font-bold text-on-surface no-underline hover:bg-surface-muted transition-all">Services</a>
+              <div className="bg-white rounded-2xl p-3 border border-[rgba(0,0,0,0.06)] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] flex flex-col gap-0.5 max-h-[80vh] overflow-y-auto">
+                {/* Services Accordion */}
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-[0.9rem] font-bold text-on-surface hover:bg-surface-muted transition-all text-left"
+                >
+                  Services
+                  <ChevronDown size={16} className={`text-on-surface-muted transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="grid grid-cols-2 gap-3 px-3 pb-3">
+                        {serviceCategories.map((cat) => (
+                          <div key={cat.title} className="bg-surface-muted rounded-xl p-3">
+                            <div className="flex items-center gap-2 mb-2">
+                              <div 
+                                className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                                style={{ color: 'white', background: cat.color }}
+                              >
+                                {React.cloneElement(cat.icon as React.ReactElement<{ size?: number }>, { size: 12 })}
+                              </div>
+                              <span className="text-[0.7rem] font-bold text-on-surface">{cat.title}</span>
+                            </div>
+                            <div className="flex flex-col gap-0.5">
+                              {cat.items.slice(0, 4).map((item) => (
+                                <a key={item} href="/services" className="text-[0.65rem] text-on-surface-muted font-medium no-underline hover:text-primary py-0.5">{item}</a>
+                              ))}
+                              {cat.items.length > 4 && (
+                                <span className="text-[0.6rem] text-primary font-bold mt-0.5">+{cat.items.length - 4} more</span>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
                 {navLinks.map((link) => (
                   <a 
                     key={link.name} 
