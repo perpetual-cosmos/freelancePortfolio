@@ -15,7 +15,7 @@ const services = [
     icon: <Code2 />,
     color: '#6300e2',
     size: 'large',
-    detail: 'I build production-ready web products—from seed-stage MVPs to Series A scale. Focus on Next.js 15, Supabase, and custom API integrations.',
+    detail: 'We build production-ready web products—from seed-stage MVPs to Series A scale. Focus on Next.js 15, Supabase, and custom API integrations.',
     metric: { label: 'PAGE_LOAD', value: '<1s' },
     tags: ['Next.js 15', 'MERN Stack', 'TypeScript']
   },
@@ -26,7 +26,7 @@ const services = [
     icon: <Server />,
     color: '#10b981',
     size: 'small',
-    detail: 'Specializing in custom Liquid themes and headless Shopify builds. I optimize for conversion and page speed (90+ score guaranteed).',
+    detail: 'Specializing in custom Liquid themes and headless Shopify builds. We optimize for conversion and page speed (90+ score guaranteed).',
     metric: { label: 'CONVERSION', value: '+40%' },
     tags: ['Shopify Liquid', 'Headless', 'D2C']
   },
@@ -37,7 +37,7 @@ const services = [
     icon: <Brain />,
     color: '#8b5cf6',
     size: 'small',
-    detail: 'I build automated pipelines for lead routing, WhatsApp bots, and CRM syncing. Save 20+ hours of manual work every week.',
+    detail: 'We build automated pipelines for lead routing, WhatsApp bots, and CRM syncing. Save 20+ hours of manual work every week.',
     metric: { label: 'TIME_SAVED', value: '20h/wk' },
     tags: ['n8n', 'Make.com', 'APIs']
   },
@@ -59,7 +59,7 @@ const services = [
     icon: <Globe />,
     color: '#0ea5e9',
     size: 'small',
-    detail: 'From custom theme development to headless WordPress setups. I ensure your CMS is a tool for growth, not a technical hurdle.',
+    detail: 'From custom theme development to headless WordPress setups. We ensure your CMS is a tool for growth, not a technical hurdle.',
     metric: { label: 'SECURITY_SLA', value: '100%' },
     tags: ['WordPress', 'Headless', 'PHP']
   },
@@ -140,7 +140,7 @@ const Services = () => {
               viewport={{ once: true }}
               className="text-[clamp(2.2rem,6vw,4.5rem)] font-extrabold tracking-tighter leading-[0.95] text-white font-display"
             >
-              Full-Stack <br /> <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Business Solutions.</span>
+              What We Build. <br /> <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Production-Ready.</span>
             </motion.h2>
           </div>
 
@@ -151,7 +151,7 @@ const Services = () => {
             transition={{ delay: 0.2 }}
             className="text-white/50 text-[1.1rem] font-medium leading-relaxed max-w-[380px]"
           >
-            We translate complex business logic into hardened, performant software systems.
+            Every service we offer, we've already shipped in production — no experiments on your budget.
           </motion.p>
         </div>
 

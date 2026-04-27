@@ -230,7 +230,7 @@ const Contact = () => {
             transition={{ delay: 0.14 }}
             className="text-white/50 text-[0.85rem] sm:text-[0.92rem] max-w-md mx-auto leading-relaxed"
           >
-            Drop me a message — I'll reply within 24 hours with a clear plan.
+            Drop us a message — we'll reply within 24 hours with a clear plan.
           </motion.p>
         </div>
 
@@ -303,7 +303,7 @@ const Contact = () => {
               className="p-4 sm:p-5 rounded-xl border border-white/8 bg-white/3"
             >
               <p className="text-[0.58rem] sm:text-[0.6rem] font-bold text-violet-400 tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
-                <Briefcase size={12} /> What can I help you with?
+                <Briefcase size={12} /> What can we help you with?
               </p>
               <div className="flex flex-wrap gap-2">
                 {SERVICE_OPTIONS.map((s) => (
@@ -369,7 +369,7 @@ const Contact = () => {
                     Message Sent! 🎉
                   </h3>
                   <p className="text-white/50 text-[0.82rem] sm:text-[0.88rem] max-w-sm leading-relaxed">
-                    Thanks for reaching out! I'll get back within 24 hours.
+                    Thanks for reaching out! We'll get back within 24 hours.
                   </p>
                 </motion.div>
               ) : (
@@ -388,7 +388,7 @@ const Contact = () => {
                       Send a Message
                     </h3>
                     <p className="text-white/40 text-[0.78rem] sm:text-[0.82rem]">
-                      Fill in the details — I'll reply fast.
+                      Fill in the details — we'll reply fast.
                     </p>
                   </div>
 
@@ -461,7 +461,7 @@ const Contact = () => {
                     <textarea
                       rows={5}
                       className={`${cx} resize-none`}
-                      placeholder="Tell me about your project — goals, timeline, budget..."
+                      placeholder="Tell us about your project — goals, timeline, budget..."
                       value={form.message}
                       onChange={(e) =>
                         setForm((f) => ({ ...f, message: e.target.value }))
@@ -512,12 +512,35 @@ const Contact = () => {
                   </motion.button>
 
                   <p className="text-center text-white/20 text-[0.65rem] sm:text-[0.68rem]">
-                    No spam. Your data is safe with me.
+                    No spam. Your data is safe with us.
                   </p>
                 </motion.form>
               )}
             </AnimatePresence>
           </motion.div>
+        </div>
+
+        {/* ── Book a Call Section ── */}
+        <div id="book-a-call" className="mt-20 sm:mt-32 pt-20 border-t border-white/5">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-[2rem] sm:text-[3rem] font-black text-white tracking-tight font-display mb-4">
+              Prefer a <span className="text-primary">Quick Call?</span>
+            </h2>
+            <p className="text-white/50 text-[1rem] sm:text-[1.1rem] font-medium">
+              Skip the back-and-forth. Pick a time that works for you and let's discuss your project goals.
+            </p>
+          </div>
+          
+          <div className="rounded-3xl border border-white/10 bg-white/[0.02] overflow-hidden min-h-[600px] shadow-2xl">
+            {/* Inline Widget Placeholder — User to replace URL */}
+            <iframe
+              src="https://calendly.com/unipick000/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+              width="100%"
+              height="700"
+              frameBorder="0"
+              className="w-full"
+            />
+          </div>
         </div>
       </div>
     </section>

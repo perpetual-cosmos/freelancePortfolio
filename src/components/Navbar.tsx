@@ -105,6 +105,12 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            <a 
+              href="/contact#book-a-call" 
+              className="px-3.5 py-2 rounded-xl text-[0.82rem] font-bold text-primary no-underline hover:bg-primary/5 transition-all"
+            >
+              Book a Call
+            </a>
           </div>
 
           {/* Right Actions */}
@@ -243,7 +249,7 @@ const Navbar = () => {
                             </div>
                             <div className="flex flex-col gap-0.5">
                               {cat.items.slice(0, 4).map((item) => (
-                                <a key={item} href={`/services/${cat.slug}`} className="text-[0.65rem] text-on-surface-muted font-medium no-underline hover:text-primary py-0.5">{item}</a>
+                                <a key={item} href={`/services/${cat.slug}`} onClick={() => setIsOpen(false)} className="text-[0.65rem] text-on-surface-muted font-medium no-underline hover:text-primary py-0.5">{item}</a>
                               ))}
                               {cat.items.length > 4 && (
                                 <span className="text-[0.6rem] text-primary font-bold mt-0.5">+{cat.items.length - 4} more</span>
@@ -260,13 +266,21 @@ const Navbar = () => {
                   <a 
                     key={link.name} 
                     href={link.href} 
+                    onClick={() => setIsOpen(false)}
                     className="px-4 py-3 rounded-xl text-[0.9rem] font-bold text-on-surface no-underline hover:bg-surface-muted transition-all"
                   >
                     {link.name}
                   </a>
                 ))}
+                <a 
+                  href="/contact#book-a-call" 
+                  onClick={() => setIsOpen(false)}
+                  className="px-4 py-3 rounded-xl text-[0.9rem] font-bold text-primary no-underline hover:bg-primary/5 transition-all"
+                >
+                  Book a Call
+                </a>
                 <div className="border-t border-[rgba(0,0,0,0.04)] mt-1 pt-2">
-                  <Link href="/audit" className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-on-surface text-white font-bold text-[0.85rem] hover:bg-primary transition-all w-full">
+                  <Link href="/audit" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-on-surface text-white font-bold text-[0.85rem] hover:bg-primary transition-all w-full">
                     Get Free Audit <ArrowRight size={16} />
                   </Link>
                 </div>

@@ -27,6 +27,180 @@ export interface CaseStudy {
 }
 
 export const caseStudies: Record<string, CaseStudy> = {
+  "dear-valentine": {
+    id: "dear-valentine",
+    title: "Dear Valentine",
+    client: "Independent SaaS",
+    industry: "SaaS · Gifting",
+    tagline: "Time-Locked Valentine Gifting SaaS — Global reach with zero ad spend.",
+    heroImage: "/projects/dearvalentine.webp",
+    stats: [
+      { label: "Organic Visits", value: "1K+" },
+      { label: "Countries", value: "70+" },
+      { label: "Signups", value: "200+" },
+    ],
+    challenge: {
+      description: "Building a viral SaaS product from scratch with zero marketing budget. The goal was to create a platform where users could send time-locked digital gifts for Valentine's Day, ensuring high deliverability and engagement across different time zones.",
+      painPoints: [
+        "Need for a viral growth loop without paid ads",
+        "Managing time-locked reveals across global time zones",
+        "Ensuring high performance under sudden traffic spikes",
+        "Implementing a seamless user onboarding flow"
+      ],
+    },
+    approach: [
+      {
+        phase: "Product Design",
+        description: "Focused on a 'surprise and delight' mechanism with time-locked reveals to drive curiosity and sharing.",
+        duration: "2 weeks",
+      },
+      {
+        phase: "Tech Architecture",
+        description: "Leveraged Next.js and Supabase for a serverless, highly scalable backend capable of handling traffic bursts.",
+        duration: "3 weeks",
+      },
+      {
+        phase: "Growth Engine",
+        description: "Implemented referral mechanics and social sharing hooks to achieve organic growth.",
+        duration: "1 week",
+      },
+      {
+        phase: "Global Deployment",
+        description: "Optimized for 70+ countries with localized time management and CDN delivery.",
+        duration: "1 week",
+      },
+    ],
+    outcomes: [
+      "Achieved 1,000+ organic visits within the first month",
+      "Successfully launched in 70+ countries",
+      "Reached 200+ registered users with zero ad spend",
+      "Zero downtime during peak Valentine's Day traffic",
+    ],
+    technologies: ["Next.js", "Supabase", "Facebook Pixel", "Vercel", "Tailwind CSS"],
+    testimonial: {
+      quote: "The organic growth of Dear Valentine proves that a well-built product with a viral loop can compete with paid marketing.",
+      author: "Tarun Singh",
+      role: "Lead Developer",
+      image: "/about_engineering.png",
+    },
+    gallery: ["/projects/dearvalentine.webp"],
+  },
+  "wavo-digital": {
+    id: "wavo-digital",
+    title: "Wavo.digital",
+    client: "Oaksol Technologies",
+    industry: "SaaS · AI Automation",
+    tagline: "WhatsApp & Voice AI Automation Dashboard for a funded startup.",
+    heroImage: "/projects/wavo.webp",
+    stats: [
+      { label: "Build Type", value: "From 0 → Production" },
+      { label: "Team Size", value: "Sole Developer" },
+      { label: "Scalability", value: "Enterprise-Ready" },
+    ],
+    challenge: {
+      description: "A funded startup needed an enterprise-grade dashboard to manage WhatsApp and Voice AI automations. The challenge was to build a secure, scalable, and highly interactive interface for complex communication workflows.",
+      painPoints: [
+        "Real-time data visualization of communication logs",
+        "Complex integration with WhatsApp and Voice AI APIs",
+        "Multi-tenant architecture requirements",
+        "Need for a premium, startup-friendly UI/UX"
+      ],
+    },
+    approach: [
+      {
+        phase: "API Integration",
+        description: "Architected a robust integration layer for handling real-time data from WhatsApp and Voice AI providers.",
+        duration: "4 weeks",
+      },
+      {
+        phase: "Dashboard UI",
+        description: "Built a high-performance React dashboard with modular components for easy feature expansion.",
+        duration: "6 weeks",
+      },
+      {
+        phase: "Security & Auth",
+        description: "Implemented enterprise-standard JWT authentication and role-based access control.",
+        duration: "2 weeks",
+      },
+      {
+        phase: "Production Ops",
+        description: "Set up CI/CD pipelines and production-ready monitoring for high availability.",
+        duration: "2 weeks",
+      },
+    ],
+    outcomes: [
+      "Delivered a full production-ready dashboard as the sole developer",
+      "Successfully integrated complex third-party AI and communication APIs",
+      "Supported the client's transition from MVP to a funded enterprise product",
+      "Zero data leaks and 99.9% system uptime since launch",
+    ],
+    technologies: ["React", "Node.js", "MongoDB", "REST APIs", "Vercel", "JWT"],
+    testimonial: {
+      quote: "TheUnipick took our complex requirements and delivered a production-ready system that impressed our investors.",
+      author: "Dhruv",
+      role: "Founder, Oaksol Technologies",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: ["/projects/wavo.webp"],
+  },
+  "alumnipp": {
+    id: "alumnipp",
+    title: "Alumnipp.com",
+    client: "Alumni Networking Platform",
+    industry: "Platform · Networking",
+    tagline: "Production Codebase Rescue — Saving 1,000+ users from a broken system.",
+    heroImage: "/projects/alumnipp.webp",
+    stats: [
+      { label: "Users Saved", value: "1,000+" },
+      { label: "Turnaround", value: "72 Hours" },
+      { label: "Data Integrity", value: "100%" },
+    ],
+    challenge: {
+      description: "Inherited a completely broken Laravel + React production codebase that was failing to serve over 1,000 registered users. Critical bugs, database inconsistencies, and architectural flaws were threatening the platform's survival.",
+      painPoints: [
+        "High user churn due to system crashes",
+        "Corrupted database records and networking logic",
+        "Extremely messy and undocumented legacy code",
+        "Immediate pressure to restore service without data loss"
+      ],
+    },
+    approach: [
+      {
+        phase: "Emergency Audit",
+        description: "Conducted a deep-dive technical audit to identify root causes of crashes and data corruption.",
+        duration: "24 hours",
+      },
+      {
+        phase: "Core Refactoring",
+        description: "Refactored the broken Laravel controllers and React components to stabilize the core architecture.",
+        duration: "24 hours",
+      },
+      {
+        phase: "Data Recovery",
+        description: "Repaired corrupted database records and ensured 100% data integrity for all users.",
+        duration: "12 hours",
+      },
+      {
+        phase: "Deployment",
+        description: "Launched the stabilized version with zero data loss and restored full functionality.",
+        duration: "12 hours",
+      },
+    ],
+    outcomes: [
+      "Successfully preserved 1,000+ registered user accounts",
+      "Restored full platform stability within 72 hours",
+      "Achieved 100% data integrity with zero records lost during rescue",
+      "Stabilized the system for future feature expansion",
+    ],
+    technologies: ["Laravel", "React", "MySQL", "PHP", "AWS"],
+    testimonial: {
+      quote: "The turnaround was incredible. Our platform went from completely broken to stable in just 3 days.",
+      author: "Platform Owner",
+      role: "Client",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+    },
+    gallery: ["/projects/alumnipp.webp"],
+  },
   "biryanibabu-website": {
     id: "biryanibabu-website",
     title: "Biryani Babu",
@@ -337,9 +511,9 @@ export const caseStudies: Record<string, CaseStudy> = {
       "/case-studies/CozyCafec-_5AIYppe.webp"
     ],
   },
-  "SaaS-Innovation-Platform": {
-    id: "SaaS-Innovation-Platform",
-    title: "SaaS Innovation Platform",
+  "creative-agency": {
+    id: "PRJ-006",
+    title: "Creative Agency",
     client: "TechNova Systems",
     industry: "Technology & Software",
     tagline: "A scalable SaaS platform built for next-generation startups",

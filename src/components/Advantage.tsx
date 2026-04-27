@@ -17,22 +17,22 @@ const Advantage = () => {
     <section id="advantage" className="bg-surface-muted py-14 sm:py-20 lg:py-28 relative overflow-hidden">
       {/* Top border */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
-      
+
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 relative z-10">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-4 sm:gap-6 mb-10 sm:mb-12 lg:mb-14">
           <div className="max-w-[550px]">
-            <motion.div 
-              initial={{ opacity: 0, x: -15 }} 
-              whileInView={{ opacity: 1, x: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, x: -15 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-bold text-[0.6rem] sm:text-[0.65rem] tracking-[0.15em] uppercase mb-4"
             >
               <Sparkles size={12} /> <span>The Unipick Advantage</span>
             </motion.div>
-            <motion.h2 
-              initial={{ opacity: 0, y: 15 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-[clamp(1.6rem,4vw,2.8rem)] font-extrabold leading-[1.1] tracking-tight text-on-surface font-display"
             >
@@ -40,9 +40,9 @@ const Advantage = () => {
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Patchwork Vendors.</span>
             </motion.h2>
           </div>
-          <motion.p 
-            initial={{ opacity: 0 }} 
-            whileInView={{ opacity: 1 }} 
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
             className="text-on-surface-variant text-[0.85rem] sm:text-[0.92rem] max-w-[340px] leading-relaxed font-medium opacity-80"
@@ -54,8 +54,8 @@ const Advantage = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {edges.map((e, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -74,11 +74,11 @@ const Advantage = () => {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Bottom Tag */}
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          whileInView={{ opacity: 1 }} 
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="mt-8 sm:mt-10 text-center"
         >

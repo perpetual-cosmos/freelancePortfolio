@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const study = caseStudies[resolvedParams.slug];
-  
+
   if (!study) {
     notFound();
   }
@@ -33,7 +33,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <main className="bg-[#050505] min-h-screen">
       <Navbar />
-      
+
       {/* Back Button */}
       <div className="fixed top-24 left-6 z-50">
         <Link href="/portfolio" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-all text-sm font-bold uppercase tracking-widest">
@@ -47,7 +47,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <img src={study.heroImage} alt={study.title} className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent" />
         </div>
-        
+
         <div className="max-w-[1440px] mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
             <div className="inline-flex items-center px-4 py-2 bg-primary/20 text-primary rounded-full text-[0.7rem] font-black tracking-[0.2em] uppercase mb-8 border border-primary/20 shadow-[0_0_20px_rgba(99,0,226,0.3)]">
@@ -60,7 +60,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               {study.tagline}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
             {study.stats.map((stat, i) => (
               <div key={i} className="p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 backdrop-blur-md">
@@ -106,7 +106,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <h2 className="text-[3rem] lg:text-[4.5rem] font-black text-white text-center leading-none tracking-tighter font-display mb-24">
             Our <span className="text-gradient">Approach.</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {study.approach.map((step, i) => (
               <div key={i} className="p-10 rounded-[2rem] bg-white/[0.03] border border-white/10 hover:border-primary/50 transition-colors group">
@@ -141,11 +141,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 ))}
               </div>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6">
               {study.gallery.map((img, i) => (
                 <div key={i} className={`rounded-[2rem] overflow-hidden border border-white/10 ${i === 0 ? 'col-span-2 aspect-video' : 'aspect-square'}`}>
-                  <img src={img} alt={`Gallery ${i+1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img src={img} alt={`Gallery ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
               ))}
             </div>
@@ -156,7 +156,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       {/* Testimonial & Tech Stack */}
       <section className="py-24 lg:py-40 relative bg-white rounded-t-[4rem] text-[#050505]">
         <div className="max-w-[1440px] mx-auto px-6">
-          
+
           <div className="max-w-4xl mx-auto text-center mb-32">
             <Quote className="w-16 h-16 mx-auto text-primary/20 mb-10" />
             <p className="text-[1.8rem] lg:text-[2.5rem] font-medium leading-tight tracking-tight mb-12">

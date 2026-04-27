@@ -12,7 +12,7 @@ const TrustBar = () => {
     <div className="bg-white py-20 border-y border-outline/30 overflow-hidden relative z-10 noise-overlay">
       {/* Dynamic Background */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(circle_at_center,var(--primary),transparent)]" />
-      
+
       {/* Label Container */}
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 mb-12 flex flex-col items-center">
         <motion.div
@@ -37,8 +37,8 @@ const TrustBar = () => {
           className="flex gap-24 sm:gap-40 whitespace-nowrap items-center px-12"
         >
           {Array(5).fill(industries).flat().map((industry, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="group flex items-center gap-6 cursor-default"
             >
               {/* Decorative Dot */}

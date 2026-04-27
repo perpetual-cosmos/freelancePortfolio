@@ -11,6 +11,45 @@ import Link from 'next/link';
 const projects = [
   {
     id: "PRJ-001",
+    slug: "dear-valentine",
+    title: "Dear Valentine",
+    category: "SAAS • PRODUCT",
+    year: "2024",
+    desc: "Time-locked digital gifting platform. 1K+ organic visits across 70+ countries with zero ad spend.",
+    stats: [{ label: "Organic Visits", value: "1K+" }, { label: "Countries", value: "70+" }],
+    image: "/projects/dearvalentine.webp",
+    color: "#f43f5e",
+    tags: ["Next.js", "Supabase", "Tailwind", "Vercel"],
+    link: "https://dearvalentine.co/"
+  },
+  {
+    id: "PRJ-002",
+    slug: "wavo-digital",
+    title: "Wavo.digital",
+    category: "SAAS • AI AUTOMATION",
+    year: "2024",
+    desc: "Enterprise WhatsApp & Voice AI automation dashboard for a funded startup. Built from 0 to production.",
+    stats: [{ label: "Role", value: "Sole Dev" }, { label: "Tech", value: "AI" }],
+    image: "/projects/wavo.webp",
+    color: "#8b5cf6",
+    tags: ["React", "Node.js", "MongoDB", "REST APIs"],
+    link: "https://wavo.digital/"
+  },
+  {
+    id: "PRJ-003",
+    slug: "alumnipp",
+    title: "Alumnipp.com",
+    category: "PLATFORM • RESCUE",
+    year: "2024",
+    desc: "Production codebase rescue. Refactored broken architecture and saved 1,000+ users in 72 hours.",
+    stats: [{ label: "Users Saved", value: "1K+" }, { label: "Turnaround", value: "72h" }],
+    image: "/projects/alumnipp.webp",
+    color: "#0ea5e9",
+    tags: ["Laravel", "React", "MySQL", "PHP"],
+    link: "https://alumnipp.com/"
+  },
+  {
+    id: "PRJ-004",
     slug: "biryanibabu-website",
     title: "Biryani Babu",
     category: "FULL STACK • E-COMMERCE",
@@ -23,12 +62,12 @@ const projects = [
     link: "https://biryanibabu.in/"
   },
   {
-    id: "PRJ-002",
+    id: "PRJ-005",
     slug: "blackart-tattoo-studio",
     title: "BlackArt Tattoo Studio",
     category: "FULL STACK • BOOKING",
     year: "2024",
-    desc: "Premier Tattoo & Piercing Studio Website in Udaipur. Highly converting premium website with elegant user experience.",
+    desc: "Premier Tattoo & Piercing Studio Website in Udaipur. #1 Ranking in local search.",
     stats: [{ label: "Organic Lift", value: "3x" }, { label: "Rankings", value: "#1" }],
     image: "/projects/BlackArtTattoo.webp",
     color: "#6300e2",
@@ -36,8 +75,8 @@ const projects = [
     link: "https://www.blackarttattoo.in/"
   },
   {
-    id: "PRJ-003",
-    slug: "SaaS-Innovation-Platform",
+    id: "PRJ-006",
+    slug: "creative-agency",
     title: "Creative Agency",
     category: "FRONTEND • PERFORMANCE",
     year: "2023",
@@ -47,6 +86,32 @@ const projects = [
     color: "#2dd4bf",
     tags: ["Wordpress", "PHP", "MySQL"],
     link: "https://www.innovacient.com/"
+  },
+  {
+    id: "PRJ-007",
+    slug: "alexink-tattoo-website",
+    title: "Alexink Tattoo",
+    category: "FRONTEND • DESIGN",
+    year: "2023",
+    desc: "Bold digital presence for a boutique tattoo studio, boosting bookings by 240%.",
+    stats: [{ label: "Conversion", value: "+240%" }, { label: "Load Time", value: "1.2s" }],
+    image: "/case-studies/TattooWebsite-BCwhkFr1.webp",
+    color: "#f59e0b",
+    tags: ["React", "Tailwind", "Stripe"],
+    link: "#"
+  },
+  {
+    id: "PRJ-008",
+    slug: "cozycafe-branding-website",
+    title: "CozyCafe",
+    category: "BRANDING • WEB",
+    year: "2023",
+    desc: "From local cafe to community favorite through authentic branding and online ordering.",
+    stats: [{ label: "Traffic", value: "+220%" }, { label: "Orders", value: "+340%" }],
+    image: "/case-studies/CozyCafe-CBA3aU9L.webp",
+    color: "#fbbf24",
+    tags: ["Next.js", "Firebase", "Stripe"],
+    link: "#"
   }
 ];
 

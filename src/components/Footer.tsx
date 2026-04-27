@@ -24,7 +24,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-[#565677] text-[0.95rem] leading-relaxed font-medium mb-8 pr-4 opacity-80">
-              Full-stack developer for Indian startups — web, Shopify, AI automation, and SEO that actually converts.
+              Full-stack development team for Indian startups — we build web, Shopify, AI automation, and SEO that actually converts.
             </p>
             <div className="flex gap-4">
               {[

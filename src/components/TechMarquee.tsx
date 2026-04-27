@@ -3,9 +3,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const techs = [
-  "NEXT.JS 14", "NODE.JS", "PYTHON AI", "TYPESCRIPT",
-  "POSTGRESQL", "AWS CLOUD", "DOCKER", "REACT", "TAILWIND V4", "REDIS",
-  "GRAPHQL", "KUBERNETES", "TERRAFORM", "STRIPE API"
+  "NEXT.JS 15", "NODE.JS", "TYPESCRIPT", "POSTGRESQL",
+  "MONGODB", "SUPABASE", "DOCKER", "TAILWIND V4", "REACT",
+  "STRIPE API", "N8N", "LARAVEL", "PHP", "SHOPIFY LIQUID", "VERCEL"
 ];
 
 const TechMarquee = () => {

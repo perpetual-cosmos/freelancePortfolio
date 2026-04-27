@@ -15,35 +15,33 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Tarun Singh | Full-Stack Developer & SEO Specialist — I Build Websites That Rank, Convert & Scale",
-  description: "Full-stack web developer specializing in Next.js, Shopify, WordPress, and AI automations. 10+ live products shipped. 70+ countries reached. Get a free website audit today.",
+  title: "TheUnipick | Full-Stack Development & SEO Team — We Build Websites That Rank, Convert & Scale",
+  description: "Expert full-stack development team specializing in Next.js, Shopify, AI automations, and SEO. 5+ years experience, 30+ live products shipped. Get a free website audit today.",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Tarun Singh",
-  "url": "https://theunipick.com",
-  "sameAs": [
-    "https://github.com/perpetual-cosmos",
-    "https://www.linkedin.com/in/perpetual-cosmos/",
-    "https://x.com/perpetual_cosmos"
-  ],
-  "jobTitle": "Full-Stack Developer & SEO Specialist",
-  "description": "I build production-ready web products for Indian founders — from idea to ranked, converting website, in 4–8 weeks. Specializing in Next.js, Shopify, WordPress, and AI automation.",
-  "knowsAbout": ["Next.js", "Shopify", "WordPress", "AI Automation", "SEO", "React", "Node.js", "n8n", "Web Development"],
+  "@type": "LocalBusiness",
+  "name": "TheUnipick",
+  "url": "https://theunipicks.vercel.app/",
+  "logo": "https://theunipicks.vercel.app/logo.png",
+  "image": "https://theunipicks.vercel.app/og-image.png",
+  "description": "We build production-ready web products — from idea to ranked, converting website. Specializing in Next.js, Shopify, WordPress, and AI automation.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Kanpur",
     "addressRegion": "Uttar Pradesh",
     "addressCountry": "IN"
   },
-  "offers": {
-    "@type": "Offer",
-    "description": "Free 20-point website audit covering SEO, speed, and conversion rate optimization. Delivered in 48 hours.",
-    "price": "0",
-    "priceCurrency": "INR"
-  }
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "26.4499",
+    "longitude": "80.3319"
+  },
+  "url": "https://theunipicks.vercel.app/",
+  "telephone": "+91-9451172458",
+  "priceRange": "₹₹",
+  "knowsAbout": ["Next.js", "Shopify", "WordPress", "AI Automation", "SEO", "React", "Node.js", "n8n", "Web Development"]
 };
 
 export default function RootLayout({

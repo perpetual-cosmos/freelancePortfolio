@@ -21,15 +21,15 @@ const Hero = () => {
     <section className="relative min-h-[85vh] lg:min-h-screen pt-24 sm:pt-28 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 flex items-center overflow-hidden bg-background">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        <motion.div 
-          animate={{ scale: [1, 1.2, 1], opacity: [0.06, 0.12, 0.06], x: [0, 50, 0], y: [0, -30, 0] }} 
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.06, 0.12, 0.06], x: [0, 50, 0], y: [0, -30, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-[15%] -right-[10%] w-[70vw] h-[70vw] bg-primary blur-[160px] rounded-full" 
+          className="absolute -top-[15%] -right-[10%] w-[70vw] h-[70vw] bg-primary blur-[160px] rounded-full"
         />
-        <motion.div 
-          animate={{ scale: [1, 1.1, 1], opacity: [0.04, 0.08, 0.04], x: [0, -40, 0], y: [0, 20, 0] }} 
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.04, 0.08, 0.04], x: [0, -40, 0], y: [0, 20, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-[10%] -left-[5%] w-[50vw] h-[50vw] bg-secondary blur-[140px] rounded-full" 
+          className="absolute -bottom-[10%] -left-[5%] w-[50vw] h-[50vw] bg-secondary blur-[140px] rounded-full"
         />
         {/* Subtle grain */}
         <div className="absolute inset-0 opacity-[0.015] bg-[url('data:image/svg+xml,%3Csvg viewBox=%270 0 200 200%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E')]" />
@@ -41,48 +41,43 @@ const Hero = () => {
           {/* Top Badge — shorter, punchier */}
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[0.55rem] sm:text-[0.6rem] lg:text-[0.7rem] tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-5 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>Available for Projects · Kanpur, IN</span>
+            <span>Full-Stack Development · 3 years · 30+ Shipped Products · Kanpur → Worldwide</span>
           </motion.div>
-          
+
           {/* Headline */}
           <motion.h1 variants={itemVariants} className="text-[clamp(1.8rem,6vw,4.8rem)] font-extrabold leading-[0.95] tracking-tighter mb-4 sm:mb-5 lg:mb-6 text-on-surface font-display">
-            I Build Websites <br className="hidden sm:block" />That <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Rank, Convert</span> <br className="hidden lg:block" />& Scale.
+            We Build Websites <br className="hidden sm:block" />That <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Rank, Convert</span> <br className="hidden lg:block" />& Scale.
           </motion.h1>
-          
+
           {/* Subheadline */}
           <motion.p variants={itemVariants} className="text-on-surface-variant max-w-[520px] mx-auto lg:mx-0 mb-6 sm:mb-8 text-[0.88rem] sm:text-[0.95rem] lg:text-[1.1rem] leading-relaxed font-medium opacity-85">
-            From Shopify stores to Next.js apps, WordPress to AI automations — I ship complete digital products with measurable results. No fluff. Just code that works.
+            From Shopify stores to Next.js apps, WordPress to AI automations — we ship complete digital products with measurable results. No fluff. Just code that works.
           </motion.p>
-          
+
           {/* Quick proof points — inline */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 justify-center lg:justify-start mb-6 sm:mb-8">
-            {['10+ live projects', 'Fixed pricing', '70+ countries'].map((item) => (
-              <div key={item} className="flex items-center gap-1.5 text-[0.7rem] sm:text-[0.75rem] text-on-surface-muted font-bold">
-                <CheckCircle2 size={14} className="text-tech-teal shrink-0" />
-                {item}
-              </div>
-            ))}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 justify-center lg:justify-start mb-6 sm:mb-8 text-on-surface-muted">
+            <span className="text-[0.7rem] sm:text-[0.75rem] font-bold">Clients from India, USA, UK · Wavo · Alumnipp · BlackArt Tattoo · Dear Valentine</span>
           </motion.div>
 
           {/* CTA Buttons */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 lg:mb-12">
             <Link href="/audit" className="relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 lg:py-4 rounded-full bg-gradient-to-br from-primary via-primary to-secondary text-white font-display font-black text-[0.8rem] sm:text-[0.85rem] shadow-lg shadow-primary/25 transition-all duration-500 hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 overflow-hidden group">
               <span className="relative z-10 flex items-center gap-2">
-                Get Free Website Audit 
+                Get Free Website Audit
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1.5" />
               </span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-15deg] transition-transform duration-700 group-hover:translate-x-[150%]" />
             </Link>
             <Link href="/portfolio" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 lg:py-4 rounded-full bg-white text-on-surface font-display font-black text-[0.8rem] sm:text-[0.85rem] border border-outline shadow-sm transition-all duration-500 hover:border-primary hover:text-primary hover:-translate-y-1 active:scale-95 group">
-              See My Work
+              See Our Work
               <Rocket size={16} className="text-on-surface-muted group-hover:text-primary transition-colors" />
             </Link>
           </motion.div>
-          
+
           {/* Trust Metrics — compact row */}
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-12 pt-6 sm:pt-8 border-t border-outline">
             {[
-              { label: 'Projects', value: '10+', icon: <Zap size={16} /> },
+              { label: 'Projects', value: '30+', icon: <Zap size={16} /> },
               { label: 'Countries', value: '70+', icon: <Globe size={16} /> },
               { label: 'SaaS Users', value: '1K+', icon: <ShieldCheck size={16} /> }
             ].map((stat, idx) => (
@@ -98,8 +93,8 @@ const Hero = () => {
         </motion.div>
 
         {/* Right: Premium Mockup — visible on lg+ */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9, rotateY: 15 }} 
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
           animate={{ opacity: 1, scale: 1, rotateY: -8 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as any, delay: 0.5 }}
           className="relative hidden lg:flex lg:h-[520px] xl:h-[600px] items-center justify-end"
@@ -107,7 +102,7 @@ const Hero = () => {
         >
           <div className="relative group cursor-pointer">
             {/* Main Visual */}
-            <motion.div 
+            <motion.div
               className="relative z-10 rounded-3xl xl:rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(99,0,226,0.2)] border border-white/15 transition-all duration-700"
               style={{ transformStyle: 'preserve-3d' }}
               whileHover={{ rotateY: -4, rotateX: 2, scale: 1.015 }}
@@ -115,10 +110,10 @@ const Hero = () => {
               <img src="/hero_premium_dashboard.png" alt="Engineering Interface" className="w-full max-w-[520px] h-auto block" />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-white/5 pointer-events-none mix-blend-overlay" />
             </motion.div>
-            
+
             {/* Floating Badge — Top Left */}
-            <motion.div 
-              animate={{ y: [0, -18, 0], rotateZ: [-1.5, 0.5, -1.5] }} 
+            <motion.div
+              animate={{ y: [0, -18, 0], rotateZ: [-1.5, 0.5, -1.5] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               className={`${glassClass} absolute z-20 -top-6 -left-8 xl:-top-10 xl:-left-12 flex items-center gap-3 px-4 py-3 xl:px-6 xl:py-4 rounded-xl xl:rounded-2xl`}
             >
@@ -128,10 +123,10 @@ const Hero = () => {
                 <div className="text-[0.55rem] xl:text-[0.6rem] text-on-surface-muted font-bold tracking-widest uppercase">Perfect Score</div>
               </div>
             </motion.div>
-            
+
             {/* Floating Badge — Bottom Right */}
-            <motion.div 
-              animate={{ y: [0, 15, 0], rotateZ: [1.5, -0.5, 1.5] }} 
+            <motion.div
+              animate={{ y: [0, 15, 0], rotateZ: [1.5, -0.5, 1.5] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className={`${glassDarkClass} absolute z-20 -bottom-5 -right-6 xl:-bottom-8 xl:-right-10 flex flex-col items-start gap-1.5 px-5 py-3.5 xl:px-7 xl:py-5 rounded-xl xl:rounded-2xl border border-white/5`}
             >

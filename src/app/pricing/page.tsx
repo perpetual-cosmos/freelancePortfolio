@@ -27,9 +27,22 @@ const faqs = [
   },
   {
     q: "Do you work with international clients?",
-    a: "Yes. I've delivered products used in 70+ countries. Communication is in English, and I align to your timezone for daily standups if needed."
+    a: "Yes. We've delivered products used in 70+ countries. Communication is in English, and we align to your timezone for daily standups if needed."
   }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
 
 function FAQItem({ faq, index }: { faq: typeof faqs[0], index: number }) {
   const [open, setOpen] = useState(false);
@@ -73,6 +86,10 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0], index: number }) {
 export default function PricingPage() {
   return (
     <main className="bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       
       {/* Page Header */}

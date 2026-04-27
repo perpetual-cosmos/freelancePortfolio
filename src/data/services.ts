@@ -68,13 +68,16 @@ const servicesData: ServiceData[] = [
     ],
     pricing: 'Starting from ₹35,000 for custom themes · ₹80,000 for headless builds',
     startingPrice: '₹35,000',
-    outcome: "Shopify stores I've built average a 40% increase in add-to-cart rates vs. their previous theme.",
+    outcome: "Shopify stores we've built average a 40% increase in add-to-cart rates vs. their previous theme.",
     stack: ['Shopify', 'Liquid', 'WooCommerce', 'WordPress', 'Razorpay', 'Stripe'],
     specs: { Latency: '< 200ms', Uptime: '99.95%', Security: 'PCI Ready', Delivery: 'Global CDN' },
     faq: [
-      { q: 'Can you work with my existing Shopify store?', a: 'Yes. I can audit and redesign an existing store, or build from scratch on a new one.' },
-      { q: 'Do you handle product uploads?', a: 'Yes, I set up up to 50 products with images, descriptions, and variants as part of the project.' },
-      { q: 'What about Shopify apps?', a: 'I integrate essential apps for reviews, email marketing, and analytics. Custom app development is also available.' }
+      { q: 'How long does a project take?', a: 'A standard website takes 7–14 days. A full-stack web app with custom features takes 3–6 weeks depending on scope.' },
+      { q: 'Do you use templates?', a: 'Never. Every project is built from scratch, custom-designed to your brand and business goals.' },
+      { q: 'What about post-launch support?', a: 'Every project includes 30-60 days of post-launch support. Monthly maintenance plans are also available.' },
+      { q: 'Can you work with my existing Shopify store?', a: 'Yes. We can audit and redesign an existing store, or build from scratch on a new one.' },
+      { q: 'Do you handle product uploads?', a: 'Yes, we set up up to 50 products with images, descriptions, and variants as part of the project.' },
+      { q: 'What about Shopify apps?', a: 'We integrate essential apps for reviews, email marketing, and analytics. Custom app development is also available.' }
     ]
   },
   {
@@ -98,9 +101,9 @@ const servicesData: ServiceData[] = [
     stack: ['n8n', 'Zapier', 'Make.com', 'OpenAI', 'Python', 'Node.js'],
     specs: { Response: '< 2s', Uptime: '99.9%', API: 'Private', Deploy: 'Hybrid' },
     faq: [
-      { q: "I'm not technical. Can you still help?", a: 'Absolutely. I handle all the technical setup. You just describe the repetitive task, and I build the system that handles it.' },
-      { q: 'What tools do you use?', a: 'n8n is my primary tool due to its flexibility. I also work with Make.com, Zapier, custom Node.js scripts, and direct API integrations.' },
-      { q: 'Can you automate WhatsApp?', a: 'Yes — I build WhatsApp bots using the official Business API for lead capture, support, and notifications.' }
+      { q: "I'm not technical. Can you still help?", a: 'Absolutely. We handle all the technical setup. You just describe the repetitive task, and we build the system that handles it.' },
+      { q: 'What tools do you use?', a: 'n8n is our primary tool due to its flexibility. We also work with Make.com, Zapier, custom Node.js scripts, and direct API integrations.' },
+      { q: 'Can you automate WhatsApp?', a: 'Yes — we build WhatsApp bots using the official Business API for lead capture, support, and notifications.' }
     ]
   },
   {
@@ -125,8 +128,8 @@ const servicesData: ServiceData[] = [
     specs: { Results: '3-6 months', Coverage: 'Global', Reports: 'Monthly', Tools: 'Premium' },
     faq: [
       { q: 'How long does SEO take to show results?', a: 'Typically 60–90 days for initial movement. Competitive terms take 3–6 months of consistent effort.' },
-      { q: 'Do you write the blog content?', a: 'Yes — content strategy and writing is included in the monthly retainer. I create SEO-optimized articles targeting your keyword clusters.' },
-      { q: 'Do you guarantee rankings?', a: "No ethical SEO provider can guarantee specific rankings. But I guarantee professional execution and transparent monthly reporting." }
+      { q: 'Do you write the blog content?', a: 'Yes — content strategy and writing is included in the monthly retainer. We create SEO-optimized articles targeting your keyword clusters.' },
+      { q: 'Do you guarantee rankings?', a: "No ethical SEO provider can guarantee specific rankings. But we guarantee professional execution and transparent monthly reporting." }
     ]
   },
   {
@@ -150,9 +153,9 @@ const servicesData: ServiceData[] = [
     stack: ['WordPress', 'Headless CMS', 'Strapi', 'Sanity', 'Next.js', 'Supabase'],
     specs: { Speed: '< 1s', CMS: 'Headless', Security: 'Hardened', Scale: 'Unlimited' },
     faq: [
-      { q: 'Can you migrate my existing website?', a: 'Yes — I handle full migrations from any platform (Wix, Squarespace, old WordPress) with zero downtime and SEO preservation.' },
-      { q: 'Do you build custom WordPress plugins?', a: 'Yes. I can build custom plugins for specific functionality not available in existing solutions.' },
-      { q: 'What about hosting?', a: 'I recommend and set up optimized hosting (Vercel, Cloudflare, or managed WP hosting) as part of every project.' }
+      { q: 'Can you migrate my existing website?', a: 'Yes — we handle full migrations from any platform (Wix, Squarespace, old WordPress) with zero downtime and SEO preservation.' },
+      { q: 'Do you build custom WordPress plugins?', a: 'Yes. We can build custom plugins for specific functionality not available in existing solutions.' },
+      { q: 'What about hosting?', a: 'We recommend and set up optimized hosting (Vercel, Cloudflare, or managed WP hosting) as part of every project.' }
     ]
   },
   {
@@ -176,7 +179,7 @@ const servicesData: ServiceData[] = [
     stack: ['Figma', 'Illustrator', 'Photoshop', 'After Effects', 'Canva'],
     specs: { Tool: 'Figma', Revisions: '3 rounds', Delivery: '2-3 weeks', Format: 'All formats' },
     faq: [
-      { q: 'Do you only design, or also develop?', a: 'Both! I can design in Figma and then build it pixel-perfect in code. Most clients prefer the full design-to-development package.' },
+      { q: 'Do you only design, or also develop?', a: 'Both! We can design in Figma and then build it pixel-perfect in code. Most clients prefer the full design-to-development package.' },
       { q: 'How many revision rounds?', a: '3 rounds of revisions are included in every design project. Additional rounds can be added if needed.' },
       { q: 'What files do I get?', a: 'You receive full Figma source files, exported assets in all formats (SVG, PNG, PDF), and brand guidelines documentation.' }
     ]
