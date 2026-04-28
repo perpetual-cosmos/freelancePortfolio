@@ -57,8 +57,8 @@ export default function AboutPage() {
             transition={{ delay: 0.1 }}
             style={{ fontSize: '4.5rem', marginBottom: '2rem', color: 'var(--on-surface)', lineHeight: 1.1 }}
           >
-            Engineering Excellence <br />
-            <span className="text-gradient">Since 2017.</span>
+            Strategic Engineering <br />
+            <span className="text-gradient">Built For Growth.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             style={{ fontSize: '1.25rem', color: 'var(--on-surface-variant)', lineHeight: 1.6 }}
           >
-            TheUnipick is a full-spectrum development studio. We are architects, engineers, and strategists dedicated to building digital infrastructure that defines the modern enterprise.
+            TheUnipick is a results-driven development studio. We are architects and strategists dedicated to building high-performance digital infrastructure that doesn't just look good—it scales your business.
           </motion.p>
         </div>
       </section>
