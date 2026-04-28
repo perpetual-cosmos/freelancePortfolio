@@ -17,10 +17,10 @@ const projects = [
     year: "2024",
     desc: "Time-locked digital gifting platform. 1K+ organic visits across 70+ countries with zero ad spend.",
     stats: [{ label: "Organic Visits", value: "1K+" }, { label: "Countries", value: "70+" }],
-    image: "/projects/dearvalentine.webp",
+    image: "/projects/dearvalentinedashboard.png",
     color: "#f43f5e",
     tags: ["Next.js", "Supabase", "Tailwind", "Vercel"],
-    link: "https://dearvalentine.co/"
+    link: "https://dearvalentine.vercel.app/"
   },
   {
     id: "PRJ-002",
@@ -28,9 +28,9 @@ const projects = [
     title: "Wavo.digital",
     category: "SAAS • AI AUTOMATION",
     year: "2024",
-    desc: "Enterprise WhatsApp & Voice AI automation dashboard for a funded startup. Built from 0 to production.",
-    stats: [{ label: "Role", value: "Sole Dev" }, { label: "Tech", value: "AI" }],
-    image: "/projects/wavo.webp",
+    desc: "Enterprise WhatsApp & Voice AI automation dashboard for a startup. Contractual work from scratch to production.",
+    stats: [{ label: "Role", value: "Software Engineer" }, { label: "Tech", value: "AI Automation" }],
+    image: "/projects/wavo.png",
     color: "#8b5cf6",
     tags: ["React", "Node.js", "MongoDB", "REST APIs"],
     link: "https://wavo.digital/"
@@ -43,7 +43,7 @@ const projects = [
     year: "2024",
     desc: "Production codebase rescue. Refactored broken architecture and saved 1,000+ users in 72 hours.",
     stats: [{ label: "Users Saved", value: "1K+" }, { label: "Turnaround", value: "72h" }],
-    image: "/projects/alumnipp.webp",
+    image: "/projects/alumnipp.png",
     color: "#0ea5e9",
     tags: ["Laravel", "React", "MySQL", "PHP"],
     link: "https://alumnipp.com/"
@@ -127,7 +127,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
       className="group"
     >
       <div className={`grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-10 items-center ${!isEven ? 'lg:[direction:rtl]' : ''}`}>
-        
+
         {/* Image */}
         <div className={`relative ${!isEven ? 'lg:[direction:ltr]' : ''}`}>
           <div className="relative rounded-2xl overflow-hidden border border-white/8 shadow-lg aspect-[16/10] bg-[#0a0a0a] group/img cursor-pointer">
@@ -147,7 +147,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
                 </a>
               </div>
             </div>
-            
+
             {/* Status badge */}
             <div className="absolute top-3 left-3 px-2.5 py-1.5 bg-black/60 backdrop-blur-lg rounded-lg flex items-center gap-1.5 border border-white/8">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_6px_#22c55e] animate-pulse" />
@@ -221,8 +221,8 @@ const Portfolio = ({ showCTA = true }: { showCTA?: boolean }) => {
   return (
     <section id="portfolio" className="bg-[#050505] py-14 sm:py-20 lg:py-28 relative overflow-hidden">
       {/* Background */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.025] pointer-events-none" 
+      <div
+        className="absolute inset-0 z-0 opacity-[0.025] pointer-events-none"
         style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '60px 60px' }}
       />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
@@ -257,7 +257,7 @@ const Portfolio = ({ showCTA = true }: { showCTA?: boolean }) => {
 
         {/* CTA */}
         {showCTA && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

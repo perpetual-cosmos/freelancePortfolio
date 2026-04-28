@@ -26,7 +26,7 @@ const About = () => {
         >
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-[rgba(99,0,226,0.08)] aspect-[4/4] sm:aspect-[4/5] max-h-[320px] sm:max-h-[400px] lg:max-h-[460px]">
             <img
-              src="/about_engineering.png"
+              src="/tarunsinghmod.png"
               alt="TheUnipick — Full-Stack Development Team"
               className="w-full h-full object-cover"
             />

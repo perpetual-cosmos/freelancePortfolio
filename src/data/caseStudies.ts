@@ -33,7 +33,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     client: "Independent SaaS",
     industry: "SaaS · Gifting",
     tagline: "Time-Locked Valentine Gifting SaaS — Global reach with zero ad spend.",
-    heroImage: "/projects/dearvalentine.webp",
+    heroImage: "/projects/dearvalentinehome.png",
     stats: [
       { label: "Organic Visits", value: "1K+" },
       { label: "Countries", value: "70+" },
@@ -81,9 +81,9 @@ export const caseStudies: Record<string, CaseStudy> = {
       quote: "The organic growth of Dear Valentine proves that a well-built product with a viral loop can compete with paid marketing.",
       author: "Tarun Singh",
       role: "Lead Developer",
-      image: "/about_engineering.png",
+      image: "/tarunsinghmod.png",
     },
-    gallery: ["/projects/dearvalentine.webp"],
+    gallery: ["/projects/dearvalentinehome.png", "/projects/dearvalentinedashboard.png"],
   },
   "wavo-digital": {
     id: "wavo-digital",
@@ -91,7 +91,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     client: "Oaksol Technologies",
     industry: "SaaS · AI Automation",
     tagline: "WhatsApp & Voice AI Automation Dashboard for a funded startup.",
-    heroImage: "/projects/wavo.webp",
+    heroImage: "/projects/wavo.png",
     stats: [
       { label: "Build Type", value: "From 0 → Production" },
       { label: "Team Size", value: "Sole Developer" },
@@ -141,7 +141,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       role: "Founder, Oaksol Technologies",
       image: "/case-studies/testimonial-Cp3MHniS.gif",
     },
-    gallery: ["/projects/wavo.webp"],
+    gallery: ["/projects/wavo.png", "/projects/wavologin.png"],
   },
   "alumnipp": {
     id: "alumnipp",
@@ -149,7 +149,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     client: "Alumni Networking Platform",
     industry: "Platform · Networking",
     tagline: "Production Codebase Rescue — Saving 1,000+ users from a broken system.",
-    heroImage: "/projects/alumnipp.webp",
+    heroImage: "/projects/alumnipp.png",
     stats: [
       { label: "Users Saved", value: "1,000+" },
       { label: "Turnaround", value: "72 Hours" },
@@ -199,7 +199,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       role: "Client",
       image: "/case-studies/testimonial-Cp3MHniS.gif",
     },
-    gallery: ["/projects/alumnipp.webp"],
+    gallery: ["/projects/alumnipp.png", "/projects/alumnipp2.png", "/projects/alumnipp3.png"],
   },
   "biryanibabu-website": {
     id: "biryanibabu-website",

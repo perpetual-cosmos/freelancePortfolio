@@ -38,7 +38,6 @@ const jsonLd = {
     "latitude": "26.4499",
     "longitude": "80.3319"
   },
-  "url": "https://theunipicks.vercel.app/",
   "telephone": "+91-9451172458",
   "priceRange": "₹₹",
   "knowsAbout": ["Next.js", "Shopify", "WordPress", "AI Automation", "SEO", "React", "Node.js", "n8n", "Web Development"]
@@ -50,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"
