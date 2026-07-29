@@ -100,7 +100,7 @@ const Testimonials = () => {
   }, [next]);
 
   return (
-    <section id="testimonials" className="bg-white py-14 sm:py-20 lg:py-28 relative overflow-hidden">
+    <section id="testimonials" className="bg-white py-12 sm:py-14 lg:py-16 relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 blur-[140px] rounded-full -z-10" />
 

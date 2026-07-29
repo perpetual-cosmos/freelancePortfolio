@@ -96,7 +96,7 @@ const Services = () => {
     <section 
       id="services" 
       onMouseMove={handleMouseMove}
-      className="bg-[#050505] relative py-24 lg:py-36 overflow-hidden"
+      className="bg-[#050505] relative py-12 sm:py-14 lg:py-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -123,22 +123,22 @@ const Services = () => {
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Compact Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-24">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-[800px]">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-black text-[0.7rem] tracking-[0.3em] uppercase mb-6"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-[0.7rem] tracking-wide mb-4 sm:mb-5"
             >
-              <Fingerprint size={14} /> <span>CORE_SERVICES</span>
+              <Layers size={14} /> <span>Our Capabilities</span>
             </motion.div>
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[clamp(2.2rem,6vw,4.5rem)] font-extrabold tracking-tighter leading-[0.95] text-white font-display"
+              className="text-[clamp(2rem,5vw,3.8rem)] font-extrabold tracking-tighter leading-[0.95] text-white font-display"
             >
               What We Build. <br /> <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">Production-Ready.</span>
             </motion.h2>
@@ -149,7 +149,7 @@ const Services = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/50 text-[1.1rem] font-medium leading-relaxed max-w-[380px]"
+            className="text-white/50 text-[1.05rem] font-medium leading-relaxed max-w-[380px]"
           >
             Every service we offer, we've already shipped in production — no experiments on your budget.
           </motion.p>
@@ -196,7 +196,6 @@ const Services = () => {
                     <h3 className="text-[1.25rem] lg:text-[1.4rem] font-extrabold text-white leading-tight font-display tracking-tight group-hover:text-primary transition-colors duration-500">
                       {s.title}
                     </h3>
-                    <div className="text-[0.6rem] font-black text-white/25 tracking-[0.15em] mt-0.5">{s.id}</div>
                   </div>
                 </div>
                 <div className="text-right hidden sm:block">

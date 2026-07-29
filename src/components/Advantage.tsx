@@ -14,7 +14,7 @@ const edges = [
 
 const Advantage = () => {
   return (
-    <section id="advantage" className="bg-surface-muted py-14 sm:py-20 lg:py-28 relative overflow-hidden">
+    <section id="advantage" className="bg-surface-muted py-10 sm:py-12 lg:py-14 relative overflow-hidden">
       {/* Top border */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 

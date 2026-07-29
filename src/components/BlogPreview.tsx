@@ -27,17 +27,17 @@ const recentPosts = [
 
 const BlogPreview = () => {
   return (
-    <section className="py-24 lg:py-32 bg-background relative overflow-hidden noise-overlay">
+    <section className="py-10 sm:py-12 lg:py-14 bg-background relative overflow-hidden noise-overlay">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10">
           <div>
             <motion.div 
               initial={{ opacity: 0, x: -20 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[0.7rem] tracking-[0.2em] uppercase mb-6"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-extrabold text-[0.7rem] tracking-wide mb-4"
             >
-              <BookOpen size={14} /> <span>Insights & Resources</span>
+              <BookOpen size={14} /> <span>Insights & Knowledge</span>
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }} 

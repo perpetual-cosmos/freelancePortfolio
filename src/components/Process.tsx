@@ -13,7 +13,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="bg-surface-muted relative overflow-hidden py-14 sm:py-20 lg:py-28">
+    <section id="process" className="bg-surface-muted relative overflow-hidden py-12 sm:py-14 lg:py-16">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 relative z-10">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-14">

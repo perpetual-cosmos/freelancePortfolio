@@ -72,69 +72,70 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${scrolled ? 'py-2' : 'py-3 sm:py-4'}`}>
       <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-10">
         <nav className={`
-          relative flex justify-between items-center h-12 sm:h-14 px-4 sm:px-5 lg:px-6 rounded-2xl border transition-all duration-500
-          ${scrolled 
-            ? 'bg-white/85 backdrop-blur-2xl border-[rgba(99,0,226,0.06)] shadow-[0_4px_30px_rgba(0,0,0,0.06)]' 
-            : 'bg-white/40 backdrop-blur-xl border-transparent'}
+          relative flex justify-between items-center h-14 sm:h-16 lg:h-18 px-4 sm:px-6 lg:px-8 rounded-2xl border transition-all duration-500 overflow-hidden
+          ${scrolled
+            ? 'bg-white/95 backdrop-blur-2xl border-[rgba(99,0,226,0.18)] shadow-[0_12px_40px_rgba(99,0,226,0.12)]'
+            : 'bg-white/80 backdrop-blur-2xl border-[rgba(99,0,226,0.12)] shadow-[0_4px_25px_rgba(99,0,226,0.05)]'}
         `}>
+          {/* Top Glass Highlight Beam */}
+          <div className="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-primary/25 to-transparent pointer-events-none" />
+
           {/* Brand */}
-          <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0 group">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-primary rounded-xl flex items-center justify-center text-white text-sm sm:text-base font-black shadow-sm transition-all duration-300 group-hover:shadow-primary/30 group-hover:scale-105">U</div>
-            <span className="text-[0.95rem] sm:text-[1.05rem] font-black text-on-surface tracking-tight leading-none font-display">TheUnipick</span>
+          <Link href="/" className="flex items-center no-underline shrink-0 group relative z-10 py-1">
+            <img src="/theunipicklogo.png" alt="TheUnipick" className="h-10 sm:h-12 lg:h-22 max-h-22 w-auto object-contain transition-all duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Center Navigation */}
-          <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+          <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2 z-10">
             {/* Services Mega-Menu Trigger */}
-            <div 
-              onMouseEnter={() => setShowMegaMenu(true)} 
-              onMouseLeave={() => setShowMegaMenu(false)} 
+            <div
+              onMouseEnter={() => setShowMegaMenu(true)}
+              onMouseLeave={() => setShowMegaMenu(false)}
               className="relative"
             >
-              <button className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[0.82rem] font-bold transition-colors ${showMegaMenu ? 'text-primary bg-primary/5' : 'text-on-surface-variant hover:text-on-surface hover:bg-black/[0.03]'}`}>
-                Services <ChevronDown size={13} className={`transition-transform duration-300 opacity-50 ${showMegaMenu ? 'rotate-180 opacity-100' : ''}`} />
+              <button className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[0.82rem] font-bold transition-all duration-300 ${showMegaMenu ? 'text-primary bg-primary/10 shadow-sm' : 'text-on-surface-variant hover:text-primary hover:bg-primary/5'}`}>
+                Services <ChevronDown size={13} className={`transition-transform duration-300 ${showMegaMenu ? 'rotate-180 text-primary' : 'opacity-60'}`} />
               </button>
             </div>
 
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className="px-3.5 py-2 rounded-xl text-[0.82rem] font-bold text-on-surface-variant no-underline hover:text-on-surface hover:bg-black/[0.03] transition-all"
+              <a
+                key={link.name}
+                href={link.href}
+                className="px-3.5 py-2 rounded-xl text-[0.82rem] font-bold text-on-surface-variant no-underline hover:text-primary hover:bg-primary/5 transition-all duration-300"
               >
                 {link.name}
               </a>
             ))}
-            <a 
-              href="/contact#book-a-call" 
-              className="px-3.5 py-2 rounded-xl text-[0.82rem] font-bold text-primary no-underline hover:bg-primary/5 transition-all"
+            <a
+              href="/contact"
+              className="px-3.5 py-2 rounded-xl text-[0.82rem] font-extrabold text-primary no-underline hover:bg-primary/10 transition-all duration-300"
             >
               Book a Call
             </a>
           </div>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Availability */}
-            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-tech-teal/8 border border-tech-teal/15">
-              <div className="relative w-1.5 h-1.5">
-                <div className="w-full h-full bg-tech-teal rounded-full" />
-                <motion.div
-                  animate={{ scale: [1, 2.5], opacity: [0.6, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="absolute inset-0 bg-tech-teal rounded-full"
-                />
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0 relative z-10">
+            {/* Availability Badge — High-Contrast Cyber Teal Radar Ping */}
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/25 shadow-[0_0_12px_rgba(20,184,166,0.15)] transition-all hover:border-teal-500/40">
+              <div className="relative w-2 h-2">
+                <div className="w-full h-full bg-teal-500 rounded-full shadow-[0_0_8px_#14b8a6]" />
+                <div className="absolute inset-0 bg-teal-500 rounded-full animate-ping opacity-75" />
               </div>
-              <span className="text-[0.65rem] font-bold text-tech-teal tracking-tight whitespace-nowrap">Available</span>
+              <span className="text-[0.65rem] font-black text-teal-700 tracking-wider uppercase whitespace-nowrap">Available for Hire</span>
             </div>
 
-            <Link href="/audit" className="hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-on-surface text-white font-bold text-[0.75rem] sm:text-[0.8rem] transition-all duration-300 hover:bg-primary hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:scale-[0.97]">
-              Free Audit
-              <ArrowRight size={14} className="opacity-60" />
+            <Link href="/audit" className="hidden sm:inline-flex items-center gap-2 px-4.5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-primary via-primary-light to-secondary text-white font-black text-[0.78rem] sm:text-[0.82rem] shadow-[0_4px_20px_rgba(99,0,226,0.3)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(99,0,226,0.45)] hover:-translate-y-0.5 active:scale-95 group overflow-hidden relative">
+              <span className="relative z-10 flex items-center gap-1.5">
+                Free Audit
+                <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+              <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:animate-shimmer" />
             </Link>
 
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
+            <button
+              onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-black/[0.03] text-on-surface-variant hover:bg-primary hover:text-white transition-all"
             >
               {isOpen ? <X size={18} /> : <Menu size={18} />}
@@ -162,7 +163,7 @@ const Navbar = () => {
                       <div key={cat.title} className="flex flex-col">
                         {/* Category Header */}
                         <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-[rgba(0,0,0,0.04)]">
-                          <div 
+                          <div
                             className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                             style={{ color: 'white', background: cat.color }}
                           >
@@ -174,8 +175,8 @@ const Navbar = () => {
                         <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
                           {cat.items.map((item) => (
                             <li key={item}>
-                              <a 
-                                href={`/services/${cat.slug}`} 
+                              <a
+                                href={`/services/${cat.slug}`}
                                 className="text-[0.75rem] text-on-surface-variant font-medium no-underline hover:text-primary transition-colors block py-0.5 leading-relaxed"
                               >
                                 {item}
@@ -210,9 +211,9 @@ const Navbar = () => {
         {/* ===== MOBILE MENU ===== */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div 
-              initial={{ opacity: 0, y: -10, scale: 0.98 }} 
-              animate={{ opacity: 1, y: 0, scale: 1 }} 
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.25 }}
               className="lg:hidden mt-2 overflow-hidden"
@@ -239,7 +240,7 @@ const Navbar = () => {
                         {serviceCategories.map((cat) => (
                           <div key={cat.title} className="bg-surface-muted rounded-xl p-3">
                             <div className="flex items-center gap-2 mb-2">
-                              <div 
+                              <div
                                 className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
                                 style={{ color: 'white', background: cat.color }}
                               >
@@ -263,17 +264,17 @@ const Navbar = () => {
                 </AnimatePresence>
 
                 {navLinks.map((link) => (
-                  <a 
-                    key={link.name} 
-                    href={link.href} 
+                  <a
+                    key={link.name}
+                    href={link.href}
                     onClick={() => setIsOpen(false)}
                     className="px-4 py-3 rounded-xl text-[0.9rem] font-bold text-on-surface no-underline hover:bg-surface-muted transition-all"
                   >
                     {link.name}
                   </a>
                 ))}
-                <a 
-                  href="/contact#book-a-call" 
+                <a
+                  href="/contact#book-a-call"
                   onClick={() => setIsOpen(false)}
                   className="px-4 py-3 rounded-xl text-[0.9rem] font-bold text-primary no-underline hover:bg-primary/5 transition-all"
                 >

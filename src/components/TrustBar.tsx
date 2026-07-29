@@ -9,23 +9,23 @@ const industries = [
 
 const TrustBar = () => {
   return (
-    <div className="bg-white py-20 border-y border-outline/30 overflow-hidden relative z-10 noise-overlay">
+    <div className="bg-white py-8 sm:py-10 border-y border-[rgba(99,0,226,0.08)] overflow-hidden relative z-10 noise-overlay">
       {/* Dynamic Background */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(circle_at_center,var(--primary),transparent)]" />
 
       {/* Label Container */}
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 mb-12 flex flex-col items-center">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 mb-5 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center gap-6"
+          className="flex items-center gap-4 sm:gap-6"
         >
-          <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-primary/20" />
-          <span className="text-[0.75rem] font-black text-primary uppercase tracking-[0.4em] opacity-80 whitespace-nowrap">
-            Powering Global Digital Infrastructure
+          <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-r from-transparent to-primary/20" />
+          <span className="text-[0.72rem] sm:text-[0.78rem] font-black text-on-surface-variant tracking-wider uppercase opacity-90 whitespace-nowrap">
+            Trusted by startups & founders across India, US & UK
           </span>
-          <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-primary/20" />
+          <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-l from-transparent to-primary/20" />
         </motion.div>
       </div>
 

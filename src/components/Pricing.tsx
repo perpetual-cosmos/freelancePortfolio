@@ -57,7 +57,7 @@ const tiers = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="bg-white relative overflow-hidden py-14 sm:py-20 lg:py-28">
+    <section id="pricing" className="bg-white relative overflow-hidden py-12 sm:py-14 lg:py-16">
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/3 to-transparent pointer-events-none" />
       

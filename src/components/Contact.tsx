@@ -176,7 +176,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative bg-[#060610] py-14 sm:py-20 lg:py-28 overflow-hidden"
+      className="relative bg-[#060610] py-12 sm:py-14 lg:py-16 overflow-hidden"
     >
       {/* Ambient cursor glow */}
       <div
@@ -518,29 +518,6 @@ const Contact = () => {
               )}
             </AnimatePresence>
           </motion.div>
-        </div>
-
-        {/* ── Book a Call Section ── */}
-        <div id="book-a-call" className="mt-20 sm:mt-32 pt-20 border-t border-white/5">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-[2rem] sm:text-[3rem] font-black text-white tracking-tight font-display mb-4">
-              Prefer a <span className="text-primary">Quick Call?</span>
-            </h2>
-            <p className="text-white/50 text-[1rem] sm:text-[1.1rem] font-medium">
-              Skip the back-and-forth. Pick a time that works for you and let's discuss your project goals.
-            </p>
-          </div>
-          
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] overflow-hidden min-h-[600px] shadow-2xl">
-            {/* Inline Widget Placeholder — User to replace URL */}
-            <iframe
-              src="https://calendly.com/unipick000/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-              width="100%"
-              height="700"
-              frameBorder="0"
-              className="w-full"
-            />
-          </div>
         </div>
       </div>
     </section>

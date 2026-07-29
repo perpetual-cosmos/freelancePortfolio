@@ -12,7 +12,7 @@ const stats = [
 
 const About = () => {
   return (
-    <section id="about" className="bg-white relative overflow-hidden py-12 sm:py-16 lg:py-24">
+    <section id="about" className="bg-white relative overflow-hidden py-10 sm:py-12 lg:py-14">
       {/* Decorative Blur */}
       <div className="absolute top-1/4 -left-24 w-72 h-72 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
 
@@ -66,8 +66,8 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[0.6rem] sm:text-[0.65rem] lg:text-[0.7rem] tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-5 lg:mb-6">
-              <Cpu size={12} /> <span>About Us</span>
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/5 border border-primary/10 text-primary font-extrabold text-[0.68rem] sm:text-[0.72rem] tracking-wide mb-4 sm:mb-5 lg:mb-6">
+              <Users size={14} /> <span>About TheUnipick</span>
             </div>
             <h2 className="text-[clamp(1.6rem,4vw,2.8rem)] font-extrabold leading-[1.1] tracking-tight mb-4 sm:mb-5 lg:mb-6 text-on-surface font-display">
               TheUnipick — <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Builders First.</span>

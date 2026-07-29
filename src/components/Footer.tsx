@@ -8,20 +8,15 @@ const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="bg-white pt-24 pb-12 relative overflow-hidden border-t border-[rgba(99,0,226,0.06)]">
+    <footer className="bg-white pt-14 sm:pt-16 pb-8 relative overflow-hidden border-t border-[rgba(99,0,226,0.06)]">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Main Grid: Standard Professional 5-Column Distribution */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 mb-12 sm:mb-14">
           
           {/* Column 1: Brand Identity */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1 mb-8 lg:mb-0">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white text-[1.1rem] font-black shadow-lg shadow-primary/20">
-                U
-              </div>
-              <span className="text-[1.5rem] font-black text-[#1a1a2e] tracking-tight font-display">
-                TheUnipick
-              </span>
+            <div className="flex items-center mb-8">
+              <img src="/theunipicklogo.png" alt="TheUnipick" className="h-12 sm:h-16 lg:h-20 max-h-20 w-auto object-contain" />
             </div>
             <p className="text-[#565677] text-[0.95rem] leading-relaxed font-medium mb-8 pr-4 opacity-80">
               Full-stack development team for Indian startups — we build web, Shopify, AI automation, and SEO that actually converts.

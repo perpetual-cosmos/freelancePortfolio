@@ -24,7 +24,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   "name": "TheUnipick",
   "url": "https://theunipicks.vercel.app/",
-  "logo": "https://theunipicks.vercel.app/logo.png",
+  "logo": "https://theunipicks.vercel.app/theunipicklogo.png",
   "image": "https://theunipicks.vercel.app/og-image.png",
   "description": "We build production-ready web products — from idea to ranked, converting website. Specializing in Next.js, Shopify, WordPress, and AI automation.",
   "address": {

@@ -149,9 +149,9 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
             </div>
 
             {/* Status badge */}
-            <div className="absolute top-3 left-3 px-2.5 py-1.5 bg-black/60 backdrop-blur-lg rounded-lg flex items-center gap-1.5 border border-white/8">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_6px_#22c55e] animate-pulse" />
-              <span className="text-[0.5rem] font-bold tracking-[0.15em] uppercase text-white/70">{project.id}</span>
+            <div className="absolute top-3 left-3 px-2.5 py-1 bg-black/70 backdrop-blur-lg rounded-lg flex items-center gap-1.5 border border-white/10">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399] animate-pulse" />
+              <span className="text-[0.6rem] font-bold text-white/80">Live Product</span>
             </div>
           </div>
         </div>
@@ -219,7 +219,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
 
 const Portfolio = ({ showCTA = true }: { showCTA?: boolean }) => {
   return (
-    <section id="portfolio" className="bg-[#050505] py-14 sm:py-20 lg:py-28 relative overflow-hidden">
+    <section id="portfolio" className="bg-[#050505] py-12 sm:py-14 lg:py-16 relative overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 z-0 opacity-[0.025] pointer-events-none"
