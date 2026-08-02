@@ -17,6 +17,14 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "TheUnipick | Full-Stack Development & SEO Team — We Build Websites That Rank, Convert & Scale",
   description: "Expert full-stack development team specializing in Next.js, Shopify, AI automations, and SEO. 5+ years experience, 30+ live products shipped. Get a free website audit today.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 const jsonLd = {

@@ -39,17 +39,6 @@ const Hero = () => {
       <div className="max-w-[1440px] my-8 mx-auto px-4 sm:px-8 lg:px-16 relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-16 items-center">
         {/* Left: Text Content — Instant SSR paint with vibrant micro-interactions */}
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="text-center lg:text-left">
-          {/* Handcrafted Human Status Bar */}
-          <motion.div variants={itemVariants} className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-2xl bg-white/90 backdrop-blur-xl border border-[rgba(99,0,226,0.14)] text-on-surface text-[0.78rem] sm:text-[0.84rem] font-medium mb-5 sm:mb-6 shadow-[0_4px_20px_rgba(99,0,226,0.06)] transition-all hover:border-primary/30 hover:shadow-[0_6px_25px_rgba(99,0,226,0.12)]">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-primary/10 text-primary font-bold text-[0.65rem] tracking-wide uppercase font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              BUILDERS
-            </span>
-            <span className="text-on-surface font-semibold">
-              Kanpur-based full-stack team <span className="text-on-surface-muted font-normal">— 30+ live products shipped for founders worldwide</span>
-            </span>
-          </motion.div>
-
           {/* Headline — Animated Gradient Shift */}
           <motion.h1 variants={itemVariants} className="text-[clamp(2.1rem,6vw,4.8rem)] font-extrabold leading-[0.95] tracking-tighter mb-4 sm:mb-5 lg:mb-6 text-on-surface font-display">
             We Build Websites <br className="hidden sm:block" />That <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent drop-shadow-sm">Rank, Convert</span> <br className="hidden lg:block" />& Scale.

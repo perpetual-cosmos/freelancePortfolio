@@ -24,21 +24,21 @@ const About = () => {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-[rgba(99,0,226,0.08)] aspect-[4/4] sm:aspect-[4/5] max-h-[320px] sm:max-h-[400px] lg:max-h-[460px]">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-[rgba(99,0,226,0.08)] aspect-[3/4] sm:aspect-[4/5] max-h-[380px] sm:max-h-[420px] lg:max-h-[460px] w-full">
             <img
               src="/tarunsinghmod.png"
               alt="TheUnipick — Full-Stack Development Team"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_12%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
 
             {/* Overlay Quote */}
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 lg:bottom-8 lg:left-8 lg:right-8">
               <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0">
                   <Users size={12} />
                 </div>
-                <span className="text-white/70 font-black text-[0.5rem] sm:text-[0.55rem] lg:text-[0.6rem] tracking-[0.15em] sm:tracking-[0.2em] uppercase">TheUnipick · Engineering Team</span>
+                <span className="text-white/80 font-black text-[0.55rem] sm:text-[0.6rem] tracking-[0.15em] sm:tracking-[0.2em] uppercase">TheUnipick · Engineering Team</span>
               </div>
               <p className="text-white text-[0.85rem] sm:text-[1rem] lg:text-[1.15rem] font-bold leading-snug font-display tracking-tight italic">
                 "Everything we build is live, real, and engineered for performance."
@@ -46,14 +46,14 @@ const About = () => {
             </div>
           </div>
 
-          {/* Floating Badge — smaller */}
+          {/* Floating Badge */}
           <motion.div
-            animate={{ y: [0, -10, 0] }}
+            animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 lg:-top-5 lg:-right-6 bg-white/70 backdrop-blur-xl border border-white/50 shadow-lg sm:shadow-xl px-3 py-2.5 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-xl sm:rounded-2xl z-20"
+            className="absolute top-3 right-3 sm:-top-4 sm:-right-4 lg:-top-5 lg:-right-6 bg-white/90 backdrop-blur-xl border border-white/60 shadow-lg sm:shadow-xl px-2.5 py-1.5 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg sm:rounded-2xl z-20"
           >
-            <div className="text-primary font-black text-[1.4rem] sm:text-[1.7rem] lg:text-[2rem] font-display leading-none">30+</div>
-            <div className="text-on-surface-muted font-black text-[0.45rem] sm:text-[0.5rem] lg:text-[0.55rem] tracking-[0.15em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1">
+            <div className="text-primary font-black text-[1.1rem] sm:text-[1.7rem] lg:text-[2rem] font-display leading-none">30+</div>
+            <div className="text-on-surface-muted font-black text-[0.4rem] sm:text-[0.5rem] lg:text-[0.55rem] tracking-[0.12em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1">
               Projects Shipped
             </div>
           </motion.div>

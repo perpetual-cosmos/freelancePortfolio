@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Column 1: Brand Identity */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1 mb-8 lg:mb-0">
             <div className="flex items-center mb-8">
-              <img src="/theunipicklogo.png" alt="TheUnipick" className="h-12 sm:h-16 lg:h-20 max-h-20 w-auto object-contain" />
+              <img src="/theunipicklogo.png" alt="TheUnipick" className="h-10 sm:h-12 lg:h-14 w-auto object-contain" />
             </div>
             <p className="text-[#565677] text-[0.95rem] leading-relaxed font-medium mb-8 pr-4 opacity-80">
               Full-stack development team for Indian startups — we build web, Shopify, AI automation, and SEO that actually converts.

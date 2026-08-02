@@ -81,8 +81,8 @@ const Navbar = () => {
           <div className="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-primary/25 to-transparent pointer-events-none" />
 
           {/* Brand */}
-          <Link href="/" className="flex items-center no-underline shrink-0 group relative z-10 py-1">
-            <img src="/theunipicklogo.png" alt="TheUnipick" className="h-10 sm:h-12 lg:h-22 max-h-22 w-auto object-contain transition-all duration-300 group-hover:scale-105" />
+          <Link href="/" className="flex items-center no-underline shrink-0 group relative z-10 py-0.5">
+            <img src="/theunipicklogo.png" alt="TheUnipick" className="h-10 sm:h-12 lg:h-14 w-auto max-w-[170px] sm:max-w-[210px] lg:max-w-none object-contain transition-all duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Center Navigation */}
