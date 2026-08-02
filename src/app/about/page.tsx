@@ -35,23 +35,23 @@ export default function AboutPage() {
   return (
     <main style={{ background: 'var(--background)' }}>
       <Navbar />
-      
+
       {/* Hero Header */}
-      <section style={{ 
-        paddingTop: '12rem', 
-        paddingBottom: '8rem', 
+      <section style={{
+        paddingTop: '12rem',
+        paddingBottom: '8rem',
         background: 'var(--gradient-mesh)',
         textAlign: 'center'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.9rem', letterSpacing: '0.3rem', marginBottom: '1.5rem' }}
           >
             OUR IDENTITY
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -60,13 +60,13 @@ export default function AboutPage() {
             Strategic Engineering <br />
             <span className="text-gradient">Built For Growth.</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             style={{ fontSize: '1.25rem', color: 'var(--on-surface-variant)', lineHeight: 1.6 }}
           >
-            TheUnipick is a results-driven development studio. We are architects and strategists dedicated to building high-performance digital infrastructure that doesn't just look good—it scales your business.
+            TheUnipick is a results-driven development studio. We are architects and strategists dedicated to building high-performance digital infrastructure that doesn't just look goodit scales your business.
           </motion.p>
         </div>
       </section>
@@ -85,13 +85,13 @@ export default function AboutPage() {
             <p style={{ color: 'var(--on-surface-variant)', marginTop: '1.5rem', fontSize: '1.2rem' }}>The principles that guide every architectural decision we make.</p>
           </div>
 
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-            gap: '3rem' 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '3rem'
           }}>
             {values.map((v, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
                 className="card-premium"

@@ -69,41 +69,41 @@ export default function TopicPage({ params }: { params: { topic: string } }) {
     <>
       <Navbar />
       <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden noise-overlay">
-      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-secondary/10 blur-[120px] rounded-full pointer-events-none" />
-      
-      <div className="max-w-[800px] mx-auto px-6 relative z-10">
-        <div className="mb-12">
-          <Link href="/learn" className="text-primary font-bold text-sm hover:underline mb-8 inline-block">
-            &larr; Back to Glossary
-          </Link>
-          <div className="text-xs font-bold text-primary mb-4 uppercase tracking-widest">{data.category}</div>
-          <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold font-display leading-[1.05] tracking-tight text-on-surface mb-8">
-            {data.title}
-          </h1>
-          <p className="text-on-surface-variant text-xl font-medium leading-relaxed mb-12 border-l-4 border-primary/20 pl-6">
-            {data.intro}
-          </p>
+        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-secondary/10 blur-[120px] rounded-full pointer-events-none" />
 
-          <div className="space-y-10">
-            {data.sections.map((section, i) => (
-              <div key={i}>
-                <h2 className="text-2xl font-bold font-display text-on-surface mb-4">{section.heading}</h2>
-                <p className="text-on-surface-variant text-lg leading-relaxed">{section.body}</p>
-              </div>
-            ))}
+        <div className="max-w-[800px] mx-auto px-6 relative z-10">
+          <div className="mb-12">
+            <Link href="/learn" className="text-primary font-bold text-sm hover:underline mb-8 inline-block">
+              &larr; Back to Glossary
+            </Link>
+            <div className="text-xs font-bold text-primary mb-4 uppercase tracking-widest">{data.category}</div>
+            <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold font-display leading-[1.05] tracking-tight text-on-surface mb-8">
+              {data.title}
+            </h1>
+            <p className="text-on-surface-variant text-xl font-medium leading-relaxed mb-12 border-l-4 border-primary/20 pl-6">
+              {data.intro}
+            </p>
+
+            <div className="space-y-10">
+              {data.sections.map((section, i) => (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold font-display text-on-surface mb-4">{section.heading}</h2>
+                  <p className="text-on-surface-variant text-lg leading-relaxed">{section.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-20 bg-surface-muted border border-outline rounded-3xl p-10 flex flex-col items-center text-center gap-6">
+            <h3 className="text-2xl font-bold font-display text-on-surface">{data.cta}</h3>
+            <p className="text-on-surface-muted text-lg max-w-[500px]">
+              I build high-performance solutions using these modern architectures. Get a free teardown of your current setup  delivered in 48 hours.
+            </p>
+            <Link href="/audit" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-black hover:-translate-y-1 transition-transform">
+              Get Free Website Audit <ArrowRight size={20} />
+            </Link>
           </div>
         </div>
-
-        <div className="mt-20 bg-surface-muted border border-outline rounded-3xl p-10 flex flex-col items-center text-center gap-6">
-           <h3 className="text-2xl font-bold font-display text-on-surface">{data.cta}</h3>
-           <p className="text-on-surface-muted text-lg max-w-[500px]">
-             I build high-performance solutions using these modern architectures. Get a free teardown of your current setup — delivered in 48 hours.
-           </p>
-           <Link href="/audit" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-black hover:-translate-y-1 transition-transform">
-              Get Free Website Audit <ArrowRight size={20} />
-           </Link>
-        </div>
-      </div>
       </main>
       <Footer />
     </>

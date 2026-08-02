@@ -27,7 +27,7 @@ const About = () => {
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-[rgba(99,0,226,0.08)] aspect-[3/4] sm:aspect-[4/5] max-h-[380px] sm:max-h-[420px] lg:max-h-[460px] w-full">
             <img
               src="/tarunsinghmod.png"
-              alt="TheUnipick — Full-Stack Development Team"
+              alt="TheUnipick  Full-Stack Development Team"
               className="w-full h-full object-cover object-[center_12%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
@@ -70,14 +70,14 @@ const About = () => {
               <Users size={14} /> <span>About TheUnipick</span>
             </div>
             <h2 className="text-[clamp(1.6rem,4vw,2.8rem)] font-extrabold leading-[1.1] tracking-tight mb-4 sm:mb-5 lg:mb-6 text-on-surface font-display">
-              TheUnipick — <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Builders First.</span>
+              TheUnipick  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Builders First.</span>
             </h2>
             <p className="text-on-surface-variant text-[0.9rem] sm:text-[0.95rem] lg:text-[1.05rem] mb-6 sm:mb-8 lg:mb-10 leading-relaxed font-medium opacity-85">
-              We are a full-stack development and SEO powerhouse. Over 3 years, we've shipped 30+ live products — from SaaS platforms with global reach, to e-commerce stores ranking #1, to production codebases rescued under pressure. We build and we ship.
+              We are a full-stack development and SEO powerhouse. Over 3 years, we've shipped 30+ live products  from SaaS platforms with global reach, to e-commerce stores ranking #1, to production codebases rescued under pressure. We build and we ship.
             </p>
           </motion.div>
 
-          {/* Stats — single row on lg */}
+          {/* Stats  single row on lg */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-3 mb-6 sm:mb-8 lg:mb-10">
             {stats.map((stat, i) => (
               <motion.div

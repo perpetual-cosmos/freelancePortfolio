@@ -230,7 +230,7 @@ const Contact = () => {
             transition={{ delay: 0.14 }}
             className="text-white/50 text-[0.85rem] sm:text-[0.92rem] max-w-md mx-auto leading-relaxed"
           >
-            Drop us a message — we'll reply within 24 hours with a clear plan.
+            Drop us a message  we'll reply within 24 hours with a clear plan.
           </motion.p>
         </div>
 
@@ -312,8 +312,8 @@ const Contact = () => {
                     type="button"
                     onClick={() => setActiveService(s === activeService ? "" : s)}
                     className={`px-3 py-1.5 rounded-lg text-[0.7rem] sm:text-[0.75rem] font-bold border transition-all duration-200 ${activeService === s
-                        ? "bg-violet-600 border-violet-500 text-white shadow-lg shadow-violet-500/20"
-                        : "bg-white/5 border-white/10 text-white/50 hover:border-violet-500/40 hover:text-white/80"
+                      ? "bg-violet-600 border-violet-500 text-white shadow-lg shadow-violet-500/20"
+                      : "bg-white/5 border-white/10 text-white/50 hover:border-violet-500/40 hover:text-white/80"
                       }`}
                   >
                     {s}
@@ -388,7 +388,7 @@ const Contact = () => {
                       Send a Message
                     </h3>
                     <p className="text-white/40 text-[0.78rem] sm:text-[0.82rem]">
-                      Fill in the details — we'll reply fast.
+                      Fill in the details  we'll reply fast.
                     </p>
                   </div>
 
@@ -461,7 +461,7 @@ const Contact = () => {
                     <textarea
                       rows={5}
                       className={`${cx} resize-none`}
-                      placeholder="Tell us about your project — goals, timeline, budget..."
+                      placeholder="Tell us about your project  goals, timeline, budget..."
                       value={form.message}
                       onChange={(e) =>
                         setForm((f) => ({ ...f, message: e.target.value }))

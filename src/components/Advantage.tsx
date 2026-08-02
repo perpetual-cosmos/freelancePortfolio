@@ -5,10 +5,10 @@ import { Zap, Link, Shield, Crosshair, RefreshCw, Lock, Sparkles } from 'lucide-
 
 const edges = [
   { title: "High-Performance First", desc: "Optimized, lightning-fast apps built for scale. Sub-100ms response times and fluid interactions.", icon: <Zap size={20} /> },
-  { title: "Zero Integration Gaps", desc: "Same team builds your backend, configures CI/CD, and connects your mobile app — no friction.", icon: <Link size={20} /> },
+  { title: "Zero Integration Gaps", desc: "Same team builds your backend, configures CI/CD, and connects your mobile app  no friction.", icon: <Link size={20} /> },
   { title: "Universal Engineering", desc: "One code style, one architecture, one security posture across every layer of your product.", icon: <Shield size={20} /> },
   { title: "Single Accountability", desc: "One contract, one relationship, one point of contact. We own the full stack.", icon: <Crosshair size={20} /> },
-  { title: "Rapid Context Switching", desc: "Need an AI feature on your existing app? No re-briefing — we already know your stack.", icon: <RefreshCw size={20} /> },
+  { title: "Rapid Context Switching", desc: "Need an AI feature on your existing app? No re-briefing  we already know your stack.", icon: <RefreshCw size={20} /> },
   { title: "Hardened Security", desc: "Encryption and threat detection baked into every layer, following global standards.", icon: <Lock size={20} /> }
 ];
 

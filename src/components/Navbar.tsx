@@ -117,7 +117,7 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0 relative z-10">
-            {/* Availability Badge — High-Contrast Cyber Teal Radar Ping */}
+            {/* Availability Badge  High-Contrast Cyber Teal Radar Ping */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/25 shadow-[0_0_12px_rgba(20,184,166,0.15)] transition-all hover:border-teal-500/40">
               <div className="relative w-2 h-2">
                 <div className="w-full h-full bg-teal-500 rounded-full shadow-[0_0_8px_#14b8a6]" />

@@ -15,7 +15,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "TheUnipick | Full-Stack Development & SEO Team — We Build Websites That Rank, Convert & Scale",
+  title: "TheUnipick | Full-Stack Development & SEO Team  We Build Websites That Rank, Convert & Scale",
   description: "Expert full-stack development team specializing in Next.js, Shopify, AI automations, and SEO. 5+ years experience, 30+ live products shipped. Get a free website audit today.",
   icons: {
     icon: [
@@ -34,7 +34,7 @@ const jsonLd = {
   "url": "https://theunipicks.vercel.app/",
   "logo": "https://theunipicks.vercel.app/theunipicklogo.png",
   "image": "https://theunipicks.vercel.app/og-image.png",
-  "description": "We build production-ready web products — from idea to ranked, converting website. Specializing in Next.js, Shopify, WordPress, and AI automation.",
+  "description": "We build production-ready web products  from idea to ranked, converting website. Specializing in Next.js, Shopify, WordPress, and AI automation.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Kanpur",

@@ -84,7 +84,7 @@ const Process = () => {
           <div className="flex-1 min-w-0">
             <h4 className="text-[0.95rem] sm:text-[1.05rem] font-bold font-display mb-1 tracking-tight">Zero-Downtime Promise</h4>
             <p className="text-on-surface-variant text-[0.78rem] sm:text-[0.82rem] font-medium leading-relaxed">
-              Every project includes automated CI/CD pipelines and rollback safety nets. We don't just launch — we ensure stability through every iteration.
+              Every project includes automated CI/CD pipelines and rollback safety nets. We don't just launch  we ensure stability through every iteration.
             </p>
           </div>
           <Link href="/portfolio" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-on-surface text-white font-bold text-[0.78rem] shrink-0 no-underline hover:bg-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">

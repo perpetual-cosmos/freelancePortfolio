@@ -37,24 +37,24 @@ const Hero = () => {
       </div>
 
       <div className="max-w-[1440px] my-8 mx-auto px-4 sm:px-8 lg:px-16 relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-16 items-center">
-        {/* Left: Text Content — Instant SSR paint with vibrant micro-interactions */}
+        {/* Left: Text Content  Instant SSR paint with vibrant micro-interactions */}
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="text-center lg:text-left">
-          {/* Headline — Animated Gradient Shift */}
+          {/* Headline  Animated Gradient Shift */}
           <motion.h1 variants={itemVariants} className="text-[clamp(2.1rem,6vw,4.8rem)] font-extrabold leading-[0.95] tracking-tighter mb-4 sm:mb-5 lg:mb-6 text-on-surface font-display">
             We Build Websites <br className="hidden sm:block" />That <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent drop-shadow-sm">Rank, Convert</span> <br className="hidden lg:block" />& Scale.
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p variants={itemVariants} className="text-on-surface-variant max-w-[540px] mx-auto lg:mx-0 mb-6 sm:mb-8 text-[0.92rem] sm:text-[1rem] lg:text-[1.12rem] leading-relaxed font-medium opacity-90">
-            From Shopify stores to Next.js apps, WordPress to AI automations — we ship complete digital products with measurable results. No fluff. Just code that works.
+            From Shopify stores to Next.js apps, WordPress to AI automations  we ship complete digital products with measurable results. No fluff. Just code that works.
           </motion.p>
 
-          {/* Quick proof points — inline */}
+          {/* Quick proof points  inline */}
           <motion.div variants={itemVariants} className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 justify-center lg:justify-start mb-6 sm:mb-8 text-on-surface-muted">
             <span className="text-[0.72rem] sm:text-[0.78rem] font-extrabold tracking-tight">Clients from India, USA, UK · Wavo · Alumnipp · BlackArt Tattoo · Dear Valentine</span>
           </motion.div>
 
-          {/* CTA Buttons — Dynamic Sheen & Glow */}
+          {/* CTA Buttons  Dynamic Sheen & Glow */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 lg:mb-12">
             <Link href="/audit" className="relative inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 lg:px-11 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-primary via-primary-light to-secondary text-white font-display font-black text-[0.8rem] sm:text-[0.85rem] tracking-wide shadow-[0_10px_35px_-5px_rgba(99,0,226,0.45)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_45px_-5px_rgba(99,0,226,0.6)] active:scale-95 overflow-hidden group">
               <span className="relative z-10 flex items-center gap-2">
@@ -69,7 +69,7 @@ const Hero = () => {
             </Link>
           </motion.div>
 
-          {/* Trust Metrics — Interactive Glass Cards */}
+          {/* Trust Metrics  Interactive Glass Cards */}
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-5 pt-6 sm:pt-8 border-t border-[rgba(99,0,226,0.08)]">
             {[
               { label: 'Projects Shipped', value: '30+', icon: <Zap size={16} />, color: 'text-amber-500' },
@@ -89,7 +89,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right: Premium 3D Mockup Showcase — Interactive floating depth */}
+        {/* Right: Premium 3D Mockup Showcase  Interactive floating depth */}
         <motion.div
           initial={{ opacity: 1, scale: 1, rotateY: -8 }}
           animate={{ opacity: 1, scale: 1, rotateY: -8 }}
@@ -111,7 +111,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-white/10 pointer-events-none mix-blend-overlay" />
             </motion.div>
 
-            {/* Floating Badge 1 — Web Vitals 100 */}
+            {/* Floating Badge 1  Web Vitals 100 */}
             <motion.div
               animate={{ y: [0, -14, 0], rotateZ: [-1.5, 0.5, -1.5] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -127,7 +127,7 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Floating Badge 2 — Live Radar Status */}
+            {/* Floating Badge 2  Live Radar Status */}
             <motion.div
               animate={{ y: [0, 12, 0], rotateZ: [1.5, -0.5, 1.5] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}

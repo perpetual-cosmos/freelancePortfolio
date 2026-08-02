@@ -15,7 +15,7 @@ const services = [
     icon: <Code2 />,
     color: '#6300e2',
     size: 'large',
-    detail: 'We build production-ready web products—from seed-stage MVPs to Series A scale. Focus on Next.js 15, Supabase, and custom API integrations.',
+    detail: 'We build production-ready web productsfrom seed-stage MVPs to Series A scale. Focus on Next.js 15, Supabase, and custom API integrations.',
     metric: { label: 'PAGE_LOAD', value: '<1s' },
     tags: ['Next.js 15', 'MERN Stack', 'TypeScript']
   },
@@ -93,15 +93,15 @@ const Services = () => {
   };
 
   return (
-    <section 
-      id="services" 
+    <section
+      id="services"
       onMouseMove={handleMouseMove}
       className="bg-[#050505] relative py-12 sm:py-14 lg:py-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 opacity-[0.05]" 
+        <div
+          className="absolute inset-0 opacity-[0.05]"
           style={{ backgroundImage: 'linear-gradient(to right, #6300e2 1px, transparent 1px), linear-gradient(to bottom, #6300e2 1px, transparent 1px)', backgroundSize: '60px 60px' }}
         />
         <motion.div
@@ -151,7 +151,7 @@ const Services = () => {
             transition={{ delay: 0.2 }}
             className="text-white/50 text-[1.05rem] font-medium leading-relaxed max-w-[380px]"
           >
-            Every service we offer, we've already shipped in production — no experiments on your budget.
+            Every service we offer, we've already shipped in production  no experiments on your budget.
           </motion.p>
         </div>
 

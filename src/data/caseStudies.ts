@@ -32,7 +32,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Dear Valentine",
     client: "Independent SaaS",
     industry: "SaaS · Gifting",
-    tagline: "Time-Locked Valentine Gifting SaaS — Global reach with zero ad spend.",
+    tagline: "Time-Locked Valentine Gifting SaaS  Global reach with zero ad spend.",
     heroImage: "/projects/dearvalentinehome.png",
     stats: [
       { label: "Organic Visits", value: "1K+" },
@@ -148,7 +148,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Alumnipp.com",
     client: "Alumni Networking Platform",
     industry: "Platform · Networking",
-    tagline: "Production Codebase Rescue — Saving 1,000+ users from a broken system.",
+    tagline: "Production Codebase Rescue  Saving 1,000+ users from a broken system.",
     heroImage: "/projects/alumnipp.png",
     stats: [
       { label: "Users Saved", value: "1,000+" },
@@ -500,7 +500,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     technologies: ["React", "Next.js", "Tailwind CSS", "Firebase", "Stripe", "Google Maps API"],
     testimonial: {
-      quote: "Our cafe finally feels like us — warm, welcoming, and professional. Customers tell us they found us online, which never happened before. We couldn’t be happier.",
+      quote: "Our cafe finally feels like us  warm, welcoming, and professional. Customers tell us they found us online, which never happened before. We couldn’t be happier.",
       author: "Rahul Verma",
       role: "Owner, Cafe",
       image: "/case-studies/testimonial-Cp3MHniS.gif",

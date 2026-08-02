@@ -111,7 +111,7 @@ export default function ServicePage() {
                     <Check size={15} strokeWidth={2.5} className="mt-0.5 text-tech-teal shrink-0" />
                     <div>
                       <span className="text-[0.82rem] sm:text-[0.88rem] font-bold text-on-surface">{f.title}</span>
-                      <span className="text-[0.78rem] sm:text-[0.82rem] text-on-surface-muted font-medium"> — {f.desc}</span>
+                      <span className="text-[0.78rem] sm:text-[0.82rem] text-on-surface-muted font-medium">  {f.desc}</span>
                     </div>
                   </div>
                 ))}

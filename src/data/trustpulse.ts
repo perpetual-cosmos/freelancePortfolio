@@ -23,7 +23,7 @@ export const trustPulses: TrustPulseItem[] = [
   },
   {
     id: 3,
-    text: "Biryani Babu — 40% conversion lift post-launch",
+    text: "Biryani Babu  40% conversion lift post-launch",
     time: "Apr 2025",
     iconType: "star",
     color: "#f59e0b"

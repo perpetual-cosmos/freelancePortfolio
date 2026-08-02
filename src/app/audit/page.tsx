@@ -43,7 +43,7 @@ export default function AuditPage() {
             <div className="space-y-6">
               <h2 className="text-2xl font-black font-display text-on-surface tracking-tight">What's in the Audit</h2>
               <p className="text-on-surface-variant font-medium leading-relaxed">
-                I run your site through Lighthouse, Screaming Frog, and manual review. You get a PDF report with prioritized fixes — ranked by impact.
+                I run your site through Lighthouse, Screaming Frog, and manual review. You get a PDF report with prioritized fixes  ranked by impact.
               </p>
               <div className="space-y-4">
                 {auditPoints.map((point, i) => (

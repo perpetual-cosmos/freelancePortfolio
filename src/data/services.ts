@@ -31,10 +31,10 @@ const servicesData: ServiceData[] = [
     tagline: 'High-performance apps built to scale',
     color: '#6300e2',
     category: 'Web Development',
-    description: 'From landing pages to complex SaaS platforms — we build fast, accessible, and SEO-ready web applications using Next.js, React, and the MERN stack.',
+    description: 'From landing pages to complex SaaS platforms  we build fast, accessible, and SEO-ready web applications using Next.js, React, and the MERN stack.',
     features: [
       { title: 'Next.js & React Apps', desc: 'Server components, edge rendering, and blazing-fast performance.' },
-      { title: 'Full-Stack MERN', desc: 'MongoDB, Express, React, Node.js — end-to-end TypeScript.' },
+      { title: 'Full-Stack MERN', desc: 'MongoDB, Express, React, Node.js  end-to-end TypeScript.' },
       { title: 'API Development', desc: 'REST and GraphQL APIs with authentication and rate limiting.' },
       { title: 'Design Systems', desc: 'Documented, accessible, and themeable UI component libraries.' },
       { title: 'Database Design', desc: 'Scalable schemas with PostgreSQL, MongoDB, or Supabase.' },
@@ -61,7 +61,7 @@ const servicesData: ServiceData[] = [
     features: [
       { title: 'Custom Liquid Themes', desc: 'Unique Shopify storefronts tailored to your brand identity.' },
       { title: 'WooCommerce Builds', desc: 'WordPress-powered stores with advanced product management.' },
-      { title: 'Payment Integration', desc: 'Razorpay, Stripe, UPI — seamless checkout flows.' },
+      { title: 'Payment Integration', desc: 'Razorpay, Stripe, UPI  seamless checkout flows.' },
       { title: 'Conversion Optimization', desc: 'A/B testing, cart recovery, and data-driven improvements.' },
       { title: 'Product Setup', desc: 'Up to 50 products with images, descriptions, and variants.' },
       { title: 'Email & Cart Flows', desc: 'Abandoned cart recovery and automated email sequences.' }
@@ -86,7 +86,7 @@ const servicesData: ServiceData[] = [
     tagline: 'Eliminate manual tasks, scale operations',
     color: '#8b5cf6',
     category: 'AI & Automation',
-    description: 'From WhatsApp chatbots to full workflow automation — we deploy n8n, Make.com, Zapier, and custom AI pipelines that save hours every week.',
+    description: 'From WhatsApp chatbots to full workflow automation  we deploy n8n, Make.com, Zapier, and custom AI pipelines that save hours every week.',
     features: [
       { title: 'Workflow Automation', desc: 'n8n, Make.com, and Zapier pipelines for repetitive tasks.' },
       { title: 'WhatsApp & Email Bots', desc: 'Automated customer communication and lead routing.' },
@@ -103,7 +103,7 @@ const servicesData: ServiceData[] = [
     faq: [
       { q: "I'm not technical. Can you still help?", a: 'Absolutely. We handle all the technical setup. You just describe the repetitive task, and we build the system that handles it.' },
       { q: 'What tools do you use?', a: 'n8n is our primary tool due to its flexibility. We also work with Make.com, Zapier, custom Node.js scripts, and direct API integrations.' },
-      { q: 'Can you automate WhatsApp?', a: 'Yes — we build WhatsApp bots using the official Business API for lead capture, support, and notifications.' }
+      { q: 'Can you automate WhatsApp?', a: 'Yes  we build WhatsApp bots using the official Business API for lead capture, support, and notifications.' }
     ]
   },
   {
@@ -128,7 +128,7 @@ const servicesData: ServiceData[] = [
     specs: { Results: '3-6 months', Coverage: 'Global', Reports: 'Monthly', Tools: 'Premium' },
     faq: [
       { q: 'How long does SEO take to show results?', a: 'Typically 60–90 days for initial movement. Competitive terms take 3–6 months of consistent effort.' },
-      { q: 'Do you write the blog content?', a: 'Yes — content strategy and writing is included in the monthly retainer. We create SEO-optimized articles targeting your keyword clusters.' },
+      { q: 'Do you write the blog content?', a: 'Yes  content strategy and writing is included in the monthly retainer. We create SEO-optimized articles targeting your keyword clusters.' },
       { q: 'Do you guarantee rankings?', a: "No ethical SEO provider can guarantee specific rankings. But we guarantee professional execution and transparent monthly reporting." }
     ]
   },
@@ -138,7 +138,7 @@ const servicesData: ServiceData[] = [
     tagline: 'WordPress, LMS, and custom dashboards',
     color: '#0ea5e9',
     category: 'CMS & Platforms',
-    description: 'From WordPress blogs to learning management systems — we build content platforms that are easy to manage, SEO-ready, and built to scale.',
+    description: 'From WordPress blogs to learning management systems  we build content platforms that are easy to manage, SEO-ready, and built to scale.',
     features: [
       { title: 'WordPress Development', desc: 'Custom themes, plugins, and headless WordPress builds.' },
       { title: 'LMS / EdTech', desc: 'Course platforms with progress tracking and certificates.' },
@@ -153,7 +153,7 @@ const servicesData: ServiceData[] = [
     stack: ['WordPress', 'Headless CMS', 'Strapi', 'Sanity', 'Next.js', 'Supabase'],
     specs: { Speed: '< 1s', CMS: 'Headless', Security: 'Hardened', Scale: 'Unlimited' },
     faq: [
-      { q: 'Can you migrate my existing website?', a: 'Yes — we handle full migrations from any platform (Wix, Squarespace, old WordPress) with zero downtime and SEO preservation.' },
+      { q: 'Can you migrate my existing website?', a: 'Yes  we handle full migrations from any platform (Wix, Squarespace, old WordPress) with zero downtime and SEO preservation.' },
       { q: 'Do you build custom WordPress plugins?', a: 'Yes. We can build custom plugins for specific functionality not available in existing solutions.' },
       { q: 'What about hosting?', a: 'We recommend and set up optimized hosting (Vercel, Cloudflare, or managed WP hosting) as part of every project.' }
     ]
@@ -164,7 +164,7 @@ const servicesData: ServiceData[] = [
     tagline: 'UI/UX design that drives engagement',
     color: '#f59e0b',
     category: 'Design & Branding',
-    description: 'From Figma prototypes to complete brand identity systems — we design interfaces that look premium and convert visitors into customers.',
+    description: 'From Figma prototypes to complete brand identity systems  we design interfaces that look premium and convert visitors into customers.',
     features: [
       { title: 'UI/UX Design', desc: 'User-centered design with wireframes, prototypes, and testing.' },
       { title: 'Brand Identity', desc: 'Logo design, color systems, typography, and brand guidelines.' },
@@ -175,7 +175,7 @@ const servicesData: ServiceData[] = [
     ],
     pricing: 'Logo & branding from ₹10,000 · Full UI/UX design from ₹20,000',
     startingPrice: '₹10,000',
-    outcome: 'Complete brand identity redesign for Dear Valentine SaaS — increased user engagement by 35%.',
+    outcome: 'Complete brand identity redesign for Dear Valentine SaaS  increased user engagement by 35%.',
     stack: ['Figma', 'Illustrator', 'Photoshop', 'After Effects', 'Canva'],
     specs: { Tool: 'Figma', Revisions: '3 rounds', Delivery: '2-3 weeks', Format: 'All formats' },
     faq: [
