@@ -1,11 +1,23 @@
+export interface ArchitectureStep {
+  step: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  techTag?: string;
+}
+
 export interface CaseStudy {
   id: string;
   title: string;
   client: string;
   industry: string;
+  role?: string;
+  timeline?: string;
+  liveUrl?: string;
+  overview?: string;
   tagline: string;
   heroImage: string;
-  stats: { label: string; value: string }[];
+  stats: { label: string; value: string; trend?: string }[];
   challenge: {
     description: string;
     painPoints: string[];
@@ -15,6 +27,8 @@ export interface CaseStudy {
     description: string;
     duration: string;
   }[];
+  keyHighlights?: { title: string; description: string }[];
+  architectureFlow?: ArchitectureStep[];
   outcomes: string[];
   technologies: string[];
   testimonial: {
@@ -32,22 +46,37 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Dear Valentine",
     client: "Independent SaaS",
     industry: "SaaS · Gifting",
-    tagline: "Time-Locked Valentine Gifting SaaS  Global reach with zero ad spend.",
+    role: "Full-Stack Architect & Product Creator",
+    timeline: "7 Weeks",
+    liveUrl: "https://dearvalentine.vercel.app/",
+    overview: "A custom Valentine's story creation SaaS where senders configure daily tasks & rewards, unlock unique access links via payment, and track recipient responses in real-time.",
+    tagline: "Customizable Valentine's Story & Daily Task Gifting SaaS — Global reach with viral referral mechanics.",
     heroImage: "/projects/dearvalentinehome.png",
     stats: [
-      { label: "Organic Visits", value: "1K+" },
-      { label: "Countries", value: "70+" },
-      { label: "Signups", value: "200+" },
+      { label: "Organic Visits", value: "1K+", trend: "+100% Organic" },
+      { label: "Global Reach", value: "70+", trend: "Countries" },
+      { label: "Active Signups", value: "200+", trend: "Zero Paid Ads" },
     ],
     challenge: {
-      description: "Building a viral SaaS product from scratch with zero marketing budget. The goal was to create a platform where users could send time-locked digital gifts for Valentine's Day, ensuring high deliverability and engagement across different time zones.",
+      description: "Building a viral SaaS product from scratch with zero marketing budget. The goal was to allow users to log in, customize daily Valentine tasks and rewards for their partners into 'Stories', and generate unique paid access links with real-time response tracking.",
       painPoints: [
-        "Need for a viral growth loop without paid ads",
-        "Managing time-locked reveals across global time zones",
-        "Ensuring high performance under sudden traffic spikes",
-        "Implementing a seamless user onboarding flow"
+        "Enabling multi-story creation per user with custom daily task and reward logic",
+        "Generating unique shareable links locked behind payment activation",
+        "Ensuring recipient access is strictly gated until payment confirmation",
+        "Streaming recipient task responses back to the sender's live dashboard"
       ],
     },
+    keyHighlights: [
+      { title: "Story Builder & Task Customizer", description: "Allows senders to create multiple custom Valentine stories with daily tasks & rewards." },
+      { title: "Payment-Gated Unique Links", description: "Generates unique URL slugs that activate instantly upon payment confirmation." },
+      { title: "Real-Time Response Dashboard", description: "Streams recipient completed tasks & answers directly to the sender's dashboard." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Story & Task Customization", subtitle: "Sender Creation", description: "Sender logs in and builds custom daily Valentine tasks (Days 1–7) with assigned rewards into a Story payload.", techTag: "Next.js & Supabase DB" },
+      { step: "02", title: "Unique Link & Payment Lock", subtitle: "Gateway Activation", description: "System generates a unique URL slug per Story. Link remains locked until checkout payment webhook succeeds.", techTag: "Payment Webhook" },
+      { step: "03", title: "Recipient Task Execution", subtitle: "Gated Access", description: "Recipient clicks unique link. System verifies active payment status, allowing recipient to attempt daily tasks & reveal rewards.", techTag: "Edge Auth Verification" },
+      { step: "04", title: "Live Response Tracking", subtitle: "Sender Dashboard", description: "Recipient answers and completed task responses are persisted and streamed live to the sender's private dashboard.", techTag: "Realtime Dashboard Sync" }
+    ],
     approach: [
       {
         phase: "Product Design",
@@ -90,22 +119,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Wavo.digital",
     client: "Oaksol Technologies",
     industry: "SaaS · AI Automation",
-    tagline: "WhatsApp & Voice AI Automation Dashboard for a funded startup.",
+    role: "Lead Frontend & API Engineer",
+    timeline: "14 Weeks",
+    overview: "An AI-powered WhatsApp marketing and automated commerce platform powered by Facebook Graph Webhooks, automated reply workflows, and in-chat purchase flows.",
+    tagline: "WhatsApp Marketing & AI Automation Platform for funded enterprise startups.",
     heroImage: "/projects/wavo.png",
     stats: [
-      { label: "Build Type", value: "From 0 → Production" },
-      { label: "Team Size", value: "Sole Developer" },
-      { label: "Scalability", value: "Enterprise-Ready" },
+      { label: "Build Velocity", value: "0 → 1", trend: "Production Built" },
+      { label: "Engineering Scope", value: "Sole Dev", trend: "Full Execution" },
+      { label: "System Uptime", value: "99.9%", trend: "Enterprise Grade" },
     ],
     challenge: {
-      description: "A funded startup needed an enterprise-grade dashboard to manage WhatsApp and Voice AI automations. The challenge was to build a secure, scalable, and highly interactive interface for complex communication workflows.",
+      description: "A funded startup needed an enterprise-grade platform to manage AI-driven WhatsApp marketing campaigns, automated customer replies, and in-chat purchasing. The challenge was building a resilient architecture to process high-volume Facebook Webhooks in real-time.",
       painPoints: [
-        "Real-time data visualization of communication logs",
-        "Complex integration with WhatsApp and Voice AI APIs",
-        "Multi-tenant architecture requirements",
-        "Need for a premium, startup-friendly UI/UX"
+        "Real-time processing of high-volume Facebook Graph & WhatsApp Webhooks",
+        "Automating intelligent AI reply sequences and in-chat purchase options",
+        "Multi-tenant data isolation and role-based client dashboard access",
+        "Streamlining communication logs and conversion analytics into a live React UI"
       ],
     },
+    keyHighlights: [
+      { title: "Facebook Graph Webhook Gateway", description: "High-throughput endpoint receiving and verifying incoming WhatsApp messages and event triggers." },
+      { title: "AI Automation & Purchase Logic", description: "Contextual AI engine managing dynamic customer replies and in-chat product purchasing options." },
+      { title: "Multi-Tenant Client Dashboard", description: "Real-time React UI for configuring bot rules, managing campaigns, and tracking conversions." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Client Automation Config", subtitle: "Dashboard UI", description: "Client logs into Wavo dashboard to configure automated AI reply rules, marketing flows, and purchase catalog options.", techTag: "React Dashboard" },
+      { step: "02", title: "Facebook Webhook Dispatch", subtitle: "Gateway Ingestion", description: "Facebook Graph & WhatsApp Cloud API dispatches real-time webhooks (customer messages, button taps, purchase intents).", techTag: "Facebook Webhook API" },
+      { step: "03", title: "AI Engine & Commerce Handler", subtitle: "Core Automation", description: "AI engine parses message intent, executes automated replies, processes in-chat purchase options, and updates order states.", techTag: "AI Engine & REST Gateway" },
+      { step: "04", title: "Live Sync & Analytics Persist", subtitle: "Data & Dispatch", description: "Automated responses are sent back via Meta Graph API; message logs, conversation analytics, and sales persist to database.", techTag: "Meta Graph API & MongoDB" }
+    ],
     approach: [
       {
         phase: "API Integration",
@@ -148,22 +191,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Alumnipp.com",
     client: "Alumni Networking Platform",
     industry: "Platform · Networking",
-    tagline: "Production Codebase Rescue  Saving 1,000+ users from a broken system.",
+    role: "Lead Full-Stack Rescue Engineer",
+    timeline: "72 Hours Emergency Turnaround",
+    overview: "A Laravel & React Alumni CRM platform featuring role-based admin controls, automated alumni verification workflows, notice management, and automated digital ID card generation.",
+    tagline: "Laravel Alumni CRM Codebase Rescue — Saved 1,000+ registered users with 100% data integrity.",
     heroImage: "/projects/alumnipp.png",
     stats: [
-      { label: "Users Saved", value: "1,000+" },
-      { label: "Turnaround", value: "72 Hours" },
-      { label: "Data Integrity", value: "100%" },
+      { label: "Users Preserved", value: "1,000+", trend: "Zero Data Lost" },
+      { label: "Rescue Velocity", value: "72 Hrs", trend: "Full Recovery" },
+      { label: "Data Integrity", value: "100%", trend: "DB Restored" },
     ],
     challenge: {
-      description: "Inherited a completely broken Laravel + React production codebase that was failing to serve over 1,000 registered users. Critical bugs, database inconsistencies, and architectural flaws were threatening the platform's survival.",
+      description: "Inherited a failing Laravel + React codebase serving over 1,000 alumni. The platform required role-based management for admins to verify alumni, broadcast institutional notices, and issue automated digital ID cards without system crashes.",
       painPoints: [
-        "High user churn due to system crashes",
-        "Corrupted database records and networking logic",
-        "Extremely messy and undocumented legacy code",
-        "Immediate pressure to restore service without data loss"
+        "Failing Laravel controller routes causing 500 errors during alumni login and verification",
+        "Improper database relational locking causing corrupted alumni profile records",
+        "Lack of dynamic PDF rendering pipeline for automated alumni ID card generation",
+        "Urgent 72-hour window to rescue service for 1,000+ active alumni without data loss"
       ],
     },
+    keyHighlights: [
+      { title: "Role-Based Admin Controller Pipeline", description: "Multi-tiered permission controllers for admin verification, notices, and user access." },
+      { title: "Automated Alumni ID Card Generation", description: "Background queue rendering dynamic digital ID cards with custom QR verification." },
+      { title: "Database Repair & Data Integrity", description: "Normalized MySQL schema and sanitized 1,000+ legacy alumni user records." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Alumni Portal & Auth", subtitle: "Frontend Interface", description: "Alumni log into React portal to view institutional updates, alumni directory, and submit verification details.", techTag: "React & Laravel Auth" },
+      { step: "02", title: "Role-Based Controller Pipeline", subtitle: "Admin Backend", description: "Admins & role-based controllers manage verification queues, publish notices, and moderate alumni profiles.", techTag: "Laravel RBAC Middleware" },
+      { step: "03", title: "Automated ID Card Generator", subtitle: "Background Queue", description: "Upon verification, system compiles alumni data and generates a dynamic PDF digital ID card with QR code.", techTag: "Laravel Queue & PDF Engine" },
+      { step: "04", title: "Data Storage & Asset Serve", subtitle: "Persistence Layer", description: "Sanitized alumni records, notices, and dynamic ID cards persist to MySQL database & S3 storage.", techTag: "MySQL DB & AWS S3" }
+    ],
     approach: [
       {
         phase: "Emergency Audit",
@@ -206,22 +263,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Biryani Babu",
     client: "Biryani Babu",
     industry: "Food & Restaurant",
-    tagline: "Kolkata's 1st Biryani QSR - Local SEO Dominance",
+    role: "Frontend Engineer & SEO Architect",
+    timeline: "5 Weeks",
+    overview: "A highly aesthetic food & QSR showcase website in Kolkata, featuring an indexable digital menu, WebP image performance tuning, and LocalBusiness Schema to dominate local search.",
+    tagline: "Kolkata's #1 Biryani QSR — Aesthetic digital menu showcase & Local SEO dominance.",
     heroImage: "/case-studies/biriyanibabu-CggFjvPm.webp",
     stats: [
-      { label: "Search Ranking", value: "#1 Local" },
-      { label: "Online Orders", value: "+300%" },
-      { label: "Mobile Conversion", value: "+180%" },
+      { label: "Search Ranking", value: "#1 Local", trend: "Top Rank" },
+      { label: "Online Orders", value: "+300%", trend: "3x Growth" },
+      { label: "Mobile Speed", value: "99/100", trend: "Lightning Fast" },
     ],
     challenge: {
-      description: "Biryani Babu needed to transform their website into the #1 ranked online destination for biryani and kebab lovers in Kolkata, attracting high-intent local customers and converting them into foot traffic and online orders.",
+      description: "Biryani Babu required a highly aesthetic shop website to showcase their rich menu, signature dishes, and QSR brand story. The objective was to attract local biryani lovers in Kolkata and convert website visitors into online orders.",
       painPoints: [
-        "Lacked static, powerful titles and indexable menu content",
-        "High-quality cinematic images were slowing down mobile load times",
-        "Missing critical Restaurant and Menu JSON-LD Schema markup",
-        "No natural integration of local 'near me' keywords"
+        "Presenting a rich, aesthetic digital menu without slowing mobile load speed",
+        "Integrating indexable dish categories for local Kolkata 'near me' search queries",
+        "Structuring Restaurant & Menu JSON-LD Schema markup for Google Rich Results",
+        "Driving smooth conversion from aesthetic menu browsing to instant online ordering"
       ],
     },
+    keyHighlights: [
+      { title: "Aesthetic Interactive Digital Menu", description: "Ultra-fast WebP dish showcase with category filters and high-res food photography." },
+      { title: "Restaurant & Menu Schema Engine", description: "Enriches Google search results with dish prices, ratings, and location metadata." },
+      { title: "High-Converting Order Pipeline", description: "Direct mobile ordering CTA converting casual visitors into foot traffic and sales." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Local Discovery & Geo SEO", subtitle: "Search Engine Ingestion", description: "Diner searches local food in Kolkata; pre-rendered Vite pages deliver location meta tags & Restaurant JSON-LD schema.", techTag: "Vite SSR & Local Schema" },
+      { step: "02", title: "Aesthetic Digital Menu Showcase", subtitle: "Interactive Frontend", description: "Visitor explores ultra-fast WebP food gallery, signature dishes, and interactive category filters with high-res visuals.", techTag: "React & Styled Components" },
+      { step: "03", title: "Direct Order & Contact Gateway", subtitle: "Conversion Pipeline", description: "Customer selects menu items, customizes spice preferences, and triggers instant online order / direct phone call.", techTag: "Responsive Order Router" },
+      { step: "04", title: "Review Schema & Foot Traffic Sync", subtitle: "Social Proof Layer", description: "Verified diner reviews sync with Google Business API to maintain #1 local ranking and drive store visits.", techTag: "Google Business API" }
+    ],
     approach: [
       {
         phase: "On-Page SEO",
@@ -268,22 +339,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "BlackArt Tattoo Studio",
     client: "Artist Nirmal",
     industry: "Retail & Services",
-    tagline: "Local SEO dominance and high-converting studio presence",
+    role: "UI/UX Architect & Full-Stack Developer",
+    timeline: "6 Weeks",
+    overview: "A premium tattoo studio web platform focused on high-engagement visual UI, artist portfolio showcase, mobile booking consultation, and a custom Admin Blog Management Portal.",
+    tagline: "High-Engagement Tattoo Studio Experience — Premium visual UI & Custom Admin Blog Portal.",
     heroImage: "/case-studies/blackarttattoo-CLnulL0F.webp",
     stats: [
-      { label: "Search Visibility", value: "Top 3" },
-      { label: "Page Speed", value: "98/100" },
-      { label: "Client Inquiries", value: "+310%" },
+      { label: "Search Visibility", value: "Top 3", trend: "Local SEO" },
+      { label: "Page Speed", value: "98/100", trend: "Mobile First" },
+      { label: "Client Inquiries", value: "+310%", trend: "3.1x Leads" },
     ],
     challenge: {
-      description: "BlackArt Tattoos needed a digital presence that matched their international hygiene standards and artistic excellence. The goal was to dominate local search in Udaipur and convert tourists into clients.",
+      description: "BlackArt Tattoos required a visually stunning digital presence to engage high-intent clients and tourists in Udaipur. The studio needed an immersive UI to showcase hygiene standards and a custom admin dashboard to publish blog updates.",
       painPoints: [
-        "Need for premium, trust-building visual identity",
-        "High competition in local tattoo service search",
-        "Requirement to showcase hygiene and safety protocols",
-        "Mobile-first audience needing quick booking access"
+        "Delivering a high-impact, visual dark UI that keeps users engaged",
+        "Building a custom Admin Blog Portal for the artist to write and publish content",
+        "Streamlining consultation requests for mobile visitors and tourists",
+        "Optimizing LocalBusiness Schema for Udaipur local search rankings"
       ],
     },
+    keyHighlights: [
+      { title: "High-Engagement Visual UI", description: "Immersive dark aesthetics showcasing artwork, hygiene standards, and artist profiles." },
+      { title: "Custom Admin Blog CMS", description: "Dedicated admin panel empowering the studio owner to write, edit, and publish blog articles." },
+      { title: "High-Converting Consultation Funnel", description: "Mobile-optimized booking flow capturing client project ideas and placement details." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "High-Engagement UI Entry", subtitle: "Visual Presentation", description: "Visitors land on immersive Next.js dark UI featuring high-res tattoo showcases, hygiene credentials, and interactive gallery.", techTag: "Next.js & Tailwind CSS" },
+      { step: "02", title: "Consultation & Booking Gateway", subtitle: "Lead Funnel", description: "Clients fill out dynamic consultation request form specifying tattoo size, placement, and custom design ideas.", techTag: "Interactive Booking Funnel" },
+      { step: "03", title: "Admin Blog CMS & Publishing", subtitle: "Content Portal", description: "Studio owner logs into secure admin portal to write blog posts, manage care guides, and publish articles.", techTag: "Admin Blog CMS Gateway" },
+      { step: "04", title: "Local SEO Index & Persistence", subtitle: "SEO & Storage", description: "Blog articles and studio metadata auto-index with LocalBusiness Schema to drive search visibility in Udaipur.", techTag: "LocalBusiness Schema & Vercel" }
+    ],
     approach: [
       {
         phase: "Identity",
@@ -330,22 +415,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Alexink Tattoo Website",
     client: "Artishtic Expressions",
     industry: "Arts & Lifestyle",
-    tagline: "A bold digital presence that boosted bookings by 240%",
+    role: "Full-Stack Web Developer & UX Designer",
+    timeline: "8 Weeks",
+    overview: "A bold, modern tattoo studio website featuring interactive portfolio filtering, fast 1.2s page load speeds, and dynamic online deposit booking.",
+    tagline: "A bold digital website presence that boosted studio bookings by 240%.",
     heroImage: "/case-studies/TattooWebsite-BCwhkFr1.webp",
     stats: [
-      { label: "Conversion Rate", value: "+240%" },
-      { label: "Page Load Time", value: "1.2s" },
-      { label: "Mobile Traffic", value: "+180%" },
+      { label: "Conversion Rate", value: "+240%", trend: "2.4x Bookings" },
+      { label: "Page Load Time", value: "1.2s", trend: "Fast Speed" },
+      { label: "Mobile Traffic", value: "+180%", trend: "Mobile Growth" },
     ],
     challenge: {
-      description: "Alexink, a boutique tattoo studio, had a dated website that didn’t reflect the artistry or professionalism of their brand. Slow load times and poor mobile usability meant most visitors left before booking a session.",
+      description: "Alexink needed a modern, high-performance website to showcase artist portfolios and convert visitor sessions into booked sessions.",
       painPoints: [
-        "Outdated design that didn’t represent the studio’s creative quality",
-        "8+ second load times leading to high bounce rates",
-        "No online booking or portfolio filtering",
-        "Inconsistent experience across devices"
+        "Outdated legacy site with slow 8s load times causing high bounce rates",
+        "No interactive portfolio category filtering for clients to browse styles",
+        "Absence of streamlined mobile booking and deposit checkout",
+        "Inconsistent visual presentation across mobile and desktop devices"
       ],
     },
+    keyHighlights: [
+      { title: "Filtered Artist Portfolio Showcase", description: "Interactive gallery letting visitors filter tattoos by style, artist, and placement." },
+      { title: "High-Performance React Engine", description: "Cut page load times from 8.0s to 1.2s with WebP image optimization and code splitting." },
+      { title: "Stripe Deposit Checkout Gateway", description: "Secures appointment slots with online deposit payments." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Visitor Entry & Style Filtering", subtitle: "Website UI", description: "Client lands on responsive React site, filtering tattoo artwork by category, style, and artist portfolio.", techTag: "React & Tailwind" },
+      { step: "02", title: "Interactive Consultation Form", subtitle: "Lead Pipeline", description: "Client selects preferred artist, uploads reference photos, and picks available session dates.", techTag: "Form Processing" },
+      { step: "03", title: "Stripe Payment Deposit", subtitle: "Checkout Gateway", description: "Client confirms booking by paying session deposit via secure Stripe Checkout API.", techTag: "Stripe Payment API" },
+      { step: "04", title: "Database Sync & Calendar Lock", subtitle: "Persistence Layer", description: "Appointment details and payment records persist to PostgreSQL database, locking calendar slot.", techTag: "Node.js & PostgreSQL" }
+    ],
     approach: [
       {
         phase: "Discovery",
@@ -392,22 +491,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Inkmaster Tattoo Website",
     client: "Inkmaster Tattoo",
     industry: "Art & Lifestyle",
-    tagline: "Redesigned UX that turned visitors into loyal clients",
+    role: "Next.js Web Developer & UX Designer",
+    timeline: "2 Weeks Fast Execution",
+    overview: "A fast, artist-focused studio website featuring real-time booking inquiries, Cloudinary asset delivery, and responsive mobile navigation.",
+    tagline: "Artist-focused website redesign that increased online studio bookings by 4X.",
     heroImage: "/case-studies/TattooWebsite2-D0LnzfOo.webp",
     stats: [
-      { label: "Website Performance", value: "96%" },
-      { label: "Average Session Time", value: "+180%" },
-      { label: "Booking increased", value: "4X" },
+      { label: "Website Score", value: "96%", trend: "High Performance" },
+      { label: "Session Time", value: "+180%", trend: "Longer Engagement" },
+      { label: "Bookings Increase", value: "4X", trend: "4x Growth" },
     ],
     challenge: {
-      description: "Inkmaster Tattoo had a strong reputation offline but lacked an online identity. They do not have any site which reflect their artistry, and failed to convert visitors into bookings.",
+      description: "Inkmaster Tattoo needed an online website reflecting their offline artistry reputation, capturing client session requests and showcasing artist portfolios.",
       painPoints: [
-        "Strict demand for a visually rich, artist-focused design",
-        "No reference were provided by the client ",
-        "Low budget and tight timeline",
-        "SEO visibility"
+        "Lacked a modern website to showcase studio artwork and artist specialties",
+        "Need for rapid 2-week execution on a tight budget",
+        "Optimizing heavy image portfolios for mobile browsers",
+        "Streamlining client booking requests into an easy admin notification system"
       ],
     },
+    keyHighlights: [
+      { title: "Cloudinary Image CDN Integration", description: "Delivers optimized high-res portfolio images automatically scaled for mobile devices." },
+      { title: "Next.js Static Site Generation", description: "Pre-renders portfolio pages for 96% Core Web Vitals speed scores." },
+      { title: "Real-Time Booking Ingestion", description: "Captures user consultation forms and notifies studio managers." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Portfolio Discovery", subtitle: "Website UI", description: "Visitors browse artist galleries rendered via Next.js SSG with Cloudinary media CDN.", techTag: "Next.js & Cloudinary" },
+      { step: "02", title: "Interactive Session Request", subtitle: "Client Funnel", description: "User submits consultation details, custom design ideas, and preferred studio dates.", techTag: "React Form Component" },
+      { step: "03", title: "API Gateway Processing", subtitle: "Serverless Route", description: "Next.js Serverless route validates form inputs and persists lead to database.", techTag: "Next.js API Route" },
+      { step: "04", title: "Admin Notification Sync", subtitle: "Database & Alerts", description: "Studio owner receives instant lead notification; inquiry persists to MongoDB database.", techTag: "MongoDB & Email Alert" }
+    ],
     approach: [
       {
         phase: "User Research",
@@ -454,22 +567,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "CozyCafe Branding & Website",
     client: "CozyCafe",
     industry: "Food & Restaurant",
-    tagline: "From local cafe to community favorite through authentic branding",
+    role: "Brand Strategist & Frontend Developer",
+    timeline: "7 Weeks",
+    overview: "A warm, authentic cafe website featuring integrated online ordering, Firebase realtime order management, and Google Maps API location integration.",
+    tagline: "Warm, authentic cafe website & branding — Tripled local search visibility & online sales.",
     heroImage: "/case-studies/CozyCafe-CBA3aU9L.webp",
     stats: [
-      { label: "Foot Traffic", value: "+220%" },
-      { label: "Online Orders", value: "+340%" },
-      { label: "Social Engagement", value: "+180%" },
+      { label: "Foot Traffic", value: "+220%", trend: "In-Store Growth" },
+      { label: "Online Orders", value: "+340%", trend: "3.4x Digital" },
+      { label: "Revenue Impact", value: "+60%", trend: "Monthly Sales" },
     ],
     challenge: {
-      description: "CozyCafe, a small family-owned coffee shop, struggled to attract new customers despite great products. Their old branding felt inconsistent and their website wasn’t optimized for local search or online ordering.",
+      description: "CozyCafe needed a warm, authentic website to present their menu, support online pickup orders, and increase local search foot traffic.",
       painPoints: [
-        "Outdated logo and color palette",
-        "Unclear menu presentation",
-        "No online ordering or delivery integration",
-        "Low visibility in Google search results"
+        "Inconsistent brand identity and outdated online menu presentation",
+        "Lack of online ordering for pickup or local delivery",
+        "Low visibility in local Google search results for nearby coffee lovers",
+        "Need for responsive mobile navigation for customers on the go"
       ],
     },
+    keyHighlights: [
+      { title: "Warm Aesthetic Branding & Website", description: "Custom typography, warm color palette, and clear digital menu presentation." },
+      { title: "Firebase Realtime Online Ordering", description: "Streamlined order checkout persisting to kitchen store tablets in real-time." },
+      { title: "Google Maps API & Local SEO", description: "Interactive map integration driving local foot traffic." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Local Geo Discovery", subtitle: "Website Entry", description: "Customer searches local cafe; Next.js site delivers location schema and Google Maps integration.", techTag: "Next.js & Google Maps" },
+      { step: "02", title: "Interactive Menu Selection", subtitle: "Menu UI", description: "Customer explores coffee, pastry, and meal options with custom dietary tags.", techTag: "Tailwind CSS & React" },
+      { step: "03", title: "Online Order Checkout", subtitle: "Payment Gateway", description: "Customer selects pickup time and pays securely via Stripe checkout gateway.", techTag: "Stripe Payment API" },
+      { step: "04", title: "Kitchen Tablet Realtime Sync", subtitle: "Store Operations", description: "Order dispatches to Firebase Realtime DB, alerting kitchen staff for instant preparation.", techTag: "Firebase Realtime DB" }
+    ],
     approach: [
       {
         phase: "Brand Discovery",
@@ -516,22 +643,36 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Creative Agency",
     client: "TechNova Systems",
     industry: "Technology & Software",
-    tagline: "A scalable SaaS platform built for next-generation startups",
+    role: "Lead Full-Stack Web Architect",
+    timeline: "12 Weeks",
+    overview: "A modern creative agency website and SaaS showcase platform built for next-generation tech startups.",
+    tagline: "A scalable SaaS website & agency showcase platform for tech startups.",
     heroImage: "/case-studies/innovation-D_EP4z-1.webp",
     stats: [
-      { label: "Deployment Speed", value: "4x Faster" },
-      { label: "Uptime", value: "99.9%" },
-      { label: "Customer Growth", value: "+320%" },
+      { label: "Deployment Speed", value: "4x Faster", trend: "Fast Speed" },
+      { label: "Uptime", value: "99.9%", trend: "High Availability" },
+      { label: "Customer Growth", value: "+320%", trend: "3.2x Growth" },
     ],
     challenge: {
-      description: "TechNova Systems wanted to modernize their legacy SaaS infrastructure to better support startups launching data-driven products. Their existing system lacked scalability, intuitive UX, and analytics clarity.",
+      description: "TechNova Systems wanted an agency showcase website to launch their scalable SaaS platform for tech startups.",
       painPoints: [
-        "Complex onboarding process",
-        "Limited scalability under heavy load",
-        "Fragmented data visualization tools",
-        "High customer churn rate"
+        "Complex onboarding process on legacy marketing website",
+        "Limited scalability under heavy multi-tenant client traffic",
+        "Fragmented data visualization and analytics tools",
+        "Need for a high-converting agency marketing website"
       ],
     },
+    keyHighlights: [
+      { title: "Modular Agency Website Showcase", description: "Interactive components highlighting product features, agency work, and client testimonials." },
+      { title: "Microservices & API Gateway", description: "Node.js and Python microservices with Redis caching for real-time analytics." },
+      { title: "High-Converting Onboarding Funnel", description: "Streamlined sign-up reducing onboarding time from 14 days to 3 days." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Agency Showcase Discovery", subtitle: "Marketing Website UI", description: "Startup client lands on high-converting React agency website showcasing SaaS features & demo video.", techTag: "React & TypeScript" },
+      { step: "02", title: "API Gateway & Onboarding", subtitle: "Client Funnel", description: "Client signs up via streamlined onboarding flow; API Gateway handles tenant provisioning.", techTag: "Node.js API Gateway" },
+      { step: "03", title: "Microservice Logic & Redis", subtitle: "Core Analytics", description: "Python & Redis microservices process real-time analytics data and dashboard feeds.", techTag: "Redis & Python Service" },
+      { step: "04", title: "AWS Auto-scaling Delivery", subtitle: "Infrastructure", description: "App dispatches via AWS auto-scaling clusters with 99.9% uptime and zero latency.", techTag: "AWS & Docker" }
+    ],
     approach: [
       {
         phase: "Research & Architecture",
