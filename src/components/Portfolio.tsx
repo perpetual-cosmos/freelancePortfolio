@@ -11,6 +11,19 @@ import Link from 'next/link';
 const projects = [
   {
     id: "PRJ-001",
+    slug: "claimpilot",
+    title: "ClaimPilot",
+    category: "ENTERPRISE • AI INSURTECH",
+    year: "2024",
+    desc: "AI-powered insurance claims management desktop platform scaling operations by 10×.",
+    stats: [{ label: "Capacity", value: "10×" }, { label: "Tech", value: "Electron" }],
+    image: "/case-studies/claimpilote/claimpilotdashboard.png",
+    color: "#3b82f6",
+    tags: ["Electron", "React", "TypeScript", "Supabase", "AI"],
+    link: "#"
+  },
+  {
+    id: "PRJ-002",
     slug: "dear-valentine",
     title: "Dear Valentine",
     category: "SAAS • PRODUCT",
@@ -23,7 +36,7 @@ const projects = [
     link: "https://dearvalentine.vercel.app/"
   },
   {
-    id: "PRJ-002",
+    id: "PRJ-003",
     slug: "wavo-digital",
     title: "Wavo.digital",
     category: "SAAS • AI AUTOMATION",
@@ -36,7 +49,7 @@ const projects = [
     link: "https://wavo.digital/"
   },
   {
-    id: "PRJ-003",
+    id: "PRJ-004",
     slug: "alumnipp",
     title: "Alumnipp.com",
     category: "PLATFORM • RESCUE",
@@ -49,7 +62,7 @@ const projects = [
     link: "https://alumnipp.com/"
   },
   {
-    id: "PRJ-004",
+    id: "PRJ-005",
     slug: "biryanibabu-website",
     title: "Biryani Babu",
     category: "FULL STACK • E-COMMERCE",
@@ -62,7 +75,7 @@ const projects = [
     link: "https://biryanibabu.in/"
   },
   {
-    id: "PRJ-005",
+    id: "PRJ-006",
     slug: "blackart-tattoo-studio",
     title: "BlackArt Tattoo Studio",
     category: "FULL STACK • BOOKING",
@@ -75,7 +88,7 @@ const projects = [
     link: "https://www.blackarttattoo.in/"
   },
   {
-    id: "PRJ-006",
+    id: "PRJ-007",
     slug: "creative-agency",
     title: "Creative Agency",
     category: "FRONTEND • PERFORMANCE",
@@ -88,7 +101,7 @@ const projects = [
     link: "https://www.innovacient.com/"
   },
   {
-    id: "PRJ-007",
+    id: "PRJ-008",
     slug: "alexink-tattoo-website",
     title: "Alexink Tattoo",
     category: "FRONTEND • DESIGN",
@@ -101,7 +114,7 @@ const projects = [
     link: "#"
   },
   {
-    id: "PRJ-008",
+    id: "PRJ-009",
     slug: "cozycafe-branding-website",
     title: "CozyCafe",
     category: "BRANDING • WEB",
@@ -111,19 +124,6 @@ const projects = [
     image: "/case-studies/CozyCafe-CBA3aU9L.webp",
     color: "#fbbf24",
     tags: ["Next.js", "Firebase", "Stripe"],
-    link: "#"
-  },
-  {
-    id: "PRJ-009",
-    slug: "claimpilot",
-    title: "ClaimPilot",
-    category: "ENTERPRISE • AI INSURTECH",
-    year: "2024",
-    desc: "AI-powered insurance claims management desktop platform scaling operations by 10×.",
-    stats: [{ label: "Capacity", value: "10×" }, { label: "Tech", value: "Electron" }],
-    image: "/case-studies/claimpilote/claimpilotdashboard.png",
-    color: "#3b82f6",
-    tags: ["Electron", "React", "TypeScript", "Supabase", "AI"],
     link: "#"
   }
 ];

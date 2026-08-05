@@ -74,6 +74,126 @@ export interface CaseStudy {
 }
 
 export const caseStudies: Record<string, CaseStudy> = {
+  "claimpilot": {
+    id: "claimpilot",
+    title: "ClaimPilot",
+    client: "InsurTech Enterprise",
+    industry: "Insurance · Enterprise Desktop App",
+    role: "Full-Stack Software Development & Solution Architecture",
+    timeline: "Enterprise Build",
+    overview: "ClaimPilot is an AI-powered desktop enterprise platform engineered with Electron, React, TypeScript, and Supabase. It unifies case management, document automation, workflow tracking, PDF report generation, and AI assistance into a single workspace, enabling claims teams to scale operational capacity by 10×.",
+    tagline: "Building an AI-Powered Insurance Claims Management Desktop Platform That Scales Operations 10×.",
+    heroImage: "/case-studies/claimpilote/claimpilotdashboard.png",
+    stats: [
+      { label: "Claims Capacity", value: "10×", trend: "Verified Outcome" },
+      { label: "Platform Type", value: "Desktop App", trend: "Electron + React" },
+      { label: "AI Integration", value: "Assisted", trend: "Supabase + AI" }
+    ],
+    aboutClient: "Insurance organizations process hundreds to thousands of claims monthly. Behind every claim are dozens of operational activities: case registration, document verification, status tracking, customer communication, report generation, approvals, and compliance compliance. Many rely on fragmented spreadsheets, email chains, and disconnected software.",
+    executiveSummary: "ClaimPilot was developed to simplify operational challenges by providing a centralized desktop platform where claims teams manage cases, automate documentation, monitor workflows, and leverage AI to improve productivity. The platform enables teams to handle 10× more claims volume with the same operational resources.",
+    discoveryProcess: "Before designing the solution, the claims workflow was analyzed from entry to final resolution: how claims entered the system, where manual effort occurred, which repetitive tasks could be automated, and what visibility managers needed for decision-making. The project focused on optimizing the end-to-end operational lifecycle.",
+    strategyRationale: "Built as a desktop-first enterprise application using Electron, React, and TypeScript for high-performance multi-window handling and local file operations. Supabase powers real-time data persistence, while AI services assist with document analysis and reporting without replacing human decision-making authority.",
+    challenge: {
+      description: "As claim volume grows, fragmented spreadsheet workflows and disconnected tools create severe operational bottlenecks that increase costs and delay processing.",
+      painPoints: [
+        "Fragmented case details, documents, and communication spread across spreadsheets and emails",
+        "Manual documentation, report generation, and summaries consuming processing time",
+        "Lack of centralized workflow visibility for managers to track bottlenecks and team performance",
+        "Difficulty scaling operations under increasing claim volumes without expanding staff headcount"
+      ]
+    },
+    challengesAndSolutions: [
+      {
+        challenge: "Fragmented case files, documents, and customer communications spread across multiple systems",
+        solution: "Centralized operational command center consolidating CRM, case management, and missing document tracking into a single desktop application",
+        businessBenefit: "Eliminated tool-switching friction and enabled 10× increase in claims processing capacity"
+      },
+      {
+        challenge: "Repetitive manual documentation and case report generation consuming processing hours",
+        solution: "Integrated AI Case Analysis, automated PDF claim report generation, and one-click Excel data exports",
+        businessBenefit: "Reduced administrative documentation time by over 80% with enterprise compliance traceability"
+      },
+      {
+        challenge: "Lack of workflow visibility for managers tracking claim progress and team bottlenecks",
+        solution: "Built dynamic dashboard analytics, activity logs, and real-time lifecycle tracking",
+        businessBenefit: "Full operational transparency with complete auditability and status tracking"
+      }
+    ],
+    keyHighlights: [
+      { title: "AI Case Analysis & Assistant", description: "Contextual AI helping teams summarize case details, analyze claims, and query operational data." },
+      { title: "Document Automation & PDF Engine", description: "Automated generation of compliance reports and PDFs directly from claim records." },
+      { title: "Centralized Command Dashboard", description: "Real-time analytics and activity logs providing complete visibility over claim lifecycles." },
+      { title: "CRM & Missing Document Tracker", description: "Integrated customer follow-ups and automated missing document highlights." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Claims Team Workspace", subtitle: "Electron Desktop App", description: "Claims managers access native desktop workspace built with Electron and React.", techTag: "Electron & React" },
+      { step: "02", title: "Business Logic & State", subtitle: "TypeScript Engine", description: "Application processes case rules, workflow states, and CRM follow-up queues.", techTag: "TypeScript & Vite" },
+      { step: "03", title: "Data & Storage Sync", subtitle: "Supabase Backend", description: "Real-time claims data, document metadata, and activity logs persist securely to Supabase.", techTag: "Supabase DB & Storage" },
+      { step: "04", title: "AI & Reporting Pipeline", subtitle: "AI Services & PDF", description: "AI engine performs case analysis; PDF and Excel exporters render compliance reports.", techTag: "AI & PDF Exporter" }
+    ],
+    approach: [
+      { phase: "Workflow Discovery", description: "Analyzed claims processing paths, bottleneck areas, and manual documentation friction points.", duration: "2 weeks" },
+      { phase: "Desktop & UI Architecture", description: "Designed unified desktop workspace layout in Electron with React and TypeScript.", duration: "3 weeks" },
+      { phase: "AI & Backend Integration", description: "Integrated Supabase persistence, AI case analysis, and CRM tracking modules.", duration: "4 weeks" },
+      { phase: "Reporting & Security Audit", description: "Built PDF report generators, Excel exports, and verified role-based activity logging.", duration: "2 weeks" }
+    ],
+    outcomes: [
+      "Enabled organization to handle 10× more claims with existing staff capacity",
+      "Unified case management, CRM, documents, and analytics into a single desktop platform",
+      "Reduced administrative documentation time by 80% through AI-assisted reporting",
+      "Achieved 100% operational transparency with activity logs and missing document tracking"
+    ],
+    clientValueLongTerm: "Delivered a centralized enterprise command center that eliminates reliance on fragmented spreadsheets and disconnected tools, allowing the organization to scale claim volume without proportional administrative headcount growth.",
+    futureRoadmap: [
+      "OCR auto-extraction for scanned physical insurance policy documents",
+      "Automated policy coverage verification integration",
+      "Multi-carrier API gateway integration",
+      "Predictive fraud detection scoring model"
+    ],
+    keyTakeaways: [
+      "Operational problems should be thoroughly understood before technical solutions are designed.",
+      "AI creates the most value when it supports human experts rather than replacing them.",
+      "Centralizing information into a unified desktop workspace delivers higher productivity gains than disconnected web tools."
+    ],
+    faqs: [
+      {
+        question: "Why build a desktop application with Electron instead of a traditional web app?",
+        answer: "Desktop applications built with Electron provide a high-performance native workspace ideal for claims managers handling multi-window workloads, heavy local document processing, and enterprise data security."
+      },
+      {
+        question: "How does AI assist in claims processing without risking inaccurate decisions?",
+        answer: "AI acts as a human-in-the-loop assistant — summarizing documents, highlighting missing items, and performing initial case analysis while keeping final claim approval strictly under human control."
+      },
+      {
+        question: "Can operational data be exported for auditing and compliance?",
+        answer: "Yes, ClaimPilot features built-in PDF document generation for formal claim reports and dynamic Excel exports for compliance auditing and business intelligence."
+      }
+    ],
+    technologies: ["Electron", "React", "TypeScript", "Vite", "Supabase", "AI Integration", "PDF Generation", "Excel Export", "Tailwind CSS"],
+    testimonial: {
+      quote: "ClaimPilot transformed our entire claims operation. Centralizing case management, document automation, and AI assistance allowed our team to handle 10× more claims seamlessly.",
+      author: "Operations Director",
+      role: "InsurTech Enterprise Client",
+      image: "/case-studies/testimonial-Cp3MHniS.gif",
+      verified: true
+    },
+    gallery: [
+      "/case-studies/claimpilote/claimpilotdashboard.png",
+      "/case-studies/claimpilote/claimpilotcasedetialandpipeline.png",
+      "/case-studies/claimpilote/claimpilotaibrain.png",
+      "/case-studies/claimpilote/claimpilotdocumentmanagement.png",
+      "/case-studies/claimpilote/claimpilotcrm.png",
+      "/case-studies/claimpilote/claimpilotexportfeature.png",
+      "/case-studies/claimpilote/claimpilotattendancepayroll.png",
+      "/case-studies/claimpilote/claimpilotpayroll.png"
+    ],
+    seo: {
+      primaryKeyword: "AI insurance claims management software",
+      secondaryKeywords: ["Electron desktop enterprise app", "Supabase InsurTech platform", "AI claims processing software"],
+      metaTitle: "ClaimPilot Case Study | AI Insurance Claims Management Platform",
+      metaDescription: "How TheUnipick built ClaimPilot — an AI-powered desktop enterprise application for insurance claims management that scaled operations 10×."
+    }
+  },
   "wavo-digital": {
     id: "wavo-digital",
     title: "Wavo.digital",
@@ -920,126 +1040,6 @@ export const caseStudies: Record<string, CaseStudy> = {
     seo: {
       metaTitle: "TechNova Enterprise Portal Case Study | Cloud Architecture",
       metaDescription: "How TheUnipick built a microservices portal for TechNova Systems, cutting onboarding from 14 days to 3 days."
-    }
-  },
-  "claimpilot": {
-    id: "claimpilot",
-    title: "ClaimPilot",
-    client: "InsurTech Enterprise",
-    industry: "Insurance · Enterprise Desktop App",
-    role: "Full-Stack Software Development & Solution Architecture",
-    timeline: "Enterprise Build",
-    overview: "ClaimPilot is an AI-powered desktop enterprise platform engineered with Electron, React, TypeScript, and Supabase. It unifies case management, document automation, workflow tracking, PDF report generation, and AI assistance into a single workspace, enabling claims teams to scale operational capacity by 10×.",
-    tagline: "Building an AI-Powered Insurance Claims Management Desktop Platform That Scales Operations 10×.",
-    heroImage: "/case-studies/claimpilote/claimpilotdashboard.png",
-    stats: [
-      { label: "Claims Capacity", value: "10×", trend: "Verified Outcome" },
-      { label: "Platform Type", value: "Desktop App", trend: "Electron + React" },
-      { label: "AI Integration", value: "Assisted", trend: "Supabase + AI" }
-    ],
-    aboutClient: "Insurance organizations process hundreds to thousands of claims monthly. Behind every claim are dozens of operational activities: case registration, document verification, status tracking, customer communication, report generation, approvals, and compliance compliance. Many rely on fragmented spreadsheets, email chains, and disconnected software.",
-    executiveSummary: "ClaimPilot was developed to simplify operational challenges by providing a centralized desktop platform where claims teams manage cases, automate documentation, monitor workflows, and leverage AI to improve productivity. The platform enables teams to handle 10× more claims volume with the same operational resources.",
-    discoveryProcess: "Before designing the solution, the claims workflow was analyzed from entry to final resolution: how claims entered the system, where manual effort occurred, which repetitive tasks could be automated, and what visibility managers needed for decision-making. The project focused on optimizing the end-to-end operational lifecycle.",
-    strategyRationale: "Built as a desktop-first enterprise application using Electron, React, and TypeScript for high-performance multi-window handling and local file operations. Supabase powers real-time data persistence, while AI services assist with document analysis and reporting without replacing human decision-making authority.",
-    challenge: {
-      description: "As claim volume grows, fragmented spreadsheet workflows and disconnected tools create severe operational bottlenecks that increase costs and delay processing.",
-      painPoints: [
-        "Fragmented case details, documents, and communication spread across spreadsheets and emails",
-        "Manual documentation, report generation, and summaries consuming processing time",
-        "Lack of centralized workflow visibility for managers to track bottlenecks and team performance",
-        "Difficulty scaling operations under increasing claim volumes without expanding staff headcount"
-      ]
-    },
-    challengesAndSolutions: [
-      {
-        challenge: "Fragmented case files, documents, and customer communications spread across multiple systems",
-        solution: "Centralized operational command center consolidating CRM, case management, and missing document tracking into a single desktop application",
-        businessBenefit: "Eliminated tool-switching friction and enabled 10× increase in claims processing capacity"
-      },
-      {
-        challenge: "Repetitive manual documentation and case report generation consuming processing hours",
-        solution: "Integrated AI Case Analysis, automated PDF claim report generation, and one-click Excel data exports",
-        businessBenefit: "Reduced administrative documentation time by over 80% with enterprise compliance traceability"
-      },
-      {
-        challenge: "Lack of workflow visibility for managers tracking claim progress and team bottlenecks",
-        solution: "Built dynamic dashboard analytics, activity logs, and real-time lifecycle tracking",
-        businessBenefit: "Full operational transparency with complete auditability and status tracking"
-      }
-    ],
-    keyHighlights: [
-      { title: "AI Case Analysis & Assistant", description: "Contextual AI helping teams summarize case details, analyze claims, and query operational data." },
-      { title: "Document Automation & PDF Engine", description: "Automated generation of compliance reports and PDFs directly from claim records." },
-      { title: "Centralized Command Dashboard", description: "Real-time analytics and activity logs providing complete visibility over claim lifecycles." },
-      { title: "CRM & Missing Document Tracker", description: "Integrated customer follow-ups and automated missing document highlights." }
-    ],
-    architectureFlow: [
-      { step: "01", title: "Claims Team Workspace", subtitle: "Electron Desktop App", description: "Claims managers access native desktop workspace built with Electron and React.", techTag: "Electron & React" },
-      { step: "02", title: "Business Logic & State", subtitle: "TypeScript Engine", description: "Application processes case rules, workflow states, and CRM follow-up queues.", techTag: "TypeScript & Vite" },
-      { step: "03", title: "Data & Storage Sync", subtitle: "Supabase Backend", description: "Real-time claims data, document metadata, and activity logs persist securely to Supabase.", techTag: "Supabase DB & Storage" },
-      { step: "04", title: "AI & Reporting Pipeline", subtitle: "AI Services & PDF", description: "AI engine performs case analysis; PDF and Excel exporters render compliance reports.", techTag: "AI & PDF Exporter" }
-    ],
-    approach: [
-      { phase: "Workflow Discovery", description: "Analyzed claims processing paths, bottleneck areas, and manual documentation friction points.", duration: "2 weeks" },
-      { phase: "Desktop & UI Architecture", description: "Designed unified desktop workspace layout in Electron with React and TypeScript.", duration: "3 weeks" },
-      { phase: "AI & Backend Integration", description: "Integrated Supabase persistence, AI case analysis, and CRM tracking modules.", duration: "4 weeks" },
-      { phase: "Reporting & Security Audit", description: "Built PDF report generators, Excel exports, and verified role-based activity logging.", duration: "2 weeks" }
-    ],
-    outcomes: [
-      "Enabled organization to handle 10× more claims with existing staff capacity",
-      "Unified case management, CRM, documents, and analytics into a single desktop platform",
-      "Reduced administrative documentation time by 80% through AI-assisted reporting",
-      "Achieved 100% operational transparency with activity logs and missing document tracking"
-    ],
-    clientValueLongTerm: "Delivered a centralized enterprise command center that eliminates reliance on fragmented spreadsheets and disconnected tools, allowing the organization to scale claim volume without proportional administrative headcount growth.",
-    futureRoadmap: [
-      "OCR auto-extraction for scanned physical insurance policy documents",
-      "Automated policy coverage verification integration",
-      "Multi-carrier API gateway integration",
-      "Predictive fraud detection scoring model"
-    ],
-    keyTakeaways: [
-      "Operational problems should be thoroughly understood before technical solutions are designed.",
-      "AI creates the most value when it supports human experts rather than replacing them.",
-      "Centralizing information into a unified desktop workspace delivers higher productivity gains than disconnected web tools."
-    ],
-    faqs: [
-      {
-        question: "Why build a desktop application with Electron instead of a traditional web app?",
-        answer: "Desktop applications built with Electron provide a high-performance native workspace ideal for claims managers handling multi-window workloads, heavy local document processing, and enterprise data security."
-      },
-      {
-        question: "How does AI assist in claims processing without risking inaccurate decisions?",
-        answer: "AI acts as a human-in-the-loop assistant — summarizing documents, highlighting missing items, and performing initial case analysis while keeping final claim approval strictly under human control."
-      },
-      {
-        question: "Can operational data be exported for auditing and compliance?",
-        answer: "Yes, ClaimPilot features built-in PDF document generation for formal claim reports and dynamic Excel exports for compliance auditing and business intelligence."
-      }
-    ],
-    technologies: ["Electron", "React", "TypeScript", "Vite", "Supabase", "AI Integration", "PDF Generation", "Excel Export", "Tailwind CSS"],
-    testimonial: {
-      quote: "ClaimPilot transformed our entire claims operation. Centralizing case management, document automation, and AI assistance allowed our team to handle 10× more claims seamlessly.",
-      author: "Operations Director",
-      role: "InsurTech Enterprise Client",
-      image: "/case-studies/testimonial-Cp3MHniS.gif",
-      verified: true
-    },
-    gallery: [
-      "/case-studies/claimpilote/claimpilotdashboard.png",
-      "/case-studies/claimpilote/claimpilotcasedetialandpipeline.png",
-      "/case-studies/claimpilote/claimpilotaibrain.png",
-      "/case-studies/claimpilote/claimpilotdocumentmanagement.png",
-      "/case-studies/claimpilote/claimpilotcrm.png",
-      "/case-studies/claimpilote/claimpilotexportfeature.png",
-      "/case-studies/claimpilote/claimpilotattendancepayroll.png",
-      "/case-studies/claimpilote/claimpilotpayroll.png"
-    ],
-    seo: {
-      primaryKeyword: "AI insurance claims management software",
-      secondaryKeywords: ["Electron desktop enterprise app", "Supabase InsurTech platform", "AI claims processing software"],
-      metaTitle: "ClaimPilot Case Study | AI Insurance Claims Management Platform",
-      metaDescription: "How TheUnipick built ClaimPilot — an AI-powered desktop enterprise application for insurance claims management that scaled operations 10×."
     }
   }
 };
