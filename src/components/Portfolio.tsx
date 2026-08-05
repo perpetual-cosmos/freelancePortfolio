@@ -112,6 +112,19 @@ const projects = [
     color: "#fbbf24",
     tags: ["Next.js", "Firebase", "Stripe"],
     link: "#"
+  },
+  {
+    id: "PRJ-009",
+    slug: "claimpilot",
+    title: "ClaimPilot",
+    category: "ENTERPRISE • AI INSURTECH",
+    year: "2024",
+    desc: "AI-powered insurance claims management desktop platform scaling operations by 10×.",
+    stats: [{ label: "Capacity", value: "10×" }, { label: "Tech", value: "Electron" }],
+    image: "/case-studies/claimpilote/claimpilotdashboard.png",
+    color: "#3b82f6",
+    tags: ["Electron", "React", "TypeScript", "Supabase", "AI"],
+    link: "#"
   }
 ];
 
