@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# agent seo
+agent_SEO.md
+Agent_style.md
+audit.md
+.gitignore

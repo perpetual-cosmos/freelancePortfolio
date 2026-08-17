@@ -3,6 +3,7 @@ import "./globals.css";
 import { Space_Grotesk, Manrope } from 'next/font/google';
 import WhatsAppCTA from "@/components/widgets/WhatsAppCTA";
 import TrustPulse from "@/components/widgets/TrustPulse";
+import { Analytics } from '@vercel/analytics/next';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -65,6 +66,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${spaceGrotesk.variable} ${manrope.variable} antialiased`} style={{ margin: 0, padding: 0 }}>
+        <Analytics />
         {children}
         <WhatsAppCTA />
         <TrustPulse />
