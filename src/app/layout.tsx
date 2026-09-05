@@ -48,6 +48,7 @@ const jsonLd = {
     "longitude": "80.3319"
   },
   "telephone": "+91-9451172458",
+  "email": "tarun@theunipick.com",
   "priceRange": "₹₹",
   "knowsAbout": ["Next.js", "Shopify", "WordPress", "AI Automation", "SEO", "React", "Node.js", "n8n", "Web Development"]
 };

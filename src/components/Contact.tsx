@@ -31,8 +31,8 @@ interface FormState {
 const CONTACT_CARDS = [
   {
     label: "Email",
-    val: "unipick000@gmail.com",
-    href: "mailto:unipick000@gmail.com",
+    val: "tarun@theunipick.com",
+    href: "mailto:tarun@theunipick.com",
     color: "from-violet-600 to-purple-700",
     bg: "from-violet-500/10 to-purple-500/5",
     icon: <Mail size={20} />,

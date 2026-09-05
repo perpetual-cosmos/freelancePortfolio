@@ -24341,8 +24341,8 @@ const ox = () => {
         {
           icon: u.jsx(Gv, { className: "w-6 h-6" }),
           title: "Email",
-          description: "unipick000@gmail.com",
-          action: "mailto:unipick000@gmail.com",
+          description: "tarun@theunipick.com",
+          action: "mailto:tarun@theunipick.com",
           cta: "Send Email",
         },
         {
@@ -24657,7 +24657,7 @@ const ox = () => {
           href: "https://www.linkedin.com/in/tarunsingh241",
           label: "LinkedIn",
         },
-        { icon: Gv, href: "mailto:unipick000@gmail.com", label: "Email" },
+        { icon: Gv, href: "mailto:tarun@theunipick.com", label: "Email" },
       ],
       i = (s) => {
         if (s.startsWith("/#")) {
