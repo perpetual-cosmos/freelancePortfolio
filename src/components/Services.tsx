@@ -7,31 +7,36 @@ import {
   Fingerprint, Activity
 } from 'lucide-react';
 
+import Link from 'next/link';
+
 const services = [
   {
     id: 'SVC-001',
+    slug: 'web-development',
     title: 'Web Development',
     desc: 'High-performance Next.js and MERN stack applications built for speed and scale.',
     icon: <Code2 />,
     color: '#6300e2',
     size: 'large',
-    detail: 'We build production-ready web productsfrom seed-stage MVPs to Series A scale. Focus on Next.js 15, Supabase, and custom API integrations.',
+    detail: 'We build production-ready web products  from seed-stage MVPs to Series A scale. Focus on Next.js 16, Supabase, and custom API integrations.',
     metric: { label: 'PAGE_LOAD', value: '<1s' },
-    tags: ['Next.js 15', 'MERN Stack', 'TypeScript']
+    tags: ['Next.js 16', 'MERN Stack', 'TypeScript']
   },
   {
     id: 'SVC-002',
+    slug: 'shopify-development',
     title: 'Shopify Development',
     desc: 'Custom Shopify themes and apps for D2C brands that actually convert.',
     icon: <Server />,
     color: '#10b981',
     size: 'small',
-    detail: 'Specializing in custom Liquid themes and headless Shopify builds. We optimize for conversion and page speed (90+ score guaranteed).',
+    detail: 'Specializing in custom Liquid themes and headless Shopify builds. We optimize for conversion and page speed (95+ score guaranteed).',
     metric: { label: 'CONVERSION', value: '+40%' },
     tags: ['Shopify Liquid', 'Headless', 'D2C']
   },
   {
     id: 'SVC-003',
+    slug: 'ai-automation',
     title: 'AI Automation',
     desc: 'Eliminate repetitive tasks with custom n8n and Make.com workflows.',
     icon: <Brain />,
@@ -43,6 +48,7 @@ const services = [
   },
   {
     id: 'SVC-004',
+    slug: 'seo-services',
     title: 'SEO & Performance',
     desc: 'Data-driven SEO strategies that drive organic revenue, not just traffic.',
     icon: <BarChart3 />,
@@ -54,6 +60,7 @@ const services = [
   },
   {
     id: 'SVC-005',
+    slug: 'cms-platforms',
     title: 'WordPress / CMS',
     desc: 'Secure, scalable, and easy-to-manage WordPress solutions for businesses.',
     icon: <Globe />,
@@ -65,14 +72,15 @@ const services = [
   },
   {
     id: 'SVC-006',
-    title: 'LMS / EdTech',
-    desc: 'Custom course platforms and education portals built for engagement.',
+    slug: 'design-branding',
+    title: 'UI/UX & Branding',
+    desc: 'Custom course platforms, Figma design systems & edtech portals built for engagement.',
     icon: <Cpu />,
     color: '#7c6fff',
     size: 'small',
-    detail: 'Building scalable learning management systems with custom progress tracking, quizzes, and certificate generation.',
+    detail: 'Building scalable interactive Figma prototypes, design systems, and edtech platforms with custom progress tracking and conversion UX.',
     metric: { label: 'ENGAGEMENT', value: '85%' },
-    tags: ['EdTech', 'LMS', 'Next.js']
+    tags: ['UI/UX', 'Figma', 'Next.js']
   },
 ];
 
@@ -232,9 +240,12 @@ const Services = () => {
                     </span>
                   ))}
                 </div>
-                <button className="flex items-center gap-2 text-white/40 font-black text-[0.7rem] uppercase tracking-[0.2em] group/btn hover:text-primary transition-all">
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="flex items-center gap-2 text-white/40 font-black text-[0.7rem] uppercase tracking-[0.2em] group/btn hover:text-primary transition-all no-underline"
+                >
                   Details <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}

@@ -40,7 +40,7 @@ const TrustPulse = () => {
   const pulse = trustPulses[index];
 
   return (
-    <div className="fixed bottom-6 left-6 sm:bottom-8 sm:left-8 min-[360px]:bottom-4 min-[360px]:left-4 z-[9998]">
+    <div className="hidden md:block fixed bottom-8 left-8 z-[9998]">
       <AnimatePresence>
         {isVisible && (
           <motion.div
