@@ -113,7 +113,7 @@ const jsonLdGraph = [
     "name": "TheUniPick Studio",
     "url": "https://theunipick.com",
     "logo": "https://theunipick.com/theunipicklogo.png",
-    "image": "https://theunipick.com/tarunsinghmod.png",
+    "image": "https://theunipick.com/TarunSingh.png",
     "description": "Full-stack development and SEO studio led by Tarun Singh. Building high-ranking, fast, and converting websites, Shopify stores, and AI automation workflows.",
     "founder": {
       "@id": "https://theunipick.com/#person"

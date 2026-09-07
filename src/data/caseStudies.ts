@@ -411,7 +411,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       quote: "The organic growth of Dear Valentine proves that a well-built product with a viral loop can compete with paid marketing.",
       author: "Tarun Singh",
       role: "Lead Developer & Creator",
-      image: "/tarunsinghmod.png",
+      image: "/TarunSingh.png",
       verified: true
     },
     gallery: ["/projects/dearvalentinehome.png", "/projects/dearvalentinedashboard.png"],

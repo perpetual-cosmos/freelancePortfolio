@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'Direct 1-on-1 engineering leadership for Next.js, Shopify, AI automations, and Technical SEO. Book a scoping call.',
     url: 'https://theunipick.com/hire',
     siteName: 'TheUniPick',
-    images: [{ url: 'https://theunipick.com/tarunsinghmod.png', width: 1200, height: 630, alt: 'Hire Tarun Singh' }],
+    images: [{ url: 'https://theunipick.com/TarunSingh.png', width: 1200, height: 630, alt: 'Hire Tarun Singh' }],
     type: 'website',
   },
   twitter: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Hire Freelance Full-Stack Developer & SEO Specialist India',
     description: 'Hire Tarun Singh for Next.js, Shopify, AI automations, and SEO.',
     creator: '@perpetual_cosmos',
-    images: ['https://theunipick.com/tarunsinghmod.png'],
+    images: ['https://theunipick.com/TarunSingh.png'],
   },
 };
 

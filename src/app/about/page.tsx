@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Principal Full-Stack Engineer Tarun Singh and studio at TheUniPick. Building fast, scalable, and converting web platforms.',
     url: 'https://theunipick.com/about',
     siteName: 'TheUniPick',
-    images: [{ url: 'https://theunipick.com/tarunsinghmod.png', width: 1200, height: 630, alt: 'Tarun Singh  Full-Stack Engineer' }],
+    images: [{ url: 'https://theunipick.com/TarunSingh.png', width: 1200, height: 630, alt: 'Tarun Singh  Full-Stack Engineer' }],
     type: 'profile',
   },
   twitter: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: 'About Tarun Singh | Freelance Full-Stack Engineer & SEO Specialist',
     description: 'Principal Full-Stack Engineer Tarun Singh & studio at TheUniPick.',
     creator: '@perpetual_cosmos',
-    images: ['https://theunipick.com/tarunsinghmod.png'],
+    images: ['https://theunipick.com/TarunSingh.png'],
   },
 };
 

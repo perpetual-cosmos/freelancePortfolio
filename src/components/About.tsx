@@ -57,7 +57,7 @@ const About = () => {
             {/* Main Photo Frame */}
             <div className="relative z-10 rounded-[28px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(124,58,237,0.35)] border-4 border-white bg-slate-100 aspect-[4/5] w-full">
               <img
-                src="/tarunsinghmod.png"
+                src="/TarunSingh.png"
                 alt="Tarun Singh — Principal Full-Stack Engineer and Technical SEO Lead"
                 className="w-full h-full object-cover object-[center_15%]"
               />
