@@ -36,27 +36,52 @@ const Hero = () => {
           <h1 className="text-[clamp(2.3rem,4.5vw,4.1rem)] font-black text-[#0F172A] leading-[1.05] font-display tracking-tight mb-5">
             We Build Websites <br />
             That{" "}
-            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#C026D3] to-[#E11D48]">
-              Rank, Convert
-              {/* Curved underline stroke */}
+            <span className="relative inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9333EA] via-[#C026D3] to-[#D946EF]">
+                Rank, Convert
+              </span>
+
+              {/* 1. Curved Underline Stroke directly below Rank, Convert */}
               <svg
-                className="absolute -bottom-2.5 left-0 w-full h-3 text-[#C026D3]"
-                viewBox="0 0 200 12"
+                className="absolute -bottom-3.5 left-0 w-full h-4 text-[#A855F7] overflow-visible pointer-events-none"
+                viewBox="0 0 240 16"
+                fill="none"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M 3 7 C 60 16, 170 16, 237 6"
+                  stroke="#A855F7"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+              </svg>
+
+              {/* 2. Radiating 3 Burst Lines above the top-right of Convert */}
+              <svg
+                className="w-6 h-6 absolute -top-3.5 -right-3 text-[#C026D3] overflow-visible pointer-events-none select-none"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M3 9C55 2.5 145 2.5 197 9"
+                  d="M 5 15 L 1 7"
                   stroke="currentColor"
-                  strokeWidth="3.5"
+                  strokeWidth="2.8"
                   strokeLinecap="round"
                 />
-              </svg>
-            </span>
-            <span className="inline-block ml-1 relative text-[#C026D3]">
-              {/* Spark doodle */}
-              <svg className="w-5 h-5 absolute -top-4 -right-3 text-[#C026D3] animate-pulse" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                <path
+                  d="M 12 13 L 12 2"
+                  stroke="currentColor"
+                  strokeWidth="2.8"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M 19 15 L 23 7"
+                  stroke="currentColor"
+                  strokeWidth="2.8"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
             <br />
@@ -65,7 +90,7 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="text-slate-600 text-base sm:text-lg font-medium leading-relaxed max-w-[540px] mb-8">
-            From Next.js web apps to custom Shopify stores, n8n AI automations to Technical SEO — Tarun Singh & TheUnipick Studio ship high-performing digital products built for revenue growth.
+            From Next.js web apps to custom Shopify stores, n8n AI automations to Technical SEO  Tarun Singh & TheUnipick Studio ship high-performing digital products built for revenue growth.
           </p>
 
           {/* CTA Buttons */}
@@ -85,38 +110,38 @@ const Hero = () => {
           </div>
 
           {/* Proof Metrics Row */}
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-8 border-t border-slate-200/70 mb-8">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full bg-[#F3E8FF] text-[#9333EA] flex items-center justify-center shrink-0 shadow-sm">
-                <Rocket size={20} />
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 lg:gap-5 pt-6 sm:pt-8 border-t border-slate-200/70 mb-8">
+            <div className="flex items-center gap-2.5 shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#F3E8FF] text-[#9333EA] flex items-center justify-center shrink-0 shadow-sm">
+                <Rocket size={18} />
               </div>
               <div>
-                <div className="text-xl font-black font-display text-slate-900 leading-none">50+</div>
-                <div className="text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">PROJECTS DELIVERED</div>
+                <div className="text-lg sm:text-xl font-black font-display text-slate-900 leading-none">50+</div>
+                <div className="text-[0.58rem] sm:text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">PROJECTS DELIVERED</div>
               </div>
             </div>
 
-            <div className="hidden sm:block h-8 w-[1px] bg-slate-200" />
+            <div className="hidden sm:block h-7 w-[1px] bg-slate-200 shrink-0" />
 
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center shrink-0 shadow-sm">
-                <Users size={20} />
+            <div className="flex items-center gap-2.5 shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center shrink-0 shadow-sm">
+                <Users size={18} />
               </div>
               <div>
-                <div className="text-xl font-black font-display text-slate-900 leading-none">70+</div>
-                <div className="text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">HAPPY CLIENTS</div>
+                <div className="text-lg sm:text-xl font-black font-display text-slate-900 leading-none">70+</div>
+                <div className="text-[0.58rem] sm:text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">HAPPY CLIENTS</div>
               </div>
             </div>
 
-            <div className="hidden sm:block h-8 w-[1px] bg-slate-200" />
+            <div className="hidden sm:block h-7 w-[1px] bg-slate-200 shrink-0" />
 
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full bg-[#FAE8FF] text-[#C026D3] flex items-center justify-center shrink-0 shadow-sm">
-                <Zap size={20} />
+            <div className="flex items-center gap-2.5 shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#FAE8FF] text-[#C026D3] flex items-center justify-center shrink-0 shadow-sm">
+                <Zap size={18} />
               </div>
               <div>
-                <div className="text-xl font-black font-display text-slate-900 leading-none">1K+</div>
-                <div className="text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">ACTIVE RESELLERS</div>
+                <div className="text-lg sm:text-xl font-black font-display text-slate-900 leading-none">1K+</div>
+                <div className="text-[0.58rem] sm:text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">ACTIVE RESELLERS</div>
               </div>
             </div>
           </div>

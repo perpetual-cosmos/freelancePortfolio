@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import PricingClient from './PricingClient';
 
 export const metadata: Metadata = {
-  title: 'Freelance Web Development & SEO Pricing | Tarun Singh — TheUniPick',
+  title: 'Freelance Web Development & SEO Pricing | Tarun Singh  TheUniPick',
   description: 'Transparent pricing for Next.js web applications, custom Shopify themes, n8n AI automations, and monthly technical SEO retainers. Fixed fee, zero hidden costs.',
   alternates: {
     canonical: 'https://theunipick.com/pricing',

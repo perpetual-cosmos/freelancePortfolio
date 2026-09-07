@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
     return { title: 'Service Not Found | TheUniPick' };
   }
 
-  const metaTitle = `${service.title} Services | Tarun Singh — TheUniPick`;
+  const metaTitle = `${service.title} Services | Tarun Singh  TheUniPick`;
   const metaDescription = `${service.description} ${service.tagline}. Professional full-stack & growth engineering by Tarun Singh.`;
 
   return {

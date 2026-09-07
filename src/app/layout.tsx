@@ -18,7 +18,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL('https://theunipick.com'),
   title: {
-    default: "TheUniPick | Freelance Full-Stack Developer & SEO Specialist — Tarun Singh",
+    default: "TheUniPick | Freelance Full-Stack Developer & SEO Specialist  Tarun Singh",
     template: "%s | TheUniPick"
   },
   description: "Principal full-stack engineer Tarun Singh & studio at TheUniPick. Specializing in Next.js, Shopify, AI automations (n8n), and Technical SEO. 50+ live products shipped. Request a free audit.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: '/theunipicklogo.png',
         width: 1200,
         height: 630,
-        alt: 'TheUniPick — Full-Stack Development & SEO Studio',
+        alt: 'TheUniPick  Full-Stack Development & SEO Studio',
       },
     ],
     locale: 'en_US',

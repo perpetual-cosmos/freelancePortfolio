@@ -146,7 +146,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
           <div className="relative rounded-2xl overflow-hidden border border-white/8 shadow-lg aspect-[16/10] bg-[#0a0a0a] group/img cursor-pointer">
             <img
               src={project.image}
-              alt={`${project.title} — ${project.category} case study by TheUniPick`}
+              alt={`${project.title}  ${project.category} case study by TheUniPick`}
               className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover/img:scale-105 opacity-85 group-hover/img:opacity-100"
             />
             {/* Hover Overlay */}

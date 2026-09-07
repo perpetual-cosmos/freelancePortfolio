@@ -162,7 +162,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       },
       {
         question: "How does AI assist in claims processing without risking inaccurate decisions?",
-        answer: "AI acts as a human-in-the-loop assistant — summarizing documents, highlighting missing items, and performing initial case analysis while keeping final claim approval strictly under human control."
+        answer: "AI acts as a human-in-the-loop assistant  summarizing documents, highlighting missing items, and performing initial case analysis while keeping final claim approval strictly under human control."
       },
       {
         question: "Can operational data be exported for auditing and compliance?",
@@ -191,7 +191,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       primaryKeyword: "AI insurance claims management software",
       secondaryKeywords: ["Electron desktop enterprise app", "Supabase InsurTech platform", "AI claims processing software"],
       metaTitle: "ClaimPilot Case Study | AI Insurance Claims Management Platform",
-      metaDescription: "How TheUnipick built ClaimPilot — an AI-powered desktop enterprise application for insurance claims management that scaled operations 10×."
+      metaDescription: "How TheUnipick built ClaimPilot  an AI-powered desktop enterprise application for insurance claims management that scaled operations 10×."
     }
   },
   "wavo-digital": {
@@ -202,7 +202,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     role: "Contract Lead Full-Stack Engineer",
     timeline: "14 Weeks",
     liveUrl: "https://wavo.digital",
-    overview: "An enterprise WhatsApp marketing and AI automation platform developed as a successful contractual engineering engagement — featuring real-time Facebook Graph Webhook ingestion, contextual AI reply engines, in-chat commerce, and multi-tenant client dashboards.",
+    overview: "An enterprise WhatsApp marketing and AI automation platform developed as a successful contractual engineering engagement  featuring real-time Facebook Graph Webhook ingestion, contextual AI reply engines, in-chat commerce, and multi-tenant client dashboards.",
     tagline: "Building an AI WhatsApp Marketing & Conversational Commerce SaaS from 0 to Enterprise Production.",
     heroImage: "/projects/wavo.png",
     stats: [
@@ -210,9 +210,9 @@ export const caseStudies: Record<string, CaseStudy> = {
       { label: "System Uptime", value: "99.9%", trend: "Zero Incidents" },
       { label: "Data Security", value: "100%", trend: "Zero Leaks" },
     ],
-    aboutClient: "Oaksol Technologies is an Indian technology startup focused on conversational commerce — using messaging platforms, particularly WhatsApp, to automate customer communication and drive sales for businesses. Contractual Note: Wavo.digital was developed as a contractual client engagement. Tarun Singh provided full-stack architecture and lead contract engineering services.",
+    aboutClient: "Oaksol Technologies is an Indian technology startup focused on conversational commerce  using messaging platforms, particularly WhatsApp, to automate customer communication and drive sales for businesses. Contractual Note: Wavo.digital was developed as a contractual client engagement. Tarun Singh provided full-stack architecture and lead contract engineering services.",
     executiveSummary: "Developed as a contractual software engineering project for Oaksol Technologies. A funded Indian startup needed an enterprise-grade platform built from scratch in 14 weeks. Wavo.digital receives thousands of real-time Meta webhooks, processes them through an AI reply engine, executes in-chat commerce flows, and surfaces analytics in a multi-tenant React dashboard. Engineered by Tarun Singh as Contract Lead Software Engineer with 99.9% uptime since production release.",
-    discoveryProcess: "We spent two weeks mapping the end-to-end journey for three distinct actors: business clients, end customers on WhatsApp, and platform administrators. We identified early that the Facebook Webhook Gateway was the critical path. Everything else — AI engine, dashboard, commerce flows — depended on a stable, high-throughput gateway for receiving and verifying messages. We prioritized stabilizing the webhook ingestion pipeline before layering UI and intelligence.",
+    discoveryProcess: "We spent two weeks mapping the end-to-end journey for three distinct actors: business clients, end customers on WhatsApp, and platform administrators. We identified early that the Facebook Webhook Gateway was the critical path. Everything else  AI engine, dashboard, commerce flows  depended on a stable, high-throughput gateway for receiving and verifying messages. We prioritized stabilizing the webhook ingestion pipeline before layering UI and intelligence.",
     strategyRationale: "Node.js was chosen over Python for the core gateway because incoming webhooks (500+ events/sec under peak load) represent an I/O-bound workload, where Node's event-driven non-blocking architecture excels. Python was isolated strictly for CPU-bound AI context processing. Multi-tenancy was enforced at both the database schema level (tenant_id) and database middleware layer to prevent cross-tenant data leakage by design rather than relying solely on developer query discipline.",
     challenge: {
       description: "Building an enterprise WhatsApp platform requires processing unpredictable real-time webhook bursts, executing intelligent conversational replies, managing in-chat catalog purchasing, and isolating client data with multi-tenant security.",
@@ -329,7 +329,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       primaryKeyword: "WhatsApp marketing platform development",
       secondaryKeywords: ["WhatsApp automation SaaS development", "Meta Graph API developer India", "multi-tenant SaaS architecture"],
       metaTitle: "Building an AI WhatsApp Marketing SaaS | Wavo.digital Case Study",
-      metaDescription: "Case study on engineering Wavo.digital as a contract lead software engineer — an AI WhatsApp automation & commerce SaaS built in 14 weeks with 99.9% uptime."
+      metaDescription: "Case study on engineering Wavo.digital as a contract lead software engineer  an AI WhatsApp automation & commerce SaaS built in 14 weeks with 99.9% uptime."
     }
   },
   "dear-valentine": {
@@ -341,7 +341,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     timeline: "7 Weeks",
     liveUrl: "https://dearvalentine.vercel.app/",
     overview: "A custom Valentine's story creation SaaS where senders configure daily tasks & rewards, unlock unique access links via payment gateways, and track recipient responses in real-time.",
-    tagline: "Customizable Valentine's Story & Daily Task Gifting SaaS — Global reach with viral referral mechanics.",
+    tagline: "Customizable Valentine's Story & Daily Task Gifting SaaS  Global reach with viral referral mechanics.",
     heroImage: "/projects/dearvalentinehome.png",
     stats: [
       { label: "Organic Visits", value: "1K+", trend: "100% Organic" },
@@ -417,7 +417,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     gallery: ["/projects/dearvalentinehome.png", "/projects/dearvalentinedashboard.png"],
     seo: {
       metaTitle: "Dear Valentine Case Study | Viral Gifting SaaS Platform",
-      metaDescription: "How TheUnipick architected Dear Valentine — a viral task gifting SaaS launched across 70+ countries."
+      metaDescription: "How TheUnipick architected Dear Valentine  a viral task gifting SaaS launched across 70+ countries."
     }
   },
   "alumnipp": {
@@ -427,8 +427,8 @@ export const caseStudies: Record<string, CaseStudy> = {
     industry: "Platform · Institutional CRM",
     role: "Lead Full-Stack Rescue Engineer",
     timeline: "72 Hours Emergency Turnaround",
-    overview: "A Laravel & React Alumni CRM platform codebase rescue executed in 72 hours — fixing failing controller routes, stabilizing database locking, and delivering dynamic automated alumni ID card PDF pipelines for 1,000+ active users.",
-    tagline: "Laravel Alumni CRM Codebase Rescue — Saved 1,000+ registered users with 100% data integrity.",
+    overview: "A Laravel & React Alumni CRM platform codebase rescue executed in 72 hours  fixing failing controller routes, stabilizing database locking, and delivering dynamic automated alumni ID card PDF pipelines for 1,000+ active users.",
+    tagline: "Laravel Alumni CRM Codebase Rescue  Saved 1,000+ registered users with 100% data integrity.",
     heroImage: "/projects/alumnipp.png",
     stats: [
       { label: "Users Preserved", value: "1,000+", trend: "Zero Data Lost" },
@@ -503,7 +503,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     gallery: ["/projects/alumnipp.png", "/projects/alumnipp2.png", "/projects/alumnipp3.png"],
     seo: {
       metaTitle: "Alumnipp Case Study | 72-Hour Laravel Codebase Rescue",
-      metaDescription: "How TheUnipick rescued Alumnipp — preserving 1,000+ user records and stabilizing a broken Laravel CRM in 72 hours."
+      metaDescription: "How TheUnipick rescued Alumnipp  preserving 1,000+ user records and stabilizing a broken Laravel CRM in 72 hours."
     }
   },
   "biryanibabu-website": {
@@ -514,7 +514,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     role: "Frontend Engineer & SEO Architect",
     timeline: "5 Weeks",
     overview: "A highly aesthetic food & QSR showcase website in Kolkata, featuring an indexable digital menu, WebP image performance tuning, and LocalBusiness Schema to dominate local search.",
-    tagline: "Kolkata's #1 Biryani QSR — Aesthetic digital menu showcase & Local SEO dominance.",
+    tagline: "Kolkata's #1 Biryani QSR  Aesthetic digital menu showcase & Local SEO dominance.",
     heroImage: "/case-studies/biriyanibabu-CggFjvPm.webp",
     stats: [
       { label: "Local Search", value: "#1 Rank", trend: "Top Local SEO" },
@@ -605,7 +605,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     role: "UI/UX Architect & Full-Stack Developer",
     timeline: "6 Weeks",
     overview: "A premium tattoo studio web platform focused on high-engagement visual UI, artist portfolio showcase, mobile booking consultation, and a custom Admin Blog Management Portal.",
-    tagline: "High-Engagement Tattoo Studio Experience — Premium visual UI & Custom Admin Blog Portal.",
+    tagline: "High-Engagement Tattoo Studio Experience  Premium visual UI & Custom Admin Blog Portal.",
     heroImage: "/case-studies/blackarttattoo-CLnulL0F.webp",
     stats: [
       { label: "Search Rank", value: "Top 3", trend: "Local SEO" },
@@ -872,7 +872,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     role: "Brand Strategist & Frontend Developer",
     timeline: "7 Weeks",
     overview: "A warm, authentic cafe website featuring integrated online ordering, Firebase realtime order management, and Google Maps API location integration.",
-    tagline: "Warm, authentic cafe website & branding — Tripled local search visibility & online sales.",
+    tagline: "Warm, authentic cafe website & branding  Tripled local search visibility & online sales.",
     heroImage: "/case-studies/CozyCafe-CBA3aU9L.webp",
     stats: [
       { label: "Foot Traffic", value: "+220%", trend: "In-Store Growth" },
@@ -937,7 +937,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     technologies: ["React", "Next.js", "Tailwind CSS", "Firebase", "Stripe", "Google Maps API"],
     testimonial: {
-      quote: "Our cafe finally feels like us — warm, welcoming, and professional. Customers tell us they found us online, which never happened before!",
+      quote: "Our cafe finally feels like us  warm, welcoming, and professional. Customers tell us they found us online, which never happened before!",
       author: "Rahul Verma",
       role: "Owner, CozyCafe",
       image: "/case-studies/testimonial-Cp3MHniS.gif",

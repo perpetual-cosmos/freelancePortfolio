@@ -31,7 +31,7 @@ export default function HireClient() {
             transition={{ delay: 0.08 }}
             className="text-[clamp(2.1rem,5vw,4.2rem)] font-extrabold tracking-tighter leading-[1.02] font-display mb-5"
           >
-            Hire Tarun Singh — <br />
+            Hire Tarun Singh  <br />
             <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
               Principal Full-Stack & SEO Lead
             </span>
@@ -43,7 +43,7 @@ export default function HireClient() {
             transition={{ delay: 0.15 }}
             className="text-white/60 text-[0.95rem] sm:text-[1.1rem] font-medium leading-relaxed max-w-[680px] mx-auto mb-8"
           >
-            Direct 1-on-1 engineering leadership for startups and D2C brands. I architect and execute full-stack Next.js apps, Shopify storefronts, n8n AI workflows, and technical SEO — backed by a vetted specialist network when your project requires scale.
+            Direct 1-on-1 engineering leadership for startups and D2C brands. I architect and execute full-stack Next.js apps, Shopify storefronts, n8n AI workflows, and technical SEO  backed by a vetted specialist network when your project requires scale.
           </motion.p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">

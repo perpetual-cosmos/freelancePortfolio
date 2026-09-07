@@ -26,7 +26,7 @@ const blogs: BlogPost[] = [
     hook: "Planning to launch an e-commerce store in India? Whether you are a D2C brand or an established retail business, understanding real Shopify development costs will save you lakhs in hidden fees. Here is a transparent breakdown of Shopify pricing in 2026.",
     fullScript: `[INTRODUCTION]
 
-Launching a Shopify store in India is one of the fastest ways to start selling online. But pricing varies wildly—from ₹15,000 for a basic setup to ₹2,50,000+ for a custom headless build. In this guide, we break down exact cost buckets so you can plan your e-commerce budget effectively.
+Launching a Shopify store in India is one of the fastest ways to start selling online. But pricing varies wildlyfrom ₹15,000 for a basic setup to ₹2,50,000+ for a custom headless build. In this guide, we break down exact cost buckets so you can plan your e-commerce budget effectively.
 
 [CORE CONCEPTS]
 
@@ -48,7 +48,7 @@ Step 3: Factor in payment gateway setup (Razorpay/Stripe/UPI) and automated What
 
 [ENGAGEMENT & SUMMARY]
 
-Are you planning to build a new Shopify store or overhaul an existing one? Contact Tarun Singh at TheUniPick for a custom scope & instant estimate. Summary: A professional Shopify store in India ranges from ₹35,000 to ₹80,000 for custom builds—focus on speed, checkout UX, and zero app bloat.`,
+Are you planning to build a new Shopify store or overhaul an existing one? Contact Tarun Singh at TheUniPick for a custom scope & instant estimate. Summary: A professional Shopify store in India ranges from ₹35,000 to ₹80,000 for custom buildsfocus on speed, checkout UX, and zero app bloat.`,
     description: "Discover real Shopify development costs in India for 2026. Detailed price breakdown for custom Liquid themes, payment gateways, and freelancer vs agency pricing.",
     tags: ['Shopify Pricing India', 'E-Commerce Costs', 'Shopify Development', 'D2C Growth', 'Web Development Pricing'],
     category: 'E-COMMERCE',
@@ -82,7 +82,7 @@ A SaaS startup client approached us after spending 4 months and $15,000 with a m
 
 How to decide for your business:
 Step 1: If your budget is under $5,000–$10,000 (₹50K–₹750K), hire a senior full-stack freelancer who takes full architectural ownership.
-Step 2: Require proof of work—demand live production URLs, GitHub repos, and client testimonials.
+Step 2: Require proof of workdemand live production URLs, GitHub repos, and client testimonials.
 Step 3: Ensure your developer understands business ROI, technical SEO, and conversion optimization, not just raw syntax.
 
 [ENGAGEMENT & SUMMARY]
