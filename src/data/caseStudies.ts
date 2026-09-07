@@ -199,10 +199,10 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Wavo.digital",
     client: "Oaksol Technologies",
     industry: "SaaS · AI Automation",
-    role: "Lead Full-Stack & API Architect (Sole Developer)",
+    role: "Contract Lead Full-Stack Engineer",
     timeline: "14 Weeks",
     liveUrl: "https://wavo.digital",
-    overview: "An enterprise WhatsApp marketing and AI automation platform engineered solo in 14 weeks — featuring real-time Facebook Graph Webhook ingestion, contextual AI reply engines, in-chat commerce, and multi-tenant client dashboards.",
+    overview: "An enterprise WhatsApp marketing and AI automation platform developed as a successful contractual engineering engagement — featuring real-time Facebook Graph Webhook ingestion, contextual AI reply engines, in-chat commerce, and multi-tenant client dashboards.",
     tagline: "Building an AI WhatsApp Marketing & Conversational Commerce SaaS from 0 to Enterprise Production.",
     heroImage: "/projects/wavo.png",
     stats: [
@@ -210,8 +210,8 @@ export const caseStudies: Record<string, CaseStudy> = {
       { label: "System Uptime", value: "99.9%", trend: "Zero Incidents" },
       { label: "Data Security", value: "100%", trend: "Zero Leaks" },
     ],
-    aboutClient: "Oaksol Technologies is an Indian technology startup focused on conversational commerce — using messaging platforms, particularly WhatsApp, to automate customer communication and drive sales for businesses. With over 500 million active WhatsApp users in India, SMBs and e-commerce brands respond to hundreds of customer messages daily manually. Founder Dhruv needed a high-performance system to automate routine inquiries, present product catalogs, and close sales directly inside WhatsApp.",
-    executiveSummary: "A funded Indian startup needed an enterprise-grade platform built from scratch in 14 weeks. Wavo.digital receives thousands of real-time Meta webhooks, processes them through an AI reply engine, executes in-chat commerce flows, and surfaces analytics in a multi-tenant React dashboard. Engineered solo by TheUnipick with 99.9% uptime since production release.",
+    aboutClient: "Oaksol Technologies is an Indian technology startup focused on conversational commerce — using messaging platforms, particularly WhatsApp, to automate customer communication and drive sales for businesses. Contractual Note: Wavo.digital was developed as a contractual client engagement. Tarun Singh provided full-stack architecture and lead contract engineering services.",
+    executiveSummary: "Developed as a contractual software engineering project for Oaksol Technologies. A funded Indian startup needed an enterprise-grade platform built from scratch in 14 weeks. Wavo.digital receives thousands of real-time Meta webhooks, processes them through an AI reply engine, executes in-chat commerce flows, and surfaces analytics in a multi-tenant React dashboard. Engineered by Tarun Singh as Contract Lead Software Engineer with 99.9% uptime since production release.",
     discoveryProcess: "We spent two weeks mapping the end-to-end journey for three distinct actors: business clients, end customers on WhatsApp, and platform administrators. We identified early that the Facebook Webhook Gateway was the critical path. Everything else — AI engine, dashboard, commerce flows — depended on a stable, high-throughput gateway for receiving and verifying messages. We prioritized stabilizing the webhook ingestion pipeline before layering UI and intelligence.",
     strategyRationale: "Node.js was chosen over Python for the core gateway because incoming webhooks (500+ events/sec under peak load) represent an I/O-bound workload, where Node's event-driven non-blocking architecture excels. Python was isolated strictly for CPU-bound AI context processing. Multi-tenancy was enforced at both the database schema level (tenant_id) and database middleware layer to prevent cross-tenant data leakage by design rather than relying solely on developer query discipline.",
     challenge: {
@@ -329,7 +329,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       primaryKeyword: "WhatsApp marketing platform development",
       secondaryKeywords: ["WhatsApp automation SaaS development", "Meta Graph API developer India", "multi-tenant SaaS architecture"],
       metaTitle: "Building an AI WhatsApp Marketing SaaS | Wavo.digital Case Study",
-      metaDescription: "How TheUnipick engineered Wavo.digital — an AI WhatsApp automation & commerce SaaS — solo in 14 weeks with 99.9% uptime."
+      metaDescription: "Case study on engineering Wavo.digital as a contract lead software engineer — an AI WhatsApp automation & commerce SaaS built in 14 weeks with 99.9% uptime."
     }
   },
   "dear-valentine": {

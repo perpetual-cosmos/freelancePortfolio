@@ -37,18 +37,23 @@ import {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const study = caseStudies[resolvedParams.slug];
-  if (!study) return { title: 'Case Study Not Found | TheUnipicks' };
+  if (!study) return { title: 'Case Study Not Found | TheUniPick' };
 
-  const metaTitle = study.seo?.metaTitle || `${study.title} Case Study | TheUnipicks`;
+  const metaTitle = study.seo?.metaTitle || `${study.title} Case Study | TheUniPick`;
   const metaDescription = study.seo?.metaDescription || study.tagline;
 
   return {
     title: metaTitle,
     description: metaDescription,
     keywords: study.seo?.secondaryKeywords || [study.industry, ...study.technologies],
+    alternates: {
+      canonical: `https://theunipick.com/case-study/${resolvedParams.slug}`,
+    },
     openGraph: {
       title: study.seo?.openGraphTitle || metaTitle,
       description: study.seo?.openGraphDescription || metaDescription,
+      url: `https://theunipick.com/case-study/${resolvedParams.slug}`,
+      siteName: 'TheUniPick',
       images: [{ url: study.heroImage, width: 1200, height: 630, alt: study.title }],
       type: 'article',
     },
@@ -56,6 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: metaTitle,
       description: metaDescription,
+      creator: '@perpetual_cosmos',
       images: [study.heroImage],
     },
   };
@@ -80,46 +86,46 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   const jsonLdGraph: Record<string, any>[] = [
     {
       '@type': 'Article',
-      '@id': `https://theunipicks.vercel.app/case-study/${slug}#article`,
+      '@id': `https://theunipick.com/case-study/${slug}#article`,
       'headline': study.seo?.metaTitle || study.title,
       'description': study.seo?.metaDescription || study.tagline,
-      'image': `https://theunipicks.vercel.app${study.heroImage}`,
+      'image': `https://theunipick.com${study.heroImage}`,
       'author': {
-        '@type': 'Organization',
-        'name': 'TheUnipicks',
-        'url': 'https://theunipicks.vercel.app',
+        '@type': 'Person',
+        'name': 'Tarun Singh',
+        'url': 'https://theunipick.com',
       },
       'publisher': {
         '@type': 'Organization',
-        'name': 'TheUnipicks',
+        'name': 'TheUniPick Studio',
         'logo': {
           '@type': 'ImageObject',
-          'url': 'https://theunipicks.vercel.app/logo.png',
+          'url': 'https://theunipick.com/theunipicklogo.png',
         },
       },
-      'mainEntityOfPage': `https://theunipicks.vercel.app/case-study/${slug}`,
+      'mainEntityOfPage': `https://theunipick.com/case-study/${slug}`,
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': `https://theunipicks.vercel.app/case-study/${slug}#breadcrumb`,
+      '@id': `https://theunipick.com/case-study/${slug}#breadcrumb`,
       'itemListElement': [
         {
           '@type': 'ListItem',
           'position': 1,
           'name': 'Home',
-          'item': 'https://theunipicks.vercel.app',
+          'item': 'https://theunipick.com',
         },
         {
           '@type': 'ListItem',
           'position': 2,
           'name': 'Portfolio',
-          'item': 'https://theunipicks.vercel.app/portfolio',
+          'item': 'https://theunipick.com/portfolio',
         },
         {
           '@type': 'ListItem',
           'position': 3,
           'name': study.title,
-          'item': `https://theunipicks.vercel.app/case-study/${slug}`,
+          'item': `https://theunipick.com/case-study/${slug}`,
         },
       ],
     },
@@ -128,7 +134,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   if (study.faqs && study.faqs.length > 0) {
     jsonLdGraph.push({
       '@type': 'FAQPage',
-      '@id': `https://theunipicks.vercel.app/case-study/${slug}#faq`,
+      '@id': `https://theunipick.com/case-study/${slug}#faq`,
       'mainEntity': study.faqs.map((faq) => ({
         '@type': 'Question',
         'name': faq.question,

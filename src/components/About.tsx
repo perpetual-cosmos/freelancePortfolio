@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Zap, Cpu, Award, Users } from 'lucide-react';
 
 const stats = [
-  { label: 'Projects Shipped', value: '30+', sub: 'Real clients, real results', icon: <Zap size={18} /> },
+  { label: 'Projects Shipped', value: '50+', sub: 'Real clients, real results', icon: <Zap size={18} /> },
   { label: 'Experience', value: '3 years', sub: 'Full-stack + SEO', icon: <Award size={18} /> },
   { label: 'SaaS Users', value: '1K+', sub: 'Dear Valentine platform', icon: <Users size={18} /> },
   { label: 'Countries', value: '70+', sub: 'Global users', icon: <ShieldCheck size={18} /> },
@@ -27,7 +27,7 @@ const About = () => {
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-[rgba(99,0,226,0.08)] aspect-[3/4] sm:aspect-[4/5] max-h-[380px] sm:max-h-[420px] lg:max-h-[460px] w-full">
             <img
               src="/tarunsinghmod.png"
-              alt="TheUnipick  Full-Stack Development Team"
+              alt="Tarun Singh — Principal Full-Stack Engineer and Technical SEO Lead at TheUniPick Studio"
               className="w-full h-full object-cover object-[center_12%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
@@ -38,10 +38,10 @@ const About = () => {
                 <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 rounded-full bg-primary flex items-center justify-center text-white shrink-0">
                   <Users size={12} />
                 </div>
-                <span className="text-white/80 font-black text-[0.55rem] sm:text-[0.6rem] tracking-[0.15em] sm:tracking-[0.2em] uppercase">TheUnipick · Engineering Team</span>
+                <span className="text-white/80 font-black text-[0.55rem] sm:text-[0.6rem] tracking-[0.15em] sm:tracking-[0.2em] uppercase">Tarun Singh · Lead Engineer & Studio</span>
               </div>
               <p className="text-white text-[0.85rem] sm:text-[1rem] lg:text-[1.15rem] font-bold leading-snug font-display tracking-tight italic">
-                "Everything we build is live, real, and engineered for performance."
+                "Everything I build is live, performant, and engineered for revenue growth."
               </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ const About = () => {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-3 right-3 sm:-top-4 sm:-right-4 lg:-top-5 lg:-right-6 bg-white/90 backdrop-blur-xl border border-white/60 shadow-lg sm:shadow-xl px-2.5 py-1.5 sm:px-4 sm:py-3 lg:px-5 lg:py-4 rounded-lg sm:rounded-2xl z-20"
           >
-            <div className="text-primary font-black text-[1.1rem] sm:text-[1.7rem] lg:text-[2rem] font-display leading-none">30+</div>
+            <div className="text-primary font-black text-[1.1rem] sm:text-[1.7rem] lg:text-[2rem] font-display leading-none">50+</div>
             <div className="text-on-surface-muted font-black text-[0.4rem] sm:text-[0.5rem] lg:text-[0.55rem] tracking-[0.12em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1">
               Projects Shipped
             </div>
@@ -67,13 +67,13 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/5 border border-primary/10 text-primary font-extrabold text-[0.68rem] sm:text-[0.72rem] tracking-wide mb-4 sm:mb-5 lg:mb-6">
-              <Users size={14} /> <span>About TheUnipick</span>
+              <Users size={14} /> <span>About Tarun Singh & TheUniPick</span>
             </div>
             <h2 className="text-[clamp(1.6rem,4vw,2.8rem)] font-extrabold leading-[1.1] tracking-tight mb-4 sm:mb-5 lg:mb-6 text-on-surface font-display">
-              TheUnipick  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Builders First.</span>
+              Tarun Singh — <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Architect & Lead Engineer.</span>
             </h2>
             <p className="text-on-surface-variant text-[0.9rem] sm:text-[0.95rem] lg:text-[1.05rem] mb-6 sm:mb-8 lg:mb-10 leading-relaxed font-medium opacity-85">
-              We are a full-stack development and SEO powerhouse. Over 3 years, we've shipped 30+ live products  from SaaS platforms with global reach, to e-commerce stores ranking #1, to production codebases rescued under pressure. We build and we ship.
+              I am a principal full-stack engineer and technical SEO specialist leading TheUniPick Studio. Over 3+ years, I have architected and shipped 50+ live products — from SaaS platforms with global reach to #1 ranking Shopify e-commerce stores. I lead every technical build and collaborate with a vetted network of specialist freelancers to deliver complete digital systems.
             </p>
           </motion.div>
 

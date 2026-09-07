@@ -1,147 +1,164 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, ShieldCheck, Zap, Rocket, Globe, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sparkles, Rocket, Users, Zap, Star, User } from 'lucide-react';
 import Link from 'next/link';
 
+const avatars = [
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
+];
+
 const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.08 } }
-  };
-  const itemVariants = {
-    hidden: { opacity: 1, y: 0 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as any } }
-  };
-
-  const glassClass = "bg-white/60 backdrop-blur-xl border border-white/40 shadow-2xl";
-  const glassDarkClass = "bg-slate-900/75 backdrop-blur-xl border border-white/10 shadow-2xl text-white";
-
   return (
-    <section className="relative min-h-[80vh] lg:min-h-[88vh] pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12 flex items-center overflow-hidden bg-background">
-      {/* Rich Multi-Layer Architectural Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-        {/* Layer 1: Tech Grid Pattern Mesh with Radial Mask Vignette */}
-        <div className="absolute inset-0 bg-tech-grid radial-mask-vignette opacity-80" />
+    <section className="relative pt-20 sm:pt-24 lg:pt-28 pb-14 sm:pb-20 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#FAF9FE] via-[#F6F3FE] to-white">
+      {/* Soft Ambient Background Glows */}
+      <div className="absolute top-1/4 right-0 w-[700px] h-[700px] bg-gradient-to-br from-purple-300/35 via-fuchsia-200/25 to-transparent blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-10 left-10 w-[450px] h-[450px] bg-purple-200/25 blur-[130px] rounded-full pointer-events-none" />
 
-        {/* Layer 2: 3-Point Ambient Color Atmosphere */}
-        <div className="absolute -top-[20%] -right-[12%] w-[68vw] h-[68vw] bg-primary/12 blur-[150px] rounded-full animate-orb-float-1 pointer-events-none" />
-        <div className="absolute -bottom-[15%] -left-[8%] w-[55vw] h-[55vw] bg-secondary/10 blur-[140px] rounded-full animate-orb-float-2 pointer-events-none" />
-        <div className="absolute top-[10%] left-[25%] w-[35vw] h-[35vw] bg-tech-teal/8 blur-[130px] rounded-full animate-pulse-glow pointer-events-none" />
-
-        {/* Layer 3: Top Ambient Light Reflection Beam */}
-        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
-        {/* Layer 4: Tactical Grain Overlay */}
-        <div className="absolute inset-0 opacity-[0.02] bg-[url('data:image/svg+xml,%3Csvg viewBox=%270 0 200 200%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E')]" />
-      </div>
-
-      <div className="max-w-[1440px] my-8 mx-auto px-4 sm:px-8 lg:px-16 relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-16 items-center">
-        {/* Left: Text Content  Instant SSR paint with vibrant micro-interactions */}
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="text-center lg:text-left">
-          {/* Headline  Animated Gradient Shift */}
-          <motion.h1 variants={itemVariants} className="text-[clamp(2.1rem,6vw,4.8rem)] font-extrabold leading-[0.95] tracking-tighter mb-4 sm:mb-5 lg:mb-6 text-on-surface font-display">
-            We Build Websites <br className="hidden sm:block" />That <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent drop-shadow-sm">Rank, Convert</span> <br className="hidden lg:block" />& Scale.
-          </motion.h1>
-
-          {/* Subheadline */}
-          <motion.p variants={itemVariants} className="text-on-surface-variant max-w-[540px] mx-auto lg:mx-0 mb-6 sm:mb-8 text-[0.92rem] sm:text-[1rem] lg:text-[1.12rem] leading-relaxed font-medium opacity-90">
-            From Shopify stores to Next.js apps, WordPress to AI automations  we ship complete digital products with measurable results. No fluff. Just code that works.
-          </motion.p>
-
-          {/* Quick proof points  inline */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 justify-center lg:justify-start mb-6 sm:mb-8 text-on-surface-muted">
-            <span className="text-[0.72rem] sm:text-[0.78rem] font-extrabold tracking-tight">Clients from India, USA, UK · Wavo · Alumnipp · BlackArt Tattoo · Dear Valentine</span>
-          </motion.div>
-
-          {/* CTA Buttons  Dynamic Sheen & Glow */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 lg:mb-12">
-            <Link href="/audit" className="relative inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 lg:px-11 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-primary via-primary-light to-secondary text-white font-display font-black text-[0.8rem] sm:text-[0.85rem] tracking-wide shadow-[0_10px_35px_-5px_rgba(99,0,226,0.45)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_45px_-5px_rgba(99,0,226,0.6)] active:scale-95 overflow-hidden group">
-              <span className="relative z-10 flex items-center gap-2">
-                Get Free Website Audit
-                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1.5" />
-              </span>
-              <div className="absolute inset-0 bg-white/25 -translate-x-full group-hover:animate-shimmer" />
-            </Link>
-            <Link href="/portfolio" className="inline-flex items-center justify-center gap-2 px-7 sm:px-9 lg:px-11 py-3.5 sm:py-4 rounded-full bg-white/90 backdrop-blur-md text-on-surface font-display font-black text-[0.8rem] sm:text-[0.85rem] border border-[rgba(99,0,226,0.12)] shadow-sm transition-all duration-500 hover:border-primary hover:text-primary hover:bg-primary/5 hover:shadow-[0_8px_25px_rgba(99,0,226,0.12)] hover:-translate-y-1 active:scale-95 group">
-              See Our Work
-              <Rocket size={16} className="text-on-surface-muted group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </motion.div>
-
-          {/* Trust Metrics  Interactive Glass Cards */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-5 pt-6 sm:pt-8 border-t border-[rgba(99,0,226,0.08)]">
-            {[
-              { label: 'Projects Shipped', value: '30+', icon: <Zap size={16} />, color: 'text-amber-500' },
-              { label: 'Global Clients', value: '70+', icon: <Globe size={16} />, color: 'text-teal-600' },
-              { label: 'Active SaaS Users', value: '1K+', icon: <ShieldCheck size={16} />, color: 'text-secondary' }
-            ].map((stat, idx) => (
-              <div key={idx} className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-[rgba(99,0,226,0.08)] shadow-sm transition-all duration-300 hover:border-primary/25 hover:shadow-md hover:bg-white hover:-translate-y-0.5 group">
-                <div className={`p-2 rounded-xl bg-primary/5 transition-colors group-hover:bg-primary/10 ${stat.color}`}>
-                  {stat.icon}
-                </div>
-                <div className="text-left">
-                  <div className="text-on-surface font-black text-[1.1rem] sm:text-[1.25rem] lg:text-[1.35rem] font-display leading-none">{stat.value}</div>
-                  <div className="text-on-surface-muted font-extrabold text-[0.55rem] tracking-wider uppercase mt-0.5">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Right: Premium 3D Mockup Showcase  Interactive floating depth */}
+      <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-4 xl:gap-8 items-center">
+        {/* Left Column (5 Cols) */}
         <motion.div
-          initial={{ opacity: 1, scale: 1, rotateY: -8 }}
-          animate={{ opacity: 1, scale: 1, rotateY: -8 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as any }}
-          className="relative hidden lg:flex lg:h-[520px] xl:h-[600px] items-center justify-end"
-          style={{ perspective: '2000px' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 xl:col-span-5 text-left"
         >
-          <div className="relative group cursor-pointer">
-            {/* Ambient Pulsing Aura behind mockup */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/20 via-secondary/15 to-tech-teal/20 blur-[100px] rounded-full -z-10 animate-pulse-glow" />
+          {/* Top Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3E8FF] border border-[#E9D5FF] text-[#9333EA] font-extrabold text-[0.68rem] sm:text-[0.74rem] tracking-wider uppercase mb-6 shadow-sm">
+            <Sparkles size={14} className="text-[#9333EA]" />
+            <span>TARUN SINGH • FREELANCE FULL STACK ENGINEER & SEO LEAD</span>
+          </div>
 
-            {/* Main Visual Frame */}
-            <motion.div
-              className="relative z-10 rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-[0_30px_70px_-15px_rgba(99,0,226,0.25)] border border-white/40 transition-all duration-700 group-hover:shadow-[0_40px_90px_-15px_rgba(99,0,226,0.35)]"
-              style={{ transformStyle: 'preserve-3d' }}
-              whileHover={{ rotateY: -3, rotateX: 2, scale: 1.02 }}
-            >
-              <img src="/hero_premium_dashboard.png" alt="Engineering Interface Showcase" className="w-full max-w-[520px] h-auto block" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-white/10 pointer-events-none mix-blend-overlay" />
-            </motion.div>
+          {/* Main Headline */}
+          <h1 className="text-[clamp(2.3rem,4.5vw,4.1rem)] font-black text-[#0F172A] leading-[1.05] font-display tracking-tight mb-5">
+            We Build Websites <br />
+            That{" "}
+            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#C026D3] to-[#E11D48]">
+              Rank, Convert
+              {/* Curved underline stroke */}
+              <svg
+                className="absolute -bottom-2.5 left-0 w-full h-3 text-[#C026D3]"
+                viewBox="0 0 200 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 9C55 2.5 145 2.5 197 9"
+                  stroke="currentColor"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            <span className="inline-block ml-1 relative text-[#C026D3]">
+              {/* Spark doodle */}
+              <svg className="w-5 h-5 absolute -top-4 -right-3 text-[#C026D3] animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+              </svg>
+            </span>
+            <br />
+            & Scale.
+          </h1>
 
-            {/* Floating Badge 1  Web Vitals 100 */}
-            <motion.div
-              animate={{ y: [0, -14, 0], rotateZ: [-1.5, 0.5, -1.5] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className={`${glassClass} absolute z-20 -top-6 -left-8 xl:-top-8 xl:-left-10 flex items-center gap-3.5 px-4 py-3 xl:px-5 xl:py-3.5 rounded-2xl border border-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.08)]`}
+          {/* Subtext */}
+          <p className="text-slate-600 text-base sm:text-lg font-medium leading-relaxed max-w-[540px] mb-8">
+            From Next.js web apps to custom Shopify stores, n8n AI automations to Technical SEO — Tarun Singh & TheUnipick Studio ship high-performing digital products built for revenue growth.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            <Link
+              href="/audit"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#D946EF] text-white font-bold text-sm tracking-wide shadow-[0_10px_30px_-5px_rgba(147,51,234,0.4)] hover:shadow-[0_15px_35px_-5px_rgba(147,51,234,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
-              <div className="relative w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-tech-teal/15 border-2 border-tech-teal flex items-center justify-center text-[0.85rem] xl:text-[1rem] font-black text-tech-teal shadow-[0_0_15px_rgba(45,212,191,0.3)]">
-                100
-                <div className="absolute inset-0 rounded-full border border-tech-teal animate-ping opacity-30" />
+              Get Free Website Audit <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/hire"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-slate-800 font-bold text-sm border border-slate-200/90 shadow-sm hover:border-purple-300 hover:bg-slate-50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            >
+              Hire Tarun <User size={18} className="text-slate-600" />
+            </Link>
+          </div>
+
+          {/* Proof Metrics Row */}
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-8 border-t border-slate-200/70 mb-8">
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-full bg-[#F3E8FF] text-[#9333EA] flex items-center justify-center shrink-0 shadow-sm">
+                <Rocket size={20} />
               </div>
               <div>
-                <div className="text-[0.75rem] xl:text-[0.82rem] font-black text-on-surface leading-tight">Web Vitals</div>
-                <div className="text-[0.55rem] text-tech-teal font-extrabold tracking-widest uppercase mt-0.5">PERFECT SCORE</div>
+                <div className="text-xl font-black font-display text-slate-900 leading-none">50+</div>
+                <div className="text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">PROJECTS DELIVERED</div>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Floating Badge 2  Live Radar Status */}
-            <motion.div
-              animate={{ y: [0, 12, 0], rotateZ: [1.5, -0.5, 1.5] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className={`${glassDarkClass} absolute z-20 -bottom-5 -right-6 xl:-bottom-7 xl:-right-8 flex flex-col items-start gap-1 px-5 py-3.5 xl:px-6 xl:py-4 rounded-2xl border border-white/15 shadow-[0_20px_45px_rgba(0,0,0,0.3)]`}
-            >
-              <div className="flex items-center gap-2">
-                <div className="relative w-2.5 h-2.5">
-                  <div className="w-full h-full rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]" />
-                  <div className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75" />
-                </div>
-                <span className="text-[0.6rem] xl:text-[0.65rem] font-black tracking-[0.2em] text-emerald-400 uppercase">STATUS: LIVE</span>
+            <div className="hidden sm:block h-8 w-[1px] bg-slate-200" />
+
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-full bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center shrink-0 shadow-sm">
+                <Users size={20} />
               </div>
-              <div className="text-[0.75rem] xl:text-[0.82rem] text-white font-mono font-black tracking-tight mt-0.5">PRODUCTION_v2.4</div>
-            </motion.div>
+              <div>
+                <div className="text-xl font-black font-display text-slate-900 leading-none">70+</div>
+                <div className="text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">HAPPY CLIENTS</div>
+              </div>
+            </div>
+
+            <div className="hidden sm:block h-8 w-[1px] bg-slate-200" />
+
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-full bg-[#FAE8FF] text-[#C026D3] flex items-center justify-center shrink-0 shadow-sm">
+                <Zap size={20} />
+              </div>
+              <div>
+                <div className="text-xl font-black font-display text-slate-900 leading-none">1K+</div>
+                <div className="text-[0.62rem] font-extrabold tracking-wider text-slate-400 uppercase mt-1">ACTIVE RESELLERS</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Rating & Social Proof Row */}
+          <div className="flex items-center gap-3.5">
+            <div className="flex -space-x-2.5 overflow-hidden">
+              {avatars.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt="Client avatar"
+                  className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover"
+                />
+              ))}
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} fill="currentColor" />
+                ))}
+              </div>
+              <span className="text-xs font-semibold text-slate-500 mt-0.5">
+                Trusted by business owners worldwide
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right Column: Larger & Fully Responsive Showcase Image (7 Cols) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+          className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center lg:justify-end mt-4 lg:mt-0"
+        >
+          <div className="relative w-full max-w-[760px] lg:max-w-none lg:w-[114%] xl:w-[122%] 2xl:w-[128%] lg:-mr-12 xl:-mr-20 2xl:-mr-28">
+            <img
+              src="/herosectionimage.png"
+              alt="TheUniPick Full-Stack Web Application and Technical SEO Dashboard Showcase"
+              className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(124,58,237,0.15)] hover:scale-[1.015] transition-transform duration-500"
+            />
           </div>
         </motion.div>
       </div>

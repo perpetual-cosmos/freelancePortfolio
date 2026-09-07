@@ -16,8 +16,49 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "TheUnipick | Full-Stack Development & SEO Team  We Build Websites That Rank, Convert & Scale",
-  description: "Expert full-stack development team specializing in Next.js, Shopify, AI automations, and SEO. 5+ years experience, 30+ live products shipped. Get a free website audit today.",
+  metadataBase: new URL('https://theunipick.com'),
+  title: {
+    default: "TheUniPick | Freelance Full-Stack Developer & SEO Specialist — Tarun Singh",
+    template: "%s | TheUniPick"
+  },
+  description: "Principal full-stack engineer Tarun Singh & studio at TheUniPick. Specializing in Next.js, Shopify, AI automations (n8n), and Technical SEO. 50+ live products shipped. Request a free audit.",
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "TheUniPick | Freelance Full-Stack Developer & SEO Specialist",
+    description: "Principal full-stack engineer Tarun Singh & studio at TheUniPick. Specializing in Next.js, Shopify, AI automations, and Technical SEO.",
+    url: 'https://theunipick.com',
+    siteName: 'TheUniPick',
+    images: [
+      {
+        url: '/theunipicklogo.png',
+        width: 1200,
+        height: 630,
+        alt: 'TheUniPick — Full-Stack Development & SEO Studio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "TheUniPick | Freelance Full-Stack Developer & SEO Specialist",
+    description: "Principal full-stack engineer Tarun Singh & studio at TheUniPick. Next.js, Shopify, AI automations, and SEO.",
+    creator: '@perpetual_cosmos',
+    images: ['/theunipicklogo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -28,29 +69,76 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLdGraph = [
+  {
+    "@type": "WebSite",
+    "@id": "https://theunipick.com/#website",
+    "url": "https://theunipick.com",
+    "name": "TheUniPick",
+    "description": "Full-stack web development, Shopify, AI automation, and SEO services by Tarun Singh.",
+    "publisher": {
+      "@id": "https://theunipick.com/#person"
+    },
+    "inLanguage": "en-US"
+  },
+  {
+    "@type": "Person",
+    "@id": "https://theunipick.com/#person",
+    "name": "Tarun Singh",
+    "jobTitle": "Principal Full-Stack Engineer & Technical SEO Specialist",
+    "worksFor": {
+      "@id": "https://theunipick.com/#organization"
+    },
+    "url": "https://theunipick.com",
+    "email": "tarun@theunipick.com",
+    "telephone": "+91-9451172458",
+    "sameAs": [
+      "https://x.com/perpetual_cosmos",
+      "https://github.com/perpetual-cosmos"
+    ],
+    "knowsAbout": [
+      "Full-Stack Web Development",
+      "Next.js",
+      "React",
+      "Shopify Liquid",
+      "AI Automations",
+      "n8n",
+      "Technical SEO",
+      "Core Web Vitals"
+    ]
+  },
+  {
+    "@type": "LocalBusiness",
+    "@id": "https://theunipick.com/#organization",
+    "name": "TheUniPick Studio",
+    "url": "https://theunipick.com",
+    "logo": "https://theunipick.com/theunipicklogo.png",
+    "image": "https://theunipick.com/tarunsinghmod.png",
+    "description": "Full-stack development and SEO studio led by Tarun Singh. Building high-ranking, fast, and converting websites, Shopify stores, and AI automation workflows.",
+    "founder": {
+      "@id": "https://theunipick.com/#person"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kanpur",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "26.4499",
+      "longitude": "80.3319"
+    },
+    "telephone": "+91-9451172458",
+    "email": "tarun@theunipick.com",
+    "priceRange": "₹₹",
+    "knowsAbout": ["Next.js", "Shopify", "WordPress", "AI Automation", "SEO", "React", "Node.js", "n8n", "Web Development"]
+  }
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "TheUnipick",
-  "url": "https://theunipicks.vercel.app/",
-  "logo": "https://theunipicks.vercel.app/theunipicklogo.png",
-  "image": "https://theunipicks.vercel.app/og-image.png",
-  "description": "We build production-ready web products  from idea to ranked, converting website. Specializing in Next.js, Shopify, WordPress, and AI automation.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Kanpur",
-    "addressRegion": "Uttar Pradesh",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "26.4499",
-    "longitude": "80.3319"
-  },
-  "telephone": "+91-9451172458",
-  "email": "tarun@theunipick.com",
-  "priceRange": "₹₹",
-  "knowsAbout": ["Next.js", "Shopify", "WordPress", "AI Automation", "SEO", "React", "Node.js", "n8n", "Web Development"]
+  "@graph": jsonLdGraph
 };
 
 export default function RootLayout({

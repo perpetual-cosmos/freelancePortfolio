@@ -19,7 +19,7 @@ const Footer = () => {
               <img src="/theunipicklogo.png" alt="TheUnipick" className="h-10 sm:h-12 lg:h-14 w-auto object-contain" />
             </div>
             <p className="text-[#565677] text-[0.95rem] leading-relaxed font-medium mb-8 pr-4 opacity-80">
-              Full-stack development team for Indian startups  we build web, Shopify, AI automation, and SEO that actually converts.
+              Full-stack development & SEO studio led by Tarun Singh. Building high-ranking web apps, Shopify stores, and n8n AI automations.
             </p>
             <div className="flex gap-4">
               {[
@@ -82,11 +82,11 @@ const Footer = () => {
             <h4 className="font-black text-[0.7rem] mb-8 text-[#1a1a2e] tracking-[0.2em] uppercase opacity-40 font-mono">/ COMPANY</h4>
             <nav className="flex flex-col gap-4">
               {[
-                { label: 'About', href: '/about' },
+                { label: 'About Tarun', href: '/about' },
+                { label: 'Hire Me', href: '/hire' },
                 { label: 'Portfolio', href: '/portfolio' },
                 { label: 'Industries', href: '/industries/ecommerce' },
                 { label: 'Contact', href: '/contact' },
-                { label: 'Book a Call', href: '/contact' },
               ].map(item => (
                 <a key={item.label} href={item.href} className="text-[0.9rem] text-[#565677] font-bold hover:text-primary transition-colors no-underline">
                   {item.label}

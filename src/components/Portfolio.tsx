@@ -41,8 +41,8 @@ const projects = [
     title: "Wavo.digital",
     category: "SAAS • AI AUTOMATION",
     year: "2024",
-    desc: "Enterprise WhatsApp & Voice AI automation dashboard for a startup. Contractual work from scratch to production.",
-    stats: [{ label: "Role", value: "Software Engineer" }, { label: "Tech", value: "AI Automation" }],
+    desc: "Enterprise WhatsApp & Voice AI automation dashboard. Developed as a successful contractual engineering engagement from architecture to production.",
+    stats: [{ label: "Role", value: "Contract Engineer" }, { label: "Tech", value: "AI & Webhooks" }],
     image: "/projects/wavo.png",
     color: "#8b5cf6",
     tags: ["React", "Node.js", "MongoDB", "REST APIs"],
@@ -146,16 +146,16 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
           <div className="relative rounded-2xl overflow-hidden border border-white/8 shadow-lg aspect-[16/10] bg-[#0a0a0a] group/img cursor-pointer">
             <img
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} — ${project.category} case study by TheUniPick`}
               className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover/img:scale-105 opacity-85 group-hover/img:opacity-100"
             />
             {/* Hover Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-400 flex items-end p-4 sm:p-5">
               <div className="flex gap-2">
-                <a href={project.link} target="_blank" rel="noreferrer" className="p-2 sm:p-2.5 rounded-lg bg-white text-black hover:bg-primary hover:text-white transition-all shadow-md scale-0 group-hover/img:scale-100 duration-300 delay-75">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 sm:p-2.5 rounded-lg bg-white text-black hover:bg-primary hover:text-white transition-all shadow-md scale-0 group-hover/img:scale-100 duration-300 delay-75">
                   <ExternalLink size={14} />
                 </a>
-                <a href={project.link} target="_blank" rel="noreferrer" className="p-2 sm:p-2.5 rounded-lg bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-black transition-all shadow-md scale-0 group-hover/img:scale-100 duration-300 delay-150">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 sm:p-2.5 rounded-lg bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-black transition-all shadow-md scale-0 group-hover/img:scale-100 duration-300 delay-150">
                   <Github size={14} />
                 </a>
               </div>
