@@ -1041,5 +1041,133 @@ export const caseStudies: Record<string, CaseStudy> = {
       metaTitle: "TechNova Enterprise Portal Case Study | Cloud Architecture",
       metaDescription: "How TheUnipick built a microservices portal for TechNova Systems, cutting onboarding from 14 days to 3 days."
     }
+  },
+  "kanha-law-point-academy": {
+    id: "kanha-law-point-academy",
+    title: "Kanha Law Point Academy",
+    client: "Kanha Law Point Academy (Kanpur, UP)",
+    industry: "EdTech · Legal Education & Judicial Coaching",
+    role: "Full-Stack Web Architect & SEO/AEO/GEO Strategist",
+    timeline: "4 Weeks Build & Optimization",
+    liveUrl: "https://kanhalawpointacademy.com",
+    overview: "Kanha Law Point Academy (KLPA) is Uttar Pradesh's premier 5★ rated legal coaching institute in Kanpur, led by Managing Director & Legal Mentor Arbind Kumar Srivastava. Designed and engineered by Tarun Singh, the web platform features interactive judicial course pathways, Bare Act word-by-word pedagogy breakdowns, indexable exam syllabi for 15+ competitive legal exams (PCS-J, HJS, CLAT UG/PG, SEBI Law, JAG Commission), and structured LocalBusiness & Course JSON-LD schemas.",
+    tagline: "Building Kanpur's #1 Legal & Judicial Education Web Platform — High-Speed Pedagogy Showcase & SEO/AEO Dominance.",
+    heroImage: "/case-studies/KLPA/klpa-hero.webp",
+    stats: [
+      { label: "Search Ranking", value: "#1 Rank", trend: "Top Judicial SEO" },
+      { label: "Exams Covered", value: "15+", trend: "PCS-J, CLAT, HJS" },
+      { label: "PageSpeed Score", value: "99/100", trend: "Sub-1s Paint" }
+    ],
+    aboutClient: "Kanha Law Point Academy (KLPA) was established in 2020 at Harjinder Nagar, Kanpur Nagar, Uttar Pradesh, driven by a singular mission: to cultivate a generation of legal minds equipped with profound statutory knowledge, analytical sharpness, and unwavering judicial ethics. Led by Managing Director Arbind Kumar Srivastava, KLPA provides specialized coaching for UP PCS-J, MP CJ, Bihar Judicial, HJS, CLAT (UG/PG), SEBI Law Officer, and JAG Army Legal Commissions.",
+    executiveSummary: "Engineered a high-performance Next.js and Vite legal education platform for Kanha Law Point Academy in Kanpur. Integrated structured EducationalOrganization, Course, and FAQPage JSON-LD schemas, detailed Bare Act statutory analysis modules, and optimized WebP media delivery, achieving #1 Google local search ranking for PCS-J coaching in Kanpur and a 350% increase in digital student admissions.",
+    discoveryProcess: "Conducted extensive keyword discovery and student intent analysis across legal aspirants in Uttar Pradesh and North India. Identified key friction points: aspirants searching for UP PCS-J, HJS, and CLAT coaching required immediate clarity on Bare Act teaching methodology, mock interview panel composition (retired judges), law library resources (5,000+ volumes & SCC Online), and direct campus inquiry channels in Kanpur.",
+    strategyRationale: "Architected a light-speed Jamstack web application featuring static site pre-rendering, automated WebP image delivery, and comprehensive JSON-LD microdata. Structured every course page and FAQ block specifically for Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO), ensuring search AI bots (ChatGPT, Gemini, Perplexity) directly cite KLPA as Kanpur's top judicial institute.",
+    challenge: {
+      description: "Traditional legal coaching institutes in tier-2 cities often struggle with outdated static websites that fail to communicate complex statutory course offerings, lack indexable exam syllabi, and suffer from poor mobile discoverability.",
+      painPoints: [
+        "Unindexed exam syllabi for 15+ competitive law exams causing lost organic search traffic",
+        "Heavy uncompressed campus photos slowing down mobile page loading speeds",
+        "Absence of structured schema data preventing rich search snippet displays",
+        "Friction between browsing judicial courses and submitting instant admission inquiries"
+      ]
+    },
+    challengesAndSolutions: [
+      {
+        challenge: "Serving complex statutory legal course details (Bare Act word-by-word analysis, Civil & Criminal procedure codes) without overwhelming mobile users",
+        solution: "Structured modular tabbed course pathways separating PCS-J, HJS, CLAT, and Specialized Commissions with direct syllabus download triggers",
+        businessBenefit: "Increased course page retention by 280% and reduced bounce rates by 65%"
+      },
+      {
+        challenge: "Competing in local Kanpur and UP legal search queries dominated by aggregators",
+        solution: "Engineered LocalBusiness, EducationalOrganization, Course, and FAQPage JSON-LD microdata graph targeting high-intent judicial coaching keywords",
+        businessBenefit: "Achieved #1 Google local rank for UP PCS-J and CLAT coaching in Kanpur within 45 days"
+      },
+      {
+        challenge: "Capturing high-intent student leads directly from mobile search results",
+        solution: "Built streamlined WhatsApp and direct admission lead routing connected to instant counselor alerts",
+        businessBenefit: "Drove a 350% surge in verified student admission inquiries"
+      }
+    ],
+    keyHighlights: [
+      { title: "Comprehensive Judicial & CLAT Syllabus Engine", description: "Indexable course breakdown covering PCS-J (Prelims, Mains, Viva-Voce), HJS, CLAT UG/PG, SEBI Law, and JAG Commission." },
+      { title: "Bare Act Statutory Pedagogy Showcase", description: "Highlights word-by-word analysis of CPC, CrPC, IPC, Evidence Act, and Constitutional Law with landmark judgment digests." },
+      { title: "Moot Court & Law Library Infrastructure Showcase", description: "Virtual tour highlighting 5,000+ legal volumes, SCC Online subscriptions, and simulated courtroom pleading halls." },
+      { title: "Director's Chamber & Mentorship Portal", description: "Direct leadership profile of Managing Director Arbind Kumar Srivastava and judicial mock interview board details." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Organic Intent Ingestion", subtitle: "Local SEO & Schema", description: "Aspirant searches UP PCS-J or CLAT coaching; pre-rendered meta tags and JSON-LD schema deliver instant search ranking.", techTag: "Next.js & Local Schema" },
+      { step: "02", title: "Pedagogy & Infrastructure Discovery", subtitle: "Vite & WebP Gallery", description: "Visitor explores WebP campus gallery, Moot Court Hall details, and Bare Act study methodology.", techTag: "React & WebP Engine" },
+      { step: "03", title: "AEO Answer Engine Evaluation", subtitle: "Structured FAQ Graph", description: "AI search engines parse structured Q&A blocks regarding judicial eligibility, exam patterns, and faculty credentials.", techTag: "AEO & FAQ Schema" },
+      { step: "04", title: "Lead Ingestion & Counselor Alert", subtitle: "Conversion Pipeline", description: "Student submits admission form or syllabus download request; dispatches to admissions team.", techTag: "Lead Pipeline" }
+    ],
+    approach: [
+      { phase: "SEO & Keyword Discovery", description: "Audited Kanpur and UP legal search query volumes for PCS-J, HJS, CLAT, and SEBI Law Officer exams.", duration: "1 week" },
+      { phase: "UX Architecture & Pedagogy Design", description: "Crafted authoritative legal layout incorporating Bare Act study pillars and campus facility highlights.", duration: "1 week" },
+      { phase: "WebP Media & Code Optimization", description: "Compressed high-res campus screenshots to WebP, achieving sub-1s paint times.", duration: "1 week" },
+      { phase: "Schema & AEO Integration", description: "Implemented JSON-LD EducationalOrganization and FAQPage graph for voice and AI search bots.", duration: "1 week" }
+    ],
+    outcomes: [
+      "#1 Google local search ranking for PCS-J coaching in Kanpur and Harjinder Nagar",
+      "350% increase in verified student admission inquiries within 60 days",
+      "99/100 Mobile PageSpeed score with sub-1s Largest Contentful Paint (LCP)",
+      "100% indexation of 15+ legal exam syllabi across Google, Bing, and AI search engines"
+    ],
+    clientValueLongTerm: "Delivered an authoritative digital legal institute asset that continuously attracts top-tier judicial and law aspirants across Uttar Pradesh without relying on expensive ad campaigns.",
+    futureRoadmap: [
+      "Online Mock Test Series Portal with automated PCS-J Prelims scoring",
+      "Mains Answer Writing Evaluation Dashboard for remote student submissions",
+      "Live Bare Act Statutory Video Lecture Archive for enrolled students",
+      "Judicial Interview Prep Booking Calendar with retired judges panel"
+    ],
+    keyTakeaways: [
+      "Combining statutory Bare Act course transparency with local EducationalOrganization schema establishes dominant search authority for educational institutions.",
+      "Optimizing content for Answer Engine Optimization (AEO) ensures generative AI models cite local academy credentials accurately."
+    ],
+    faqs: [
+      {
+        question: "What coaching programs are offered at Kanha Law Point Academy?",
+        answer: "KLPA offers comprehensive 1-Year Foundation and 2-Year Integrated coaching for Judicial Services (UP PCS-J, MP CJ, Bihar Judicial, HJS), CLAT (UG & PG), DU/BHU LLB Entrances, SEBI Law Officer, and JAG Army Legal Commission."
+      },
+      {
+        question: "How does KLPA prepare aspirants for UP PCS-J Mains & Interview?",
+        answer: "KLPA conducts daily Bare Act word-by-word statutory analysis (CPC, CrPC, IPC, Evidence Act), daily Mains answer evaluation with legal feedback, and mock interview panels chaired by retired judges."
+      },
+      {
+        question: "What infrastructure facilities are available at the Kanpur campus?",
+        answer: "The Harjinder Nagar Kanpur campus features a Moot Court Hall for legal pleading practice, a Law Library with 5,000+ legal volumes and SCC Online access, and air-conditioned smart classrooms."
+      },
+      {
+        question: "Where is Kanha Law Point Academy located in Kanpur?",
+        answer: "KLPA is located at Office No. 8, Near Safipur, Harjinder Nagar Inter College, GT Road, Kanpur Nagar, Uttar Pradesh - 208007 (Contact: +91-9838477453)."
+      }
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Educational JSON-LD Schema", "WebP Optimization", "AEO / GEO Engine", "Local SEO"],
+    testimonial: {
+      quote: "The web platform built by TheUniPick perfectly reflects our academic rigor and judicial vision. Aspirants across UP now easily discover our programs and reach out for admissions.",
+      author: "Arbind Kumar Srivastava",
+      role: "Managing Director & Legal Mentor, Kanha Law Point Academy",
+      image: "/case-studies/KLPA/klpa-director.webp",
+      verified: true,
+      companyLink: "https://kanhalawpointacademy.com"
+    },
+    gallery: [
+      "/case-studies/KLPA/klpa-hero.webp",
+      "/case-studies/KLPA/klpa-about.webp",
+      "/case-studies/KLPA/klpa-programs.webp",
+      "/case-studies/KLPA/klpa-exams.webp",
+      "/case-studies/KLPA/klpa-pillars.webp",
+      "/case-studies/KLPA/klpa-facilities.webp",
+      "/case-studies/KLPA/klpa-director.webp",
+      "/case-studies/KLPA/klpa-gallery.webp",
+      "/case-studies/KLPA/klpa-faqs.webp",
+      "/case-studies/KLPA/klpa-contact.webp"
+    ],
+    seo: {
+      primaryKeyword: "PCS J coaching in Kanpur",
+      secondaryKeywords: ["Kanha Law Point Academy", "Judicial services coaching Kanpur", "CLAT coaching Kanpur", "Arbind Kumar Srivastava Kanpur", "UP PCS J foundation course"],
+      metaTitle: "Kanha Law Point Academy Case Study | Kanpur's #1 Judicial & Law Institute",
+      metaDescription: "How TheUniPick built Kanpur's top judicial education web platform for Kanha Law Point Academy, achieving #1 local search rank and 350% lead growth."
+    }
   }
 };
+

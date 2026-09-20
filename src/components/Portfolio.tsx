@@ -10,6 +10,19 @@ import Link from 'next/link';
 
 const projects = [
   {
+    id: "PRJ-000",
+    slug: "kanha-law-point-academy",
+    title: "Kanha Law Point Academy",
+    category: "EDTECH • LEGAL & JUDICIARY",
+    year: "2024",
+    desc: "Kanpur's premier 5★ legal education web platform for UP PCS-J, HJS, & CLAT. Bare Act statutory pedagogy & #1 local SEO rank.",
+    stats: [{ label: "Search Rank", value: "#1 Rank" }, { label: "Exams Covered", value: "15+" }],
+    image: "/case-studies/KLPA/klpa-hero.webp",
+    color: "#f59e0b",
+    tags: ["React", "Next.js", "TypeScript", "Tailwind", "Local SEO"],
+    link: "https://kanhalawpointacademy.com/"
+  },
+  {
     id: "PRJ-001",
     slug: "claimpilot",
     title: "ClaimPilot",
