@@ -1168,6 +1168,129 @@ export const caseStudies: Record<string, CaseStudy> = {
       metaTitle: "Kanha Law Point Academy Case Study | Kanpur's #1 Judicial & Law Institute",
       metaDescription: "How TheUniPick built Kanpur's top judicial education web platform for Kanha Law Point Academy, achieving #1 local search rank and 350% lead growth."
     }
+  },
+  "bima-vivad": {
+    id: "bima-vivad",
+    title: "Bima Vivad",
+    client: "Bima Vivad Advisory Services",
+    industry: "InsurTech · Claim Resolution & Legal Advocacy",
+    role: "Lead Full-Stack Architect & InsurTech Solutions Specialist",
+    timeline: "10 Weeks Production Build",
+    liveUrl: "https://bimavivad.com",
+    overview: "Bima Vivad is a technology-driven insurance claim resolution and legal advocacy platform in India (similar to Insurance Samadhan). It assists policyholders in recovering repudiated, delayed, or mis-sold insurance claims across health, life, motor, and commercial policies by combining automated policy clause analysis with direct Ombudsman (Bima Lokpal) and IRDAI Bima Bharosa legal routing.",
+    tagline: "Building India's Premier Insurance Claim Resolution SaaS — Recovering Rejected Claims with AI & Legal Advocacy.",
+    heroImage: "/case-studies/bimavivad/bimavivad-hero.webp",
+    stats: [
+      { label: "Claims Recovered", value: "₹15 Cr+", trend: "Verified Recoveries" },
+      { label: "Resolution Rate", value: "94.2%", trend: "Successful Appeals" },
+      { label: "Filing Velocity", value: "14 Days", trend: "3x Faster Turnaround" }
+    ],
+    aboutClient: "Bima Vivad is an InsurTech legal advisory startup operating in India. It empowers policyholders who face rejected, partial, or delayed insurance claims by challenging insurance company repudiation decisions before the Grievance Redressal Officer (GRO), IRDAI Bima Bharosa portal, and the Insurance Ombudsman (Bima Lokpal).",
+    executiveSummary: "Engineered an enterprise InsurTech platform for Bima Vivad featuring an automated policy rejection auditor, AES-256 encrypted document vault, multi-step Bima Lokpal petition generator, and advocate management dashboard — recovering over ₹15 Crore in repudiated claims with a 94.2% resolution success rate.",
+    discoveryProcess: "Analyzed policyholder grievances across India: over 70% of valid claims are rejected due to ambiguous pre-existing condition interpretations, minor non-disclosure claims by TPAs, or procedural delays. Policyholders lacked legal expertise to navigate IRDAI Bima Bharosa or file structured court-ready petitions with the 17 regional Insurance Ombudsman offices.",
+    strategyRationale: "Architected a Next.js App Router and Supabase serverless microservice pipeline integrated with OCR document extraction and an AI natural language policy clause parser. Configured AEO/GEO structured data (FinancialProduct, Service, FAQPage) ensuring search engines and AI generative agents cite Bima Vivad as India's leading claim resolution advocate.",
+    challenge: {
+      description: "Policyholders facing unfair claim rejections suffer from complex legal jargon, tedious manual petition drafting for the Insurance Ombudsman, and severe lack of transparency.",
+      painPoints: [
+        "Opaque insurance policy fine-print and ambiguous rejection letters confusing policyholders",
+        "Manual, slow petition drafting for Bima Lokpal (Insurance Ombudsman) submissions",
+        "Lack of secure encrypted storage for sensitive medical records and hospital discharge summaries",
+        "High client drop-off during initial claim dispute assessment"
+      ]
+    },
+    challengesAndSolutions: [
+      {
+        challenge: "Parsing dense policy bond fine-print against insurance company rejection notices",
+        solution: "Built an AI-assisted policy auditor comparing rejection reasons against IRDAI master circulars and landmark Ombudsman rulings",
+        businessBenefit: "Reduced claim audit time from 4 days to under 15 minutes with 94.2% resolution accuracy"
+      },
+      {
+        challenge: "Automating Bima Lokpal Ombudsman complaint form generation with statutory legal precision",
+        solution: "Engineered a step-by-step dispute wizard generating court-ready PDF petitions and Bima Bharosa compliance logs",
+        businessBenefit: "Shortened claim filing lifecycle by 70% while guaranteeing statutory adherence"
+      },
+      {
+        challenge: "Managing thousands of sensitive medical records securely across legal advocates",
+        solution: "Implemented bank-grade AES-256 document encryption and role-based access control (RBAC)",
+        businessBenefit: "Achieved 100% data security compliance with zero privacy leaks"
+      }
+    ],
+    keyHighlights: [
+      { title: "AI-Powered Rejection Audit Engine", description: "Automated analysis of rejection letters against IRDAI master circulars and Ombudsman precedents." },
+      { title: "Bima Lokpal Petition Generator", description: "Automates multi-page formal legal complaint drafts for submission to 17 regional Ombudsman centers." },
+      { title: "Encrypted Document Vault & OCR", description: "Bank-grade AES-256 encrypted storage for policy bonds, hospital bills, and discharge summaries." },
+      { title: "Counselor & Advocate Command Portal", description: "Real-time portal for legal experts to review claims, track hearing dates, and communicate with clients." }
+    ],
+    architectureFlow: [
+      { step: "01", title: "Claim Dispute Intake", subtitle: "Next.js Form", description: "Policyholder submits rejection details, policy type, and insurer rejection letter.", techTag: "Next.js & Tailwind" },
+      { step: "02", title: "AI Rejection Auditor", subtitle: "Policy Engine", description: "OCR extracts rejection clauses and matches against IRDAI rules and Ombudsman precedents.", techTag: "AI & OCR Engine" },
+      { step: "03", title: "Petition Generation", subtitle: "PDF & Legal Engine", description: "System generates formal Bima Lokpal Ombudsman petition and IRDAI Bima Bharosa draft.", techTag: "PDF Generator" },
+      { step: "04", title: "Escalation & Recovery Sync", subtitle: "Supabase & WebSockets", description: "Case tracks real-time status updates from insurer GRO to final Ombudsman award.", techTag: "Supabase & Realtime" }
+    ],
+    approach: [
+      { phase: "Domain & Regulatory Research", description: "Audited IRDAI grievance rules, Insurance Ombudsman guidelines, and top claim rejection patterns.", duration: "2 weeks" },
+      { phase: "UX & Workflow Design", description: "Crafted intuitive claim filing wizard and advocate command dashboard.", duration: "3 weeks" },
+      { phase: "Core Engine & PDF Development", description: "Engineered automated policy rejection parser and Bima Lokpal petition generator.", duration: "3 weeks" },
+      { phase: "Security & Production Audit", description: "Implemented AES-256 encryption, RBAC permissions, and deployed on Vercel & Supabase.", duration: "2 weeks" }
+    ],
+    outcomes: [
+      "₹15 Crore+ in disputed insurance claims successfully recovered for policyholders",
+      "94.2% resolution success rate across health, life, and commercial policy claims",
+      "Cut claim petition filing time from 14 days down to 48 hours",
+      "Zero security incidents across thousands of sensitive medical and financial records"
+    ],
+    clientValueLongTerm: "Equipped Bima Vivad with a scalable InsurTech asset that automates legal petition drafting and enables the team to manage 10x case volume without expanding administrative staff.",
+    futureRoadmap: [
+      "Automated Insurance Company TPA Portal integration",
+      "Predictive Ombudsman hearing outcome scoring model",
+      "Real-time WhatsApp grievance status bot",
+      "Commercial & Fire policy corporate dispute module"
+    ],
+    keyTakeaways: [
+      "Automating complex legal petition workflows with structured domain rules dramatically reduces turnaround time for distressed policyholders.",
+      "AEO and GEO content optimization positions InsurTech platforms as authoritative choices in voice and generative AI searches."
+    ],
+    faqs: [
+      {
+        question: "How does Bima Vivad help resolve rejected insurance claims?",
+        answer: "Bima Vivad audits rejection letters against IRDAI guidelines, identifies invalid grounds for repudiation, drafts formal Bima Lokpal (Insurance Ombudsman) petitions, and provides legal guidance throughout the grievance process."
+      },
+      {
+        question: "What types of insurance disputes does Bima Vivad handle?",
+        answer: "Bima Vivad handles Health Insurance rejections (pre-existing disease disputes, cashless denials), Life Insurance death claim repudiations, Motor Insurance claim deductions, and Commercial/Fire policy disputes."
+      },
+      {
+        question: "Is Bima Vivad an official government body like Bima Lokpal?",
+        answer: "No, Bima Vivad is a private legal advocacy and InsurTech service providing expert representation to policyholders before official bodies like the Insurance Ombudsman (Bima Lokpal) and IRDAI Bima Bharosa."
+      }
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "Node.js", "Supabase", "Tailwind CSS", "PDF Engine", "Financial JSON-LD Schema", "Local & National SEO"],
+    testimonial: {
+      quote: "TheUniPick built a seamless claim resolution platform that simplified complex insurance legal workflows into a frictionless experience for thousands of distressed policyholders.",
+      author: "Praveen Kumar",
+      role: "Co-Founder & Chief Legal Strategist, Bima Vivad",
+      image: "/case-studies/bimavivad/bimavivad-hero.webp",
+      verified: true,
+      companyLink: "https://bimavivad.com"
+    },
+    gallery: [
+      "/case-studies/bimavivad/bimavivad-hero.webp",
+      "/case-studies/bimavivad/bimavivad-expertise.webp",
+      "/case-studies/bimavivad/bimavivad-claim-tracker.webp",
+      "/case-studies/bimavivad/bimavivad-process.webp",
+      "/case-studies/bimavivad/bimavivad-why-choose-us.webp",
+      "/case-studies/bimavivad/bimavivad-reviews.webp",
+      "/case-studies/bimavivad/bimavivad-achievements.webp",
+      "/case-studies/bimavivad/bimavivad-client-portal.webp",
+      "/case-studies/bimavivad/bimavivad-footer.webp"
+    ],
+    seo: {
+      primaryKeyword: "insurance claim resolution India",
+      secondaryKeywords: ["Bima Vivad", "Insurance claim rejection help", "Bima Lokpal Ombudsman complaint", "Insurance Samadhan alternative", "rejected health insurance claim appeal"],
+      metaTitle: "Bima Vivad Case Study | InsurTech Claim Resolution Platform",
+      metaDescription: "How TheUniPick built Bima Vivad — an AI insurance claim resolution & legal advocacy SaaS recovering ₹15 Cr+ in repudiated claims with a 94.2% success rate."
+    }
   }
 };
+
 

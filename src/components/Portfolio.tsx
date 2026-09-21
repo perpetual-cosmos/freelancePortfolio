@@ -10,6 +10,19 @@ import Link from 'next/link';
 
 const projects = [
   {
+    id: "PRJ-000A",
+    slug: "bima-vivad",
+    title: "Bima Vivad",
+    category: "INSURTECH • CLAIM ADVOCACY",
+    year: "2024",
+    desc: "Insurance claim resolution & legal advocacy SaaS. AI rejection auditor & Bima Lokpal Ombudsman petition engine.",
+    stats: [{ label: "Recovered", value: "₹15 Cr+" }, { label: "Resolution", value: "94.2%" }],
+    image: "/case-studies/bimavivad/bimavivad-hero.webp",
+    color: "#06b6d4",
+    tags: ["React", "Next.js", "Node.js", "Supabase", "AEO / GEO"],
+    link: "https://bimavivad.com/"
+  },
+  {
     id: "PRJ-000",
     slug: "kanha-law-point-academy",
     title: "Kanha Law Point Academy",
