@@ -4,7 +4,7 @@ import { caseStudies } from '@/data/caseStudies';
 import { getAllBlogs } from '@/data/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://theunipick.com';
+  const baseUrl = 'https://www.theunipick.com';
   const currentDate = new Date().toISOString();
 
   // Static routes

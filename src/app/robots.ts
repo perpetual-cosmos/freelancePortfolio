@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://theunipick.com/sitemap.xml',
-    host: 'https://theunipick.com',
+    sitemap: 'https://www.theunipick.com/sitemap.xml',
+    host: 'https://www.theunipick.com',
   };
 }

@@ -192,6 +192,66 @@ const servicesData: ServiceData[] = [
       { q: 'Do you provide design AND code?', a: 'Yes. We handle both Figma design and pixel-perfect Next.js implementation under one roof.' },
       { q: 'How many design revisions are included?', a: '3 rounds of design feedback and revisions are included in every design project package.' }
     ]
+  },
+  {
+    slug: 'crm-development',
+    title: 'Custom CRM Development',
+    tagline: 'Tailor-made CRM systems engineered for your sales pipeline & client workflows',
+    color: '#ec4899',
+    category: 'Enterprise Systems',
+    description: 'Custom CRM software designed to replace rigid off-the-shelf platforms with high-speed, tailored workflows. Built using Next.js 16, Node.js, and PostgreSQL by Tarun Singh, our CRM solutions provide automated lead scoring, pipeline management, WhatsApp integration, and granular analytics.',
+    features: [
+      { title: 'Custom Lead & Pipeline Tracking', desc: 'Visual kanban pipelines, stage gating, and multi-channel lead capture from web forms, WhatsApp, and meta ads.' },
+      { title: 'Automated Follow-ups & Task Scheduling', desc: 'Trigger automated email and WhatsApp reminders for sales reps to ensure zero lead drop-offs.' },
+      { title: 'Role-Based Access Control (RBAC)', desc: 'Granular permissions for admins, sales managers, and executives to keep client data secure.' },
+      { title: 'Bi-directional Third-Party Integrations', desc: 'Seamless API connections with Razorpay, Stripe, Gmail, WhatsApp Business API, and Tally.' },
+      { title: 'Custom Analytics & Conversion Dashboards', desc: 'Real-time sales tracking, agent performance metrics, and revenue forecasting views.' },
+      { title: 'Secure Data Ownership & Self-Hosting', desc: 'Complete ownership of your customer data with options for self-hosting on AWS or VPS.' }
+    ],
+    pricing: 'Starting from ₹45,000 for core custom CRM setups · ₹1,200,000 for enterprise multi-tier platforms',
+    startingPrice: '₹45,000',
+    outcome: 'Streamlined lead management and improved sales conversion rates by 35% for B2B client teams.',
+    relatedCaseStudySlug: 'wavo-digital',
+    relatedCaseStudyTitle: 'Wavo Digital Operations Case Study',
+    stack: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Tailwind', 'n8n'],
+    specs: { Security: 'RBAC Enforced', Database: 'PostgreSQL', API: 'REST & GraphQL', Audit: 'Full Logging' },
+    faq: [
+      { q: 'Why build a custom CRM instead of buying Salesforce or HubSpot?', a: 'Off-the-shelf CRMs charge expensive per-seat monthly fees and force you to adapt your business processes to their rigid structure. A custom CRM built by TheUniPick gives you 100% data ownership, zero recurring monthly per-user fees, and a UI tailored exactly to your sales workflow.' },
+      { q: 'How long does custom CRM development take?', a: 'A core operational CRM MVP takes 3–5 weeks. Advanced enterprise CRMs with deep third-party integrations typically take 6–8 weeks.' },
+      { q: 'Can the custom CRM integrate with WhatsApp Business API?', a: 'Yes. We natively integrate Meta WhatsApp Business API so your sales reps can send automated messages, view chat histories, and update deal stages directly inside the CRM.' },
+      { q: 'Is our customer data secure on a custom CRM?', a: 'Absoluely. We implement strict Role-Based Access Control (RBAC), end-to-end SSL encryption, environment secret isolation, and database backup routines.' },
+      { q: 'What happens as our sales team grows?', a: 'Because we build on scalable Next.js and PostgreSQL architecture, your CRM can scale from 5 users to thousands of team members without performance degradation or added software licensing fees.' }
+    ]
+  },
+  {
+    slug: 'payroll-system',
+    title: 'Payroll & HR Management Systems',
+    tagline: 'Automated, tax-compliant payroll software tailored for Indian & global businesses',
+    color: '#06b6d4',
+    category: 'Enterprise Systems',
+    description: 'Custom payroll and HR management software built for precision, automated salary calculation, tax compliance, and seamless attendance tracking. Engineered with Next.js, Node.js, and secure encrypted databases.',
+    features: [
+      { title: 'Automated Salary & Tax Computation', desc: 'Precision engines for PF, ESI, Professional Tax, TDS, bonuses, and reimbursement management.' },
+      { title: 'Attendance & Leave Tracking Portal', desc: 'Employee self-service portals for leave requests, attendance marking, and payslip downloads.' },
+      { title: 'One-Click Direct Bank Transfer Exports', desc: 'Generate bank-formatted payout files for seamless monthly salary processing.' },
+      { title: 'Encrypted Payslip Generation & Distribution', desc: 'Automated PDF payslip generation emailed directly to employees with password protection.' },
+      { title: 'Tally & Accounting Software Sync', desc: 'Export payroll data into Tally, Zoho Books, or QuickBooks compatible XML/CSV formats.' },
+      { title: 'Audit Trail & Financial Security', desc: 'Tamper-proof financial logs and AES-256 encryption for sensitive employee compensation data.' }
+    ],
+    pricing: 'Starting from ₹50,000 for custom payroll engines · ₹1,500,000 for full HRMS integration',
+    startingPrice: '₹50,000',
+    outcome: 'Eliminated manual Excel errors and reduced monthly payroll calculation time from 3 days to 15 minutes.',
+    relatedCaseStudySlug: 'alumnipp',
+    relatedCaseStudyTitle: 'Alumnipp Platform Case Study',
+    stack: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Tailwind', 'Redis', 'Docker'],
+    specs: { Compliance: 'India Tax & PF Ready', Security: 'AES-256 Encrypted', Precision: 'Decimal Financial Math', Export: 'Tally / Excel' },
+    faq: [
+      { q: 'How does custom payroll software handle statutory compliance in India?', a: 'Our custom payroll engines auto-calculate Provident Fund (PF), Employee State Insurance (ESI), Professional Tax (PT), and Tax Deducted at Source (TDS) based on current government slabs, ensuring 100% tax compliance.' },
+      { q: 'Can employees view and download their own payslips?', a: 'Yes. We include a dedicated employee self-service portal where staff can view salary structures, request leaves, and download monthly password-protected PDF payslips.' },
+      { q: 'Can the payroll system export data to Tally or Zoho Books?', a: 'Yes. We provide automated exports formatted specifically for Tally Prime, Zoho Books, or QuickBooks to streamline your accounting workflows.' },
+      { q: 'Is employee salary data encrypted and secure?', a: 'Yes. Salary structures, bank account details, and PAN/Aadhaar information are stored using AES-256 encryption with restricted role-based database access.' },
+      { q: 'Can custom payroll handle contractor payments and freelancers?', a: 'Yes. Our systems support dual payment workflows for full-time salaried staff (TDS u/s 192) and independent contractors/freelancers (TDS u/s 194J/194C).' }
+    ]
   }
 ];
 
