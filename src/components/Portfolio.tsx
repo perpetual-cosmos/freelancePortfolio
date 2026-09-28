@@ -114,19 +114,6 @@ const projects = [
     link: "https://www.blackarttattoo.in/"
   },
   {
-    id: "PRJ-007",
-    slug: "creative-agency",
-    title: "Creative Agency",
-    category: "FRONTEND • PERFORMANCE",
-    year: "2023",
-    desc: "Award-winning creative agency website with stunning performance and smooth animations.",
-    stats: [{ label: "Load Time", value: "<1s" }, { label: "Performance", value: "99" }],
-    image: "/projects/Creative-agency.webp",
-    color: "#2dd4bf",
-    tags: ["Wordpress", "PHP", "MySQL"],
-    link: "https://www.innovacient.com/"
-  },
-  {
     id: "PRJ-008",
     slug: "alexink-tattoo-website",
     title: "Alexink Tattoo",
