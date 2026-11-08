@@ -7,29 +7,9 @@ import Pricing from "@/components/Pricing";
 import { motion, AnimatePresence } from 'framer-motion';
 import { HelpCircle, ChevronDown, ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
+import { pricingFaqs } from '@/data/pricingFaqs';
 
-const faqs = [
-  {
-    q: "How do you determine project timelines?",
-    a: "We use a milestone-based approach. Once we scope the project, we provide a detailed timeline with weekly sprints. A standard MVP typically takes 3–6 weeks."
-  },
-  {
-    q: "Do you offer post-launch support?",
-    a: "Yes. Every package includes a standard support period (30–60 days). We also offer monthly maintenance and retainer models for ongoing feature development and scaling."
-  },
-  {
-    q: "Can I upgrade my package mid-project?",
-    a: "Absolutely. We build in an agile manner, allowing for scope adjustments. We'll simply adjust the milestones and pricing transparently."
-  },
-  {
-    q: "What payment structures do you accept?",
-    a: "Typically, we work on a 40/40/20 model: 40% initial, 40% at mid-point milestone, and 20% upon final delivery and sign-off."
-  },
-  {
-    q: "Do you work with international clients?",
-    a: "Yes. We've delivered products used globally across 70+ countries. Communication is in English, and we align to your timezone for standups."
-  }
-];
+const faqs = pricingFaqs;
 
 function FAQItem({ faq, index }: { faq: typeof faqs[0], index: number }) {
   const [open, setOpen] = useState(false);
@@ -47,7 +27,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0], index: number }) {
       >
         <div className="flex items-center gap-3 min-w-0">
           <HelpCircle size={16} className="text-primary shrink-0" />
-          <span className="text-[0.85rem] sm:text-[0.9rem] font-bold text-on-surface truncate">{faq.q}</span>
+          <span className="text-[0.85rem] sm:text-[0.9rem] font-bold text-on-surface leading-snug">{faq.q}</span>
         </div>
         <ChevronDown size={16} className={`text-on-surface-muted shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
@@ -84,14 +64,14 @@ export default function PricingClient() {
             animate={{ opacity: 1 }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-bold text-[0.6rem] tracking-[0.15em] uppercase mb-4"
           >
-            <Star size={12} /> Transparent Pricing
+            <Star size={12} /> Pricing
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-[clamp(1.8rem,5vw,3.2rem)] font-extrabold tracking-tight leading-[1.05] font-display text-on-surface mb-3 sm:mb-4"
           >
-            Investment <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Transparency.</span>
+            Packages with the scope written down
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -99,13 +79,13 @@ export default function PricingClient() {
             transition={{ delay: 0.1 }}
             className="text-on-surface-variant text-[0.88rem] sm:text-[0.95rem] font-medium leading-relaxed opacity-80"
           >
-            Fixed-fee engineering packages built for predictability. No hidden costs, no vendor lock-in.
+            Websites, stores, software, SEO and automation. Prices in ₹ for India and $ for international clients.
           </motion.p>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <Pricing />
+      <Pricing variant="full" />
 
       {/* FAQ Section */}
       <section className="py-14 sm:py-20 lg:py-24">
@@ -125,7 +105,7 @@ export default function PricingClient() {
 
           {/* Bottom CTA */}
           <div className="mt-10 sm:mt-12 text-center">
-            <p className="text-on-surface-muted text-[0.8rem] font-medium mb-4">Need a completely custom enterprise solution?</p>
+            <p className="text-on-surface-muted text-[0.8rem] font-medium mb-4">Not sure which package fits? Tell us what you need and we will recommend one.</p>
             <Link 
               href="/contact" 
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-on-surface text-white font-bold text-[0.82rem] no-underline hover:bg-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"

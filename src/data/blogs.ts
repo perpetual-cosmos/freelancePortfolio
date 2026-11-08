@@ -43,7 +43,7 @@ Consider Biryani Babu, an online e-commerce platform built by TheUniPick. By avo
 
 Here is your Shopify budgeting checklist:
 Step 1: Define your feature scope. Do you need custom product configurators or multi-currency pricing?
-Step 2: Choose between a freelancer vs agency. Freelancers like Tarun Singh offer direct lead-engineer execution for ₹35,000–₹85,000, while agencies often charge ₹2,000,000+ with high account management overhead.
+Step 2: Choose between a freelancer vs agency. Freelancers like Tarun Singh offer direct lead-engineer execution for ₹30,000–₹60,000 (custom-designed stores from ₹1,25,000), while agencies often charge ₹2,000,000+ with high account management overhead.
 Step 3: Factor in payment gateway setup (Razorpay/Stripe/UPI) and automated WhatsApp order alerts using n8n or official WhatsApp APIs.
 
 [ENGAGEMENT & SUMMARY]

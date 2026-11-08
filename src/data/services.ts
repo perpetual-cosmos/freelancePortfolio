@@ -42,8 +42,8 @@ const servicesData: ServiceData[] = [
       { title: 'Scalable Database Architecture', desc: 'PostgreSQL, MongoDB, Supabase, and Prisma/Mongoose ORM integration.' },
       { title: 'Core Web Vitals Optimization', desc: 'Sub-100ms TTFB, 100 Lighthouse score, and zero layout shift.' }
     ],
-    pricing: 'Starting from ₹25,000 for high-converting websites · ₹75,000 for full-stack SaaS apps',
-    startingPrice: '₹25,000',
+    pricing: 'Landing page ₹10,000 · 5-page website ₹18,000 · Web apps from ₹1,25,000',
+    startingPrice: '₹10,000',
     outcome: 'BlackArt Tattoo Studio went from 0 to #1 in Udaipur organic search results within 90 days of launch.',
     relatedCaseStudySlug: 'blackart-tattoo',
     relatedCaseStudyTitle: 'BlackArt Tattoo Studio Case Study',
@@ -70,8 +70,8 @@ const servicesData: ServiceData[] = [
       { title: 'Catalog & Inventory Setup', desc: 'Import and configuration of up to 50 products with variants and media.' },
       { title: 'Klaviyo & Automated Email Flows', desc: 'Abandoned cart sequences, post-purchase follow-ups, and review flows.' }
     ],
-    pricing: 'Starting from ₹35,000 for custom Shopify themes · ₹80,000 for headless builds',
-    startingPrice: '₹35,000',
+    pricing: 'Starter store ₹30,000 · D2C growth store ₹60,000 · Custom store from ₹1,25,000',
+    startingPrice: '₹30,000',
     outcome: 'Biryani Babu e-commerce store achieved a 240% lift in online orders within 30 days.',
     relatedCaseStudySlug: 'biryani-babu',
     relatedCaseStudyTitle: 'Biryani Babu E-Commerce Growth Case Study',
@@ -98,7 +98,7 @@ const servicesData: ServiceData[] = [
       { title: 'Lead Routing & Instant Alerts', desc: 'Instant Slack, Telegram, and SMS alerts when a high-value lead submits.' },
       { title: 'Post-Deployment Monitoring', desc: 'Real-time error logging and 2-week monitoring for 100% operational uptime.' }
     ],
-    pricing: 'Single workflow build from ₹15,000 · Full automation suite from ₹35,000–75,000',
+    pricing: 'Lead routing ₹15,000 · AI chatbot ₹30,000 · WhatsApp bot + CRM ₹35,000',
     startingPrice: '₹15,000',
     outcome: 'Wavo Digital reduced client onboarding time by 80% using automated n8n workflows.',
     relatedCaseStudySlug: 'wavo-digital',
@@ -126,8 +126,8 @@ const servicesData: ServiceData[] = [
       { title: 'Search Console & Analytics Management', desc: 'GSC setup, rank tracking, indexation fixes, and monthly ROI reports.' },
       { title: 'Internal Linking Architecture', desc: 'Optimize link equity flow to money pages and case studies.' }
     ],
-    pricing: 'One-time technical SEO audit & fix from ₹15,000 · Monthly retainer from ₹20,000/mo',
-    startingPrice: '₹15,000',
+    pricing: 'Google Business Profile ₹5,000 · SEO audit ₹7,500 · Local SEO ₹12,000/month',
+    startingPrice: '₹5,000',
     outcome: 'Achieved 3x organic growth and #1 Google ranking for client brands within 90 days.',
     relatedCaseStudySlug: 'blackart-tattoo',
     relatedCaseStudyTitle: 'BlackArt Tattoo Organic Growth Case Study',
@@ -154,7 +154,7 @@ const servicesData: ServiceData[] = [
       { title: 'Custom Business Dashboards', desc: 'Tailored admin panels and operational analytics for team workflows.' },
       { title: 'Multilingual & i18n Support', desc: 'Multi-language content systems with proper hreflang tags.' }
     ],
-    pricing: 'Starting from ₹25,000 for WordPress · ₹60,000 for LMS & Custom Platforms',
+    pricing: 'WordPress site ₹25,000 · Growth CMS ₹45,000 · LMS / membership ₹75,000',
     startingPrice: '₹25,000',
     outcome: 'Alumnipp platform launched with full student portal, payments, and 1,000+ active users.',
     relatedCaseStudySlug: 'alumnipp',
@@ -181,8 +181,8 @@ const servicesData: ServiceData[] = [
       { title: 'Design Systems for Developers', desc: 'Component specs ready for pixel-perfect React & Tailwind implementation.' },
       { title: 'Marketing & Pitch Decks', desc: 'Visual assets for social proof, pitch presentations, and ads.' }
     ],
-    pricing: 'Logo & branding from ₹12,000 · Full UI/UX design from ₹25,000',
-    startingPrice: '₹12,000',
+    pricing: 'Logo ₹3,000 (3 concepts, 2 revisions) · UI/UX design ₹2,000 per screen',
+    startingPrice: '₹3,000',
     outcome: 'Dear Valentine SaaS brand redesign increased user engagement by 35%.',
     relatedCaseStudySlug: 'dear-valentine',
     relatedCaseStudyTitle: 'Dear Valentine SaaS Product Case Study',
@@ -208,8 +208,8 @@ const servicesData: ServiceData[] = [
       { title: 'Custom Analytics & Conversion Dashboards', desc: 'Real-time sales tracking, agent performance metrics, and revenue forecasting views.' },
       { title: 'Secure Data Ownership & Self-Hosting', desc: 'Complete ownership of your customer data with options for self-hosting on AWS or VPS.' }
     ],
-    pricing: 'Starting from ₹45,000 for core custom CRM setups · ₹1,200,000 for enterprise multi-tier platforms',
-    startingPrice: '₹45,000',
+    pricing: 'Custom CRM / business portal ₹1,25,000 – ₹1,80,000 · Larger systems quoted after a call',
+    startingPrice: '₹1,25,000',
     outcome: 'Streamlined lead management and improved sales conversion rates by 35% for B2B client teams.',
     relatedCaseStudySlug: 'wavo-digital',
     relatedCaseStudyTitle: 'Wavo Digital Operations Case Study',
@@ -238,8 +238,8 @@ const servicesData: ServiceData[] = [
       { title: 'Tally & Accounting Software Sync', desc: 'Export payroll data into Tally, Zoho Books, or QuickBooks compatible XML/CSV formats.' },
       { title: 'Audit Trail & Financial Security', desc: 'Tamper-proof financial logs and AES-256 encryption for sensitive employee compensation data.' }
     ],
-    pricing: 'Starting from ₹50,000 for custom payroll engines · ₹1,500,000 for full HRMS integration',
-    startingPrice: '₹50,000',
+    pricing: 'Payroll / HR portal ₹1,25,000 – ₹1,80,000 · Larger systems quoted after a call',
+    startingPrice: '₹1,25,000',
     outcome: 'Eliminated manual Excel errors and reduced monthly payroll calculation time from 3 days to 15 minutes.',
     relatedCaseStudySlug: 'alumnipp',
     relatedCaseStudyTitle: 'Alumnipp Platform Case Study',

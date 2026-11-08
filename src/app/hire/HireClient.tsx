@@ -7,8 +7,10 @@ import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Sparkles, Code2, ShoppingCart, Brain, BarChart3, Clock, Users } from 'lucide-react';
 import Link from 'next/link';
+import { useCurrency } from '@/lib/useCurrency';
 
 export default function HireClient() {
+  const { currency, ready } = useCurrency();
   return (
     <main className="bg-background min-h-screen">
       <Navbar />
@@ -85,7 +87,7 @@ export default function HireClient() {
               Ideal for new web applications, Shopify store builds, or landing page overhauls with clear deliverables and milestones.
             </p>
             <div className="space-y-3 mb-8">
-              {['Fixed scope & guaranteed timeline', 'Full UI/UX + Next.js / Shopify engineering', '30–60 days post-launch warranty', 'Sub-100ms performance & technical SEO'].map((feat, idx) => (
+              {['Fixed scope, timeline & price in a written quote', 'Full UI/UX + Next.js / Shopify engineering', '30–60 days of free bug fixes after launch', 'Fast-loading pages & technical SEO'].map((feat, idx) => (
                 <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-on-surface font-medium">
                   <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
                   <span>{feat}</span>
@@ -95,7 +97,7 @@ export default function HireClient() {
             <div className="pt-4 border-t border-[rgba(0,0,0,0.05)] flex items-center justify-between">
               <div>
                 <span className="text-xs text-on-surface-muted uppercase font-bold tracking-wider">Starting at</span>
-                <div className="text-xl font-black font-display text-primary">₹25,000 / $350</div>
+                <div className="text-xl font-black font-display text-primary">{!ready ? '…' : currency === 'INR' ? '₹10,000' : '$350'}</div>
               </div>
               <Link href="/contact" className="px-5 py-2.5 rounded-xl bg-on-surface text-white text-xs font-bold hover:bg-primary transition-colors">
                 Scope Project
@@ -116,7 +118,7 @@ export default function HireClient() {
               Ideal for startups and growing brands needing ongoing engineering, feature rollouts, AI automation, and technical SEO growth.
             </p>
             <div className="space-y-3 mb-8">
-              {['Dedicated sprint hours per week', 'Continuous technical SEO & Core Web Vitals optimization', 'n8n & WhatsApp automation maintenance', 'Direct Slack/WhatsApp priority communication'].map((feat, idx) => (
+              {['40 or 80 development hours every month', 'Continuous technical SEO & Core Web Vitals optimization', 'n8n & WhatsApp automation maintenance', 'Direct Slack/WhatsApp priority communication'].map((feat, idx) => (
                 <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-on-surface font-medium">
                   <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
                   <span>{feat}</span>
@@ -126,7 +128,8 @@ export default function HireClient() {
             <div className="pt-4 border-t border-[rgba(0,0,0,0.05)] flex items-center justify-between">
               <div>
                 <span className="text-xs text-on-surface-muted uppercase font-bold tracking-wider">Starting at</span>
-                <div className="text-xl font-black font-display text-secondary">₹30,000 / mo</div>
+                <div className="text-xl font-black font-display text-secondary">{!ready ? '…' : currency === 'INR' ? '₹65,000 / mo' : '$1,000 / mo'}</div>
+                <div className="text-[0.7rem] text-on-surface-muted font-medium">40 hrs/month · 3-month minimum</div>
               </div>
               <Link href="/contact" className="px-5 py-2.5 rounded-xl bg-primary text-white text-xs font-bold hover:bg-primary/90 transition-colors">
                 Reserve Capacity

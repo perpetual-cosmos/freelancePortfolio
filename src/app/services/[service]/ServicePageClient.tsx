@@ -11,6 +11,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
 import { type ServiceData } from '@/data/services';
+import { servicePrices } from '@/data/pricing';
+import { useCurrency } from '@/lib/useCurrency';
 
 const iconMap: Record<string, React.ReactNode> = {
   'web-development': <Code2 size={24} />,
@@ -216,6 +218,8 @@ function FAQItem({ faq }: { faq: { q: string; a: string } }) {
 }
 
 export default function ServicePageClient({ service }: { service: ServiceData }) {
+  const { currency, ready } = useCurrency();
+  const priceLine = ready ? servicePrices[service.slug]?.[currency].line ?? service.pricing : '…';
   const icon = iconMap[service.slug] || <Code2 size={24} />;
 
   const processSteps = [
@@ -261,8 +265,11 @@ export default function ServicePageClient({ service }: { service: ServiceData })
             <div className="flex flex-wrap items-center gap-3">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-purple-100 text-purple-800 font-extrabold text-xs sm:text-sm shadow-xs">
                 <Sparkles size={14} className="text-purple-600" />
-                {service.pricing}
+                {priceLine}
               </div>
+              <Link href="/pricing" className="text-xs sm:text-sm font-bold text-purple-700 hover:underline">
+                See all packages and what each includes
+              </Link>
             </div>
           </div>
 

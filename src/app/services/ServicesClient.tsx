@@ -9,6 +9,8 @@ import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
 import { Code2, ShoppingCart, Brain, BarChart3, Globe, Palette } from 'lucide-react';
 import Link from 'next/link';
 import { getAllServices, type ServiceData } from '@/data/services';
+import { servicePrices } from '@/data/pricing';
+import { useCurrency } from '@/lib/useCurrency';
 
 const iconMap: Record<string, React.ReactNode> = {
   'web-development': <Code2 size={22} />,
@@ -124,16 +126,10 @@ const ServiceBlock = ({ service, index }: { service: ServiceData, index: number 
 
 export default function ServicesClient() {
   const services = getAllServices();
+  const { currency, ready } = useCurrency();
 
-  const getShortPrice = (pricing: string) => {
-    const match = pricing.match(/₹[\d,]+/);
-    if (match) {
-      const num = parseInt(match[0].replace(/[₹,]/g, ''));
-      if (num >= 1000) return `₹${Math.round(num / 1000)}K+`;
-      return `₹${num}+`;
-    }
-    return '';
-  };
+  // Starting prices from Rate Card v2 (data/pricing.ts), in the visitor's currency.
+  const getShortPrice = (slug: string, fallback: string) => ready ? servicePrices[slug]?.[currency].short ?? fallback : '…';
 
   return (
     <main className="bg-surface-muted min-h-screen">
@@ -170,7 +166,7 @@ export default function ServicesClient() {
       {/* Service Blocks */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 py-10 sm:py-14 lg:py-20 space-y-5 sm:space-y-6 lg:space-y-8">
         {services.map((s, i) => (
-          <ServiceBlock key={s.slug} service={{ ...s, startingPrice: getShortPrice(s.pricing) } as any} index={i} />
+          <ServiceBlock key={s.slug} service={{ ...s, startingPrice: getShortPrice(s.slug, s.startingPrice) } as any} index={i} />
         ))}
       </div>
 
